@@ -74,6 +74,9 @@ h2 code {
 
 .about #full_name {
     font-size: x-large;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .about .affiliations #title {
