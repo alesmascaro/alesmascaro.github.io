@@ -70,7 +70,7 @@ h2 code {
 #profile_picture  {
     object-fit: cover;
     width: auto;
-    height: auto;
+    height: 250px;
     margin-top: 1%;
 }
 
