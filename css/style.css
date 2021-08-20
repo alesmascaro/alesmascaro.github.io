@@ -39,22 +39,12 @@ h2 code {
     margin: auto;
 }
 
-.row {
-    display:-ms-flexbox;
-    display:flex;
-    -ms-flex
-    -wrap:wrap;
-    flex-wrap:wrap;
-    margin-right:-15px;
-    margin-left:-15px
-}
-
 .h-100 {
     margin: auto;
 }
 
 .w-100 {
-    margin: auto;
+    margin: 100%;
 }
 
 .main_color  {
