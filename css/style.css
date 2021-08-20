@@ -68,7 +68,7 @@ h2 code {
 }
 
 #profile_picture  {
-    display: block;
+    object-fit: cover;
     width: auto;
     height: auto;
     margin-top: 1%;
