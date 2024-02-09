@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Random data generation from Gaussian DAG models</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Random data generation from Gaussian DAG
+models</h1>
+
+
+
+<style type="text/css">
+.math.inline {
+font-size: 11px;
+}
+</style>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(BCDAG)</span></code></pre></div>
+<p>This is the first of a series of three vignettes introducing the R
+package <code>BCDAG</code>. In this vignette we focus on functions
+<code>rDAG()</code> and <code>rDAGWishart()</code> which implement
+random generation of DAG structures and DAG parameters under the
+assumption that the joint distribution of variables <span class="math inline">\(X_1,\dots, X_q\)</span> is Gaussian and the
+corresponding model (Choleski) parameters follow a DAG-Wishart
+distribution. Finally, data generation from Gaussian DAG models is
+described.</p>
+<div id="generating-dags-and-parameters-functions-rdag-and-rdagwishart" class="section level2">
+<h2>Generating DAGs and parameters: functions <code>rDAG()</code> and
+<code>rDAGWishart()</code></h2>
+<p>Function <code>rDAG()</code> can be used to randomly generate a DAG
+structure <span class="math inline">\(\mathcal{D}=(V,E)\)</span>, where
+<span class="math inline">\(V=\{1,\dots,q\}\)</span> and <span class="math inline">\(E\subseteq V \times V\)</span> is the set of
+edges. <code>rDAG()</code> has two arguments: the number of nodes
+(variables) <span class="math inline">\(q\)</span> and the prior
+probability of edge inclusion <span class="math inline">\(w\in[0,1]\)</span>; the latter can be tuned to
+control the degree of sparsity in the resulting DAG. By fixing a
+probability of edge inclusion <span class="math inline">\(w=0.2\)</span>, a DAG structure with <span class="math inline">\(q=10\)</span> nodes can be generated as
+follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>DAG <span class="ot">&lt;-</span> <span class="fu">rDAG</span>(q,w)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>DAG</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt;    1 2 3 4 5 6 7 8 9 10</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; 1  0 0 0 0 0 0 0 0 0  0</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; 2  0 0 0 0 0 0 0 0 0  0</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; 3  0 0 0 0 0 0 0 0 0  0</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; 4  0 0 1 0 0 0 0 0 0  0</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 5  1 0 0 0 0 0 0 0 0  0</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 6  0 0 0 0 0 0 0 0 0  0</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 7  1 0 1 0 0 0 0 0 0  0</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 8  1 0 0 0 0 0 0 0 0  0</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 9  0 0 0 1 0 0 1 0 0  0</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 10 0 0 0 0 1 0 0 0 0  0</span></span></code></pre></div>
+<p>Output of <code>rDAG()</code> is the 0-1 <span class="math inline">\((q,q)\)</span> adjacency matrix of the generated
+DAG, with element <span class="math inline">\(1\)</span> at position
+<span class="math inline">\((u,v)\)</span> indicating the presence of an
+edge <span class="math inline">\(u\rightarrow v\)</span>. Notice that
+the generated DAG is <em>topologically ordered</em>, meaning that edges
+are allowed only from high to low nodes (nodes are labeled according to
+rows/columns indexes); accordingly the DAG adjacency matrix is
+lower-triangular.</p>
+</div>
+<div id="generating-gaussian-dag-parameters" class="section level2">
+<h2>Generating Gaussian DAG parameters</h2>
+<p>Consider a Gaussian DAG model of the form <span class="math display">\[\begin{eqnarray}
+X_1, \dots, X_q \,|\,\boldsymbol L, \boldsymbol D, \mathcal{D}
+&amp;\sim&amp; \mathcal{N}_q\left(\boldsymbol 0,
+(\boldsymbol{L}\boldsymbol{D}^{-1}\boldsymbol{L}^\top)^{-1}\right),
+\end{eqnarray}\]</span> where <span class="math inline">\((\boldsymbol
+L, \boldsymbol D)\)</span> are model parameters providing the
+decomposition of the precision (inverse-covariance) matrix <span class="math inline">\(\boldsymbol{\Omega} =
+\boldsymbol{L}\boldsymbol{D}^{-1}\boldsymbol{L}^\top\)</span>;
+specifically, <span class="math inline">\(\boldsymbol{L}\)</span> is a
+<span class="math inline">\((q, q)\)</span> matrix of coefficients such
+that for each <span class="math inline">\((u, v)\)</span>-element <span class="math inline">\(\boldsymbol{L}_{uv}\)</span> with <span class="math inline">\(u \ne v\)</span>, we have <span class="math inline">\(\boldsymbol{L}_{uv} \ne 0\)</span> if and only if
+<span class="math inline">\((u, v) \in E\)</span>, while <span class="math inline">\(\boldsymbol{L}_{uu} = 1\)</span> for each <span class="math inline">\(u = 1,\dots, q\)</span>; also, <span class="math inline">\(\boldsymbol{D}\)</span> is a <span class="math inline">\((q, q)\)</span> diagonal matrix with <span class="math inline">\((u, u)\)</span>-element <span class="math inline">\(\boldsymbol{D}_{uu}\)</span>. The latter
+decomposition follows from the equivalent Structural Equation Model
+(SEM) representation of a Gaussian DAG model:</p>
+<p><span class="math display">\[\begin{equation}
+\boldsymbol{L}^\top\boldsymbol{x} = \boldsymbol \epsilon, \quad
+\boldsymbol \epsilon \sim \mathcal{N}_q(\boldsymbol 0, \boldsymbol D),
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol x = (X_1,\dots,
+X_q)^\top\)</span>; see also Castelletti &amp; Mascaro (2021).</p>
+<p>Function <code>rDAGWishart</code> implements random sampling from
+<span class="math inline">\((\boldsymbol L, \boldsymbol
+D)\,|\,\mathcal{D} \sim
+\text{DAG-Wishart}(\boldsymbol{a}_{c}^{\mathcal{D}}, \boldsymbol
+U)\)</span>, where <span class="math inline">\(\boldsymbol{U}\)</span>
+is the rate parameter (a <span class="math inline">\((q,q)\)</span>
+s.p.d. matrix) and <span class="math inline">\(\boldsymbol{a}^{\mathcal
+{D}}_{c}\)</span> (a <span class="math inline">\((q,1)\)</span> vector)
+is the shape parameter of the DAG-Wishart distribution. This class of
+distributions was introduced by Ben David et al. (2015) as a conjugate
+prior for Gaussian DAG model-parameters. In its compatible version
+(Peluso &amp; Consonni, 2020), elements of the vector parameter <span class="math inline">\(\boldsymbol{a}^{\mathcal {D}}_{c}\)</span> are
+uniquely determined from a single <em>common</em> shape parameter <span class="math inline">\(a&gt;q-1\)</span>.</p>
+<p>Inputs of <code>rDAGWishart</code> are: the number of samples <span class="math inline">\(n\)</span>, the underlying DAG <span class="math inline">\(\mathcal{D}\)</span>, the common shape parameter
+<span class="math inline">\(a\)</span> and the rate parameter <span class="math inline">\(\boldsymbol U\)</span>. Given the DAG <span class="math inline">\(\mathcal{D}\)</span> generated before, the
+following example implements a single (<span class="math inline">\(n=1\)</span>) draw from a compatible DAG-Wishart
+distribution with parameters <span class="math inline">\(a=q\)</span>,
+<span class="math inline">\(\boldsymbol U = \boldsymbol
+I_q\)</span>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> q</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>U <span class="ot">&lt;-</span> <span class="fu">diag</span>(<span class="dv">1</span>,q)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>outDL <span class="ot">&lt;-</span> <span class="fu">rDAGWishart</span>(<span class="at">n=</span><span class="dv">1</span>, DAG, a, U)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="fu">class</span>(outDL)</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; [1] &quot;list&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>L <span class="ot">&lt;-</span> outDL<span class="sc">$</span>L; D <span class="ot">&lt;-</span> outDL<span class="sc">$</span>D</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">class</span>(L); <span class="fu">class</span>(D)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; [1] &quot;matrix&quot; &quot;array&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; [1] &quot;matrix&quot; &quot;array&quot;</span></span></code></pre></div>
+<p>The output of <code>rDAGWishart()</code> consists of two elements: a
+<span class="math inline">\((q,q,n)\)</span>-dimensional array
+collecting the <span class="math inline">\(n\)</span> sampled matrices
+<span class="math inline">\(\boldsymbol L^{(1)}, \dots, \boldsymbol
+L^{(n)}\)</span> and a <span class="math inline">\((q,q,n)\)</span>-dimensional array collecting the
+<span class="math inline">\(n\)</span> sampled matrices <span class="math inline">\(\boldsymbol D^{(1)}, \dots,\boldsymbol
+D^{(n)}\)</span>. We refer the reader to Castelletti &amp; Mascaro
+(2021) and Castelletti &amp; Mascaro (2022+) for more details.</p>
+</div>
+<div id="generating-data-from-a-gaussian-dag-model" class="section level2">
+<h2>Generating data from a Gaussian DAG model</h2>
+<p>Data generation from a Gaussian DAG model is then straightforward.
+Recall that <span class="math inline">\(\boldsymbol{\Omega} =
+\boldsymbol{L}\boldsymbol{D}^{-1}\boldsymbol{L}^\top\)</span>, where
+<span class="math inline">\(\boldsymbol{\Omega}\)</span> is the
+inverse-covariance (precision) matrix of a multivariate Gaussian model
+satisfying the constraints imposed by a DAG. Accordingly, we can recover
+the precision and covariance matrices as:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Precision matrix</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>Omega <span class="ot">&lt;-</span> L <span class="sc">%*%</span> <span class="fu">solve</span>(D) <span class="sc">%*%</span> <span class="fu">t</span>(L)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co"># Covariance matrix</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">solve</span>(Omega)</span></code></pre></div>
+<p>Next, i.i.d. draws from a Gaussian DAG model can be obtained through
+the function <code>rmvnorm()</code> provided within the R package
+<code>mvtnorm</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>X <span class="ot">&lt;-</span> mvtnorm<span class="sc">::</span><span class="fu">rmvnorm</span>(<span class="at">n =</span> n, <span class="at">sigma =</span> Sigma)</span></code></pre></div>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<ul>
+<li><p>Ben-David E, Li T, Massam H, Rajaratnam B (2015). “High
+dimensional Bayesian inference for Gaussian directed acyclic graph
+models.” <em>arXiv pre-print</em>.</p></li>
+<li><p>Cao X, Khare K, Ghosh M (2019). “Posterior graph selection and
+estimation consistency for high-dimensional Bayesian DAG models.”
+<em>The Annals of Statistics</em>, 47(1), 319–348.</p></li>
+<li><p>Castelletti F, Mascaro A (2021). “Structural learning and
+estimation of joint causal effects among network-dependent variables.”
+<em>Statistical Methods &amp; Applications</em>, 30, 1289–1314.</p></li>
+<li><p>Castelletti F, Mascaro A (2022). “BCDAG: An R package for
+Bayesian structural and Causal learning of Gaussian DAGs.” <em>arXiv
+pre-print</em>.</p></li>
+<li><p>Peluso S, Consonni G (2020). “Compatible priors for model
+selection of high-dimensional Gaussian DAGs.” <em>Electronic Journal of
+Statistics</em>, 14(2), 4110–4132.</p></li>
+</ul>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
