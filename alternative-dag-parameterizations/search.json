@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Alternative DAG Parameterizations",
     "section": "",
-    "text": "Overview\nThis living research book develops and evaluates alternative parameterizations of directed acyclic graphs. Its scientific scope will be refined as source materials and research questions are introduced.",
+    "text": "Overview\nGaussian directed acyclic graph (DAG) models admit alternative parameterizations that expose a total causal effect as a regression coefficient. The I-MAP construction combines this effect coordinate with constraints that preserve the original sparse covariance model.",
     "crumbs": [
       "Overview"
     ]
@@ -14,17 +14,17 @@
     "href": "index.html#abstract",
     "title": "Alternative DAG Parameterizations",
     "section": "Abstract",
-    "text": "Abstract\nThe project is at the setup stage. No project-specific theoretical or empirical conclusions have been established. The executable Monte Carlo example in the appendix demonstrates the computational workflow only.",
+    "text": "Abstract\nFor a fully observed linear Gaussian causal DAG and a single treatment-outcome pair connected by a directed path, an appropriate change of variable ordering makes the outcome’s parent set equal to the treatment together with the optimal adjustment set. Its treatment coefficient is the original total causal effect. The resulting Gaussian factorization is an independence map (I-MAP); additional smooth constraints preserve the original sparse model. A covariance-preserving adjacent transposition provides the reparameterization, illustrated by a four-node example. Bayesian inference on the constrained space requires a proper prior in admissible coordinates. Non-local prior reweighting and adjustment-set decision rules follow from explicit normalization and loss assumptions.",
     "crumbs": [
       "Overview"
     ]
   },
   {
-    "objectID": "index.html#reading-guide",
-    "href": "index.html#reading-guide",
+    "objectID": "index.html#organization",
+    "href": "index.html#organization",
     "title": "Alternative DAG Parameterizations",
-    "section": "Reading guide",
-    "text": "Reading guide\nThe main text follows a scientific article structure: introduction, related work, notation, methods, research results, discussion, conclusions, and references. Topic investigations can expand the results section over time. Appendices document reproducibility and the evolution of the research.\nEach substantive claim should be linked to a derivation, verified source, or reproducible computation, with its assumptions and limitations stated explicitly.",
+    "section": "Organization",
+    "text": "Organization\n1  Introduction and research questions introduces the scientific questions and 3  Notation and theoretical framework defines the model and notation. The construction and proofs are in 5  The I-MAP construction and its constraints; the worked example and numerical validation are in 6  Worked example and reproducible validation. 7  Bayesian inference with an effect coordinate and 8  Adjustment decisions under graph uncertainty distinguish exact identities from inference strategies requiring additional assumptions. 9  Summary of analytical results summarizes the analytical results and their scope.\nEvidence conventions. Cited results are supported by the referenced literature. Analytical results are accompanied by arguments under stated assumptions. Numerical checks are finite reproducible verifications; they do not replace general proofs. Proposed inference strategies and open questions are distinguished from established results.",
     "crumbs": [
       "Overview"
     ]
@@ -34,17 +34,17 @@
     "href": "chapters/01-questions.html",
     "title": "1  Introduction and research questions",
     "section": "",
-    "text": "1.1 Scope\nTo be established from the first research materials and questions.",
+    "text": "1.1 Scope and motivation\nA total effect in a linear causal DAG is a sum of products of edge coefficients. Independent priors on those coefficients provide indirect control over the induced effect distribution, and the mapping changes across DAGs. The I-MAP construction instead places the target effect in a single outcome regression while preserving the observational model through constraints.\nThe setting consists of fully observed, acyclic, linear Gaussian systems with independent errors, one treatment \\(d\\), and one outcome \\(y\\). A causal interpretation is assumed for the original DAG. Observational data alone need not identify that DAG or its causal effect. Gaussianity supports the regression factorization; it does not resolve causal ambiguity.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction and research questions</span>"
     ]
   },
   {
-    "objectID": "chapters/01-questions.html#question-register",
-    "href": "chapters/01-questions.html#question-register",
+    "objectID": "chapters/01-questions.html#scientific-questions",
+    "href": "chapters/01-questions.html#scientific-questions",
     "title": "1  Introduction and research questions",
-    "section": "1.2 Question register",
-    "text": "1.2 Question register\n\n\n\n\n\n\n\n\n\nID\nQuestion\nStatus\nEvidence\n\n\n\n\nQ001\nWhat should the I-MAP parameterization explain or predict?\nOpen\nPending source materials\n\n\n\nUse stable IDs so chapters, scripts, findings, and GitHub issues can refer to the same question.",
+    "section": "1.2 Scientific questions",
+    "text": "1.2 Scientific questions\n\n\n\n\n\n\n\n\nID\nQuestion\nRelevant analysis\n\n\n\n\nQ001\nWhat should the I-MAP parameterization explain or predict?\nEffect representation and model preservation: Chapter 3; Chapter 5.\n\n\nQ002\nWhen does an ordered I-MAP expose the total effect, and how are its parameters computed?\nOutcome-parent theorem and adjacent transposition: Chapter 5; Chapter 6.\n\n\nQ003\nWhich constraints retain the original sparse Gaussian DAG model?\nRestored missing-edge equations: Section 5.5; Section 6.2.\n\n\nQ004\nHow can a proper effect-centered prior and marginal likelihood be constructed?\nAdmissible prior coordinates and normalized reweighting: Chapter 7.\n\n\nQ005\nWhat loss defines Bayesian optimal adjustment under graph uncertainty?\nPosterior risk and validity criteria: Chapter 8.\n\n\nQ006\nHow does the construction compare with existing causal parameterizations?\nFrugal parameterization and forbidden projection: Chapter 2.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction and research questions</span>"
     ]
@@ -54,17 +54,27 @@
     "href": "chapters/related-work.html",
     "title": "2  Related work",
     "section": "",
-    "text": "2.1 Source inventory\nVerified scientific sources will be summarized here, with citations from references.bib. Record what each source establishes, its assumptions, and how it relates to the research questions.",
+    "text": "2.1 Graphs, interventions, and uncertainty\nPearl’s graphical framework provides the language of conditional independence and interventions (Pearl 1988, 2009). IDA estimates possible effects across DAGs compatible with an observational equivalence class (Maathuis et al. 2009). Joint interventions require additional methods (Nandy et al. 2017), and ancestral-graph approaches allow latent-variable uncertainty under their own assumptions (Malinsky and Spirtes 2016). The generalized adjustment criterion covers DAGs and several classes of partially identified graphs (Perković et al. 2018). These results motivate graph uncertainty without making an individual causal DAG observationally identifiable.\nHenckel, Perković and Maathuis characterize the asymptotically efficient O-set for linear-model adjustment (Henckel et al. 2022). Witte and colleagues give its forbidden-projection interpretation and integrate it into effect estimation under graph uncertainty (Witte et al. 2020). The I-MAP construction here retains all nodes and uses a constrained reordering; forbidden projection marginalizes selected nodes. They are related constructions with different inferential roles.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Related work</span>"
     ]
   },
   {
-    "objectID": "chapters/related-work.html#gap-and-motivation",
-    "href": "chapters/related-work.html#gap-and-motivation",
+    "objectID": "chapters/related-work.html#bayesian-graph-and-effect-inference",
+    "href": "chapters/related-work.html#bayesian-graph-and-effect-inference",
     "title": "2  Related work",
-    "section": "2.2 Gap and motivation",
-    "text": "2.2 Gap and motivation\nThe research gap will be defined after reviewing the initial materials. No literature claims have been made yet.",
+    "section": "2.2 Bayesian graph and effect inference",
+    "text": "2.2 Bayesian graph and effect inference\nDAG-Wishart priors supply a conjugate baseline (Ben-David et al. 2015). Compatible priors for model comparison impose additional shape restrictions (Peluso and Consonni 2020), connected to the parameter-prior construction framework of Geiger and Heckerman (Geiger and Heckerman 2002). Conjugacy alone does not imply score equivalence.\nBayesian effect inference can average over graph and parameter uncertainty in Gaussian systems (Castelletti and Consonni 2021; Pensar et al. 2020), including simultaneous interventions (Castelletti and Mascaro 2021). Categorical-model extensions have also been developed (Castelletti et al. 2024).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Related work</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/related-work.html#frugal-parameterization",
+    "href": "chapters/related-work.html#frugal-parameterization",
+    "title": "2  Related work",
+    "section": "2.3 Frugal parameterization",
+    "text": "2.3 Frugal parameterization\nEvans and Didelez directly parameterize a causal distribution and build the remaining model around it (Evans and Didelez 2024). The I-MAP target here is a mean derivative in a constrained Gaussian DAG representation. Comparisons of redundancy or inferential accuracy require explicit sparse-model constraints and a common inferential target. See Q006 and the discussion.\n\n\n\n\n\n\nBen-David, Emanuel, Tianxi Li, Helene Massam, and Bala Rajaratnam. 2015. High Dimensional Bayesian Inference for Gaussian Directed Acyclic Graph Models. https://arxiv.org/abs/1109.4371v5.\n\n\nCastelletti, Federico, and Guido Consonni. 2021. “Bayesian Inference of Causal Effects from Observational Data in Gaussian Graphical Models.” Biometrics 77 (1): 136–49. https://doi.org/10.1111/biom.13281.\n\n\nCastelletti, Federico, Guido Consonni, and Marco L. Della Vedova. 2024. “Joint Structure Learning and Causal Effect Estimation for Categorical Graphical Models.” Biometrics 80 (3): ujae067. https://doi.org/10.1093/biomtc/ujae067.\n\n\nCastelletti, Federico, and Alessandro Mascaro. 2021. “Structural Learning and Estimation of Joint Causal Effects Among Network-Dependent Variables.” Statistical Methods & Applications 30: 1289–314. https://doi.org/10.1007/s10260-021-00579-1.\n\n\nEvans, Robin J., and Vanessa Didelez. 2024. “Parameterizing and Simulating from Causal Models.” Journal of the Royal Statistical Society Series B: Statistical Methodology 86 (3): 535–68. https://doi.org/10.1093/jrsssb/qkad058.\n\n\nGeiger, Dan, and David Heckerman. 2002. “Parameter Priors for Directed Acyclic Graphical Models and the Characterization of Several Probability Distributions.” The Annals of Statistics 30 (5): 1412–40. https://doi.org/10.1214/aos/1035844981.\n\n\nHenckel, Leonard, Emilija Perković, and Marloes H. Maathuis. 2022. “Graphical Criteria for Efficient Total Effect Estimation via Adjustment in Causal Linear Models.” Journal of the Royal Statistical Society Series B: Statistical Methodology 84 (2): 579–99. https://academic.oup.com/jrsssb/article/84/2/579/7056108.\n\n\nMaathuis, Marloes H., Markus Kalisch, and Peter Bühlmann. 2009. “Estimating High-Dimensional Intervention Effects from Observational Data.” The Annals of Statistics 37 (6A): 3133–64. https://doi.org/10.1214/09-AOS685.\n\n\nMalinsky, Daniel, and Peter Spirtes. 2016. “Estimating Causal Effects with Ancestral Graph Markov Models.” Proceedings of the Eighth International Conference on Probabilistic Graphical Models, Proceedings of machine learning research, vol. 52: 299–309. https://proceedings.mlr.press/v52/malinsky16.html.\n\n\nNandy, Preetam, Marloes H. Maathuis, and Thomas S. Richardson. 2017. “Estimating the Effect of Joint Interventions from Observational Data in Sparse High-Dimensional Settings.” The Annals of Statistics 45 (2): 647–74. https://doi.org/10.1214/16-AOS1462.\n\n\nPearl, Judea. 1988. Probabilistic Reasoning in Intelligent Systems: Networks of Plausible Inference. Morgan Kaufmann.\n\n\nPearl, Judea. 2009. Causality: Models, Reasoning, and Inference. 2nd ed. Cambridge University Press. https://doi.org/10.1017/CBO9780511803161.\n\n\nPeluso, Stefano, and Guido Consonni. 2020. “Compatible Priors for Model Selection of High-Dimensional Gaussian DAGs.” Electronic Journal of Statistics 14 (2): 4110–32. https://doi.org/10.1214/20-EJS1768.\n\n\nPensar, Johan, Topi Talvitie, Antti Hyttinen, and Mikko Koivisto. 2020. “A Bayesian Approach for Estimating Causal Effects from Observational Data.” Proceedings of the AAAI Conference on Artificial Intelligence 34 (04): 5395–402. https://doi.org/10.1609/aaai.v34i04.5988.\n\n\nPerković, Emilija, Johannes Textor, Markus Kalisch, and Marloes H. Maathuis. 2018. “Complete Graphical Characterization and Construction of Adjustment Sets in Markov Equivalence Classes of Ancestral Graphs.” Journal of Machine Learning Research 18 (220): 1–62. https://jmlr.org/papers/v18/16-319.html.\n\n\nWitte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa Didelez. 2020. “On Efficient Adjustment in Causal Graphs.” Journal of Machine Learning Research 21 (246): 1–45. https://jmlr.org/papers/v21/20-175.html.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Related work</span>"
     ]
@@ -74,37 +84,37 @@
     "href": "chapters/02-framework.html",
     "title": "3  Notation and theoretical framework",
     "section": "",
-    "text": "3.1 Definitions and notation\nRecord precise definitions, units, domains, and notation here.",
+    "text": "3.1 Graphs and Gaussian models\nLet \\(\\mathcal D=(V,E)\\) be a DAG on \\(V=\\{1,\\ldots,q\\}\\). Write \\(\\operatorname{pa}_{\\mathcal D}(j)\\), \\(\\operatorname{an}_{\\mathcal D}(j)\\) and \\(\\operatorname{de}_{\\mathcal D}(j)\\) for parents, strict ancestors and strict descendants. These sets exclude the node itself. An ordering is topological when every parent precedes its children. For a set, parents and ancestors denote unions of the corresponding node sets.\nUse \\(\\mathcal D\\) for the graph and \\(D=\\operatorname{diag}(v_1,\\ldots,v_q)\\) for positive error variances. The centered structural equations are\n\\[\nX=B^\\top X+\\epsilon,\\qquad \\epsilon\\sim N_q(0,D),\\qquad L=I-B,\n\\]\nwhere \\(B_{uj}=0\\) if \\(u\\notin\\operatorname{pa}_{\\mathcal D}(j)\\). Allowed edge coefficients may equal zero; requiring every allowed coefficient to be nonzero would unnecessarily exclude legitimate parameter values and would still not guarantee faithfulness. Consequently,\n\\[\nL^\\top X=\\epsilon,\\qquad\n\\Sigma=L^{-\\top}DL^{-1},\\qquad \\Omega=LD^{-1}L^\\top.\n\\]\nAll errors are mutually independent. There are no hidden variables, selection effects, or feedback loops. Means are assumed known to be zero in the likelihood calculations. Estimating an intercept or mean requires changing those calculations and their parameter counts.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Notation and theoretical framework</span>"
     ]
   },
   {
-    "objectID": "chapters/02-framework.html#assumptions",
-    "href": "chapters/02-framework.html#assumptions",
+    "objectID": "chapters/02-framework.html#interventions-and-total-effects",
+    "href": "chapters/02-framework.html#interventions-and-total-effects",
     "title": "3  Notation and theoretical framework",
-    "section": "3.2 Assumptions",
-    "text": "3.2 Assumptions\nDistinguish assumptions supported by sources from working hypotheses.",
+    "section": "3.2 Interventions and total effects",
+    "text": "3.2 Interventions and total effects\nA hard intervention \\(\\operatorname{do}(X_d=x)\\) replaces the equation for \\(X_d\\) by the constant \\(x\\) and removes its incoming edges. The remaining structural equations are retained. For \\(d\\ne y\\), define\n\\[\n\\tau_{dy}=\\frac{\\partial}{\\partial x}E[X_y\\mid\\operatorname{do}(X_d=x)]\n=\\sum_{p:d\\rightsquigarrow y}\\prod_{(u\\to v)\\in p} B_{uv}\n=[L^{-1}]_{dy}.\n\\]\nAnalytical justification. Since \\(B\\) is nilpotent after topological permutation, \\((I-B)^{-1}=I+B+\\cdots+B^{q-1}\\). For distinct endpoints its \\((d,y)\\) entry enumerates the directed paths. Replacing the treatment equation yields the same propagation along paths starting at \\(d\\).\nIf no directed path exists, \\(\\tau_{dy}=0\\) for all parameters. If a path exists, opposing path contributions may still cancel. Thus ancestry and a nonzero effect are different statements at particular parameter values. For simultaneous interventions, paths through another intervened treatment are removed; the single-treatment formula cannot be reused without this change. Joint interventions require a separate construction (Nandy et al. 2017; Castelletti and Mascaro 2021).",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Notation and theoretical framework</span>"
     ]
   },
   {
-    "objectID": "chapters/02-framework.html#reasoning",
-    "href": "chapters/02-framework.html#reasoning",
+    "objectID": "chapters/02-framework.html#adjustment-and-the-o-set",
+    "href": "chapters/02-framework.html#adjustment-and-the-o-set",
     "title": "3  Notation and theoretical framework",
-    "section": "3.3 Reasoning",
-    "text": "3.3 Reasoning\nWrite derivations with explicit premises. Cite source material using BibTeX keys.",
+    "section": "3.3 Adjustment and the O-set",
+    "text": "3.3 Adjustment and the O-set\nA set \\(Z\\subseteq V\\setminus\\{d,y\\}\\) is valid for adjustment if, for every causal distribution compatible with the original DAG,\n\\[\np(x_y\\mid\\operatorname{do}(X_d=x))\n=\\int p(x_y\\mid X_d=x,X_Z=z)p(z)\\,dz.\n\\]\nFor \\(Z=\\varnothing\\), the right side is \\(p(x_y\\mid X_d=x)\\). In a Gaussian model write the observational conditional mean as\n\\[\nE[X_y\\mid X_d,X_Z]=\\beta_d X_d+\\beta_Z^\\top X_Z.\n\\]\nIf \\(Z\\) is valid, integrating this expression proves \\(\\beta_d=\\tau_{dy}\\). The adjustment identity does not generally equate the observational conditional law with \\(p(x_y\\mid\\operatorname{do}(X_d=x),X_Z=z)\\) for an arbitrary valid set.\nSuppose \\(d\\in\\operatorname{an}_{\\mathcal D}(y)\\) and let\n\\[\nM=\\operatorname{de}_{\\mathcal D}(d)\\cap\\operatorname{an}_{\\mathcal D}(y),\\qquad\nC=M\\cup\\{y\\},\\qquad\nO=\\operatorname{pa}_{\\mathcal D}(C)\\setminus(\\{d\\}\\cup M).\n\\]\nThe general O-set definition removes the treatment and the causal nodes together with their descendants. In this single-treatment DAG setting, an external parent of \\(C\\) cannot be a descendant of \\(C\\) without a directed cycle, so it reduces to the displayed expression. An external parent descended from \\(d\\) would itself lie in \\(M\\); hence \\(O\\) contains only non-descendants of \\(d\\).\nSource-supported result. The O-set is valid and minimizes the asymptotic variance of the OLS total-effect estimator over valid adjustment sets under the causal linear-model assumptions (Henckel et al. 2022; Witte et al. 2020). This is not a claim of universal finite-sample or Bayesian optimality. With \\(A=(d,O)\\) in that order,\n\\[\n\\tau_{dy}=[\\Sigma_{AA}^{-1}\\Sigma_{Ay}]_1,\\qquad\n\\widehat\\tau_{dy}=[S_{AA}^{-1}S_{Ay}]_1.\n\\]\n\\(S\\) is the sample covariance matrix (centered when fitting an intercept). Equivalently, use \\((W^\\top W)^{-1}W^\\top x_y\\) for the regression design \\(W\\). The asymptotic variance is\n\\[\n\\operatorname{avar}(\\widehat\\tau_{dy})=\n\\frac{\\operatorname{Var}(X_y\\mid X_d,X_O)}{n\\operatorname{Var}(X_d\\mid X_O)}.\n\\]",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Notation and theoretical framework</span>"
     ]
   },
   {
-    "objectID": "chapters/02-framework.html#limits-of-the-argument",
-    "href": "chapters/02-framework.html#limits-of-the-argument",
+    "objectID": "chapters/02-framework.html#sec-ordered-imap",
+    "href": "chapters/02-framework.html#sec-ordered-imap",
     "title": "3  Notation and theoretical framework",
-    "section": "3.4 Limits of the argument",
-    "text": "3.4 Limits of the argument\nRecord alternative explanations and conditions under which the argument may fail.",
+    "section": "3.4 Independence maps and ordered regressions",
+    "text": "3.4 Independence maps and ordered regressions\nLet \\(\\mathcal I(\\mathcal D)\\) denote all graphical d-separations, and \\(\\mathcal I(p)\\) all distributional conditional independences. A DAG \\(G\\) is an I-MAP of \\(p\\) if \\(\\mathcal I(G)\\subseteq\\mathcal I(p)\\), and an I-MAP of \\(\\mathcal D\\) if \\(\\mathcal I(G)\\subseteq\\mathcal I(\\mathcal D)\\). This latter definition does not require choosing a faithful distribution. Faithfulness means \\(\\mathcal I(p)=\\mathcal I(\\mathcal D)\\).\nFor ordering \\(\\pi\\), put \\(P_j=\\{\\pi_1,\\ldots,\\pi_{j-1}\\}\\). Define the ordered graph by\n\\[\n\\pi_i\\to\\pi_j\\in G^\\pi_{\\mathcal D}\n\\quad\\Longleftrightarrow\\quad\ni&lt;j\\ \\text{and}\\ \\pi_i\\not\\!\\perp_{\\mathcal D}\\pi_j\\mid P_j\\setminus\\{\\pi_i\\}.\n\\]\nThe edge criterion uses dependence. For nonsingular Gaussians, the corresponding distribution-specific construction keeps exactly the nonzero coefficients in each regression on all predecessors. Gaussian conditional independence satisfies the intersection property, so removing all zero coefficients leaves a valid factorization. Each retained coefficient is necessary: deleting it would impose a conditional independence that fails in that regression. Thus the distribution-specific graph is a minimal I-MAP. Taking a faithful Gaussian distribution of \\(\\mathcal D\\) gives the graphical ordered minimal I-MAP above; its definition applies to the entire DAG model.\nMinimal means no edge can be removed while retaining the I-MAP property; it does not mean globally fewest edges. At unfaithful parameter values, a regression coefficient can vanish on an edge of the graph-defined I-MAP. Keep the graph and its allowed coefficients separate.\n\n\n\n\n\n\nCastelletti, Federico, and Alessandro Mascaro. 2021. “Structural Learning and Estimation of Joint Causal Effects Among Network-Dependent Variables.” Statistical Methods & Applications 30: 1289–314. https://doi.org/10.1007/s10260-021-00579-1.\n\n\nHenckel, Leonard, Emilija Perković, and Marloes H. Maathuis. 2022. “Graphical Criteria for Efficient Total Effect Estimation via Adjustment in Causal Linear Models.” Journal of the Royal Statistical Society Series B: Statistical Methodology 84 (2): 579–99. https://academic.oup.com/jrsssb/article/84/2/579/7056108.\n\n\nNandy, Preetam, Marloes H. Maathuis, and Thomas S. Richardson. 2017. “Estimating the Effect of Joint Interventions from Observational Data in Sparse High-Dimensional Settings.” The Annals of Statistics 45 (2): 647–74. https://doi.org/10.1214/16-AOS1462.\n\n\nWitte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa Didelez. 2020. “On Efficient Adjustment in Causal Graphs.” Journal of Machine Learning Research 21 (246): 1–45. https://jmlr.org/papers/v21/20-175.html.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Notation and theoretical framework</span>"
     ]
@@ -112,201 +122,281 @@
   {
     "objectID": "chapters/methods.html",
     "href": "chapters/methods.html",
-    "title": "4  Methods and reproducibility",
+    "title": "4  Analytical and computational methods",
     "section": "",
-    "text": "4.1 Analytical methods\nState premises, definitions, and proof obligations for each proposed result.",
+    "text": "4.1 Analytical methods\nStructural substitution expresses the outcome as a regression on treatment and external parents of the causal nodes. Path polynomials distinguish graphically implied zeros from coefficient cancellations. Adjacent equation operations preserve the covariance matrix, and uniqueness of Gaussian regressions identifies the factorization in each variable ordering. Restoring the original ordering gives an exact missing-edge characterization of the constrained model.\nGraphical I-MAPs are defined through the original DAG’s d-separations. Numerical coefficient support agrees with the graph-defined support under faithfulness; individual unfaithful parameter values can have additional zeros. All covariance factorizations assume strictly positive error variances.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Methods and reproducibility</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analytical and computational methods</span>"
     ]
   },
   {
-    "objectID": "chapters/methods.html#computational-methods",
-    "href": "chapters/methods.html#computational-methods",
-    "title": "4  Methods and reproducibility",
-    "section": "4.2 Computational methods",
-    "text": "4.2 Computational methods\nKeep analysis code in scripts/R/ or scripts/python/. Execute that code from the relevant research chapter, or consume documented artifacts from an explicit pipeline. Specify input provenance, parameters, random seeds, package versions, and numerical tolerances.",
+    "objectID": "chapters/methods.html#numerical-validation",
+    "href": "chapters/methods.html#numerical-validation",
+    "title": "4  Analytical and computational methods",
+    "section": "4.2 Numerical validation",
+    "text": "4.2 Numerical validation\nThe base-R validation script independently computes d-separation by ancestral moralization and Gaussian factorizations by direct regression. The finite validation domain, coefficient and variance ranges, random seed and numerical tolerance are specified in Chapter 6. The same script produces the tables and graph illustration.\nThe graphical checks concern all DAGs in the specified finite ordered class. Numerical checks compare population covariance factorizations, effect coefficients and reverse constraints. They assess the implementation against analytical benchmarks; they do not establish general theorems or the statistical performance of Bayesian estimators.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Methods and reproducibility</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analytical and computational methods</span>"
     ]
   },
   {
-    "objectID": "chapters/methods.html#validation",
-    "href": "chapters/methods.html#validation",
-    "title": "4  Methods and reproducibility",
-    "section": "4.3 Validation",
-    "text": "4.3 Validation\nCompare numerical results with analytical benchmarks where available. Report uncertainty and sensitivity to assumptions. The executable appendix illustrates the workflow without establishing a project-specific result.",
+    "objectID": "chapters/methods.html#reproduction",
+    "href": "chapters/methods.html#reproduction",
+    "title": "4  Analytical and computational methods",
+    "section": "4.3 Reproduction",
+    "text": "4.3 Reproduction\nRun the validation from the repository root:\nRscript scripts/R/002-imap-validation.R\nStandalone execution writes regenerated tables and execution-environment information to results/. The calculations use base R. A full HTML build executes the same validation code:\nquarto render\nThe seed, inputs, parameter ranges and tolerances define the computational experiment; runtime information supports reproduction across environments.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Methods and reproducibility</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analytical and computational methods</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-construction.html",
+    "href": "chapters/imap-construction.html",
+    "title": "5  The I-MAP construction and its constraints",
+    "section": "",
+    "text": "5.1 Existence of a closest ordering\nAssume the setting of Chapter 3 with \\(d\\in\\operatorname{an}_{\\mathcal D}(y)\\). A closest ordering has the form\n\\[\n\\pi_{dy}=\\langle\\delta_1,d,M,y,\\delta_3\\rangle,\n\\]\nwhere the mediator block \\(M\\) is internally topological. Define \\(S=\\{d\\}\\cup M\\cup\\{y\\}\\) and \\(A=\\operatorname{an}_{\\mathcal D}(S)\\setminus S\\). Choose a topological ordering within \\(A\\), then \\(d,M,y\\), then the remaining nodes. This is topological: every outside parent of \\(S\\) belongs to \\(A\\), and an ancestor of \\(S\\) descended from \\(d\\) must lie on a \\(d\\)-to-\\(y\\) path and so belongs to \\(S\\). No node in \\(S\\) can therefore be an ancestor of a node in \\(A\\). Since \\(A\\cup S\\) is ancestral, all remaining nodes can be placed last. This establishes the existence of a closest ordering.\nMove \\(y\\) just before the mediator block to obtain\n\\[\n\\pi^*=\\langle\\delta_1,d,y,M,\\delta_3\\rangle.\n\\]\nDifferent choices inside \\(\\delta_1,M,\\delta_3\\) may give different I-MAPs. “Optimal” here refers to the outcome regression’s adjustment efficiency; it does not identify a unique globally optimal graph.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The I-MAP construction and its constraints</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-construction.html#sec-outcome-theorem",
+    "href": "chapters/imap-construction.html#sec-outcome-theorem",
+    "title": "5  The I-MAP construction and its constraints",
+    "section": "5.2 Outcome parents and the effect coordinate",
+    "text": "5.2 Outcome parents and the effect coordinate\nProposition (outcome parents and effect coordinate). For any closest ordering, the graph-defined ordered minimal I-MAP \\(G^*=G^{\\pi^*}_{\\mathcal D}\\) has\n\\[\n\\operatorname{pa}_{G^*}(y)=\\{d\\}\\cup O.\n\\]\nFor every positive-variance parameter value of the original Gaussian DAG model, including unfaithful ones, its regression factorization in \\(\\pi^*\\) satisfies\n\\[\n-\\widetilde L_{dy}=\\tau_{dy}.\n\\]\nProof. Every external parent of \\(M\\cup\\{y\\}\\) is either \\(d\\) or lies in \\(O\\subseteq\\delta_1\\). Successive substitution of the equations for the mediators therefore gives\n\\[\nX_y=\\tau_{dy}X_d+\\sum_{u\\in O}c_uX_u+\\eta,\n\\]\nwhere \\(\\eta\\) is a linear combination of the errors at \\(M\\cup\\{y\\}\\). Because the closest ordering is topological, \\((X_{\\delta_1},X_d)\\) depends only on earlier errors, so \\(\\eta\\) is independent of this entire predecessor vector. Its variance is positive because its coefficient on \\(\\epsilon_y\\) is one. This is exactly the regression of \\(X_y\\) on \\((X_{\\delta_1},X_d)\\); all predecessors outside \\(\\{d\\}\\cup O\\) have zero coefficients.\nFor each \\(u\\in O\\), an edge \\(u\\to c\\), \\(c\\in M\\cup\\{y\\}\\), followed by a directed path from \\(c\\) to \\(y\\) supplies a monomial in \\(c_u\\). All internal nodes of this path lie in the mediator block. Distinct paths give distinct monomials with positive formal signs in the \\(B\\) coefficients; hence \\(c_u\\) is not the zero polynomial. Likewise, a directed \\(d\\)-to-\\(y\\) path makes \\(\\tau_{dy}\\) a nonzero polynomial. These coefficients can be nonzero in the DAG model and thus their associated conditional independences are not graphically implied. By the ordered edge criterion, precisely these predecessor nodes are parents in \\(G^*\\). This proves the graph statement, while the substitution identity proves the effect equality at all parameter values. \\(\\square\\)\nAncestors of \\(d\\) need not be separated from the outcome by conditioning on \\(d\\). For example, \\(u\\to d\\), \\(u\\to y\\) and \\(d\\to y\\) leave \\(u\\) associated with \\(y\\) given \\(d\\). Such confounders are included in the external-parent regression.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The I-MAP construction and its constraints</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-construction.html#sec-transposition",
+    "href": "chapters/imap-construction.html#sec-transposition",
+    "title": "5  The I-MAP construction and its constraints",
+    "section": "5.3 Adjacent transposition",
+    "text": "5.3 Adjacent transposition\nLet \\(i,j\\) be adjacent in the current factorization ordering, with \\(i\\) preceding \\(j\\), and put \\(a=L_{ij}\\). It is permissible that \\(a=0\\). Save the old variances \\(v_i,v_j\\) and set \\(s=v_j+a^2v_i\\). Apply these column operations in sequence:\n\\[\nL_{\\cdot j}^{E}=L_{\\cdot j}-aL_{\\cdot i},\\qquad\n\\widetilde L_{\\cdot i}=L_{\\cdot i}+\\frac{av_i}{s}L_{\\cdot j}^{E},\\qquad\n\\widetilde L_{\\cdot j}=L_{\\cdot j}^{E},\n\\]\nand leave other columns unchanged. The new variances are\n\\[\n\\widetilde v_i=\\frac{v_iv_j}{s},\\qquad \\widetilde v_j=s.\n\\]\nSwap \\(i,j\\) in the ordering. Both variance updates use the old values; an in-place update that reuses the new \\(v_i\\) in \\(s\\) is incorrect.\nProof of covariance preservation and DAG validity. The eliminated error is \\(\\epsilon_j^E=\\epsilon_j-a\\epsilon_i\\), with variance \\(s\\) and covariance \\(-av_i\\) with \\(\\epsilon_i\\). Replacing the latter by \\(\\widetilde\\epsilon_i=\\epsilon_i+(av_i/s)\\epsilon_j^E\\) makes these two errors uncorrelated, hence independent by Gaussianity, and gives variance \\(v_iv_j/s\\). The invertible equation operations leave \\(X\\) unchanged, so\n\\[\n\\widetilde L^{-\\top}\\widetilde D\\widetilde L^{-1}=L^{-\\top}DL^{-1}.\n\\]\nAdjacency ensures that both old columns involve only predecessors and the pair itself. After elimination the \\(j\\) column involves only earlier nodes; the \\(i\\) column involves those nodes and \\(j\\). The unit diagonal is retained and the new matrix is triangular in the swapped ordering. Its equations therefore constitute a DAG factorization. Uniqueness of Gaussian regressions on all predecessors identifies it with the modified Cholesky factorization in that ordering. \\(\\square\\)\nThe covariance algebra alone is insufficient to establish a DAG for arbitrary \\(i\\to j\\). In \\(i\\to k\\to j\\) with \\(i\\to j\\), transposing \\(i,j\\) can introduce \\(k\\to i\\) while retaining \\(i\\to k\\). Adjacency is essential to DAG validity. Minimality follows from the ordered construction: for a faithful input distribution, numerical nonzero support gives the ordered minimal I-MAP; for a graph-defined output use d-separation in the original graph, rather than thresholding a particular parameter matrix.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The I-MAP construction and its constraints</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-construction.html#forward-and-reverse-algorithms",
+    "href": "chapters/imap-construction.html#forward-and-reverse-algorithms",
+    "title": "5  The I-MAP construction and its constraints",
+    "section": "5.4 Forward and reverse algorithms",
+    "text": "5.4 Forward and reverse algorithms\nStart with a closest ordering. Traverse \\(M\\) in reverse topological order and transpose each mediator with \\(y\\). At every step they are adjacent. If the current coefficient happens to be zero, swap their ordering with no numerical change. After the last step, the ordering is \\(\\pi^*\\) and the parameters are its unique Gaussian regression factorization. Minimality relative to the original graph follows from the ordered d-separation criterion; it does not follow solely from a succession of locally minimal I-MAPs.\nTo reverse the construction, traverse \\(M\\) in its original topological order, transposing \\(y\\) with each mediator. Each transposition is an involution on its adjacent factorization pair: alternatively, uniqueness in the restored ordering proves that the reverse sequence recovers the original \\((L,D)\\) on the constrained image. Applied to an unconstrained Gaussian factorization on \\(G^*\\), it recovers a factorization in \\(\\pi_{dy}\\) that can have extra coefficients.\nWith exactly one mediator, a single adjacent transposition in a closest ordering produces the effect coefficient. The existence of an edge \\(m\\to y\\) alone does not imply that \\(m\\) is the sole mediator.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The I-MAP construction and its constraints</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-construction.html#sec-imap-constraints",
+    "href": "chapters/imap-construction.html#sec-imap-constraints",
+    "title": "5  The I-MAP construction and its constraints",
+    "section": "5.5 Exact characterization of the constrained image",
+    "text": "5.5 Exact characterization of the constrained image\nLet \\(\\Theta_{\\mathcal D}\\) have one free coefficient per allowed edge and \\(q\\) positive variances. Let \\(\\Theta_{G^*}\\) be the analogous ambient space. The change of ordering \\(F\\) maps the former into the latter while preserving \\(\\Sigma\\).\nFor \\(\\widetilde\\theta\\in\\Theta_{G^*}\\), reconstruct its covariance and factorize it in the original ordering, obtaining \\((L^{\\mathrm{back}},D^{\\mathrm{back}})\\). Then\n\\[\nF(\\Theta_{\\mathcal D})=\n\\left\\{\\widetilde\\theta\\in\\Theta_{G^*}:\nL^{\\mathrm{back}}_{uv}=0\\ \\text{for every }u\\prec_{\\pi_{dy}}v\\text{ with }u\\to v\\notin E\\right\\}.\n\\]\nProof. Necessity follows from reversing \\(F\\). For sufficiency, the imposed zeros place the restored factorization in \\(\\Theta_{\\mathcal D}\\). Refactorizing it in \\(\\pi^*\\) returns the unique original \\(\\widetilde\\theta\\). All denominators are positive conditional variances. Consequently \\(F\\) and its inverse are smooth on the positive-variance domains, and the image has dimension \\(q+|E|\\), even though the ambient I-MAP has dimension \\(q+|E(G^*)|\\). \\(\\square\\)\nThis characterization avoids any need to infer constraints from a single numerical sparsity pattern. Constraints may be redundant; their number need not equal their rank. A choice of which entries to solve for can fail at zero denominators, so a global free-coordinate chart and variation independence of the effect from the nuisance parameters require additional conditions.\nThe construction preserves the observational model. The alternative arrows generally do not retain the original intervention semantics. The distinguished effect coefficient is justified by the preceding theorem; other intervention effects must still be evaluated from the original causal model.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The I-MAP construction and its constraints</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-validation.html",
+    "href": "chapters/imap-validation.html",
+    "title": "6  Worked example and reproducible validation",
+    "section": "",
+    "text": "6.1 The four-node diamond\nTake \\(1\\to2\\), \\(1\\to3\\), \\(2\\to4\\), \\(3\\to4\\), with treatment \\(d=1\\) and outcome \\(y=4\\). Write\n\\[\nL^\\top=\\begin{pmatrix}\n1&0&0&0\\\\a&1&0&0\\\\b&0&1&0\\\\0&c&e&1\n\\end{pmatrix},\\qquad D=\\operatorname{diag}(v_1,v_2,v_3,v_4).\n\\]\nThus \\(a=L_{12}\\), \\(b=L_{13}\\), \\(c=L_{24}\\), \\(e=L_{34}\\) and\n\\[\n\\tau_{14}=ac+be,\\qquad O=\\varnothing.\n\\]\nThe sign follows from \\(B=-L\\) off the diagonal: each causal path has two edges. Starting from \\((1,2,3,4)\\), transpose \\((3,4)\\) and then \\((2,4)\\) to obtain ordering \\((1,4,2,3)\\). Put\n\\[\ns_3=v_4+e^2v_3,\\qquad s=s_3+c^2v_2,\\qquad t=ac+be.\n\\]\nAnalytical result. The resulting factorization, displayed in original node labels, is\n\\[\n\\widetilde L^\\top=\n\\begin{pmatrix}\n1&0&0&0\\\\\na-tcv_2/s&1&0&cv_2/s\\\\\nb-be^2v_3/s_3&cev_3/s_3&1&ev_3/s_3\\\\\n-t&0&0&1\n\\end{pmatrix},\n\\]\n\\[\n\\widetilde D=\\operatorname{diag}\\left(v_1,\\frac{v_2s_3}{s},\n\\frac{v_3v_4}{s_3},s\\right).\n\\]\nThe last row represents \\(X_4=tX_1+\\widetilde\\epsilon_4\\). Both directed paths contribute to the outcome coefficient through \\(t=ac+be\\). All denominators are positive.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Worked example and reproducible validation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-validation.html#sec-diamond",
+    "href": "chapters/imap-validation.html#sec-diamond",
+    "title": "6  Worked example and reproducible validation",
+    "section": "",
+    "text": "Note\n\n\n\nThe I-MAP graph has edges \\(1\\to4\\), \\(1\\to2\\), \\(4\\to2\\), \\(1\\to3\\), \\(4\\to3\\), and \\(2\\to3\\). It has six edges, while the original graph has four. Its eight-dimensional ambient parameter space must be constrained to retain the original six-dimensional model. If \\(ac+be=0\\), the numerical \\(1\\to4\\) coefficient vanishes even though that edge belongs to the graph-defined I-MAP.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Worked example and reproducible validation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-validation.html#sec-diamond-constraints",
+    "href": "chapters/imap-validation.html#sec-diamond-constraints",
+    "title": "6  Worked example and reproducible validation",
+    "section": "6.2 Reverse constraints with arbitrary variances",
+    "text": "6.2 Reverse constraints with arbitrary variances\nStart with an unconstrained factorization in \\((1,4,2,3)\\),\n\\[\n\\widetilde L^\\top=\\begin{pmatrix}\n1&0&0&0\\\\a'&1&0&f\\\\b'&h&1&g\\\\c'&0&0&1\n\\end{pmatrix},\\qquad\n\\widetilde D=\\operatorname{diag}(w_1,w_2,w_3,w_4),\\quad w_j&gt;0.\n\\]\nTo restore \\((1,2,3,4)\\), transpose \\((4,2)\\) then \\((4,3)\\). Define\n\\[\ns_2=w_2+f^2w_4,\\qquad t_4=\\frac{w_4w_2}{s_2},\\qquad\nA=\\frac{c'w_2+fw_4a'}{s_2}.\n\\]\nThe two restored coefficients absent from the original diamond are\n\\[\nL^{\\mathrm{back}}_{23}=h-\\frac{gfw_4}{s_2},\\qquad\nL^{\\mathrm{back}}_{14}=\\frac{w_3A+gt_4b'}{w_3+g^2t_4}.\n\\]\nTherefore the exact constraints are\n\\[\nh(w_2+f^2w_4)-gfw_4=0,\\qquad\nw_3(c'w_2+fw_4a')+gw_4w_2b'=0.\n\\]\nThese polynomial equations include all positive variance values and do not divide by an edge coefficient. When \\(w_2=w_3=w_4=1\\), they reduce to\n\\[\nh=\\frac{gf}{1+f^2},\\qquad c'+a'f+gb'=0.\n\\]\nSolving the latter as \\(g=-(c'+a'f)/b'\\) is valid only on the chart \\(b'\\ne0\\). At \\(b'=0\\), keep \\(c'+a'f=0\\) and \\(h=gf/(1+f^2)\\); excluding that case would discard valid parameter values. Unit transformed variances are a restriction on the example, not a harmless simplification covering every original model. The general formulas above allow arbitrary positive transformed variances.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Worked example and reproducible validation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/imap-validation.html#executable-checks",
+    "href": "chapters/imap-validation.html#executable-checks",
+    "title": "6  Worked example and reproducible validation",
+    "section": "6.3 Executable checks",
+    "text": "6.3 Executable checks\nThe downloadable validation script uses base R and seed 20261010. It enumerates all \\(2^{10}=1024\\) DAGs compatible with the fixed ordering \\((1,2,3,4,5)\\), and all ancestor treatment-outcome pairs within each. This is exhaustive for that finite ordered class, not for arbitrary node counts or every labeled five-node DAG.\nThe graphical reference uses d-separation by ancestral moralization. The numerical reference independently computes regressions from \\(\\Sigma\\). For each pair, the script constructs a closest ordering, applies the forward swaps, checks the outcome parent set, compares against direct modified Cholesky regression, verifies covariance and the effect coefficient, and reverses the transformation. One coefficient draw per graph is uniform on \\([-0.8,0.8]\\), with error variances uniform on \\([0.5,2]\\). It also checks the diamond formula, the general reverse formulas on 100 unconstrained examples, exact path cancellation, and rejection of a non-adjacent transposition. Absolute tolerance is \\(10^{-9}\\).\n\n\nCode\nknitr::kable(imap_results$summary)\n\n\n\n\nTable 6.1: Finite scope of the I-MAP validation.\n\n\n\n\n\n\ncheck\ncases\n\n\n\n\nDAGs in fixed topological order\n1024\n\n\nAncestor pairs\n6313\n\n\nForward adjacent swaps\n3200\n\n\nUnconstrained reverse examples\n100\n\n\n\n\n\n\n\n\n\n\nCode\nimap_plot_diamond()\n\n\n\n\n\n\n\n\nFigure 6.1: The original diamond and its ordered I-MAP. The highlighted edge carries the original total effect; other I-MAP arrows describe an observational factorization.\n\n\n\n\n\n\n\nCode\nknitr::kable(imap_results$errors, digits = 17)\n\n\n\n\nTable 6.2: Maximum absolute discrepancies against independent algebraic benchmarks.\n\n\n\n\n\n\ncheck\nmaximum_absolute_error\n\n\n\n\ncovariance\n1.33e-15\n\n\nregression\n2.22e-15\n\n\nround_trip\n6.70e-16\n\n\neffect\n0.00e+00\n\n\ndiamond\n1.10e-16\n\n\nconstraints\n2.20e-16\n\n\n\n\n\n\n\n\nThe examples use \\(a=-0.7\\), \\(b=0.4\\), \\(c=-0.6\\), \\(e=0.8\\) and original variances \\((1.2,0.7,1.5,0.9)\\):\n\n\nCode\nknitr::kable(imap_results$diamond, digits = 5)\n\n\n\n\nTable 6.3: Effect and residual variance in the diamond example.\n\n\n\n\n\n\nparameter\nvalue\n\n\n\n\ntotal effect\n0.740\n\n\noutcome residual variance\n2.112\n\n\n\n\n\n\n\n\nThese are population-parameter calculations, not simulated data or posterior inference. The analytical arguments establish the general results; the finite checks detect implementation errors. They do not prove a theorem or evaluate Bayesian prior sensitivity.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Worked example and reproducible validation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-imap.html",
+    "href": "chapters/bayesian-imap.html",
+    "title": "7  Bayesian inference with an effect coordinate",
+    "section": "",
+    "text": "7.1 Exact DAG-Wishart baseline\nThe DAG-Wishart distribution is a conjugate prior for Gaussian DAG models (Ben-David et al. 2015; Peluso and Consonni 2020). In the \\(L=I-B\\) convention, its normalization follows by completing the square. For centered independent observations collected in an \\(n\\times q\\) matrix \\(\\mathbf X\\), take \\(U\\succ0\\) and shape vector \\(\\alpha\\) with \\(\\alpha_j&gt;|P_j|+2\\), \\(P_j=\\operatorname{pa}_{\\mathcal D}(j)\\). The prior density with respect to the free entries of \\(L\\) and the variances is\n\\[\n\\pi(L,D\\mid\\mathcal D)=\\frac1{Z_{\\mathcal D}(\\alpha,U)}\n\\exp\\{-\\tfrac12\\operatorname{tr}(LD^{-1}L^\\top U)\\}\n\\prod_j v_j^{-\\alpha_j/2}.\n\\]\nPut \\(p_j=|P_j|\\), \\(K_j=U_{P_jP_j}\\), \\(u_j=U_{P_jj}\\), \\(s_j=U_{jj}-u_j^\\top K_j^{-1}u_j\\), and \\(r_j=(\\alpha_j-p_j)/2-1\\). Empty parent sets have determinant one and \\(s_j=U_{jj}\\). Completing the square in the exponent and then integrating the variance gives\n\\[\nZ_{\\mathcal D}(\\alpha,U)=\\prod_j\n(2\\pi)^{p_j/2}|K_j|^{-1/2}\\Gamma(r_j)(s_j/2)^{-r_j}.\n\\]\nIndeed the coefficient integral contributes \\((2\\pi v_j)^{p_j/2}|K_j|^{-1/2}\\), and the remaining integral is that of an inverse-gamma kernel. Equivalently, independently over nodes,\n\\[\nv_j\\sim\\operatorname{IG}(r_j,s_j/2),\\qquad\nL_{P_jj}\\mid v_j\\sim N(-K_j^{-1}u_j,v_jK_j^{-1}).\n\\]\nHere \\(\\operatorname{IG}(r,b)\\) has density \\(b^r\\Gamma(r)^{-1}v^{-r-1}e^{-b/v}\\). Marginally the coefficient vector is Student \\(t\\) with \\(2r_j\\) degrees of freedom, center \\(-K_j^{-1}u_j\\), and scale matrix \\(s_jK_j^{-1}/(2r_j)\\); that scale is not its covariance matrix.\nThe posterior updates are \\(\\alpha_j\\mapsto\\alpha_j+n\\) and \\(U\\mapsto U+\\mathbf X^\\top\\mathbf X\\). Thus\n\\[\nm_0(\\mathbf X\\mid\\mathcal D)=(2\\pi)^{-nq/2}\n\\frac{Z_{\\mathcal D}(\\alpha+n\\mathbf1,U+\\mathbf X^\\top\\mathbf X)}{Z_{\\mathcal D}(\\alpha,U)}.\n\\]\nA compatible choice is \\(\\alpha_j=a-q+2p_j+3\\) with \\(a&gt;q-1\\) and common \\(U\\), yielding the score-equivalent construction discussed by Peluso and Consonni. The scalar \\(a\\) is a shape hyperparameter; \\(U\\) is the scale/rate matrix in the exponential kernel. Arbitrary DAG-Wishart shapes need not yield equal marginal likelihoods for Markov-equivalent graphs.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Bayesian inference with an effect coordinate</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-imap.html#what-an-i-map-prior-must-specify",
+    "href": "chapters/bayesian-imap.html#what-an-i-map-prior-must-specify",
+    "title": "7  Bayesian inference with an effect coordinate",
+    "section": "7.2 What an I-MAP prior must specify",
+    "text": "7.2 What an I-MAP prior must specify\nPossible prior construction. Normal/inverse-gamma local priors can be assigned to selected free I-MAP entries, with the remaining entries determined by the model constraints, to influence \\(\\tau_{dy}=-\\widetilde L_{dy}\\). Such a specification, denoted “I-MAP-Wishart,” requires an admissible coordinate domain and a proper joint distribution; the label alone does not establish a conjugate family.\nA prior on the full ambient I-MAP generally assigns probability zero to the lower-dimensional constrained image. Choosing a collection of “free” entries requires a valid chart, its domain, a rule for all branches of the constraints, and a reference measure. Independent priors in two different charts usually induce different priors on the same covariance model. The diamond chart dividing by \\(b'\\) already illustrates a domain problem (Section 6.2).\nFor a smooth bijective chart transformation \\(z=g(\\theta)\\), densities representing the same prior obey\n\\[\n\\pi_z(z)=\\pi_\\theta(g^{-1}(z))\\left|\\det Dg^{-1}(z)\\right|.\n\\]\nFor the embedded I-MAP image, work in coordinates of its actual dimension, not an ambient rectangular Jacobian determinant. A prior on the original DAG can always be pushed forward through \\(F\\); this preserves its marginal likelihood but does not independently choose an arbitrary marginal prior on the effect. Properness, effect support and the domains of a global or multi-chart nuisance specification must be established for each prior construction.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Bayesian inference with an effect coordinate</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-imap.html#laplace-approximation-and-mle-invariance",
+    "href": "chapters/bayesian-imap.html#laplace-approximation-and-mle-invariance",
+    "title": "7  Bayesian inference with an effect coordinate",
+    "section": "7.3 Laplace approximation and MLE invariance",
+    "text": "7.3 Laplace approximation and MLE invariance\nAnalytical identity. If a finite interior MLE exists, the constrained I-MAP estimate is \\(F(\\widehat\\theta)\\) by invariance under the smooth bijection onto the constrained image. It is not the unconstrained MLE of the denser I-MAP model.\nFor a proper smooth prior in \\(k=q+|E|\\) coordinates and a regular interior likelihood maximum,\n\\[\nm(\\mathbf X\\mid\\mathcal D)\\approx\ne^{\\ell(\\widehat\\theta)}\\pi(\\widehat\\theta)(2\\pi)^{k/2}\n|H(\\widehat\\theta)|^{-1/2},\n\\]\nwhere \\(H=-\\nabla^2\\ell\\) is the observed information in those same coordinates. This MLE-centered expression is the leading approximation when the prior is smooth and positive nearby; a posterior-mode formulation incorporates prior curvature explicitly. Under standard fixed-dimensional conditions,\n\\[\n\\log m=\\ell(\\widehat\\theta)-\\tfrac{k}{2}\\log n+O(1).\n\\]\nBIC discards prior- and graph-dependent constants, so it cannot retain all effects of an effect-centered prior. Changing coordinates for a fixed prior does not change the exact integral; the transformed density and curvature terms compensate in the leading Laplace expression. Using the number of ambient I-MAP entries over-penalizes the model. A non-local prior that vanishes at a null maximum needs a separate approximation; the displayed regular formula cannot simply be used there.\nExact nodewise integration after changing priors is available only if the full prior and likelihood still factor into independent blocks in valid coordinates. The fact that some equations are numerically unchanged does not by itself establish that condition. A split between exact integration and Laplace approximation requires a specified prior and a factorization proof.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Bayesian inference with an effect coordinate</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-imap.html#graph-search-and-importance-sampling",
+    "href": "chapters/bayesian-imap.html#graph-search-and-importance-sampling",
+    "title": "7  Bayesian inference with an effect coordinate",
+    "section": "7.4 Graph search and importance sampling",
+    "text": "7.4 Graph search and importance sampling\nFor any properly specified score \\(m(\\mathbf X\\mid\\mathcal D)\\) and graph prior \\(p(\\mathcal D)\\), the Metropolis-Hastings acceptance probability is\n\\[\n\\min\\left\\{1,\\frac{m(\\mathbf X\\mid\\mathcal D')p(\\mathcal D')q(\\mathcal D\\mid\\mathcal D')}\n{m(\\mathbf X\\mid\\mathcal D)p(\\mathcal D)q(\\mathcal D'\\mid\\mathcal D)}\\right\\}.\n\\]\nProposals can add, delete, or reverse edges, rejecting cycles. The skeleton-size prior \\(p(\\mathcal D)\\propto\\omega^{|E|}(1-\\omega)^{q(q-1)/2-|E|}\\) is a possible mass function on the chosen DAG space; orientation and DAG restrictions are part of that choice. Rejecting all moves that destroy \\(d\\in\\operatorname{an}(y)\\) targets a posterior conditional on ancestry. It cannot then estimate the probability of a structural null effect. A deterministic approximate marginal likelihood also targets an approximate posterior, not the exact one.\nIf samples \\(\\theta^{(s)}\\) come from a baseline posterior under \\(\\pi_0\\), reweight by \\(w_s\\propto\\pi_1(\\theta^{(s)})/\\pi_0(\\theta^{(s)})\\), provided both densities are in the same coordinates and reference measure. If they instead come from the baseline prior, include the likelihood as well. Jacobians are needed when comparing densities in different charts. Support coverage and finite weight moments matter; effective sample size and tail diagnostics assess the reliability of the weighted approximation.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Bayesian inference with an effect coordinate</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-imap.html#sec-nonlocal-prior",
+    "href": "chapters/bayesian-imap.html#sec-nonlocal-prior",
+    "title": "7  Bayesian inference with an effect coordinate",
+    "section": "7.5 A normalized non-local alternative",
+    "text": "7.5 A normalized non-local alternative\nAnalytical result. Let a proper baseline prior on a fixed DAG be \\(\\pi_0(\\theta\\mid\\mathcal D)\\), with \\(0&lt;C_{\\mathcal D}=E_0[\\tau_{dy}^2\\mid\\mathcal D]&lt;\\infty\\). Define\n\\[\n\\pi_M(\\theta\\mid\\mathcal D)=\\frac{\\tau_{dy}(\\theta)^2}{C_{\\mathcal D}}\\pi_0(\\theta\\mid\\mathcal D).\n\\]\nDirect substitution into the marginal likelihood integral gives\n\\[\nm_M(\\mathbf X\\mid\\mathcal D)=m_0(\\mathbf X\\mid\\mathcal D)\n\\frac{E_0[\\tau_{dy}^2\\mid\\mathbf X,\\mathcal D]}{C_{\\mathcal D}}.\n\\]\nThis identity requires no I-MAP coordinates. The normalizing constant can be replaced by \\(v\\) only when the baseline effect marginal has second moment \\(v\\), for example \\(\\tau\\sim N(0,v)\\) in an admissible coordinate factorization. A general DAG-Wishart-induced path-sum prior need not have this second moment or even a finite one. DAGs with no \\(d\\)-to-\\(y\\) path have \\(C_{\\mathcal D}=0\\); they require a separate null component rather than this tilt.\nThe posterior second moment is exactly \\(E_0[\\tau\\mid\\mathbf X]^2+\\operatorname{Var}_0(\\tau\\mid\\mathbf X)\\). A normal posterior approximation may replace these by \\(\\widehat\\tau^2+\\widehat V_\\tau\\), but \\(\\widehat V_\\tau\\) is not generally \\(1/n\\). For a regular parameter vector it is the delta-method quantity\n\\[\n\\widehat V_\\tau=\\nabla\\tau(\\widehat\\theta)^\\top H(\\widehat\\theta)^{-1}\\nabla\\tau(\\widehat\\theta).\n\\]\nFor an unconstrained Gaussian regression on a valid \\(Z\\), the corresponding OLS variance coefficient is \\(\\sigma^2_{y\\mid d,Z}/\\{n\\sigma^2_{d\\mid Z}\\}\\). Approximation accuracy near path cancellation and in small samples depends on posterior shape, prior moments and the model-specific information matrix.\n\n\n\n\n\n\nBen-David, Emanuel, Tianxi Li, Helene Massam, and Bala Rajaratnam. 2015. High Dimensional Bayesian Inference for Gaussian Directed Acyclic Graph Models. https://arxiv.org/abs/1109.4371v5.\n\n\nPeluso, Stefano, and Guido Consonni. 2020. “Compatible Priors for Model Selection of High-Dimensional Gaussian DAGs.” Electronic Journal of Statistics 14 (2): 4110–32. https://doi.org/10.1214/20-EJS1768.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Bayesian inference with an effect coordinate</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-adjustment.html",
+    "href": "chapters/bayesian-adjustment.html",
+    "title": "8  Adjustment decisions under graph uncertainty",
+    "section": "",
+    "text": "8.1 A well-defined action space\nAn adjustment regression can be selected by minimizing posterior expected loss. Let \\(\\tau=\\tau_{dy}(\\mathcal D,\\theta)\\) have a proper reference posterior \\(p(\\mathcal D,\\theta\\mid\\mathbf X)\\) with a finite second moment. For each candidate \\(Z\\), specify a regression prior and obtain a reported number \\(a_Z(\\mathbf X)\\), such as its posterior mean. This action is computable from the data and \\(Z\\); it cannot depend on an unknown true DAG unless a further, observable rule averages those DAG-specific actions.\n“Bayesian OLS” does not by itself specify a posterior. A regression likelihood, prior, and treatment of the residual variance are required. A regression coefficient for an invalid set is an associational estimand, even if it is assigned a Bayesian posterior. The reference posterior for the causal effect and the candidate regression posteriors serve different roles.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Adjustment decisions under graph uncertainty</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-adjustment.html#sec-adjustment-risk",
+    "href": "chapters/bayesian-adjustment.html#sec-adjustment-risk",
+    "title": "8  Adjustment decisions under graph uncertainty",
+    "section": "8.2 Squared-loss decision rule",
+    "text": "8.2 Squared-loss decision rule\nTake \\(L(Z,\\tau)=(a_Z-\\tau)^2\\). Put \\(\\mu=E[\\tau\\mid\\mathbf X]\\) and \\(V=\\operatorname{Var}(\\tau\\mid\\mathbf X)\\). Expanding around \\(\\mu\\) gives the exact risk\n\\[\nR(Z\\mid\\mathbf X)=(a_Z-\\mu)^2+V,\n\\qquad Z^*\\in\\operatorname*{arg\\,min}_Z(a_Z-\\mu)^2.\n\\]\nAnalytical result. The chosen action is closest to the Bayesian model averaged effect mean among the available actions. The posterior variance of the reference effect is constant across \\(Z\\). The regression posterior variance \\(s_Z^2\\) does not appear. Thus squared loss for the reported point action does not separately penalize the candidate estimator’s variance. The full Bayes risk is not equal to its first term; that term is only an equivalent minimization objective.\nWith \\(\\mu_{\\mathcal D}=E[\\tau\\mid\\mathcal D,\\mathbf X]\\) and \\(V_{\\mathcal D}=\\operatorname{Var}(\\tau\\mid\\mathcal D,\\mathbf X)\\), the law of total variance gives\n\\[\nV=\\sum_{\\mathcal D}p(\\mathcal D\\mid\\mathbf X)V_{\\mathcal D}\n+\\operatorname{Var}_{\\mathcal D\\mid\\mathbf X}(\\mu_{\\mathcal D}).\n\\]\nIf one formally writes a DAG-dependent action \\(a_{\\mathcal D,Z}\\), its risk is\n\\[\n\\sum_{\\mathcal D}p(\\mathcal D\\mid\\mathbf X)\n\\{(a_{\\mathcal D,Z}-\\mu_{\\mathcal D})^2+V_{\\mathcal D}\\}.\n\\]\nThe constant term here is the within-DAG variance; the total mixture variance additionally includes between-DAG variation. This expression describes an action that observes \\(\\mathcal D\\); it is not an implementable decision under graph uncertainty without an additional rule. If \\(a_{\\mathcal D,Z}=a_Z\\) for every DAG, minimizing the first term recovers the preceding closest-to-\\(\\mu\\) rule, with the between-DAG constant retained in the full risk.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Adjustment decisions under graph uncertainty</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-adjustment.html#validity-precision-and-alternative-losses",
+    "href": "chapters/bayesian-adjustment.html#validity-precision-and-alternative-losses",
+    "title": "8  Adjustment decisions under graph uncertainty",
+    "section": "8.3 Validity, precision, and alternative losses",
+    "text": "8.3 Validity, precision, and alternative losses\nProposals. Distinct objectives need distinct specifications. Possible choices include:\n\nRestrict to sets valid in every DAG with posterior support, if such sets exist; that intersection can be empty.\nRequire \\(P(Z\\text{ is valid in }\\mathcal D\\mid\\mathbf X)\\ge1-\\varepsilon\\), documenting the chosen tolerance and the posterior graph model.\nUse the decision criterion \\((a_Z-\\mu)^2+\\lambda s_Z^2\\) with a specified \\(\\lambda\\ge0\\) to penalize regression posterior dispersion. This is a new criterion, not a consequence of the original squared-loss rule.\nEvaluate predictive or repeated-sampling risk with an explicit data-generating model if the goal is estimator bias and sampling variance.\n\nEnumeration of candidates is one computational approach, not a demonstrated necessary or uniquely available algorithm. The union of graph-specific valid sets contains sets invalid in other supported DAGs. A graphical characterization of a Bayesian criterion depends on its particular loss and posterior specification. The frequentist O-set result optimizes a different quantity (Chapter 3).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Adjustment decisions under graph uncertainty</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/bayesian-adjustment.html#structural-null-effects-and-shrinkage-estimators",
+    "href": "chapters/bayesian-adjustment.html#structural-null-effects-and-shrinkage-estimators",
+    "title": "8  Adjustment decisions under graph uncertainty",
+    "section": "8.4 Structural null effects and shrinkage estimators",
+    "text": "8.4 Structural null effects and shrinkage estimators\nConsider the shrinkage rule \\(\\tau^{PB}=P(\\tau\\ne0\\mid\\mathbf X)\\,\\tau^B\\). Let \\(H\\) indicate an active effect model, with \\(\\tau=0\\) under \\(H=0\\). Then\n\\[\nE[\\tau\\mid\\mathbf X]=P(H=1\\mid\\mathbf X)E[\\tau\\mid H=1,\\mathbf X].\n\\]\nThis is a coherent squared-loss estimator if \\(\\tau^B\\) is the conditional active-model posterior mean. If \\(\\tau^B\\) is already the unconditional model averaged mean, multiplying by \\(P(H=1\\mid\\mathbf X)\\) applies the inclusion factor twice. If \\(\\tau^B\\) is selected from adjustment regressions, the product needs its own loss-based justification.\nUnder absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (Chapter 7).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Adjustment decisions under graph uncertainty</span>"
     ]
   },
   {
     "objectID": "chapters/04-findings.html",
     "href": "chapters/04-findings.html",
-    "title": "5  Research results",
+    "title": "9  Summary of analytical results",
     "section": "",
-    "text": "No project-specific findings have been established yet.\nFor each finding, record its ID, associated question, evidence chapter, assumptions, uncertainty, and implications. Distinguish analytical results from numerical evidence and conjecture.",
+    "text": "Finding\nQuestions\nResult\nEvidence and limits\n\n\n\n\nF001\nQ001, Q002\nThe ordered I-MAP outcome parents are treatment plus O-set; its treatment coefficient is the total effect.\nAnalytical proof in Section 5.2; one treatment/outcome, fully observed linear Gaussian DAG with ancestry. Graph statement and accidental coefficient zeros are distinguished.\n\n\nF002\nQ002\nAdjacent transposition preserves covariance and produces the factorization in the swapped ordering. Forward and reverse mediator sequences agree with unique Gaussian regressions.\nAnalytical proof in Section 5.3; finite checks in Chapter 6. Arbitrary non-adjacent edge reversal is not covered.\n\n\nF003\nQ003\nThe original DAG model is exactly the constrained I-MAP image determined by restored missing-edge zeros.\nAnalytical proof in Section 5.5; explicit general-variance diamond constraints in Section 6.2. Global free-coordinate priors require additional domain and normalization conditions.\n\n\nF004\nQ004\nA normalized second-moment prior tilt yields an exact marginal-likelihood ratio, without needing I-MAP coordinates.\nAlgebra in Section 7.5; requires finite positive prior second moment. The identity does not imply approximation accuracy.\n\n\nF005\nQ005\nSquared-loss selection chooses a reported action nearest the model averaged posterior effect mean; candidate regression variance is absent from that loss.\nExact risk decomposition in Section 8.2. Additional precision or validity criteria are proposals.\n\n\n\nThe executable tables in Chapter 6 are numerical evidence for the implementation, not substitutes for these proofs.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research results</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Summary of analytical results</span>"
     ]
   },
   {
     "objectID": "chapters/discussion.html",
     "href": "chapters/discussion.html",
-    "title": "6  Discussion",
+    "title": "10  Discussion",
     "section": "",
-    "text": "6.1 Interpretation and implications\nTo be developed from the research results.",
+    "text": "10.1 Interpretation\nThe construction provides a precise outcome regression coordinate for the total effect while retaining every observed variable. Its extra arrows enlarge the unconstrained Gaussian model; the restored missing-edge equations recover the original sparse model. The target coefficient identity holds even at path cancellations, while the graph-defined parent set does not change with individual coefficient values.\nThis distinction explains both the appeal and the difficulty of Bayesian inference. The effect is easily located, but independent priors on arbitrary subsets of ambient entries do not automatically define a coherent prior on the original model. Chart choices, domains, normalization and Jacobians can matter. A pushforward of a fixed prior preserves Bayesian evidence; specifying new independent chart priors changes the scientific model.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Discussion</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Discussion</span>"
     ]
   },
   {
-    "objectID": "chapters/discussion.html#limitations",
-    "href": "chapters/discussion.html#limitations",
-    "title": "6  Discussion",
-    "section": "6.2 Limitations",
-    "text": "6.2 Limitations\nDistinguish model assumptions, data limitations, numerical approximations, and unresolved proof obligations.",
+    "objectID": "chapters/discussion.html#scope-and-limitations",
+    "href": "chapters/discussion.html#scope-and-limitations",
+    "title": "10  Discussion",
+    "section": "10.2 Scope and limitations",
+    "text": "10.2 Scope and limitations\nThe results concern one treatment and one outcome, Gaussian observational factorizations, positive error variances, independent errors, and a causal original DAG. They do not identify a causal DAG from observational data, extend automatically to hidden confounding or joint interventions, or preserve all intervention interpretations of the alternative arrows.\nThe O-set’s efficiency guarantee is asymptotic and frequentist. The Bayesian adjustment decision depends on its specified reference posterior and loss. Neither implies the other. BIC may approximate evidence under regularity, but discards prior constants; it cannot establish improved effect-prior calibration. Near null effects, non-local priors require appropriate normalization and approximations.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Discussion</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Discussion</span>"
     ]
   },
   {
-    "objectID": "chapters/discussion.html#alternative-explanations",
-    "href": "chapters/discussion.html#alternative-explanations",
-    "title": "6  Discussion",
-    "section": "6.3 Alternative explanations",
-    "text": "6.3 Alternative explanations\nDocument competing interpretations and the evidence needed to distinguish them.",
+    "objectID": "chapters/discussion.html#comparison-with-frugal-parameterization",
+    "href": "chapters/discussion.html#comparison-with-frugal-parameterization",
+    "title": "10  Discussion",
+    "section": "10.3 Comparison with frugal parameterization",
+    "text": "10.3 Comparison with frugal parameterization\nBoth constructions expose causal quantities, but the I-MAP result here focuses on a single mean derivative within a full-variable Gaussian factorization. Frugal parameterization directly organizes a causal distribution and its nuisance pieces under explicit smoothness and compatibility assumptions (Evans and Didelez 2024). Sparse-DAG comparisons require explicit constraints on the common observational model.\nNeither redundancy nor improved marginal-likelihood accuracy follows solely from exposing a causal coordinate. Those properties depend on the constrained model, prior and inference method. The forbidden-projection approach also remains relevant under graph uncertainty: one can compute a projection within each candidate DAG. Marginalizing variables changes the inferential construction, but does not make that approach impossible (Witte et al. 2020).\n\n\n\n\n\n\nEvans, Robin J., and Vanessa Didelez. 2024. “Parameterizing and Simulating from Causal Models.” Journal of the Royal Statistical Society Series B: Statistical Methodology 86 (3): 535–68. https://doi.org/10.1093/jrsssb/qkad058.\n\n\nWitte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa Didelez. 2020. “On Efficient Adjustment in Causal Graphs.” Journal of Machine Learning Research 21 (246): 1–45. https://jmlr.org/papers/v21/20-175.html.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Discussion</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Discussion</span>"
     ]
   },
   {
     "objectID": "chapters/05-open-questions.html",
     "href": "chapters/05-open-questions.html",
-    "title": "7  Conclusions and open questions",
+    "title": "11  Conclusions and open questions",
     "section": "",
-    "text": "7.1 Conclusions\nNo project-specific conclusions have been established yet.",
+    "text": "11.1 Conclusions\nA total causal effect can be represented as a coefficient in an ordered Gaussian I-MAP, with outcome adjustment by the O-set. Adjacent transpositions compute this factorization, and reverse-order missing-edge constraints preserve the original DAG model. The observational reparameterization does not in general preserve the causal interpretation of every alternative arrow.\nBayesian inference requires more than locating the effect coefficient. The prior must be proper on admissible coordinates of the constrained model, and its density must transform with the appropriate Jacobian. A normalized second-moment tilt yields an exact evidence identity, while adjustment decisions depend on the specified posterior and loss.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Conclusions and open questions</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Conclusions and open questions</span>"
     ]
   },
   {
-    "objectID": "chapters/05-open-questions.html#next-investigations",
-    "href": "chapters/05-open-questions.html#next-investigations",
-    "title": "7  Conclusions and open questions",
-    "section": "7.2 Next investigations",
-    "text": "7.2 Next investigations\n\nDefine the scientific scope and meaning of I-MAP.\nInventory source materials and identify the first parameterization question.\nSpecify the observations or simulations needed to assess proposed claims.\n\nRevisit this list after each substantive investigation.",
+    "objectID": "chapters/05-open-questions.html#open-questions",
+    "href": "chapters/05-open-questions.html#open-questions",
+    "title": "11  Conclusions and open questions",
+    "section": "11.2 Open questions",
+    "text": "11.2 Open questions\nEffect-centered priors (Q004). What is the attainable effect support, and when are nuisance coordinates globally variation independent of the effect? How can multi-chart or conditional priors accommodate path cancellation and zero-coordinate boundaries while retaining tractable normalization?\nEvidence approximation (Q004). Under what conditions do Laplace approximations and posterior second-moment approximations remain accurate near null effects? How do prior sensitivity and importance-weight tails affect graph comparison?\nAdjustment decisions (Q005). Which posterior loss captures the desired balance between point-estimation error, regression uncertainty and adjustment validity under graph uncertainty? What graphical or computational characterization follows from that loss?\nParameterization scope (Q006). How do I-MAP constraints compare with frugal parameterization and forbidden projection for sparse Gaussian models? Which parts of the construction extend to joint interventions or hidden confounding?",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Conclusions and open questions</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Conclusions and open questions</span>"
     ]
   },
   {
-    "objectID": "chapters/03-reproducible-example.html",
-    "href": "chapters/03-reproducible-example.html",
-    "title": "Appendix A — Reproducible computation: workflow demonstration",
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
     "section": "",
-    "text": "A.1 Question and status\nStatus: demonstration. Can a standalone R script supply the book’s table and figure without copying results by hand?",
+    "text": "Ben-David, Emanuel, Tianxi Li, Helene Massam, and Bala Rajaratnam. 2015.\nHigh Dimensional Bayesian Inference for Gaussian\nDirected Acyclic Graph Models. https://arxiv.org/abs/1109.4371v5.\n\n\nCastelletti, Federico, and Guido Consonni. 2021. “Bayesian\nInference of Causal Effects from Observational Data in\nGaussian Graphical Models.” Biometrics 77\n(1): 136–49. https://doi.org/10.1111/biom.13281.\n\n\nCastelletti, Federico, Guido Consonni, and Marco L. Della Vedova. 2024.\n“Joint Structure Learning and Causal Effect Estimation for\nCategorical Graphical Models.” Biometrics 80 (3):\nujae067. https://doi.org/10.1093/biomtc/ujae067.\n\n\nCastelletti, Federico, and Alessandro Mascaro. 2021. “Structural\nLearning and Estimation of Joint Causal Effects Among Network-Dependent\nVariables.” Statistical Methods & Applications 30:\n1289–314. https://doi.org/10.1007/s10260-021-00579-1.\n\n\nEvans, Robin J., and Vanessa Didelez. 2024. “Parameterizing and\nSimulating from Causal Models.” Journal of the Royal\nStatistical Society Series B: Statistical Methodology 86 (3):\n535–68. https://doi.org/10.1093/jrsssb/qkad058.\n\n\nGeiger, Dan, and David Heckerman. 2002. “Parameter Priors for\nDirected Acyclic Graphical Models and the Characterization of Several\nProbability Distributions.” The Annals of Statistics 30\n(5): 1412–40. https://doi.org/10.1214/aos/1035844981.\n\n\nHenckel, Leonard, Emilija Perković, and Marloes H. Maathuis. 2022.\n“Graphical Criteria for Efficient Total Effect Estimation via\nAdjustment in Causal Linear Models.” Journal of the Royal\nStatistical Society Series B: Statistical Methodology 84 (2):\n579–99. https://academic.oup.com/jrsssb/article/84/2/579/7056108.\n\n\nMaathuis, Marloes H., Markus Kalisch, and Peter Bühlmann. 2009.\n“Estimating High-Dimensional Intervention Effects from\nObservational Data.” The Annals of Statistics 37 (6A):\n3133–64. https://doi.org/10.1214/09-AOS685.\n\n\nMalinsky, Daniel, and Peter Spirtes. 2016. “Estimating Causal\nEffects with Ancestral Graph Markov Models.”\nProceedings of the Eighth International Conference on Probabilistic\nGraphical Models, Proceedings of machine learning research, vol.\n52: 299–309. https://proceedings.mlr.press/v52/malinsky16.html.\n\n\nNandy, Preetam, Marloes H. Maathuis, and Thomas S. Richardson. 2017.\n“Estimating the Effect of Joint Interventions from Observational\nData in Sparse High-Dimensional Settings.” The Annals of\nStatistics 45 (2): 647–74. https://doi.org/10.1214/16-AOS1462.\n\n\nPearl, Judea. 1988. Probabilistic Reasoning in Intelligent Systems:\nNetworks of Plausible Inference. Morgan Kaufmann.\n\n\nPearl, Judea. 2009. Causality: Models, Reasoning, and\nInference. 2nd ed. Cambridge University Press. https://doi.org/10.1017/CBO9780511803161.\n\n\nPeluso, Stefano, and Guido Consonni. 2020. “Compatible Priors for\nModel Selection of High-Dimensional Gaussian\nDAGs.” Electronic Journal of Statistics 14\n(2): 4110–32. https://doi.org/10.1214/20-EJS1768.\n\n\nPensar, Johan, Topi Talvitie, Antti Hyttinen, and Mikko Koivisto. 2020.\n“A Bayesian Approach for Estimating Causal Effects\nfrom Observational Data.” Proceedings of the AAAI Conference\non Artificial Intelligence 34 (04): 5395–402. https://doi.org/10.1609/aaai.v34i04.5988.\n\n\nPerković, Emilija, Johannes Textor, Markus Kalisch, and Marloes H.\nMaathuis. 2018. “Complete Graphical Characterization and\nConstruction of Adjustment Sets in Markov Equivalence\nClasses of Ancestral Graphs.” Journal of Machine Learning\nResearch 18 (220): 1–62. https://jmlr.org/papers/v18/16-319.html.\n\n\nWitte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa\nDidelez. 2020. “On Efficient Adjustment in Causal Graphs.”\nJournal of Machine Learning Research 21 (246): 1–45. https://jmlr.org/papers/v21/20-175.html.",
     "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/03-reproducible-example.html#mathematical-expectation",
-    "href": "chapters/03-reproducible-example.html#mathematical-expectation",
-    "title": "Appendix A — Reproducible computation: workflow demonstration",
-    "section": "A.2 Mathematical expectation",
-    "text": "A.2 Mathematical expectation\nFor independent standard normal observations, the sample mean has expectation zero and standard deviation \\(1/\\sqrt{n}\\). This is a theoretical result; the simulation illustrates its numerical behavior.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/03-reproducible-example.html#method-and-script",
-    "href": "chapters/03-reproducible-example.html#method-and-script",
-    "title": "Appendix A — Reproducible computation: workflow demonstration",
-    "section": "A.3 Method and script",
-    "text": "A.3 Method and script\nThe downloadable R script uses seed 20261010, 2,000 repetitions, and sample sizes 10, 100, and 1,000. Run it independently from the repository root:\nRscript scripts/R/001-monte-carlo.R\nThe book executes that same script when rendered:\n\n\nCode\nsource(\"scripts/R/001-monte-carlo.R\")\n\n\n\n\nCode\nknitr::kable(mc_results, digits = 4)\n\n\n\n\nTable A.1: Empirical and theoretical standard deviations of sample means.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsample_size\nrepetitions\nempirical_mean\nempirical_sd\ntheoretical_sd\n\n\n\n\n10\n2000\n-0.0058\n0.3199\n0.3162\n\n\n100\n2000\n0.0025\n0.0995\n0.1000\n\n\n1000\n2000\n-0.0014\n0.0313\n0.0316\n\n\n\n\n\n\n\n\n\n\nCode\nplot(mc_results$sample_size, mc_results$empirical_sd,\n     log = \"xy\", pch = 19, xlab = \"Sample size\", ylab = \"Standard deviation\")\nlines(mc_results$sample_size, mc_results$theoretical_sd, col = \"steelblue\", lwd = 2)\nlegend(\"topright\", c(\"Simulation\", \"Theory\"),\n       pch = c(19, NA), lty = c(NA, 1), col = c(\"black\", \"steelblue\"), bty = \"n\")\n\n\n\n\n\n\n\n\nFigure A.1: Empirical variability compared with the theoretical prediction.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/03-reproducible-example.html#interpretation-and-limitations",
-    "href": "chapters/03-reproducible-example.html#interpretation-and-limitations",
-    "title": "Appendix A — Reproducible computation: workflow demonstration",
-    "section": "A.4 Interpretation and limitations",
-    "text": "A.4 Interpretation and limitations\nTable A.1 and Figure A.1 compare simulated variability with the analytical prediction. Differences reflect finite Monte Carlo sampling. A simulation can provide evidence or a counterexample; it does not replace a general mathematical proof.\nThis example does not establish any I-MAP finding.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/03-reproducible-example.html#execution-environment",
-    "href": "chapters/03-reproducible-example.html#execution-environment",
-    "title": "Appendix A — Reproducible computation: workflow demonstration",
-    "section": "A.5 Execution environment",
-    "text": "A.5 Execution environment\n\n\nCode\nsessionInfo()\n\n\nR version 4.4.2 (2024-10-31)\nPlatform: x86_64-pc-linux-gnu\nRunning under: Ubuntu 24.04.5 LTS\n\nMatrix products: default\nBLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 \nLAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.26.so;  LAPACK version 3.12.0\n\nlocale:\n [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       \n [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   \n [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          \n[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   \n\ntime zone: UTC\ntzcode source: system (glibc)\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] compiler_4.4.2  fastmap_1.2.0   cli_3.6.6       tools_4.4.2    \n [5] htmltools_0.5.9 yaml_2.3.12     rmarkdown_2.32  knitr_1.52     \n [9] jsonlite_2.0.0  xfun_0.61       digest_0.6.39   rlang_1.3.0    \n[13] evaluate_1.0.5",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/research-log.html",
-    "href": "chapters/research-log.html",
-    "title": "Appendix B — Research log",
-    "section": "",
-    "text": "B.1 2026-10-10 — Project foundation\nRecord changes in reasoning, rejected hypotheses, and the evidence behind decisions. Link to question IDs, chapters, and relevant commits.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/research-log.html#project-foundation",
-    "href": "chapters/research-log.html#project-foundation",
-    "title": "Appendix B — Research log",
-    "section": "",
-    "text": "Established a Quarto book structure and an executable R demonstration.\nNo scientific source material or project-specific conclusions have been added yet.\nVerified the standalone R simulation and full HTML book rendering, including its table and figure.\nSelected the private GitHub repository name alternative-dag-parameterizations. Created and pushed the private repository: https://github.com/alesmascaro/alternative-dag-parameterizations.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/research-log.html#shared-context-and-automated-builds",
-    "href": "chapters/research-log.html#shared-context-and-automated-builds",
-    "title": "Appendix B — Research log",
-    "section": "B.2 2026-10-10 — Shared context and automated builds",
-    "text": "B.2 2026-10-10 — Shared context and automated builds\n\nAdded PROJECT_CONTEXT.md and startup/update instructions for chats sharing this project.\nDiagnosed the initial CI failure: the R package fs required missing libuv headers. Added the system dependency and explicit R dependency checks.\nOnline website publication remains a separate decision from private repository storage.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/research-log.html#article-structure-and-reuse",
-    "href": "chapters/research-log.html#article-structure-and-reuse",
-    "title": "Appendix B — Research log",
-    "section": "B.3 2026-10-10 — Article structure and reuse",
-    "text": "B.3 2026-10-10 — Article structure and reuse\n\nCorrected GitHub build passed.\nAuthorized a public book website; private-repository Pages was rejected by the current GitHub plan.\nReorganized the main text around a scientific article and moved the workflow example to the appendices.\nAdded contributor guidance and a clean scaffold exporter for future projects.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/research-log.html#publication-through-the-personal-website",
-    "href": "chapters/research-log.html#publication-through-the-personal-website",
-    "title": "Appendix B — Research log",
-    "section": "B.4 2026-10-10 — Publication through the personal website",
-    "text": "B.4 2026-10-10 — Publication through the personal website\n\nAuthorized publishing the generated book into the existing public personal website while preserving the private research repository.\nConfigured a website-repository deploy key and an encrypted research-repository secret for automatic updates.\nThe website deploys via GitHub Pages Actions; research builds update only the dedicated book folder.\nVerified the complete automatic cross-repository publishing run and subsequent website deployment; live book and existing homepage responded successfully.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
+      "References"
     ]
   }
 ]

@@ -174,25 +174,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Methods and reproducibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/imap-construction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,29 +225,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">References</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapters/03-reproducible-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Reproducible computation: workflow demonstration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapters/research-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Research log</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -237,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#reading-guide" id="toc-reading-guide" class="nav-link" data-scroll-target="#reading-guide">Reading guide</a></li>
+  <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -248,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Alternative DAG Parameterizations</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">A living research book</p>
+<p class="subtitle lead">Gaussian DAG models and causal effects</p>
 </div>
 
 
@@ -267,15 +268,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level1 unnumbered">
 <h1 class="unnumbered">Overview</h1>
-<p>This living research book develops and evaluates alternative parameterizations of directed acyclic graphs. Its scientific scope will be refined as source materials and research questions are introduced.</p>
+<p>Gaussian directed acyclic graph (DAG) models admit alternative parameterizations that expose a total causal effect as a regression coefficient. The I-MAP construction combines this effect coordinate with constraints that preserve the original sparse covariance model.</p>
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The project is at the setup stage. No project-specific theoretical or empirical conclusions have been established. The executable Monte Carlo example in the appendix demonstrates the computational workflow only.</p>
+<p>For a fully observed linear Gaussian causal DAG and a single treatment-outcome pair connected by a directed path, an appropriate change of variable ordering makes the outcome’s parent set equal to the treatment together with the optimal adjustment set. Its treatment coefficient is the original total causal effect. The resulting Gaussian factorization is an independence map (I-MAP); additional smooth constraints preserve the original sparse model. A covariance-preserving adjacent transposition provides the reparameterization, illustrated by a four-node example. Bayesian inference on the constrained space requires a proper prior in admissible coordinates. Non-local prior reweighting and adjustment-set decision rules follow from explicit normalization and loss assumptions.</p>
 </section>
-<section id="reading-guide" class="level2">
-<h2 class="anchored" data-anchor-id="reading-guide">Reading guide</h2>
-<p>The main text follows a scientific article structure: introduction, related work, notation, methods, research results, discussion, conclusions, and references. Topic investigations can expand the results section over time. Appendices document reproducibility and the evolution of the research.</p>
-<p>Each substantive claim should be linked to a derivation, verified source, or reproducible computation, with its assumptions and limitations stated explicitly.</p>
+<section id="organization" class="level2">
+<h2 class="anchored" data-anchor-id="organization">Organization</h2>
+<p><a href="chapters/01-questions.html" class="quarto-xref"><span>1&nbsp; Introduction and research questions</span></a> introduces the scientific questions and <a href="chapters/02-framework.html" class="quarto-xref"><span>3&nbsp; Notation and theoretical framework</span></a> defines the model and notation. The construction and proofs are in <a href="chapters/imap-construction.html" class="quarto-xref"><span>5&nbsp; The I-MAP construction and its constraints</span></a>; the worked example and numerical validation are in <a href="chapters/imap-validation.html" class="quarto-xref"><span>6&nbsp; Worked example and reproducible validation</span></a>. <a href="chapters/bayesian-imap.html" class="quarto-xref"><span>7&nbsp; Bayesian inference with an effect coordinate</span></a> and <a href="chapters/bayesian-adjustment.html" class="quarto-xref"><span>8&nbsp; Adjustment decisions under graph uncertainty</span></a> distinguish exact identities from inference strategies requiring additional assumptions. <a href="chapters/04-findings.html" class="quarto-xref"><span>9&nbsp; Summary of analytical results</span></a> summarizes the analytical results and their scope.</p>
+<p><strong>Evidence conventions.</strong> Cited results are supported by the referenced literature. Analytical results are accompanied by arguments under stated assumptions. Numerical checks are finite reproducible verifications; they do not replace general proofs. Proposed inference strategies and open questions are distinguished from established results.</p>
 
 
 <!-- -->
@@ -746,17 +747,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Overview {.unnumbered}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>This living research book develops and evaluates alternative parameterizations of directed acyclic graphs. Its scientific scope will be refined as source materials and research questions are introduced.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Gaussian directed acyclic graph (DAG) models admit alternative parameterizations that expose a total causal effect as a regression coefficient. The I-MAP construction combines this effect coordinate with constraints that preserve the original sparse covariance model.</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Abstract</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>The project is at the setup stage. No project-specific theoretical or empirical conclusions have been established. The executable Monte Carlo example in the appendix demonstrates the computational workflow only.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>For a fully observed linear Gaussian causal DAG and a single treatment-outcome pair connected by a directed path, an appropriate change of variable ordering makes the outcome's parent set equal to the treatment together with the optimal adjustment set. Its treatment coefficient is the original total causal effect. The resulting Gaussian factorization is an independence map (I-MAP); additional smooth constraints preserve the original sparse model. A covariance-preserving adjacent transposition provides the reparameterization, illustrated by a four-node example. Bayesian inference on the constrained space requires a proper prior in admissible coordinates. Non-local prior reweighting and adjustment-set decision rules follow from explicit normalization and loss assumptions.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading guide</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Organization</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>The main text follows a scientific article structure: introduction, related work, notation, methods, research results, discussion, conclusions, and references. Topic investigations can expand the results section over time. Appendices document reproducibility and the evolution of the research.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>@sec-questions introduces the scientific questions and @sec-framework defines the model and notation. The construction and proofs are in @sec-imap-construction; the worked example and numerical validation are in @sec-imap-validation. @sec-bayesian-imap and @sec-bayesian-adjustment distinguish exact identities from inference strategies requiring additional assumptions. @sec-findings summarizes the analytical results and their scope.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Each substantive claim should be linked to a derivation, verified source, or reproducible computation, with its assumptions and limitations stated explicitly.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**Evidence conventions.** Cited results are supported by the referenced literature. Analytical results are accompanied by arguments under stated assumptions. Numerical checks are finite reproducible verifications; they do not replace general proofs. Proposed inference strategies and open questions are distinguished from established results.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

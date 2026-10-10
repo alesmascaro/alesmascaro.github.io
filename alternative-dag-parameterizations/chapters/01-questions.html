@@ -111,6 +111,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -175,25 +204,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Methods and reproducibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-construction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,29 +255,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">References</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/03-reproducible-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Reproducible computation: workflow demonstration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/research-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Research log</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -235,8 +265,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#scope" id="toc-scope" class="nav-link active" data-scroll-target="#scope"><span class="header-section-number">1.1</span> Scope</a></li>
-  <li><a href="#question-register" id="toc-question-register" class="nav-link" data-scroll-target="#question-register"><span class="header-section-number">1.2</span> Question register</a></li>
+  <li><a href="#scope-and-motivation" id="toc-scope-and-motivation" class="nav-link active" data-scroll-target="#scope-and-motivation"><span class="header-section-number">1.1</span> Scope and motivation</a></li>
+  <li><a href="#scientific-questions" id="toc-scientific-questions" class="nav-link" data-scroll-target="#scientific-questions"><span class="header-section-number">1.2</span> Scientific questions</a></li>
   </ul>
 </nav>
     </div>
@@ -262,37 +292,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="scope" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="scope"><span class="header-section-number">1.1</span> Scope</h2>
-<p>To be established from the first research materials and questions.</p>
+<section id="scope-and-motivation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="scope-and-motivation"><span class="header-section-number">1.1</span> Scope and motivation</h2>
+<p>A total effect in a linear causal DAG is a sum of products of edge coefficients. Independent priors on those coefficients provide indirect control over the induced effect distribution, and the mapping changes across DAGs. The I-MAP construction instead places the target effect in a single outcome regression while preserving the observational model through constraints.</p>
+<p>The setting consists of fully observed, acyclic, linear Gaussian systems with independent errors, one treatment <span class="math inline">\(d\)</span>, and one outcome <span class="math inline">\(y\)</span>. A causal interpretation is assumed for the original DAG. Observational data alone need not identify that DAG or its causal effect. Gaussianity supports the regression factorization; it does not resolve causal ambiguity.</p>
 </section>
-<section id="question-register" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="question-register"><span class="header-section-number">1.2</span> Question register</h2>
+<section id="scientific-questions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="scientific-questions"><span class="header-section-number">1.2</span> Scientific questions</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>ID</th>
 <th>Question</th>
-<th>Status</th>
-<th>Evidence</th>
+<th>Relevant analysis</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Q001</td>
 <td>What should the I-MAP parameterization explain or predict?</td>
-<td>Open</td>
-<td>Pending source materials</td>
+<td>Effect representation and model preservation: <a href="02-framework.html" class="quarto-xref"><span>Chapter 3</span></a>; <a href="imap-construction.html" class="quarto-xref"><span>Chapter 5</span></a>.</td>
+</tr>
+<tr class="even">
+<td>Q002</td>
+<td>When does an ordered I-MAP expose the total effect, and how are its parameters computed?</td>
+<td>Outcome-parent theorem and adjacent transposition: <a href="imap-construction.html" class="quarto-xref"><span>Chapter 5</span></a>; <a href="imap-validation.html" class="quarto-xref"><span>Chapter 6</span></a>.</td>
+</tr>
+<tr class="odd">
+<td>Q003</td>
+<td>Which constraints retain the original sparse Gaussian DAG model?</td>
+<td>Restored missing-edge equations: <a href="imap-construction.html#sec-imap-constraints" class="quarto-xref"><span>Section 5.5</span></a>; <a href="imap-validation.html#sec-diamond-constraints" class="quarto-xref"><span>Section 6.2</span></a>.</td>
+</tr>
+<tr class="even">
+<td>Q004</td>
+<td>How can a proper effect-centered prior and marginal likelihood be constructed?</td>
+<td>Admissible prior coordinates and normalized reweighting: <a href="bayesian-imap.html" class="quarto-xref"><span>Chapter 7</span></a>.</td>
+</tr>
+<tr class="odd">
+<td>Q005</td>
+<td>What loss defines Bayesian optimal adjustment under graph uncertainty?</td>
+<td>Posterior risk and validity criteria: <a href="bayesian-adjustment.html" class="quarto-xref"><span>Chapter 8</span></a>.</td>
+</tr>
+<tr class="even">
+<td>Q006</td>
+<td>How does the construction compare with existing causal parameterizations?</td>
+<td>Frugal parameterization and forbidden projection: <a href="related-work.html" class="quarto-xref"><span>Chapter 2</span></a>.</td>
 </tr>
 </tbody>
 </table>
-<p>Use stable IDs so chapters, scripts, findings, and GitHub issues can refer to the same question.</p>
 
 
 <!-- -->
@@ -765,17 +817,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction and research questions {#sec-questions}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scope</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scope and motivation</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>To be established from the first research materials and questions.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>A total effect in a linear causal DAG is a sum of products of edge coefficients. Independent priors on those coefficients provide indirect control over the induced effect distribution, and the mapping changes across DAGs. The I-MAP construction instead places the target effect in a single outcome regression while preserving the observational model through constraints.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question register</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>The setting consists of fully observed, acyclic, linear Gaussian systems with independent errors, one treatment $d$, and one outcome $y$. A causal interpretation is assumed for the original DAG. Observational data alone need not identify that DAG or its causal effect. Gaussianity supports the regression factorization; it does not resolve causal ambiguity.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> ID <span class="pp">|</span> Question <span class="pp">|</span> Status <span class="pp">|</span> Evidence <span class="pp">|</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q001 <span class="pp">|</span> What should the I-MAP parameterization explain or predict? <span class="pp">|</span> Open <span class="pp">|</span> Pending source materials <span class="pp">|</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Use stable IDs so chapters, scripts, findings, and GitHub issues can refer to the same question.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scientific questions</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> ID <span class="pp">|</span> Question <span class="pp">|</span> Relevant analysis <span class="pp">|</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q001 <span class="pp">|</span> What should the I-MAP parameterization explain or predict? <span class="pp">|</span> Effect representation and model preservation: @sec-framework; @sec-imap-construction. <span class="pp">|</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q002 <span class="pp">|</span> When does an ordered I-MAP expose the total effect, and how are its parameters computed? <span class="pp">|</span> Outcome-parent theorem and adjacent transposition: @sec-imap-construction; @sec-imap-validation. <span class="pp">|</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q003 <span class="pp">|</span> Which constraints retain the original sparse Gaussian DAG model? <span class="pp">|</span> Restored missing-edge equations: @sec-imap-constraints; @sec-diamond-constraints. <span class="pp">|</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q004 <span class="pp">|</span> How can a proper effect-centered prior and marginal likelihood be constructed? <span class="pp">|</span> Admissible prior coordinates and normalized reweighting: @sec-bayesian-imap. <span class="pp">|</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q005 <span class="pp">|</span> What loss defines Bayesian optimal adjustment under graph uncertainty? <span class="pp">|</span> Posterior risk and validity criteria: @sec-bayesian-adjustment. <span class="pp">|</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q006 <span class="pp">|</span> How does the construction compare with existing causal parameterizations? <span class="pp">|</span> Frugal parameterization and forbidden projection: @sec-related-work. <span class="pp">|</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

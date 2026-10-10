@@ -90,7 +90,6 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapters/03-reproducible-example.html" rel="next">
 <link href="./chapters/05-open-questions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -194,25 +193,49 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Methods and reproducibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/imap-construction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -221,29 +244,6 @@ div.csl-indent {
  <span class="menu-text">References</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapters/03-reproducible-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Reproducible computation: workflow demonstration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapters/research-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Research log</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -274,8 +274,100 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
-
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-benDavidDAGWishart" class="csl-entry" role="listitem">
+Ben-David, Emanuel, Tianxi Li, Helene Massam, and Bala Rajaratnam. 2015.
+<em>High Dimensional Bayesian Inference for <span>Gaussian</span>
+Directed Acyclic Graph Models</em>. <a href="https://arxiv.org/abs/1109.4371v5">https://arxiv.org/abs/1109.4371v5</a>.
+</div>
+<div id="ref-castellettiConsonni2021" class="csl-entry" role="listitem">
+Castelletti, Federico, and Guido Consonni. 2021. <span>“Bayesian
+Inference of Causal Effects from Observational Data in
+<span>Gaussian</span> Graphical Models.”</span> <em>Biometrics</em> 77
+(1): 136–49. <a href="https://doi.org/10.1111/biom.13281">https://doi.org/10.1111/biom.13281</a>.
+</div>
+<div id="ref-castelletti2024" class="csl-entry" role="listitem">
+Castelletti, Federico, Guido Consonni, and Marco L. Della Vedova. 2024.
+<span>“Joint Structure Learning and Causal Effect Estimation for
+Categorical Graphical Models.”</span> <em>Biometrics</em> 80 (3):
+ujae067. <a href="https://doi.org/10.1093/biomtc/ujae067">https://doi.org/10.1093/biomtc/ujae067</a>.
+</div>
+<div id="ref-castellettiMascaro2021" class="csl-entry" role="listitem">
+Castelletti, Federico, and Alessandro Mascaro. 2021. <span>“Structural
+Learning and Estimation of Joint Causal Effects Among Network-Dependent
+Variables.”</span> <em>Statistical Methods &amp; Applications</em> 30:
+1289–314. <a href="https://doi.org/10.1007/s10260-021-00579-1">https://doi.org/10.1007/s10260-021-00579-1</a>.
+</div>
+<div id="ref-evansDidelez2024" class="csl-entry" role="listitem">
+Evans, Robin J., and Vanessa Didelez. 2024. <span>“Parameterizing and
+Simulating from Causal Models.”</span> <em>Journal of the Royal
+Statistical Society Series B: Statistical Methodology</em> 86 (3):
+535–68. <a href="https://doi.org/10.1093/jrsssb/qkad058">https://doi.org/10.1093/jrsssb/qkad058</a>.
+</div>
+<div id="ref-geiger2002" class="csl-entry" role="listitem">
+Geiger, Dan, and David Heckerman. 2002. <span>“Parameter Priors for
+Directed Acyclic Graphical Models and the Characterization of Several
+Probability Distributions.”</span> <em>The Annals of Statistics</em> 30
+(5): 1412–40. <a href="https://doi.org/10.1214/aos/1035844981">https://doi.org/10.1214/aos/1035844981</a>.
+</div>
+<div id="ref-henckel2022" class="csl-entry" role="listitem">
+Henckel, Leonard, Emilija Perković, and Marloes H. Maathuis. 2022.
+<span>“Graphical Criteria for Efficient Total Effect Estimation via
+Adjustment in Causal Linear Models.”</span> <em>Journal of the Royal
+Statistical Society Series B: Statistical Methodology</em> 84 (2):
+579–99. <a href="https://academic.oup.com/jrsssb/article/84/2/579/7056108">https://academic.oup.com/jrsssb/article/84/2/579/7056108</a>.
+</div>
+<div id="ref-maathuis2009" class="csl-entry" role="listitem">
+Maathuis, Marloes H., Markus Kalisch, and Peter Bühlmann. 2009.
+<span>“Estimating High-Dimensional Intervention Effects from
+Observational Data.”</span> <em>The Annals of Statistics</em> 37 (6A):
+3133–64. <a href="https://doi.org/10.1214/09-AOS685">https://doi.org/10.1214/09-AOS685</a>.
+</div>
+<div id="ref-malinsky2016" class="csl-entry" role="listitem">
+Malinsky, Daniel, and Peter Spirtes. 2016. <span>“Estimating Causal
+Effects with Ancestral Graph <span>Markov</span> Models.”</span>
+<em>Proceedings of the Eighth International Conference on Probabilistic
+Graphical Models</em>, Proceedings of machine learning research, vol.
+52: 299–309. <a href="https://proceedings.mlr.press/v52/malinsky16.html">https://proceedings.mlr.press/v52/malinsky16.html</a>.
+</div>
+<div id="ref-nandy2017" class="csl-entry" role="listitem">
+Nandy, Preetam, Marloes H. Maathuis, and Thomas S. Richardson. 2017.
+<span>“Estimating the Effect of Joint Interventions from Observational
+Data in Sparse High-Dimensional Settings.”</span> <em>The Annals of
+Statistics</em> 45 (2): 647–74. <a href="https://doi.org/10.1214/16-AOS1462">https://doi.org/10.1214/16-AOS1462</a>.
+</div>
+<div id="ref-pearl1988" class="csl-entry" role="listitem">
+Pearl, Judea. 1988. <em>Probabilistic Reasoning in Intelligent Systems:
+Networks of Plausible Inference</em>. Morgan Kaufmann.
+</div>
+<div id="ref-pearl2009" class="csl-entry" role="listitem">
+Pearl, Judea. 2009. <em>Causality: Models, Reasoning, and
+Inference</em>. 2nd ed. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511803161">https://doi.org/10.1017/CBO9780511803161</a>.
+</div>
+<div id="ref-peluso2020" class="csl-entry" role="listitem">
+Peluso, Stefano, and Guido Consonni. 2020. <span>“Compatible Priors for
+Model Selection of High-Dimensional <span>Gaussian</span>
+<span>DAGs</span>.”</span> <em>Electronic Journal of Statistics</em> 14
+(2): 4110–32. <a href="https://doi.org/10.1214/20-EJS1768">https://doi.org/10.1214/20-EJS1768</a>.
+</div>
+<div id="ref-pensar2020" class="csl-entry" role="listitem">
+Pensar, Johan, Topi Talvitie, Antti Hyttinen, and Mikko Koivisto. 2020.
+<span>“A <span>Bayesian</span> Approach for Estimating Causal Effects
+from Observational Data.”</span> <em>Proceedings of the AAAI Conference
+on Artificial Intelligence</em> 34 (04): 5395–402. <a href="https://doi.org/10.1609/aaai.v34i04.5988">https://doi.org/10.1609/aaai.v34i04.5988</a>.
+</div>
+<div id="ref-perkovic2018" class="csl-entry" role="listitem">
+Perković, Emilija, Johannes Textor, Markus Kalisch, and Marloes H.
+Maathuis. 2018. <span>“Complete Graphical Characterization and
+Construction of Adjustment Sets in <span>Markov</span> Equivalence
+Classes of Ancestral Graphs.”</span> <em>Journal of Machine Learning
+Research</em> 18 (220): 1–62. <a href="https://jmlr.org/papers/v18/16-319.html">https://jmlr.org/papers/v18/16-319.html</a>.
+</div>
+<div id="ref-witte2020" class="csl-entry" role="listitem">
+Witte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa
+Didelez. 2020. <span>“On Efficient Adjustment in Causal Graphs.”</span>
+<em>Journal of Machine Learning Research</em> 21 (246): 1–45. <a href="https://jmlr.org/papers/v21/20-175.html">https://jmlr.org/papers/v21/20-175.html</a>.
+</div>
 </div>
 
 
@@ -737,13 +829,10 @@ div.csl-indent {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./chapters/05-open-questions.html" class="pagination-link" aria-label="Conclusions and open questions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapters/03-reproducible-example.html" class="pagination-link" aria-label="Reproducible computation: workflow demonstration">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Reproducible computation: workflow demonstration</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>

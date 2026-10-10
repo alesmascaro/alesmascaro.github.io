@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Bayesian inference with an effect coordinate – Alternative DAG Parameterizations</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/bayesian-adjustment.html" rel="next">
+<link href="../chapters/imap-validation.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/bayesian-imap.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Alternative DAG Parameterizations</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/related-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Related work</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-framework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-construction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#exact-dag-wishart-baseline" id="toc-exact-dag-wishart-baseline" class="nav-link active" data-scroll-target="#exact-dag-wishart-baseline"><span class="header-section-number">7.1</span> Exact DAG-Wishart baseline</a></li>
+  <li><a href="#what-an-i-map-prior-must-specify" id="toc-what-an-i-map-prior-must-specify" class="nav-link" data-scroll-target="#what-an-i-map-prior-must-specify"><span class="header-section-number">7.2</span> What an I-MAP prior must specify</a></li>
+  <li><a href="#laplace-approximation-and-mle-invariance" id="toc-laplace-approximation-and-mle-invariance" class="nav-link" data-scroll-target="#laplace-approximation-and-mle-invariance"><span class="header-section-number">7.3</span> Laplace approximation and MLE invariance</a></li>
+  <li><a href="#graph-search-and-importance-sampling" id="toc-graph-search-and-importance-sampling" class="nav-link" data-scroll-target="#graph-search-and-importance-sampling"><span class="header-section-number">7.4</span> Graph search and importance sampling</a></li>
+  <li><a href="#sec-nonlocal-prior" id="toc-sec-nonlocal-prior" class="nav-link" data-scroll-target="#sec-nonlocal-prior"><span class="header-section-number">7.5</span> A normalized non-local alternative</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-bayesian-imap" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="exact-dag-wishart-baseline" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="exact-dag-wishart-baseline"><span class="header-section-number">7.1</span> Exact DAG-Wishart baseline</h2>
+<p>The DAG-Wishart distribution is a conjugate prior for Gaussian DAG models <span class="citation" data-cites="benDavidDAGWishart peluso2020">(<a href="../references.html#ref-benDavidDAGWishart" role="doc-biblioref">Ben-David et al. 2015</a>; <a href="../references.html#ref-peluso2020" role="doc-biblioref">Peluso and Consonni 2020</a>)</span>. In the <span class="math inline">\(L=I-B\)</span> convention, its normalization follows by completing the square. For centered independent observations collected in an <span class="math inline">\(n\times q\)</span> matrix <span class="math inline">\(\mathbf X\)</span>, take <span class="math inline">\(U\succ0\)</span> and shape vector <span class="math inline">\(\alpha\)</span> with <span class="math inline">\(\alpha_j&gt;|P_j|+2\)</span>, <span class="math inline">\(P_j=\operatorname{pa}_{\mathcal D}(j)\)</span>. The prior density with respect to the free entries of <span class="math inline">\(L\)</span> and the variances is</p>
+<p><span class="math display">\[
+\pi(L,D\mid\mathcal D)=\frac1{Z_{\mathcal D}(\alpha,U)}
+\exp\{-\tfrac12\operatorname{tr}(LD^{-1}L^\top U)\}
+\prod_j v_j^{-\alpha_j/2}.
+\]</span></p>
+<p>Put <span class="math inline">\(p_j=|P_j|\)</span>, <span class="math inline">\(K_j=U_{P_jP_j}\)</span>, <span class="math inline">\(u_j=U_{P_jj}\)</span>, <span class="math inline">\(s_j=U_{jj}-u_j^\top K_j^{-1}u_j\)</span>, and <span class="math inline">\(r_j=(\alpha_j-p_j)/2-1\)</span>. Empty parent sets have determinant one and <span class="math inline">\(s_j=U_{jj}\)</span>. Completing the square in the exponent and then integrating the variance gives</p>
+<p><span class="math display">\[
+Z_{\mathcal D}(\alpha,U)=\prod_j
+(2\pi)^{p_j/2}|K_j|^{-1/2}\Gamma(r_j)(s_j/2)^{-r_j}.
+\]</span></p>
+<p>Indeed the coefficient integral contributes <span class="math inline">\((2\pi v_j)^{p_j/2}|K_j|^{-1/2}\)</span>, and the remaining integral is that of an inverse-gamma kernel. Equivalently, independently over nodes,</p>
+<p><span class="math display">\[
+v_j\sim\operatorname{IG}(r_j,s_j/2),\qquad
+L_{P_jj}\mid v_j\sim N(-K_j^{-1}u_j,v_jK_j^{-1}).
+\]</span></p>
+<p>Here <span class="math inline">\(\operatorname{IG}(r,b)\)</span> has density <span class="math inline">\(b^r\Gamma(r)^{-1}v^{-r-1}e^{-b/v}\)</span>. Marginally the coefficient vector is Student <span class="math inline">\(t\)</span> with <span class="math inline">\(2r_j\)</span> degrees of freedom, center <span class="math inline">\(-K_j^{-1}u_j\)</span>, and scale matrix <span class="math inline">\(s_jK_j^{-1}/(2r_j)\)</span>; that scale is not its covariance matrix.</p>
+<p>The posterior updates are <span class="math inline">\(\alpha_j\mapsto\alpha_j+n\)</span> and <span class="math inline">\(U\mapsto U+\mathbf X^\top\mathbf X\)</span>. Thus</p>
+<p><span class="math display">\[
+m_0(\mathbf X\mid\mathcal D)=(2\pi)^{-nq/2}
+\frac{Z_{\mathcal D}(\alpha+n\mathbf1,U+\mathbf X^\top\mathbf X)}{Z_{\mathcal D}(\alpha,U)}.
+\]</span></p>
+<p>A compatible choice is <span class="math inline">\(\alpha_j=a-q+2p_j+3\)</span> with <span class="math inline">\(a&gt;q-1\)</span> and common <span class="math inline">\(U\)</span>, yielding the score-equivalent construction discussed by Peluso and Consonni. The scalar <span class="math inline">\(a\)</span> is a <strong>shape</strong> hyperparameter; <span class="math inline">\(U\)</span> is the scale/rate matrix in the exponential kernel. Arbitrary DAG-Wishart shapes need not yield equal marginal likelihoods for Markov-equivalent graphs.</p>
+</section>
+<section id="what-an-i-map-prior-must-specify" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="what-an-i-map-prior-must-specify"><span class="header-section-number">7.2</span> What an I-MAP prior must specify</h2>
+<p><strong>Possible prior construction.</strong> Normal/inverse-gamma local priors can be assigned to selected free I-MAP entries, with the remaining entries determined by the model constraints, to influence <span class="math inline">\(\tau_{dy}=-\widetilde L_{dy}\)</span>. Such a specification, denoted “I-MAP-Wishart,” requires an admissible coordinate domain and a proper joint distribution; the label alone does not establish a conjugate family.</p>
+<p>A prior on the full ambient I-MAP generally assigns probability zero to the lower-dimensional constrained image. Choosing a collection of “free” entries requires a valid chart, its domain, a rule for all branches of the constraints, and a reference measure. Independent priors in two different charts usually induce different priors on the same covariance model. The diamond chart dividing by <span class="math inline">\(b'\)</span> already illustrates a domain problem (<a href="imap-validation.html#sec-diamond-constraints" class="quarto-xref"><span>Section 6.2</span></a>).</p>
+<p>For a smooth bijective chart transformation <span class="math inline">\(z=g(\theta)\)</span>, densities representing the <strong>same prior</strong> obey</p>
+<p><span class="math display">\[
+\pi_z(z)=\pi_\theta(g^{-1}(z))\left|\det Dg^{-1}(z)\right|.
+\]</span></p>
+<p>For the embedded I-MAP image, work in coordinates of its actual dimension, not an ambient rectangular Jacobian determinant. A prior on the original DAG can always be pushed forward through <span class="math inline">\(F\)</span>; this preserves its marginal likelihood but does not independently choose an arbitrary marginal prior on the effect. Properness, effect support and the domains of a global or multi-chart nuisance specification must be established for each prior construction.</p>
+</section>
+<section id="laplace-approximation-and-mle-invariance" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="laplace-approximation-and-mle-invariance"><span class="header-section-number">7.3</span> Laplace approximation and MLE invariance</h2>
+<p><strong>Analytical identity.</strong> If a finite interior MLE exists, the constrained I-MAP estimate is <span class="math inline">\(F(\widehat\theta)\)</span> by invariance under the smooth bijection onto the constrained image. It is not the unconstrained MLE of the denser I-MAP model.</p>
+<p>For a proper smooth prior in <span class="math inline">\(k=q+|E|\)</span> coordinates and a regular interior likelihood maximum,</p>
+<p><span class="math display">\[
+m(\mathbf X\mid\mathcal D)\approx
+e^{\ell(\widehat\theta)}\pi(\widehat\theta)(2\pi)^{k/2}
+|H(\widehat\theta)|^{-1/2},
+\]</span></p>
+<p>where <span class="math inline">\(H=-\nabla^2\ell\)</span> is the observed information in those same coordinates. This MLE-centered expression is the leading approximation when the prior is smooth and positive nearby; a posterior-mode formulation incorporates prior curvature explicitly. Under standard fixed-dimensional conditions,</p>
+<p><span class="math display">\[
+\log m=\ell(\widehat\theta)-\tfrac{k}{2}\log n+O(1).
+\]</span></p>
+<p>BIC discards prior- and graph-dependent constants, so it cannot retain all effects of an effect-centered prior. Changing coordinates for a fixed prior does not change the exact integral; the transformed density and curvature terms compensate in the leading Laplace expression. Using the number of ambient I-MAP entries over-penalizes the model. A non-local prior that vanishes at a null maximum needs a separate approximation; the displayed regular formula cannot simply be used there.</p>
+<p>Exact nodewise integration after changing priors is available only if the full prior and likelihood still factor into independent blocks in valid coordinates. The fact that some equations are numerically unchanged does not by itself establish that condition. A split between exact integration and Laplace approximation requires a specified prior and a factorization proof.</p>
+</section>
+<section id="graph-search-and-importance-sampling" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="graph-search-and-importance-sampling"><span class="header-section-number">7.4</span> Graph search and importance sampling</h2>
+<p>For any properly specified score <span class="math inline">\(m(\mathbf X\mid\mathcal D)\)</span> and graph prior <span class="math inline">\(p(\mathcal D)\)</span>, the Metropolis-Hastings acceptance probability is</p>
+<p><span class="math display">\[
+\min\left\{1,\frac{m(\mathbf X\mid\mathcal D')p(\mathcal D')q(\mathcal D\mid\mathcal D')}
+{m(\mathbf X\mid\mathcal D)p(\mathcal D)q(\mathcal D'\mid\mathcal D)}\right\}.
+\]</span></p>
+<p>Proposals can add, delete, or reverse edges, rejecting cycles. The skeleton-size prior <span class="math inline">\(p(\mathcal D)\propto\omega^{|E|}(1-\omega)^{q(q-1)/2-|E|}\)</span> is a possible mass function on the chosen DAG space; orientation and DAG restrictions are part of that choice. Rejecting all moves that destroy <span class="math inline">\(d\in\operatorname{an}(y)\)</span> targets a posterior <strong>conditional on ancestry</strong>. It cannot then estimate the probability of a structural null effect. A deterministic approximate marginal likelihood also targets an approximate posterior, not the exact one.</p>
+<p>If samples <span class="math inline">\(\theta^{(s)}\)</span> come from a baseline <strong>posterior</strong> under <span class="math inline">\(\pi_0\)</span>, reweight by <span class="math inline">\(w_s\propto\pi_1(\theta^{(s)})/\pi_0(\theta^{(s)})\)</span>, provided both densities are in the same coordinates and reference measure. If they instead come from the baseline <strong>prior</strong>, include the likelihood as well. Jacobians are needed when comparing densities in different charts. Support coverage and finite weight moments matter; effective sample size and tail diagnostics assess the reliability of the weighted approximation.</p>
+</section>
+<section id="sec-nonlocal-prior" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-nonlocal-prior"><span class="header-section-number">7.5</span> A normalized non-local alternative</h2>
+<p><strong>Analytical result.</strong> Let a proper baseline prior on a fixed DAG be <span class="math inline">\(\pi_0(\theta\mid\mathcal D)\)</span>, with <span class="math inline">\(0&lt;C_{\mathcal D}=E_0[\tau_{dy}^2\mid\mathcal D]&lt;\infty\)</span>. Define</p>
+<p><span class="math display">\[
+\pi_M(\theta\mid\mathcal D)=\frac{\tau_{dy}(\theta)^2}{C_{\mathcal D}}\pi_0(\theta\mid\mathcal D).
+\]</span></p>
+<p>Direct substitution into the marginal likelihood integral gives</p>
+<p><span class="math display">\[
+m_M(\mathbf X\mid\mathcal D)=m_0(\mathbf X\mid\mathcal D)
+\frac{E_0[\tau_{dy}^2\mid\mathbf X,\mathcal D]}{C_{\mathcal D}}.
+\]</span></p>
+<p>This identity requires no I-MAP coordinates. The normalizing constant can be replaced by <span class="math inline">\(v\)</span> only when the baseline effect marginal has second moment <span class="math inline">\(v\)</span>, for example <span class="math inline">\(\tau\sim N(0,v)\)</span> in an admissible coordinate factorization. A general DAG-Wishart-induced path-sum prior need not have this second moment or even a finite one. DAGs with no <span class="math inline">\(d\)</span>-to-<span class="math inline">\(y\)</span> path have <span class="math inline">\(C_{\mathcal D}=0\)</span>; they require a separate null component rather than this tilt.</p>
+<p>The posterior second moment is exactly <span class="math inline">\(E_0[\tau\mid\mathbf X]^2+\operatorname{Var}_0(\tau\mid\mathbf X)\)</span>. A normal posterior approximation may replace these by <span class="math inline">\(\widehat\tau^2+\widehat V_\tau\)</span>, but <span class="math inline">\(\widehat V_\tau\)</span> is not generally <span class="math inline">\(1/n\)</span>. For a regular parameter vector it is the delta-method quantity</p>
+<p><span class="math display">\[
+\widehat V_\tau=\nabla\tau(\widehat\theta)^\top H(\widehat\theta)^{-1}\nabla\tau(\widehat\theta).
+\]</span></p>
+<p>For an unconstrained Gaussian regression on a valid <span class="math inline">\(Z\)</span>, the corresponding OLS variance coefficient is <span class="math inline">\(\sigma^2_{y\mid d,Z}/\{n\sigma^2_{d\mid Z}\}\)</span>. Approximation accuracy near path cancellation and in small samples depends on posterior shape, prior moments and the model-specific information matrix.</p>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-benDavidDAGWishart" class="csl-entry" role="listitem">
+Ben-David, Emanuel, Tianxi Li, Helene Massam, and Bala Rajaratnam. 2015. <em>High Dimensional Bayesian Inference for <span>Gaussian</span> Directed Acyclic Graph Models</em>. <a href="https://arxiv.org/abs/1109.4371v5">https://arxiv.org/abs/1109.4371v5</a>.
+</div>
+<div id="ref-peluso2020" class="csl-entry" role="listitem">
+Peluso, Stefano, and Guido Consonni. 2020. <span>“Compatible Priors for Model Selection of High-Dimensional <span>Gaussian</span> <span>DAGs</span>.”</span> <em>Electronic Journal of Statistics</em> 14 (2): 4110–32. <a href="https://doi.org/10.1214/20-EJS1768">https://doi.org/10.1214/20-EJS1768</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alesmascaro\.github\.io\/alternative-dag-parameterizations\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/imap-validation.html" class="pagination-link" aria-label="Worked example and reproducible validation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/bayesian-adjustment.html" class="pagination-link" aria-label="Adjustment decisions under graph uncertainty">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Bayesian inference with an effect coordinate {#sec-bayesian-imap}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exact DAG-Wishart baseline</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>The DAG-Wishart distribution is a conjugate prior for Gaussian DAG models <span class="co">[</span><span class="ot">@benDavidDAGWishart; @peluso2020</span><span class="co">]</span>. In the $L=I-B$ convention, its normalization follows by completing the square. For centered independent observations collected in an $n\times q$ matrix $\mathbf X$, take $U\succ0$ and shape vector $\alpha$ with $\alpha_j&gt;|P_j|+2$, $P_j=\operatorname{pa}_{\mathcal D}(j)$. The prior density with respect to the free entries of $L$ and the variances is</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>\pi(L,D\mid\mathcal D)=\frac1{Z_{\mathcal D}(\alpha,U)}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>\exp<span class="sc">\{</span>-\tfrac12\operatorname{tr}(LD^{-1}L^\top U)<span class="sc">\}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>\prod_j v_j^{-\alpha_j/2}.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Put $p_j=|P_j|$, $K_j=U_{P_jP_j}$, $u_j=U_{P_jj}$,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>$s_j=U_{jj}-u_j^\top K_j^{-1}u_j$, and $r_j=(\alpha_j-p_j)/2-1$. Empty parent sets have determinant one and $s_j=U_{jj}$. Completing the square in the exponent and then integrating the variance gives</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Z_{\mathcal D}(\alpha,U)=\prod_j</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>(2\pi)^{p_j/2}|K_j|^{-1/2}\Gamma(r_j)(s_j/2)^{-r_j}.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Indeed the coefficient integral contributes $(2\pi v_j)^{p_j/2}|K_j|^{-1/2}$, and the remaining integral is that of an inverse-gamma kernel. Equivalently, independently over nodes,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>v_j\sim\operatorname{IG}(r_j,s_j/2),\qquad</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>L_{P_jj}\mid v_j\sim N(-K_j^{-1}u_j,v_jK_j^{-1}).</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Here $\operatorname{IG}(r,b)$ has density $b^r\Gamma(r)^{-1}v^{-r-1}e^{-b/v}$. Marginally the coefficient vector is Student $t$ with $2r_j$ degrees of freedom, center $-K_j^{-1}u_j$, and scale matrix $s_jK_j^{-1}/(2r_j)$; that scale is not its covariance matrix.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The posterior updates are $\alpha_j\mapsto\alpha_j+n$ and $U\mapsto U+\mathbf X^\top\mathbf X$. Thus</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>m_0(\mathbf X\mid\mathcal D)=(2\pi)^{-nq/2}</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\frac{Z_{\mathcal D}(\alpha+n\mathbf1,U+\mathbf X^\top\mathbf X)}{Z_{\mathcal D}(\alpha,U)}.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>A compatible choice is $\alpha_j=a-q+2p_j+3$ with $a&gt;q-1$ and common $U$, yielding the score-equivalent construction discussed by Peluso and Consonni. The scalar $a$ is a **shape** hyperparameter; $U$ is the scale/rate matrix in the exponential kernel. Arbitrary DAG-Wishart shapes need not yield equal marginal likelihoods for Markov-equivalent graphs.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## What an I-MAP prior must specify</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>**Possible prior construction.** Normal/inverse-gamma local priors can be assigned to selected free I-MAP entries, with the remaining entries determined by the model constraints, to influence $\tau_{dy}=-\widetilde L_{dy}$. Such a specification, denoted “I-MAP-Wishart,” requires an admissible coordinate domain and a proper joint distribution; the label alone does not establish a conjugate family.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>A prior on the full ambient I-MAP generally assigns probability zero to the lower-dimensional constrained image. Choosing a collection of “free” entries requires a valid chart, its domain, a rule for all branches of the constraints, and a reference measure. Independent priors in two different charts usually induce different priors on the same covariance model. The diamond chart dividing by $b'$ already illustrates a domain problem (@sec-diamond-constraints).</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>For a smooth bijective chart transformation $z=g(\theta)$, densities representing the **same prior** obey</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>\pi_z(z)=\pi_\theta(g^{-1}(z))\left|\det Dg^{-1}(z)\right|.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>For the embedded I-MAP image, work in coordinates of its actual dimension, not an ambient rectangular Jacobian determinant. A prior on the original DAG can always be pushed forward through $F$; this preserves its marginal likelihood but does not independently choose an arbitrary marginal prior on the effect. Properness, effect support and the domains of a global or multi-chart nuisance specification must be established for each prior construction.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## Laplace approximation and MLE invariance</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>**Analytical identity.** If a finite interior MLE exists, the constrained I-MAP estimate is $F(\widehat\theta)$ by invariance under the smooth bijection onto the constrained image. It is not the unconstrained MLE of the denser I-MAP model.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>For a proper smooth prior in $k=q+|E|$ coordinates and a regular interior likelihood maximum,</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>m(\mathbf X\mid\mathcal D)\approx</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a> e^{\ell(\widehat\theta)}\pi(\widehat\theta)(2\pi)^{k/2}</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a> <span class="pp">|</span>H(\widehat\theta)<span class="pp">|</span>^{-1/2},</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>where $H=-\nabla^2\ell$ is the observed information in those same coordinates. This MLE-centered expression is the leading approximation when the prior is smooth and positive nearby; a posterior-mode formulation incorporates prior curvature explicitly. Under standard fixed-dimensional conditions,</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>\log m=\ell(\widehat\theta)-\tfrac{k}{2}\log n+O(1).</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>BIC discards prior- and graph-dependent constants, so it cannot retain all effects of an effect-centered prior. Changing coordinates for a fixed prior does not change the exact integral; the transformed density and curvature terms compensate in the leading Laplace expression. Using the number of ambient I-MAP entries over-penalizes the model. A non-local prior that vanishes at a null maximum needs a separate approximation; the displayed regular formula cannot simply be used there.</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Exact nodewise integration after changing priors is available only if the full prior and likelihood still factor into independent blocks in valid coordinates. The fact that some equations are numerically unchanged does not by itself establish that condition. A split between exact integration and Laplace approximation requires a specified prior and a factorization proof.</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Graph search and importance sampling</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>For any properly specified score $m(\mathbf X\mid\mathcal D)$ and graph prior $p(\mathcal D)$, the Metropolis-Hastings acceptance probability is</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>\min\left<span class="sc">\{</span>1,\frac{m(\mathbf X\mid\mathcal D')p(\mathcal D')q(\mathcal D\mid\mathcal D')}</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>{m(\mathbf X\mid\mathcal D)p(\mathcal D)q(\mathcal D'\mid\mathcal D)}\right<span class="sc">\}</span>.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Proposals can add, delete, or reverse edges, rejecting cycles. The skeleton-size prior $p(\mathcal D)\propto\omega^{|E|}(1-\omega)^{q(q-1)/2-|E|}$ is a possible mass function on the chosen DAG space; orientation and DAG restrictions are part of that choice. Rejecting all moves that destroy $d\in\operatorname{an}(y)$ targets a posterior **conditional on ancestry**. It cannot then estimate the probability of a structural null effect. A deterministic approximate marginal likelihood also targets an approximate posterior, not the exact one.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>If samples $\theta^{(s)}$ come from a baseline **posterior** under $\pi_0$, reweight by $w_s\propto\pi_1(\theta^{(s)})/\pi_0(\theta^{(s)})$, provided both densities are in the same coordinates and reference measure. If they instead come from the baseline **prior**, include the likelihood as well. Jacobians are needed when comparing densities in different charts. Support coverage and finite weight moments matter; effective sample size and tail diagnostics assess the reliability of the weighted approximation.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## A normalized non-local alternative {#sec-nonlocal-prior}</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>**Analytical result.** Let a proper baseline prior on a fixed DAG be $\pi_0(\theta\mid\mathcal D)$, with $0&lt;C_{\mathcal D}=E_0<span class="co">[</span><span class="ot">\tau_{dy}^2\mid\mathcal D</span><span class="co">]</span>&lt;\infty$. Define</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>\pi_M(\theta\mid\mathcal D)=\frac{\tau_{dy}(\theta)^2}{C_{\mathcal D}}\pi_0(\theta\mid\mathcal D).</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Direct substitution into the marginal likelihood integral gives</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>m_M(\mathbf X\mid\mathcal D)=m_0(\mathbf X\mid\mathcal D)</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>\frac{E_0<span class="co">[</span><span class="ot">\tau_{dy}^2\mid\mathbf X,\mathcal D</span><span class="co">]</span>}{C_{\mathcal D}}.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>This identity requires no I-MAP coordinates. The normalizing constant can be replaced by $v$ only when the baseline effect marginal has second moment $v$, for example $\tau\sim N(0,v)$ in an admissible coordinate factorization. A general DAG-Wishart-induced path-sum prior need not have this second moment or even a finite one. DAGs with no $d$-to-$y$ path have $C_{\mathcal D}=0$; they require a separate null component rather than this tilt.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>The posterior second moment is exactly $E_0<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>^2+\operatorname{Var}_0(\tau\mid\mathbf X)$. A normal posterior approximation may replace these by $\widehat\tau^2+\widehat V_\tau$, but $\widehat V_\tau$ is not generally $1/n$. For a regular parameter vector it is the delta-method quantity</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>\widehat V_\tau=\nabla\tau(\widehat\theta)^\top H(\widehat\theta)^{-1}\nabla\tau(\widehat\theta).</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>For an unconstrained Gaussian regression on a valid $Z$, the corresponding OLS variance coefficient is $\sigma^2_{y\mid d,Z}/<span class="sc">\{</span>n\sigma^2_{d\mid Z}<span class="sc">\}</span>$. Approximation accuracy near path cancellation and in small samples depends on posterior shape, prior moments and the model-specific information matrix.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

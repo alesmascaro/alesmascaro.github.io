@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Discussion – Alternative DAG Parameterizations</title>
+<title>10&nbsp; Discussion – Alternative DAG Parameterizations</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -61,7 +61,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -123,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/discussion.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/discussion.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -175,25 +194,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Methods and reproducibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-construction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,29 +245,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">References</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/03-reproducible-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Reproducible computation: workflow demonstration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/research-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Research log</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -235,9 +255,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#interpretation-and-implications" id="toc-interpretation-and-implications" class="nav-link active" data-scroll-target="#interpretation-and-implications"><span class="header-section-number">6.1</span> Interpretation and implications</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">6.2</span> Limitations</a></li>
-  <li><a href="#alternative-explanations" id="toc-alternative-explanations" class="nav-link" data-scroll-target="#alternative-explanations"><span class="header-section-number">6.3</span> Alternative explanations</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link active" data-scroll-target="#interpretation"><span class="header-section-number">10.1</span> Interpretation</a></li>
+  <li><a href="#scope-and-limitations" id="toc-scope-and-limitations" class="nav-link" data-scroll-target="#scope-and-limitations"><span class="header-section-number">10.2</span> Scope and limitations</a></li>
+  <li><a href="#comparison-with-frugal-parameterization" id="toc-comparison-with-frugal-parameterization" class="nav-link" data-scroll-target="#comparison-with-frugal-parameterization"><span class="header-section-number">10.3</span> Comparison with frugal parameterization</a></li>
   </ul>
 </nav>
     </div>
@@ -246,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -263,21 +283,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="interpretation-and-implications" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="interpretation-and-implications"><span class="header-section-number">6.1</span> Interpretation and implications</h2>
-<p>To be developed from the research results.</p>
+<section id="interpretation" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">10.1</span> Interpretation</h2>
+<p>The construction provides a precise outcome regression coordinate for the total effect while retaining every observed variable. Its extra arrows enlarge the unconstrained Gaussian model; the restored missing-edge equations recover the original sparse model. The target coefficient identity holds even at path cancellations, while the graph-defined parent set does not change with individual coefficient values.</p>
+<p>This distinction explains both the appeal and the difficulty of Bayesian inference. The effect is easily located, but independent priors on arbitrary subsets of ambient entries do not automatically define a coherent prior on the original model. Chart choices, domains, normalization and Jacobians can matter. A pushforward of a fixed prior preserves Bayesian evidence; specifying new independent chart priors changes the scientific model.</p>
 </section>
-<section id="limitations" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="limitations"><span class="header-section-number">6.2</span> Limitations</h2>
-<p>Distinguish model assumptions, data limitations, numerical approximations, and unresolved proof obligations.</p>
+<section id="scope-and-limitations" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="scope-and-limitations"><span class="header-section-number">10.2</span> Scope and limitations</h2>
+<p>The results concern one treatment and one outcome, Gaussian observational factorizations, positive error variances, independent errors, and a causal original DAG. They do not identify a causal DAG from observational data, extend automatically to hidden confounding or joint interventions, or preserve all intervention interpretations of the alternative arrows.</p>
+<p>The O-set’s efficiency guarantee is asymptotic and frequentist. The Bayesian adjustment decision depends on its specified reference posterior and loss. Neither implies the other. BIC may approximate evidence under regularity, but discards prior constants; it cannot establish improved effect-prior calibration. Near null effects, non-local priors require appropriate normalization and approximations.</p>
 </section>
-<section id="alternative-explanations" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="alternative-explanations"><span class="header-section-number">6.3</span> Alternative explanations</h2>
-<p>Document competing interpretations and the evidence needed to distinguish them.</p>
+<section id="comparison-with-frugal-parameterization" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="comparison-with-frugal-parameterization"><span class="header-section-number">10.3</span> Comparison with frugal parameterization</h2>
+<p>Both constructions expose causal quantities, but the I-MAP result here focuses on a single mean derivative within a full-variable Gaussian factorization. Frugal parameterization directly organizes a causal distribution and its nuisance pieces under explicit smoothness and compatibility assumptions <span class="citation" data-cites="evansDidelez2024">(<a href="../references.html#ref-evansDidelez2024" role="doc-biblioref">Evans and Didelez 2024</a>)</span>. Sparse-DAG comparisons require explicit constraints on the common observational model.</p>
+<p>Neither redundancy nor improved marginal-likelihood accuracy follows solely from exposing a causal coordinate. Those properties depend on the constrained model, prior and inference method. The forbidden-projection approach also remains relevant under graph uncertainty: one can compute a projection within each candidate DAG. Marginalizing variables changes the inferential construction, but does not make that approach impossible <span class="citation" data-cites="witte2020">(<a href="../references.html#ref-witte2020" role="doc-biblioref">Witte et al. 2020</a>)</span>.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-evansDidelez2024" class="csl-entry" role="listitem">
+Evans, Robin J., and Vanessa Didelez. 2024. <span>“Parameterizing and Simulating from Causal Models.”</span> <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 86 (3): 535–68. <a href="https://doi.org/10.1093/jrsssb/qkad058">https://doi.org/10.1093/jrsssb/qkad058</a>.
+</div>
+<div id="ref-witte2020" class="csl-entry" role="listitem">
+Witte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa Didelez. 2020. <span>“On Efficient Adjustment in Causal Graphs.”</span> <em>Journal of Machine Learning Research</em> 21 (246): 1–45. <a href="https://jmlr.org/papers/v21/20-175.html">https://jmlr.org/papers/v21/20-175.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -734,29 +765,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/04-findings.html" class="pagination-link" aria-label="Research results">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></span>
+      <a href="../chapters/04-findings.html" class="pagination-link" aria-label="Summary of analytical results">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/05-open-questions.html" class="pagination-link" aria-label="Conclusions and open questions">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretation and implications</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretation</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>To be developed from the research results.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>The construction provides a precise outcome regression coordinate for the total effect while retaining every observed variable. Its extra arrows enlarge the unconstrained Gaussian model; the restored missing-edge equations recover the original sparse model. The target coefficient identity holds even at path cancellations, while the graph-defined parent set does not change with individual coefficient values.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Limitations</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>This distinction explains both the appeal and the difficulty of Bayesian inference. The effect is easily located, but independent priors on arbitrary subsets of ambient entries do not automatically define a coherent prior on the original model. Chart choices, domains, normalization and Jacobians can matter. A pushforward of a fixed prior preserves Bayesian evidence; specifying new independent chart priors changes the scientific model.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Distinguish model assumptions, data limitations, numerical approximations, and unresolved proof obligations.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scope and limitations</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternative explanations</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>The results concern one treatment and one outcome, Gaussian observational factorizations, positive error variances, independent errors, and a causal original DAG. They do not identify a causal DAG from observational data, extend automatically to hidden confounding or joint interventions, or preserve all intervention interpretations of the alternative arrows.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Document competing interpretations and the evidence needed to distinguish them.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>The O-set's efficiency guarantee is asymptotic and frequentist. The Bayesian adjustment decision depends on its specified reference posterior and loss. Neither implies the other. BIC may approximate evidence under regularity, but discards prior constants; it cannot establish improved effect-prior calibration. Near null effects, non-local priors require appropriate normalization and approximations.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison with frugal parameterization</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Both constructions expose causal quantities, but the I-MAP result here focuses on a single mean derivative within a full-variable Gaussian factorization. Frugal parameterization directly organizes a causal distribution and its nuisance pieces under explicit smoothness and compatibility assumptions <span class="co">[</span><span class="ot">@evansDidelez2024</span><span class="co">]</span>. Sparse-DAG comparisons require explicit constraints on the common observational model.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Neither redundancy nor improved marginal-likelihood accuracy follows solely from exposing a causal coordinate. Those properties depend on the constrained model, prior and inference method. The forbidden-projection approach also remains relevant under graph uncertainty: one can compute a projection within each candidate DAG. Marginalizing variables changes the inferential construction, but does not make that approach impossible <span class="co">[</span><span class="ot">@witte2020</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

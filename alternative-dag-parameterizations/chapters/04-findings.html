@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Research results – Alternative DAG Parameterizations</title>
+<title>9&nbsp; Summary of analytical results – Alternative DAG Parameterizations</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -72,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/discussion.html" rel="next">
-<link href="../chapters/methods.html" rel="prev">
+<link href="../chapters/bayesian-adjustment.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-findings.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-findings.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -175,25 +175,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Methods and reproducibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-construction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,29 +226,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">References</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/03-reproducible-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Reproducible computation: workflow demonstration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/research-log.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Research log</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -238,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="sec-findings" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-findings" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -255,8 +256,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>No project-specific findings have been established yet.</p>
-<p>For each finding, record its ID, associated question, evidence chapter, assumptions, uncertainty, and implications. Distinguish analytical results from numerical evidence and conjecture.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Finding</th>
+<th>Questions</th>
+<th>Result</th>
+<th>Evidence and limits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F001</td>
+<td>Q001, Q002</td>
+<td>The ordered I-MAP outcome parents are treatment plus O-set; its treatment coefficient is the total effect.</td>
+<td>Analytical proof in <a href="imap-construction.html#sec-outcome-theorem" class="quarto-xref"><span>Section 5.2</span></a>; one treatment/outcome, fully observed linear Gaussian DAG with ancestry. Graph statement and accidental coefficient zeros are distinguished.</td>
+</tr>
+<tr class="even">
+<td>F002</td>
+<td>Q002</td>
+<td>Adjacent transposition preserves covariance and produces the factorization in the swapped ordering. Forward and reverse mediator sequences agree with unique Gaussian regressions.</td>
+<td>Analytical proof in <a href="imap-construction.html#sec-transposition" class="quarto-xref"><span>Section 5.3</span></a>; finite checks in <a href="imap-validation.html" class="quarto-xref"><span>Chapter 6</span></a>. Arbitrary non-adjacent edge reversal is not covered.</td>
+</tr>
+<tr class="odd">
+<td>F003</td>
+<td>Q003</td>
+<td>The original DAG model is exactly the constrained I-MAP image determined by restored missing-edge zeros.</td>
+<td>Analytical proof in <a href="imap-construction.html#sec-imap-constraints" class="quarto-xref"><span>Section 5.5</span></a>; explicit general-variance diamond constraints in <a href="imap-validation.html#sec-diamond-constraints" class="quarto-xref"><span>Section 6.2</span></a>. Global free-coordinate priors require additional domain and normalization conditions.</td>
+</tr>
+<tr class="even">
+<td>F004</td>
+<td>Q004</td>
+<td>A normalized second-moment prior tilt yields an exact marginal-likelihood ratio, without needing I-MAP coordinates.</td>
+<td>Algebra in <a href="bayesian-imap.html#sec-nonlocal-prior" class="quarto-xref"><span>Section 7.5</span></a>; requires finite positive prior second moment. The identity does not imply approximation accuracy.</td>
+</tr>
+<tr class="odd">
+<td>F005</td>
+<td>Q005</td>
+<td>Squared-loss selection chooses a reported action nearest the model averaged posterior effect mean; candidate regression variance is absent from that loss.</td>
+<td>Exact risk decomposition in <a href="bayesian-adjustment.html#sec-adjustment-risk" class="quarto-xref"><span>Section 8.2</span></a>. Additional precision or validity criteria are proposals.</td>
+</tr>
+</tbody>
+</table>
+<p>The executable tables in <a href="imap-validation.html" class="quarto-xref"><span>Chapter 6</span></a> are numerical evidence for the implementation, not substitutes for these proofs.</p>
 
 
 <!-- -->
@@ -716,21 +764,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/methods.html" class="pagination-link" aria-label="Methods and reproducibility">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Methods and reproducibility</span></span>
+      <a href="../chapters/bayesian-adjustment.html" class="pagination-link" aria-label="Adjustment decisions under graph uncertainty">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/discussion.html" class="pagination-link" aria-label="Discussion">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Research results {#sec-findings}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Summary of analytical results {#sec-findings}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>No project-specific findings have been established yet.</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>For each finding, record its ID, associated question, evidence chapter, assumptions, uncertainty, and implications. Distinguish analytical results from numerical evidence and conjecture.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Finding <span class="pp">|</span> Questions <span class="pp">|</span> Result <span class="pp">|</span> Evidence and limits <span class="pp">|</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> F001 <span class="pp">|</span> Q001, Q002 <span class="pp">|</span> The ordered I-MAP outcome parents are treatment plus O-set; its treatment coefficient is the total effect. <span class="pp">|</span> Analytical proof in @sec-outcome-theorem; one treatment/outcome, fully observed linear Gaussian DAG with ancestry. Graph statement and accidental coefficient zeros are distinguished. <span class="pp">|</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> F002 <span class="pp">|</span> Q002 <span class="pp">|</span> Adjacent transposition preserves covariance and produces the factorization in the swapped ordering. Forward and reverse mediator sequences agree with unique Gaussian regressions. <span class="pp">|</span> Analytical proof in @sec-transposition; finite checks in @sec-imap-validation. Arbitrary non-adjacent edge reversal is not covered. <span class="pp">|</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> F003 <span class="pp">|</span> Q003 <span class="pp">|</span> The original DAG model is exactly the constrained I-MAP image determined by restored missing-edge zeros. <span class="pp">|</span> Analytical proof in @sec-imap-constraints; explicit general-variance diamond constraints in @sec-diamond-constraints. Global free-coordinate priors require additional domain and normalization conditions. <span class="pp">|</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> F004 <span class="pp">|</span> Q004 <span class="pp">|</span> A normalized second-moment prior tilt yields an exact marginal-likelihood ratio, without needing I-MAP coordinates. <span class="pp">|</span> Algebra in @sec-nonlocal-prior; requires finite positive prior second moment. The identity does not imply approximation accuracy. <span class="pp">|</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> F005 <span class="pp">|</span> Q005 <span class="pp">|</span> Squared-loss selection chooses a reported action nearest the model averaged posterior effect mean; candidate regression variance is absent from that loss. <span class="pp">|</span> Exact risk decomposition in @sec-adjustment-risk. Additional precision or validity criteria are proposals. <span class="pp">|</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>The executable tables in @sec-imap-validation are numerical evidence for the implementation, not substitutes for these proofs.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — Research log – Alternative DAG Parameterizations</title>
+<title>8&nbsp; Adjustment decisions under graph uncertainty – Alternative DAG Parameterizations</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,7 +71,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/03-reproducible-example.html" rel="prev">
+<link href="../chapters/04-findings.html" rel="next">
+<link href="../chapters/bayesian-imap.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -110,6 +111,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -122,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-reproducible-example.html">Appendices</a></li><li class="breadcrumb-item"><a href="../chapters/research-log.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Research log</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/bayesian-adjustment.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -174,25 +204,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Methods and reproducibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-construction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,29 +255,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">References</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/03-reproducible-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Reproducible computation: workflow demonstration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/research-log.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Research log</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -234,19 +265,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#project-foundation" id="toc-project-foundation" class="nav-link active" data-scroll-target="#project-foundation"><span class="header-section-number">B.1</span> 2026-10-10 — Project foundation</a></li>
-  <li><a href="#shared-context-and-automated-builds" id="toc-shared-context-and-automated-builds" class="nav-link" data-scroll-target="#shared-context-and-automated-builds"><span class="header-section-number">B.2</span> 2026-10-10 — Shared context and automated builds</a></li>
-  <li><a href="#article-structure-and-reuse" id="toc-article-structure-and-reuse" class="nav-link" data-scroll-target="#article-structure-and-reuse"><span class="header-section-number">B.3</span> 2026-10-10 — Article structure and reuse</a></li>
-  <li><a href="#publication-through-the-personal-website" id="toc-publication-through-the-personal-website" class="nav-link" data-scroll-target="#publication-through-the-personal-website"><span class="header-section-number">B.4</span> 2026-10-10 — Publication through the personal website</a></li>
+  <li><a href="#a-well-defined-action-space" id="toc-a-well-defined-action-space" class="nav-link active" data-scroll-target="#a-well-defined-action-space"><span class="header-section-number">8.1</span> A well-defined action space</a></li>
+  <li><a href="#sec-adjustment-risk" id="toc-sec-adjustment-risk" class="nav-link" data-scroll-target="#sec-adjustment-risk"><span class="header-section-number">8.2</span> Squared-loss decision rule</a></li>
+  <li><a href="#validity-precision-and-alternative-losses" id="toc-validity-precision-and-alternative-losses" class="nav-link" data-scroll-target="#validity-precision-and-alternative-losses"><span class="header-section-number">8.3</span> Validity, precision, and alternative losses</a></li>
+  <li><a href="#structural-null-effects-and-shrinkage-estimators" id="toc-structural-null-effects-and-shrinkage-estimators" class="nav-link" data-scroll-target="#structural-null-effects-and-shrinkage-estimators"><span class="header-section-number">8.4</span> Structural null effects and shrinkage estimators</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-reproducible-example.html">Appendices</a></li><li class="breadcrumb-item"><a href="../chapters/research-log.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Research log</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Appendix B — Research log</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-bayesian-adjustment" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -263,41 +294,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="project-foundation" class="level2" data-number="B.1">
-<h2 data-number="B.1" class="anchored" data-anchor-id="project-foundation"><span class="header-section-number">B.1</span> 2026-10-10 — Project foundation</h2>
-<ul>
-<li>Established a Quarto book structure and an executable R demonstration.</li>
-<li>No scientific source material or project-specific conclusions have been added yet.</li>
-<li>Verified the standalone R simulation and full HTML book rendering, including its table and figure.</li>
-<li>Selected the private GitHub repository name alternative-dag-parameterizations. Created and pushed the private repository: https://github.com/alesmascaro/alternative-dag-parameterizations.</li>
-</ul>
-<p>Record changes in reasoning, rejected hypotheses, and the evidence behind decisions. Link to question IDs, chapters, and relevant commits.</p>
+<section id="a-well-defined-action-space" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="a-well-defined-action-space"><span class="header-section-number">8.1</span> A well-defined action space</h2>
+<p>An adjustment regression can be selected by minimizing posterior expected loss. Let <span class="math inline">\(\tau=\tau_{dy}(\mathcal D,\theta)\)</span> have a proper reference posterior <span class="math inline">\(p(\mathcal D,\theta\mid\mathbf X)\)</span> with a finite second moment. For each candidate <span class="math inline">\(Z\)</span>, specify a regression prior and obtain a reported number <span class="math inline">\(a_Z(\mathbf X)\)</span>, such as its posterior mean. This action is computable from the data and <span class="math inline">\(Z\)</span>; it cannot depend on an unknown true DAG unless a further, observable rule averages those DAG-specific actions.</p>
+<p>“Bayesian OLS” does not by itself specify a posterior. A regression likelihood, prior, and treatment of the residual variance are required. A regression coefficient for an invalid set is an associational estimand, even if it is assigned a Bayesian posterior. The reference posterior for the causal effect and the candidate regression posteriors serve different roles.</p>
 </section>
-<section id="shared-context-and-automated-builds" class="level2" data-number="B.2">
-<h2 data-number="B.2" class="anchored" data-anchor-id="shared-context-and-automated-builds"><span class="header-section-number">B.2</span> 2026-10-10 — Shared context and automated builds</h2>
-<ul>
-<li>Added PROJECT_CONTEXT.md and startup/update instructions for chats sharing this project.</li>
-<li>Diagnosed the initial CI failure: the R package fs required missing libuv headers. Added the system dependency and explicit R dependency checks.</li>
-<li>Online website publication remains a separate decision from private repository storage.</li>
-</ul>
+<section id="sec-adjustment-risk" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-adjustment-risk"><span class="header-section-number">8.2</span> Squared-loss decision rule</h2>
+<p>Take <span class="math inline">\(L(Z,\tau)=(a_Z-\tau)^2\)</span>. Put <span class="math inline">\(\mu=E[\tau\mid\mathbf X]\)</span> and <span class="math inline">\(V=\operatorname{Var}(\tau\mid\mathbf X)\)</span>. Expanding around <span class="math inline">\(\mu\)</span> gives the exact risk</p>
+<p><span class="math display">\[
+R(Z\mid\mathbf X)=(a_Z-\mu)^2+V,
+\qquad Z^*\in\operatorname*{arg\,min}_Z(a_Z-\mu)^2.
+\]</span></p>
+<p><strong>Analytical result.</strong> The chosen action is closest to the Bayesian model averaged effect mean among the available actions. The posterior variance of the reference effect is constant across <span class="math inline">\(Z\)</span>. The regression posterior variance <span class="math inline">\(s_Z^2\)</span> does not appear. Thus squared loss for the reported point action does <strong>not</strong> separately penalize the candidate estimator’s variance. The full Bayes risk is not equal to its first term; that term is only an equivalent minimization objective.</p>
+<p>With <span class="math inline">\(\mu_{\mathcal D}=E[\tau\mid\mathcal D,\mathbf X]\)</span> and <span class="math inline">\(V_{\mathcal D}=\operatorname{Var}(\tau\mid\mathcal D,\mathbf X)\)</span>, the law of total variance gives</p>
+<p><span class="math display">\[
+V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}
++\operatorname{Var}_{\mathcal D\mid\mathbf X}(\mu_{\mathcal D}).
+\]</span></p>
+<p>If one formally writes a DAG-dependent action <span class="math inline">\(a_{\mathcal D,Z}\)</span>, its risk is</p>
+<p><span class="math display">\[
+\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)
+\{(a_{\mathcal D,Z}-\mu_{\mathcal D})^2+V_{\mathcal D}\}.
+\]</span></p>
+<p>The constant term here is the within-DAG variance; the total mixture variance additionally includes between-DAG variation. This expression describes an action that observes <span class="math inline">\(\mathcal D\)</span>; it is not an implementable decision under graph uncertainty without an additional rule. If <span class="math inline">\(a_{\mathcal D,Z}=a_Z\)</span> for every DAG, minimizing the first term recovers the preceding closest-to-<span class="math inline">\(\mu\)</span> rule, with the between-DAG constant retained in the full risk.</p>
 </section>
-<section id="article-structure-and-reuse" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="article-structure-and-reuse"><span class="header-section-number">B.3</span> 2026-10-10 — Article structure and reuse</h2>
+<section id="validity-precision-and-alternative-losses" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="validity-precision-and-alternative-losses"><span class="header-section-number">8.3</span> Validity, precision, and alternative losses</h2>
+<p><strong>Proposals.</strong> Distinct objectives need distinct specifications. Possible choices include:</p>
 <ul>
-<li>Corrected GitHub build passed.</li>
-<li>Authorized a public book website; private-repository Pages was rejected by the current GitHub plan.</li>
-<li>Reorganized the main text around a scientific article and moved the workflow example to the appendices.</li>
-<li>Added contributor guidance and a clean scaffold exporter for future projects.</li>
+<li>Restrict to sets valid in every DAG with posterior support, if such sets exist; that intersection can be empty.</li>
+<li>Require <span class="math inline">\(P(Z\text{ is valid in }\mathcal D\mid\mathbf X)\ge1-\varepsilon\)</span>, documenting the chosen tolerance and the posterior graph model.</li>
+<li>Use the decision criterion <span class="math inline">\((a_Z-\mu)^2+\lambda s_Z^2\)</span> with a specified <span class="math inline">\(\lambda\ge0\)</span> to penalize regression posterior dispersion. This is a new criterion, not a consequence of the original squared-loss rule.</li>
+<li>Evaluate predictive or repeated-sampling risk with an explicit data-generating model if the goal is estimator bias and sampling variance.</li>
 </ul>
+<p>Enumeration of candidates is one computational approach, not a demonstrated necessary or uniquely available algorithm. The union of graph-specific valid sets contains sets invalid in other supported DAGs. A graphical characterization of a Bayesian criterion depends on its particular loss and posterior specification. The frequentist O-set result optimizes a different quantity (<a href="02-framework.html" class="quarto-xref"><span>Chapter 3</span></a>).</p>
 </section>
-<section id="publication-through-the-personal-website" class="level2" data-number="B.4">
-<h2 data-number="B.4" class="anchored" data-anchor-id="publication-through-the-personal-website"><span class="header-section-number">B.4</span> 2026-10-10 — Publication through the personal website</h2>
-<ul>
-<li><p>Authorized publishing the generated book into the existing public personal website while preserving the private research repository.</p></li>
-<li><p>Configured a website-repository deploy key and an encrypted research-repository secret for automatic updates.</p></li>
-<li><p>The website deploys via GitHub Pages Actions; research builds update only the dedicated book folder.</p></li>
-<li><p>Verified the complete automatic cross-repository publishing run and subsequent website deployment; live book and existing homepage responded successfully.</p></li>
-</ul>
+<section id="structural-null-effects-and-shrinkage-estimators" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="structural-null-effects-and-shrinkage-estimators"><span class="header-section-number">8.4</span> Structural null effects and shrinkage estimators</h2>
+<p>Consider the shrinkage rule <span class="math inline">\(\tau^{PB}=P(\tau\ne0\mid\mathbf X)\,\tau^B\)</span>. Let <span class="math inline">\(H\)</span> indicate an active effect model, with <span class="math inline">\(\tau=0\)</span> under <span class="math inline">\(H=0\)</span>. Then</p>
+<p><span class="math display">\[
+E[\tau\mid\mathbf X]=P(H=1\mid\mathbf X)E[\tau\mid H=1,\mathbf X].
+\]</span></p>
+<p>This is a coherent squared-loss estimator if <span class="math inline">\(\tau^B\)</span> is the <strong>conditional active-model posterior mean</strong>. If <span class="math inline">\(\tau^B\)</span> is already the unconditional model averaged mean, multiplying by <span class="math inline">\(P(H=1\mid\mathbf X)\)</span> applies the inclusion factor twice. If <span class="math inline">\(\tau^B\)</span> is selected from adjustment regressions, the product needs its own loss-based justification.</p>
+<p>Under absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (<a href="bayesian-imap.html" class="quarto-xref"><span>Chapter 7</span></a>).</p>
 
 
 <!-- -->
@@ -758,44 +798,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/03-reproducible-example.html" class="pagination-link" aria-label="Reproducible computation: workflow demonstration">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Reproducible computation: workflow demonstration</span></span>
+      <a href="../chapters/bayesian-imap.html" class="pagination-link" aria-label="Bayesian inference with an effect coordinate">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../chapters/04-findings.html" class="pagination-link" aria-label="Summary of analytical results">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Research log</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Adjustment decisions under graph uncertainty {#sec-bayesian-adjustment}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2026-10-10 — Project foundation</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## A well-defined action space</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Established a Quarto book structure and an executable R demonstration.</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No scientific source material or project-specific conclusions have been added yet.</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Verified the standalone R simulation and full HTML book rendering, including its table and figure.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Selected the private GitHub repository name alternative-dag-parameterizations. Created and pushed the private repository: https://github.com/alesmascaro/alternative-dag-parameterizations.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Record changes in reasoning, rejected hypotheses, and the evidence behind decisions. Link to question IDs, chapters, and relevant commits.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2026-10-10 — Shared context and automated builds</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Added PROJECT_CONTEXT.md and startup/update instructions for chats sharing this project.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Diagnosed the initial CI failure: the R package fs required missing libuv headers. Added the system dependency and explicit R dependency checks.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Online website publication remains a separate decision from private repository storage.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>An adjustment regression can be selected by minimizing posterior expected loss. Let $\tau=\tau_{dy}(\mathcal D,\theta)$ have a proper reference posterior $p(\mathcal D,\theta\mid\mathbf X)$ with a finite second moment. For each candidate $Z$, specify a regression prior and obtain a reported number $a_Z(\mathbf X)$, such as its posterior mean. This action is computable from the data and $Z$; it cannot depend on an unknown true DAG unless a further, observable rule averages those DAG-specific actions.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>“Bayesian OLS” does not by itself specify a posterior. A regression likelihood, prior, and treatment of the residual variance are required. A regression coefficient for an invalid set is an associational estimand, even if it is assigned a Bayesian posterior. The reference posterior for the causal effect and the candidate regression posteriors serve different roles.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Squared-loss decision rule {#sec-adjustment-risk}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Take $L(Z,\tau)=(a_Z-\tau)^2$. Put $\mu=E<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>$ and $V=\operatorname{Var}(\tau\mid\mathbf X)$. Expanding around $\mu$ gives the exact risk</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>R(Z\mid\mathbf X)=(a_Z-\mu)^2+V,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>\qquad Z^*\in\operatorname*{arg\,min}_Z(a_Z-\mu)^2.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2026-10-10 — Article structure and reuse</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Analytical result.** The chosen action is closest to the Bayesian model averaged effect mean among the available actions. The posterior variance of the reference effect is constant across $Z$. The regression posterior variance $s_Z^2$ does not appear. Thus squared loss for the reported point action does **not** separately penalize the candidate estimator's variance. The full Bayes risk is not equal to its first term; that term is only an equivalent minimization objective.</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Corrected GitHub build passed.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Authorized a public book website; private-repository Pages was rejected by the current GitHub plan.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reorganized the main text around a scientific article and moved the workflow example to the appendices.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Added contributor guidance and a clean scaffold exporter for future projects.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2026-10-10 — Publication through the personal website</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>With $\mu_{\mathcal D}=E<span class="co">[</span><span class="ot">\tau\mid\mathcal D,\mathbf X</span><span class="co">]</span>$ and $V_{\mathcal D}=\operatorname{Var}(\tau\mid\mathcal D,\mathbf X)$, the law of total variance gives</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>+\operatorname{Var}_{\mathcal D\mid\mathbf X}(\mu_{\mathcal D}).</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Authorized publishing the generated book into the existing public personal website while preserving the private research repository.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Configured a website-repository deploy key and an encrypted research-repository secret for automatic updates.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The website deploys via GitHub Pages Actions; research builds update only the dedicated book folder.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Verified the complete automatic cross-repository publishing run and subsequent website deployment; live book and existing homepage responded successfully.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>If one formally writes a DAG-dependent action $a_{\mathcal D,Z}$, its risk is</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="sc">\{</span>(a_{\mathcal D,Z}-\mu_{\mathcal D})^2+V_{\mathcal D}<span class="sc">\}</span>.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The constant term here is the within-DAG variance; the total mixture variance additionally includes between-DAG variation. This expression describes an action that observes $\mathcal D$; it is not an implementable decision under graph uncertainty without an additional rule. If $a_{\mathcal D,Z}=a_Z$ for every DAG, minimizing the first term recovers the preceding closest-to-$\mu$ rule, with the between-DAG constant retained in the full risk.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validity, precision, and alternative losses</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>**Proposals.** Distinct objectives need distinct specifications. Possible choices include:</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Restrict to sets valid in every DAG with posterior support, if such sets exist; that intersection can be empty.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Require $P(Z\text{ is valid in }\mathcal D\mid\mathbf X)\ge1-\varepsilon$, documenting the chosen tolerance and the posterior graph model.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use the decision criterion $(a_Z-\mu)^2+\lambda s_Z^2$ with a specified $\lambda\ge0$ to penalize regression posterior dispersion. This is a new criterion, not a consequence of the original squared-loss rule.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluate predictive or repeated-sampling risk with an explicit data-generating model if the goal is estimator bias and sampling variance.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Enumeration of candidates is one computational approach, not a demonstrated necessary or uniquely available algorithm. The union of graph-specific valid sets contains sets invalid in other supported DAGs. A graphical characterization of a Bayesian criterion depends on its particular loss and posterior specification. The frequentist O-set result optimizes a different quantity (@sec-framework).</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Structural null effects and shrinkage estimators</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Consider the shrinkage rule $\tau^{PB}=P(\tau\ne0\mid\mathbf X)\,\tau^B$. Let $H$ indicate an active effect model, with $\tau=0$ under $H=0$. Then</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>=P(H=1\mid\mathbf X)E<span class="co">[</span><span class="ot">\tau\mid H=1,\mathbf X</span><span class="co">]</span>.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>This is a coherent squared-loss estimator if $\tau^B$ is the **conditional active-model posterior mean**. If $\tau^B$ is already the unconditional model averaged mean, multiplying by $P(H=1\mid\mathbf X)$ applies the inclusion factor twice. If $\tau^B$ is selected from adjustment regressions, the product needs its own loss-based justification.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Under absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (@sec-bayesian-imap).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
