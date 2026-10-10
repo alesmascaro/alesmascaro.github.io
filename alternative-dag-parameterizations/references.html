@@ -90,7 +90,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapters/05-open-questions.html" rel="prev">
+<link href="./chapters/imap-validation.html" rel="next">
+<link href="./chapters/discussion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -175,7 +176,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/01-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -187,13 +188,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/02-framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -204,38 +205,20 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -244,6 +227,23 @@ div.csl-indent {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -275,6 +275,12 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-andrieuRoberts2009" class="csl-entry" role="listitem">
+Andrieu, Christophe, and Gareth O. Roberts. 2009. <span>“The
+Pseudo-Marginal Approach for Efficient <span>Monte Carlo</span>
+Computations.”</span> <em>The Annals of Statistics</em> 37 (2): 697–725.
+<a href="https://doi.org/10.1214/07-AOS574">https://doi.org/10.1214/07-AOS574</a>.
+</div>
 <div id="ref-benDavidDAGWishart" class="csl-entry" role="listitem">
 Ben-David, Emanuel, Tianxi Li, Helene Massam, and Bala Rajaratnam. 2015.
 <em>High Dimensional Bayesian Inference for <span>Gaussian</span>
@@ -304,11 +310,33 @@ Simulating from Causal Models.”</span> <em>Journal of the Royal
 Statistical Society Series B: Statistical Methodology</em> 86 (3):
 535–68. <a href="https://doi.org/10.1093/jrsssb/qkad058">https://doi.org/10.1093/jrsssb/qkad058</a>.
 </div>
+<div id="ref-freniHenckelWeichwald2026" class="csl-entry" role="listitem">
+Freni, Francesco, Leonard Henckel, and Sebastian Weichwald. 2026.
+<em>Verifying Formulas for Interventional Distributions</em>. <a href="https://arxiv.org/abs/2607.13883v1">https://arxiv.org/abs/2607.13883v1</a>.
+</div>
 <div id="ref-geiger2002" class="csl-entry" role="listitem">
 Geiger, Dan, and David Heckerman. 2002. <span>“Parameter Priors for
 Directed Acyclic Graphical Models and the Characterization of Several
 Probability Distributions.”</span> <em>The Annals of Statistics</em> 30
 (5): 1412–40. <a href="https://doi.org/10.1214/aos/1035844981">https://doi.org/10.1214/aos/1035844981</a>.
+</div>
+<div id="ref-guoPerkovic2021" class="csl-entry" role="listitem">
+Guo, F. Richard, and Emilija Perković. 2021. <span>“Minimal Enumeration
+of All Possible Total Effects in a <span>Markov</span> Equivalence
+Class.”</span> <em>Proceedings of the 24th International Conference on
+Artificial Intelligence and Statistics</em>, Proceedings of machine
+learning research, vol. 130: 2395–403. <a href="https://proceedings.mlr.press/v130/guo21c.html">https://proceedings.mlr.press/v130/guo21c.html</a>.
+</div>
+<div id="ref-guoPerkovic2022" class="csl-entry" role="listitem">
+Guo, F. Richard, and Emilija Perković. 2022. <span>“Efficient Least
+Squares for Estimating Total Effects Under Linearity and Causal
+Sufficiency.”</span> <em>Journal of Machine Learning Research</em> 23
+(104): 1–41. <a href="https://jmlr.org/papers/v23/21-023.html">https://jmlr.org/papers/v23/21-023.html</a>.
+</div>
+<div id="ref-guoPerkovicRotnitzky2023" class="csl-entry" role="listitem">
+Guo, F. Richard, Emilija Perković, and Andrea Rotnitzky. 2023.
+<span>“Variable Elimination, Graph Reduction and the Efficient
+g-Formula.”</span> <em>Biometrika</em> 110 (3): 739–61. <a href="https://doi.org/10.1093/biomet/asac062">https://doi.org/10.1093/biomet/asac062</a>.
 </div>
 <div id="ref-henckel2022" class="csl-entry" role="listitem">
 Henckel, Leonard, Emilija Perković, and Marloes H. Maathuis. 2022.
@@ -316,6 +344,34 @@ Henckel, Leonard, Emilija Perković, and Marloes H. Maathuis. 2022.
 Adjustment in Causal Linear Models.”</span> <em>Journal of the Royal
 Statistical Society Series B: Statistical Methodology</em> 84 (2):
 579–99. <a href="https://academic.oup.com/jrsssb/article/84/2/579/7056108">https://academic.oup.com/jrsssb/article/84/2/579/7056108</a>.
+</div>
+<div id="ref-henckelWurtzenWeichwald2024" class="csl-entry" role="listitem">
+Henckel, Leonard, Theo Würtzen, and Sebastian Weichwald. 2024.
+<span>“Adjustment Identification Distance: A Gadjid for Causal Structure
+Learning.”</span> <em>Proceedings of the Fortieth Conference on
+Uncertainty in Artificial Intelligence</em>, Proceedings of machine
+learning research, vol. 244: 1569–98. <a href="https://proceedings.mlr.press/v244/henckel24a.html">https://proceedings.mlr.press/v244/henckel24a.html</a>.
+</div>
+<div id="ref-johnsonRossell2010" class="csl-entry" role="listitem">
+Johnson, Valen E., and David Rossell. 2010. <span>“On the Use of
+Non-Local Prior Densities in <span>Bayesian</span> Hypothesis
+Tests.”</span> <em>Journal of the Royal Statistical Society Series B:
+Statistical Methodology</em> 72 (2): 143–70. <a href="https://doi.org/10.1111/j.1467-9868.2009.00730.x">https://doi.org/10.1111/j.1467-9868.2009.00730.x</a>.
+</div>
+<div id="ref-laplantePerkovic2024" class="csl-entry" role="listitem">
+LaPlante, Sara, and Emilija Perković. 2024. <span>“Conditional
+Adjustment in a <span>Markov</span> Equivalence Class.”</span>
+<em>Proceedings of the 27th International Conference on Artificial
+Intelligence and Statistics</em>, Proceedings of machine learning
+research, vol. 238: 2782–90. <a href="https://proceedings.mlr.press/v238/laplante24a.html">https://proceedings.mlr.press/v238/laplante24a.html</a>.
+</div>
+<div id="ref-laplantePerkovic2025" class="csl-entry" role="listitem">
+LaPlante, Sara, and Emilija Perković. 2025. <em>Identifying Conditional
+Causal Effects in <span>MPDAGs</span></em>. <a href="https://arxiv.org/abs/2507.15842v1">https://arxiv.org/abs/2507.15842v1</a>.
+</div>
+<div id="ref-laplanteTriantafillouPerkovic2025" class="csl-entry" role="listitem">
+LaPlante, Sara, Sofia Triantafillou, and Emilija Perković. 2025.
+<em>Data-Driven Adjustment for Multiple Treatments</em>. <a href="https://arxiv.org/abs/2503.08971v2">https://arxiv.org/abs/2503.08971v2</a>.
 </div>
 <div id="ref-maathuis2009" class="csl-entry" role="listitem">
 Maathuis, Marloes H., Markus Kalisch, and Peter Bühlmann. 2009.
@@ -356,12 +412,24 @@ Pensar, Johan, Topi Talvitie, Antti Hyttinen, and Mikko Koivisto. 2020.
 from Observational Data.”</span> <em>Proceedings of the AAAI Conference
 on Artificial Intelligence</em> 34 (04): 5395–402. <a href="https://doi.org/10.1609/aaai.v34i04.5988">https://doi.org/10.1609/aaai.v34i04.5988</a>.
 </div>
+<div id="ref-perkovic2020" class="csl-entry" role="listitem">
+Perković, Emilija. 2020. <span>“Identifying Causal Effects in Maximally
+Oriented Partially Directed Acyclic Graphs.”</span> <em>Proceedings of
+the 36th Conference on Uncertainty in Artificial Intelligence</em>,
+Proceedings of machine learning research, vol. 124: 530–39. <a href="https://proceedings.mlr.press/v124/perkovic20a.html">https://proceedings.mlr.press/v124/perkovic20a.html</a>.
+</div>
 <div id="ref-perkovic2018" class="csl-entry" role="listitem">
 Perković, Emilija, Johannes Textor, Markus Kalisch, and Marloes H.
 Maathuis. 2018. <span>“Complete Graphical Characterization and
 Construction of Adjustment Sets in <span>Markov</span> Equivalence
 Classes of Ancestral Graphs.”</span> <em>Journal of Machine Learning
 Research</em> 18 (220): 1–62. <a href="https://jmlr.org/papers/v18/16-319.html">https://jmlr.org/papers/v18/16-319.html</a>.
+</div>
+<div id="ref-wienobstHenckelWeichwald2026" class="csl-entry" role="listitem">
+Wienöbst, Marcel, Leonard Henckel, and Sebastian Weichwald. 2026.
+<span>“Embracing Discrete Search: A Reasonable Approach to Causal
+Structure Learning.”</span> <em>International Conference on Learning
+Representations</em>. <a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/59db52d2abe2c60ec722e50e2852baad-Paper-Conference.pdf">https://proceedings.iclr.cc/paper_files/paper/2026/file/59db52d2abe2c60ec722e50e2852baad-Paper-Conference.pdf</a>.
 </div>
 <div id="ref-witte2020" class="csl-entry" role="listitem">
 Witte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa
@@ -828,11 +896,14 @@ Didelez. 2020. <span>“On Efficient Adjustment in Causal Graphs.”</span>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapters/05-open-questions.html" class="pagination-link" aria-label="Conclusions and open questions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span>
+      <a href="./chapters/discussion.html" class="pagination-link" aria-label="Discussion, conclusions and open questions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./chapters/imap-validation.html" class="pagination-link" aria-label="Numerical validation and worked algebra">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>

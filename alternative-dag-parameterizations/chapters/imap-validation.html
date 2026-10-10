@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Worked example and reproducible validation – Alternative DAG Parameterizations</title>
+<title>Appendix A — Numerical validation and worked algebra – Alternative DAG Parameterizations</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,8 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/bayesian-imap.html" rel="next">
-<link href="../chapters/imap-construction.html" rel="prev">
+<link href="../references.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -152,7 +151,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/imap-validation.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/imap-validation.html">Appendices</a></li><li class="breadcrumb-item"><a href="../chapters/imap-validation.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -186,7 +185,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -198,13 +197,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,38 +214,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,6 +236,23 @@ window.Quarto = {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -265,18 +263,26 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-diamond" id="toc-sec-diamond" class="nav-link active" data-scroll-target="#sec-diamond"><span class="header-section-number">6.1</span> The four-node diamond</a></li>
-  <li><a href="#sec-diamond-constraints" id="toc-sec-diamond-constraints" class="nav-link" data-scroll-target="#sec-diamond-constraints"><span class="header-section-number">6.2</span> Reverse constraints with arbitrary variances</a></li>
-  <li><a href="#executable-checks" id="toc-executable-checks" class="nav-link" data-scroll-target="#executable-checks"><span class="header-section-number">6.3</span> Executable checks</a></li>
+  <li><a href="#sec-diamond" id="toc-sec-diamond" class="nav-link active" data-scroll-target="#sec-diamond"><span class="header-section-number">A.1</span> The four-node diamond</a></li>
+  <li><a href="#sec-diamond-constraints" id="toc-sec-diamond-constraints" class="nav-link" data-scroll-target="#sec-diamond-constraints"><span class="header-section-number">A.2</span> Reverse constraints with arbitrary variances</a></li>
+  <li><a href="#validation-methods" id="toc-validation-methods" class="nav-link" data-scroll-target="#validation-methods"><span class="header-section-number">A.3</span> Validation methods</a>
+  <ul class="collapse">
+  <li><a href="#analytical-methods" id="toc-analytical-methods" class="nav-link" data-scroll-target="#analytical-methods"><span class="header-section-number">A.3.1</span> Analytical methods</a></li>
+  <li><a href="#numerical-validation" id="toc-numerical-validation" class="nav-link" data-scroll-target="#numerical-validation"><span class="header-section-number">A.3.2</span> Numerical validation</a></li>
+  <li><a href="#reproduction" id="toc-reproduction" class="nav-link" data-scroll-target="#reproduction"><span class="header-section-number">A.3.3</span> Reproduction</a></li>
+  </ul></li>
+  <li><a href="#executable-checks" id="toc-executable-checks" class="nav-link" data-scroll-target="#executable-checks"><span class="header-section-number">A.4</span> Executable checks</a></li>
+  <li><a href="#sec-frugal-validation" id="toc-sec-frugal-validation" class="nav-link" data-scroll-target="#sec-frugal-validation"><span class="header-section-number">A.5</span> Sparse frugal coordinates and adjustment validity</a></li>
+  <li><a href="#sec-workflow-validation" id="toc-sec-workflow-validation" class="nav-link" data-scroll-target="#sec-workflow-validation"><span class="header-section-number">A.6</span> A Bayesian evidence and sampling benchmark</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/imap-validation.html">Appendices</a></li><li class="breadcrumb-item"><a href="../chapters/imap-validation.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="sec-imap-validation" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-imap-validation" class="quarto-section-identifier">Appendix A — Numerical validation and worked algebra</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -293,8 +299,8 @@ window.Quarto = {
 </header>
 
 
-<section id="sec-diamond" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="sec-diamond"><span class="header-section-number">6.1</span> The four-node diamond</h2>
+<section id="sec-diamond" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="sec-diamond"><span class="header-section-number">A.1</span> The four-node diamond</h2>
 <p>Take <span class="math inline">\(1\to2\)</span>, <span class="math inline">\(1\to3\)</span>, <span class="math inline">\(2\to4\)</span>, <span class="math inline">\(3\to4\)</span>, with treatment <span class="math inline">\(d=1\)</span> and outcome <span class="math inline">\(y=4\)</span>. Write</p>
 <p><span class="math display">\[
 L^\top=\begin{pmatrix}
@@ -338,8 +344,8 @@ Note
 </div>
 </div>
 </section>
-<section id="sec-diamond-constraints" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="sec-diamond-constraints"><span class="header-section-number">6.2</span> Reverse constraints with arbitrary variances</h2>
+<section id="sec-diamond-constraints" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="sec-diamond-constraints"><span class="header-section-number">A.2</span> Reverse constraints with arbitrary variances</h2>
 <p>Start with an unconstrained factorization in <span class="math inline">\((1,4,2,3)\)</span>,</p>
 <p><span class="math display">\[
 \widetilde L^\top=\begin{pmatrix}
@@ -368,19 +374,40 @@ h=\frac{gf}{1+f^2},\qquad c'+a'f+gb'=0.
 \]</span></p>
 <p>Solving the latter as <span class="math inline">\(g=-(c'+a'f)/b'\)</span> is valid only on the chart <span class="math inline">\(b'\ne0\)</span>. At <span class="math inline">\(b'=0\)</span>, keep <span class="math inline">\(c'+a'f=0\)</span> and <span class="math inline">\(h=gf/(1+f^2)\)</span>; excluding that case would discard valid parameter values. Unit <strong>transformed</strong> variances are a restriction on the example, not a harmless simplification covering every original model. The general formulas above allow arbitrary positive transformed variances.</p>
 </section>
-<section id="executable-checks" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="executable-checks"><span class="header-section-number">6.3</span> Executable checks</h2>
+<section id="validation-methods" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="validation-methods"><span class="header-section-number">A.3</span> Validation methods</h2>
+<section id="analytical-methods" class="level3" data-number="A.3.1">
+<h3 data-number="A.3.1" class="anchored" data-anchor-id="analytical-methods"><span class="header-section-number">A.3.1</span> Analytical methods</h3>
+<p>Structural substitution expresses the outcome as a regression on treatment and external parents of the causal nodes. Path polynomials distinguish graphically implied zeros from coefficient cancellations. Adjacent equation operations preserve the covariance matrix, and uniqueness of Gaussian regressions identifies the factorization in each variable ordering. Restoring the original ordering gives an exact missing-edge characterization of the constrained model.</p>
+<p>Graphical I-MAPs are defined through the original DAG’s d-separations. Numerical coefficient support agrees with the graph-defined support under faithfulness; individual unfaithful parameter values can have additional zeros. All covariance factorizations assume strictly positive error variances.</p>
+</section>
+<section id="numerical-validation" class="level3" data-number="A.3.2">
+<h3 data-number="A.3.2" class="anchored" data-anchor-id="numerical-validation"><span class="header-section-number">A.3.2</span> Numerical validation</h3>
+<p>The <a href="../scripts/R/002-imap-validation.R">base-R validation script</a> independently computes d-separation by ancestral moralization and Gaussian factorizations by direct regression. The finite validation domain, coefficient and variance ranges, random seed and numerical tolerance are specified in <a href="#sec-imap-validation" class="quarto-xref"><span>Appendix A</span></a>. The same script produces the tables and graph illustration.</p>
+<p>The graphical checks concern all DAGs in the specified finite ordered class. Numerical checks compare population covariance factorizations, effect coefficients and reverse constraints. They assess the implementation against analytical benchmarks; they do not establish general theorems or the statistical performance of Bayesian estimators.</p>
+</section>
+<section id="reproduction" class="level3" data-number="A.3.3">
+<h3 data-number="A.3.3" class="anchored" data-anchor-id="reproduction"><span class="header-section-number">A.3.3</span> Reproduction</h3>
+<p>Run the validation from the repository root:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/002-imap-validation.R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Standalone execution writes regenerated tables and execution-environment information to <code>results/</code>. The calculations use base R. A full HTML build executes the same validation code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The seed, inputs, parameter ranges and tolerances define the computational experiment; runtime information supports reproduction across environments.</p>
+</section>
+</section>
+<section id="executable-checks" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="executable-checks"><span class="header-section-number">A.4</span> Executable checks</h2>
 <p>The downloadable <a href="../scripts/R/002-imap-validation.R">validation script</a> uses base R and seed <code>20261010</code>. It enumerates all <span class="math inline">\(2^{10}=1024\)</span> DAGs compatible with the fixed ordering <span class="math inline">\((1,2,3,4,5)\)</span>, and all ancestor treatment-outcome pairs within each. This is exhaustive for that finite ordered class, not for arbitrary node counts or every labeled five-node DAG.</p>
 <p>The graphical reference uses d-separation by ancestral moralization. The numerical reference independently computes regressions from <span class="math inline">\(\Sigma\)</span>. For each pair, the script constructs a closest ordering, applies the forward swaps, checks the outcome parent set, compares against direct modified Cholesky regression, verifies covariance and the effect coefficient, and reverses the transformation. One coefficient draw per graph is uniform on <span class="math inline">\([-0.8,0.8]\)</span>, with error variances uniform on <span class="math inline">\([0.5,2]\)</span>. It also checks the diamond formula, the general reverse formulas on 100 unconstrained examples, exact path cancellation, and rejection of a non-adjacent transposition. Absolute tolerance is <span class="math inline">\(10^{-9}\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>summary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>summary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-imap-cases" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-imap-cases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.1: Finite scope of the I-MAP validation.
+Table&nbsp;A.1: Finite scope of the I-MAP validation.
 </figcaption>
 <div aria-describedby="tbl-imap-cases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -418,7 +445,7 @@ Table&nbsp;6.1: Finite scope of the I-MAP validation.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_plot_diamond</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_plot_diamond</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-diamond-imap" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -427,7 +454,7 @@ Table&nbsp;6.1: Finite scope of the I-MAP validation.
 <img src="imap-validation_files/figure-html/fig-diamond-imap-1.png" class="img-fluid figure-img" width="768">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diamond-imap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: The original diamond and its ordered I-MAP. The highlighted edge carries the original total effect; other I-MAP arrows describe an observational factorization.
+Figure&nbsp;A.1: The original diamond and its ordered I-MAP. The highlighted edge carries the original total effect; other I-MAP arrows describe an observational factorization.
 </figcaption>
 </figure>
 </div>
@@ -436,12 +463,12 @@ Figure&nbsp;6.1: The original diamond and its ordered I-MAP. The highlighted edg
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>errors, <span class="at">digits =</span> <span class="dv">17</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>errors, <span class="at">digits =</span> <span class="dv">17</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-imap-errors" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-imap-errors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.2: Maximum absolute discrepancies against independent algebraic benchmarks.
+Table&nbsp;A.2: Maximum absolute discrepancies against independent algebraic benchmarks.
 </figcaption>
 <div aria-describedby="tbl-imap-errors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -488,12 +515,12 @@ Table&nbsp;6.2: Maximum absolute discrepancies against independent algebraic ben
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>diamond, <span class="at">digits =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>diamond, <span class="at">digits =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-diamond-values" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-diamond-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.3: Effect and residual variance in the diamond example.
+Table&nbsp;A.3: Effect and residual variance in the diamond example.
 </figcaption>
 <div aria-describedby="tbl-diamond-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -521,6 +548,383 @@ Table&nbsp;6.3: Effect and residual variance in the diamond example.
 </div>
 </div>
 <p>These are population-parameter calculations, not simulated data or posterior inference. The analytical arguments establish the general results; the finite checks detect implementation errors. They do not prove a theorem or evaluate Bayesian prior sensitivity.</p>
+</section>
+<section id="sec-frugal-validation" class="level2" data-number="A.5">
+<h2 data-number="A.5" class="anchored" data-anchor-id="sec-frugal-validation"><span class="header-section-number">A.5</span> Sparse frugal coordinates and adjustment validity</h2>
+<p>The <a href="../scripts/R/003-frugal-validation.R">modular validation script</a> executes the chain maps in <a href="related-work.html#sec-frugal-chain" class="quarto-xref"><span>Section 2.3.1</span></a> with seed <code>20261011</code>. It uses 100 coefficient pairs uniform on <span class="math inline">\([-1,1]^2\)</span>, variances uniform on <span class="math inline">\([0.5,2]^3\)</span>, and three additional pairs with one or both coefficients zero. The checks compare covariance matrices and inverse parameters, retain the missing-edge equation, and reject an incompatible effect coordinate. They also verify the intervention variance by replacing the treatment equation directly.</p>
+<p>All 24 node relabelings of the diamond verify construction without assuming that numerical labels are already topological. Four six-node graphs and seven candidate sets give 28 adjustment-validity comparisons. For each valid pretreatment set, the population regression coefficient is compared with the structural effect. The validity routine uses d-separation in the back-door graph and restricts candidates to non-descendants of treatment; it is not an implementation of the full generalized adjustment criterion. Absolute numerical tolerance is <span class="math inline">\(10^{-9}\)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(frugal_results<span class="sc">$</span>summary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-frugal-cases" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-frugal-cases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;A.4: Finite checks for sparse coordinates, node relabeling and adjustment.
+</figcaption>
+<div aria-describedby="tbl-frugal-cases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">check</th>
+<th style="text-align: right;">cases</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Random chain values</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zero-edge chain values</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Diamond relabelings</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph/set pairs</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Valid population regressions</td>
+<td style="text-align: right;">16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(frugal_results<span class="sc">$</span>errors, <span class="at">digits =</span> <span class="dv">17</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-frugal-errors" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-frugal-errors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;A.5: Maximum absolute discrepancies for the sparse-model benchmarks.
+</figcaption>
+<div aria-describedby="tbl-frugal-errors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">check</th>
+<th style="text-align: right;">maximum_absolute_error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">frugal_covariance</td>
+<td style="text-align: right;">4.4e-16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">inverse</td>
+<td style="text-align: right;">4.4e-16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chain_constraint</td>
+<td style="text-align: right;">1.1e-16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">intervention_variance</td>
+<td style="text-align: right;">0.0e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">relabeled_imap</td>
+<td style="text-align: right;">4.4e-16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">valid_adjustment</td>
+<td style="text-align: right;">0.0e+00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>For the graphs in <a href="bayesian-adjustment.html" class="quarto-xref"><span>Chapter 7</span></a>, the candidate-set results are:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(frugal_results<span class="sc">$</span>validity)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-adjustment-validity" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-adjustment-validity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;A.6: Pretreatment adjustment validity in the four-graph example.
+</figcaption>
+<div aria-describedby="tbl-adjustment-validity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">set</th>
+<th style="text-align: left;">D1</th>
+<th style="text-align: left;">D2</th>
+<th style="text-align: left;">D3</th>
+<th style="text-align: left;">D4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">empty</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1,3</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1,2,3</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>These calculations check population identities and implementation. They contain no simulated observations and do not establish repeated-sampling precision or Bayesian coverage.</p>
+</section>
+<section id="sec-workflow-validation" class="level2" data-number="A.6">
+<h2 data-number="A.6" class="anchored" data-anchor-id="sec-workflow-validation"><span class="header-section-number">A.6</span> A Bayesian evidence and sampling benchmark</h2>
+<p>The <a href="../scripts/R/004-bayesian-benchmark.R">Bayesian benchmark</a> uses the three Markov-equivalent orientations of the path skeleton on <span class="math inline">\((1,2,3)\)</span>. Only the chain <span class="math inline">\(1\to2\to3\)</span> permits the target effect of 1 on 3. It generates <span class="math inline">\(n=120\)</span> zero-mean observations from that chain, with <span class="math inline">\(B_{12}=0.7\)</span>, <span class="math inline">\(B_{23}=0.9\)</span> and all error variances one. The baseline uses compatible DAG-Wishart shapes with <span class="math inline">\(a=8\)</span>, <span class="math inline">\(U=I_3\)</span> and equal graph masses. Seed is <code>20261012</code>.</p>
+<p>For the chain, the baseline coefficient blocks for <span class="math inline">\(B_{12}\)</span> and <span class="math inline">\(B_{23}\)</span> are independent. Therefore its prior and posterior moments of <span class="math inline">\(\tau_{13}=B_{12}B_{23}\)</span> factor into the corresponding coefficient moments. In a node block, if the coefficient has conditional mean <span class="math inline">\(\mu\)</span> and conditional variance <span class="math inline">\(vK^{-1}_{uu}\)</span>, with <span class="math inline">\(v\sim\operatorname{IG}(r,b_0)\)</span>, then</p>
+<p><span class="math display">\[
+E[B^2]=\mu^2+\frac{b_0K^{-1}_{uu}}{r-1},\qquad
+E[B^3]=\mu^3+\frac{3\mu b_0K^{-1}_{uu}}{r-1},
+\]</span></p>
+<p>provided the required absolute moments exist. The benchmark has <span class="math inline">\(r&gt;2\)</span>, which also gives a finite fourth moment. Independence then yields <span class="math inline">\(E[\tau^k]=E[B_{12}^k]E[B_{23}^k]\)</span> for <span class="math inline">\(k\le4\)</span>.</p>
+<p>Apply the properly normalized <span class="math inline">\(\tau^2\)</span> tilt only to the active chain; keep the two null priors unchanged. Its evidence correction is exactly <span class="math inline">\(E_0[\tau^2\mid\mathbf X]/E_0[\tau^2]\)</span>. Its conditional posterior mean is exactly <span class="math inline">\(E_0[\tau^3\mid\mathbf X]/E_0[\tau^2\mid\mathbf X]\)</span>. These give independent analytical references for the evidence and sampling calculations. This tilt is not an assertion that every DAG has a common Gaussian moment-prior marginal.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bayesian_results<span class="sc">$</span>scores, <span class="at">digits =</span> <span class="dv">6</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-bayesian-scores" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bayesian-scores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;A.7: Equal baseline evidence and effect-informed graph weights in the three-graph benchmark.
+</figcaption>
+<div aria-describedby="tbl-bayesian-scores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 31%">
+<col style="width: 30%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">graph</th>
+<th style="text-align: right;">baseline_log_evidence</th>
+<th style="text-align: right;">baseline_probability</th>
+<th style="text-align: right;">tilted_probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">chain</td>
+<td style="text-align: right;">-511.6219</td>
+<td style="text-align: right;">0.333333</td>
+<td style="text-align: right;">0.832221</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fork</td>
+<td style="text-align: right;">-511.6219</td>
+<td style="text-align: right;">0.333333</td>
+<td style="text-align: right;">0.083889</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">reverse</td>
+<td style="text-align: right;">-511.6219</td>
+<td style="text-align: right;">0.333333</td>
+<td style="text-align: right;">0.083889</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bayesian_results<span class="sc">$</span>moments, <span class="at">digits =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-bayesian-exact-moments" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bayesian-exact-moments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;A.8: Analytical normalizing constants and posterior effect summaries.
+</figcaption>
+<div aria-describedby="tbl-bayesian-exact-moments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">quantity</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Prior effect second moment</td>
+<td style="text-align: right;">0.040000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Posterior baseline second moment</td>
+<td style="text-align: right;">0.396818</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tilted/baseline evidence ratio</td>
+<td style="text-align: right;">9.920449</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Active tilted posterior mean</td>
+<td style="text-align: right;">0.649734</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Averaged tilted posterior mean</td>
+<td style="text-align: right;">0.540722</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The sampler draws 8,000 independent baseline posterior parameter values from the normal/inverse-gamma blocks. Effect-squared weights produce conditional tilted-posterior estimates. Monte Carlo standard errors are reported for the baseline second moment and the self-normalized tilted mean; the latter uses the delta method. Their discrepancies must lie within seven estimated Monte Carlo standard errors in this deterministic-seed check. Covariance/effect identities and score equality use absolute tolerance <span class="math inline">\(10^{-9}\)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bayesian_results<span class="sc">$</span>monte_carlo, <span class="at">digits =</span> <span class="dv">6</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-bayesian-monte-carlo" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bayesian-monte-carlo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;A.9: Posterior sampling compared with exact coefficient-moment calculations.
+</figcaption>
+<div aria-describedby="tbl-bayesian-monte-carlo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">quantity</th>
+<th style="text-align: right;">exact</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">monte_carlo_se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Posterior effect second moment</td>
+<td style="text-align: right;">0.396818</td>
+<td style="text-align: right;">0.397649</td>
+<td style="text-align: right;">0.001298</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Active tilted posterior mean</td>
+<td style="text-align: right;">0.649734</td>
+<td style="text-align: right;">0.650393</td>
+<td style="text-align: right;">0.001140</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bayesian_results<span class="sc">$</span>diagnostics, <span class="at">digits =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-bayesian-diagnostics" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bayesian-diagnostics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;A.10: Algebraic discrepancies and importance-weight diagnostic.
+</figcaption>
+<div aria-describedby="tbl-bayesian-diagnostics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">check</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Equivalent-score absolute discrepancy</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Effect-transformation absolute discrepancy</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Importance effective sample size</td>
+<td style="text-align: right;">7371.687</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The graph probabilities are obtained by exact enumeration of three models. The benchmark contains no graph-search MCMC, general I-MAP density sampler, or comparison of estimators over repeated datasets. It checks a normalized prior modification, exact marginal-likelihood identities and conditional posterior sampling within this finite example.</p>
 
 
 <!-- -->
@@ -981,144 +1385,256 @@ Table&nbsp;6.3: Effect and residual variance in the diamond example.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/imap-construction.html" class="pagination-link" aria-label="The I-MAP construction and its constraints">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span>
+      <a href="../references.html" class="pagination-link" aria-label="References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/bayesian-imap.html" class="pagination-link" aria-label="Bayesian inference with an effect coordinate">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Worked example and reproducible validation {#sec-imap-validation}</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The four-node diamond {#sec-diamond}</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Take $1\to2$, $1\to3$, $2\to4$, $3\to4$, with treatment $d=1$ and outcome $y=4$. Write</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>L^\top=\begin{pmatrix}</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>1&amp;0&amp;0&amp;0<span class="sc">\\</span>a&amp;1&amp;0&amp;0<span class="sc">\\</span>b&amp;0&amp;1&amp;0<span class="sc">\\</span>0&amp;c&amp;e&amp;1</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>\end{pmatrix},\qquad D=\operatorname{diag}(v_1,v_2,v_3,v_4).</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>Thus $a=L_{12}$, $b=L_{13}$, $c=L_{24}$, $e=L_{34}$ and</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>\tau_{14}=ac+be,\qquad O=\varnothing.</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>The sign follows from $B=-L$ off the diagonal: each causal path has two edges. Starting from $(1,2,3,4)$, transpose $(3,4)$ and then $(2,4)$ to obtain ordering $(1,4,2,3)$. Put</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>s_3=v_4+e^2v_3,\qquad s=s_3+c^2v_2,\qquad t=ac+be.</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>**Analytical result.** The resulting factorization, displayed in original node labels, is</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>\widetilde L^\top=</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>1&amp;0&amp;0&amp;0<span class="sc">\\</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>a-tcv_2/s&amp;1&amp;0&amp;cv_2/s<span class="sc">\\</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>b-be^2v_3/s_3&amp;cev_3/s_3&amp;1&amp;ev_3/s_3<span class="sc">\\</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>-t&amp;0&amp;0&amp;1</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>\end{pmatrix},</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>\widetilde D=\operatorname{diag}\left(v_1,\frac{v_2s_3}{s},</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>\frac{v_3v_4}{s_3},s\right).</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>The last row represents $X_4=tX_1+\widetilde\epsilon_4$. Both directed paths contribute to the outcome coefficient through $t=ac+be$. All denominators are positive.</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>The I-MAP graph has edges $1\to4$, $1\to2$, $4\to2$, $1\to3$, $4\to3$, and $2\to3$. It has six edges, while the original graph has four. Its eight-dimensional ambient parameter space must be constrained to retain the original six-dimensional model. If $ac+be=0$, the numerical $1\to4$ coefficient vanishes even though that edge belongs to the graph-defined I-MAP.</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reverse constraints with arbitrary variances {#sec-diamond-constraints}</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>Start with an unconstrained factorization in $(1,4,2,3)$,</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>\widetilde L^\top=\begin{pmatrix}</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>1&amp;0&amp;0&amp;0<span class="sc">\\</span>a'&amp;1&amp;0&amp;f<span class="sc">\\</span>b'&amp;h&amp;1&amp;g<span class="sc">\\</span>c'&amp;0&amp;0&amp;1</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>\end{pmatrix},\qquad</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>\widetilde D=\operatorname{diag}(w_1,w_2,w_3,w_4),\quad w_j&gt;0.</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>To restore $(1,2,3,4)$, transpose $(4,2)$ then $(4,3)$. Define</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>s_2=w_2+f^2w_4,\qquad t_4=\frac{w_4w_2}{s_2},\qquad</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>A=\frac{c'w_2+fw_4a'}{s_2}.</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>The two restored coefficients absent from the original diamond are</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>L^{\mathrm{back}}_{23}=h-\frac{gfw_4}{s_2},\qquad</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>L^{\mathrm{back}}_{14}=\frac{w_3A+gt_4b'}{w_3+g^2t_4}.</span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>Therefore the exact constraints are</span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>h(w_2+f^2w_4)-gfw_4=0,\qquad</span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>w_3(c'w_2+fw_4a')+gw_4w_2b'=0.</span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>These polynomial equations include all positive variance values and do not divide by an edge coefficient. When $w_2=w_3=w_4=1$, they reduce to</span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>h=\frac{gf}{1+f^2},\qquad c'+a'f+gb'=0.</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>Solving the latter as $g=-(c'+a'f)/b'$ is valid only on the chart $b'\ne0$. At $b'=0$, keep $c'+a'f=0$ and $h=gf/(1+f^2)$; excluding that case would discard valid parameter values. Unit **transformed** variances are a restriction on the example, not a harmless simplification covering every original model. The general formulas above allow arbitrary positive transformed variances.</span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## Executable checks</span></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>The downloadable <span class="co">[</span><span class="ot">validation script</span><span class="co">](../scripts/R/002-imap-validation.R)</span> uses base R and seed <span class="in">`20261010`</span>. It enumerates all $2^{10}=1024$ DAGs compatible with the fixed ordering $(1,2,3,4,5)$, and all ancestor treatment-outcome pairs within each. This is exhaustive for that finite ordered class, not for arbitrary node counts or every labeled five-node DAG.</span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>The graphical reference uses d-separation by ancestral moralization. The numerical reference independently computes regressions from $\Sigma$. For each pair, the script constructs a closest ordering, applies the forward swaps, checks the outcome parent set, compares against direct modified Cholesky regression, verifies covariance and the effect coefficient, and reverses the transformation. One coefficient draw per graph is uniform on $<span class="co">[</span><span class="ot">-0.8,0.8</span><span class="co">]</span>$, with error variances uniform on $<span class="co">[</span><span class="ot">0.5,2</span><span class="co">]</span>$. It also checks the diamond formula, the general reverse formulas on 100 unconstrained examples, exact path cancellation, and rejection of a non-adjacent transposition. Absolute tolerance is $10^{-9}$.</span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: run-imap-validation</span></span>
-<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/R/002-imap-validation.R"</span>)</span>
-<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-imap-cases</span></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Finite scope of the I-MAP validation."</span></span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>summary)</span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-diamond-imap</span></span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "The original diamond and its ordered I-MAP. The highlighted edge carries the original total effect; other I-MAP arrows describe an observational factorization."</span></span>
-<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
-<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_plot_diamond</span>()</span>
-<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-imap-errors</span></span>
-<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Maximum absolute discrepancies against independent algebraic benchmarks."</span></span>
-<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>errors, <span class="at">digits =</span> <span class="dv">17</span>)</span>
-<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>The examples use $a=-0.7$, $b=0.4$, $c=-0.6$, $e=0.8$ and original variances $(1.2,0.7,1.5,0.9)$:</span>
-<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-diamond-values</span></span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Effect and residual variance in the diamond example."</span></span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>diamond, <span class="at">digits =</span> <span class="dv">5</span>)</span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>These are population-parameter calculations, not simulated data or posterior inference. The analytical arguments establish the general results; the finite checks detect implementation errors. They do not prove a theorem or evaluate Bayesian prior sensitivity.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Numerical validation and worked algebra {#sec-imap-validation}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The four-node diamond {#sec-diamond}</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>Take $1\to2$, $1\to3$, $2\to4$, $3\to4$, with treatment $d=1$ and outcome $y=4$. Write</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>L^\top=\begin{pmatrix}</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>1&amp;0&amp;0&amp;0<span class="sc">\\</span>a&amp;1&amp;0&amp;0<span class="sc">\\</span>b&amp;0&amp;1&amp;0<span class="sc">\\</span>0&amp;c&amp;e&amp;1</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>\end{pmatrix},\qquad D=\operatorname{diag}(v_1,v_2,v_3,v_4).</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>Thus $a=L_{12}$, $b=L_{13}$, $c=L_{24}$, $e=L_{34}$ and</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>\tau_{14}=ac+be,\qquad O=\varnothing.</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>The sign follows from $B=-L$ off the diagonal: each causal path has two edges. Starting from $(1,2,3,4)$, transpose $(3,4)$ and then $(2,4)$ to obtain ordering $(1,4,2,3)$. Put</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>s_3=v_4+e^2v_3,\qquad s=s_3+c^2v_2,\qquad t=ac+be.</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>**Analytical result.** The resulting factorization, displayed in original node labels, is</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>\widetilde L^\top=</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>1&amp;0&amp;0&amp;0<span class="sc">\\</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>a-tcv_2/s&amp;1&amp;0&amp;cv_2/s<span class="sc">\\</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>b-be^2v_3/s_3&amp;cev_3/s_3&amp;1&amp;ev_3/s_3<span class="sc">\\</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>-t&amp;0&amp;0&amp;1</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>\end{pmatrix},</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>\widetilde D=\operatorname{diag}\left(v_1,\frac{v_2s_3}{s},</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>\frac{v_3v_4}{s_3},s\right).</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>The last row represents $X_4=tX_1+\widetilde\epsilon_4$. Both directed paths contribute to the outcome coefficient through $t=ac+be$. All denominators are positive.</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>The I-MAP graph has edges $1\to4$, $1\to2$, $4\to2$, $1\to3$, $4\to3$, and $2\to3$. It has six edges, while the original graph has four. Its eight-dimensional ambient parameter space must be constrained to retain the original six-dimensional model. If $ac+be=0$, the numerical $1\to4$ coefficient vanishes even though that edge belongs to the graph-defined I-MAP.</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reverse constraints with arbitrary variances {#sec-diamond-constraints}</span></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>Start with an unconstrained factorization in $(1,4,2,3)$,</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>\widetilde L^\top=\begin{pmatrix}</span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>1&amp;0&amp;0&amp;0<span class="sc">\\</span>a'&amp;1&amp;0&amp;f<span class="sc">\\</span>b'&amp;h&amp;1&amp;g<span class="sc">\\</span>c'&amp;0&amp;0&amp;1</span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>\end{pmatrix},\qquad</span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>\widetilde D=\operatorname{diag}(w_1,w_2,w_3,w_4),\quad w_j&gt;0.</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>To restore $(1,2,3,4)$, transpose $(4,2)$ then $(4,3)$. Define</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>s_2=w_2+f^2w_4,\qquad t_4=\frac{w_4w_2}{s_2},\qquad</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>A=\frac{c'w_2+fw_4a'}{s_2}.</span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>The two restored coefficients absent from the original diamond are</span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>L^{\mathrm{back}}_{23}=h-\frac{gfw_4}{s_2},\qquad</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>L^{\mathrm{back}}_{14}=\frac{w_3A+gt_4b'}{w_3+g^2t_4}.</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>Therefore the exact constraints are</span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>h(w_2+f^2w_4)-gfw_4=0,\qquad</span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a>w_3(c'w_2+fw_4a')+gw_4w_2b'=0.</span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a>These polynomial equations include all positive variance values and do not divide by an edge coefficient. When $w_2=w_3=w_4=1$, they reduce to</span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a>h=\frac{gf}{1+f^2},\qquad c'+a'f+gb'=0.</span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a>Solving the latter as $g=-(c'+a'f)/b'$ is valid only on the chart $b'\ne0$. At $b'=0$, keep $c'+a'f=0$ and $h=gf/(1+f^2)$; excluding that case would discard valid parameter values. Unit **transformed** variances are a restriction on the example, not a harmless simplification covering every original model. The general formulas above allow arbitrary positive transformed variances.</span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validation methods</span></span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### Analytical methods</span></span>
+<span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>Structural substitution expresses the outcome as a regression on treatment and external parents of the causal nodes. Path polynomials distinguish graphically implied zeros from coefficient cancellations. Adjacent equation operations preserve the covariance matrix, and uniqueness of Gaussian regressions identifies the factorization in each variable ordering. Restoring the original ordering gives an exact missing-edge characterization of the constrained model.</span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a>Graphical I-MAPs are defined through the original DAG's d-separations. Numerical coefficient support agrees with the graph-defined support under faithfulness; individual unfaithful parameter values can have additional zeros. All covariance factorizations assume strictly positive error variances.</span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Numerical validation</span></span>
+<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">base-R validation script</span><span class="co">](../scripts/R/002-imap-validation.R)</span> independently computes d-separation by ancestral moralization and Gaussian factorizations by direct regression. The finite validation domain, coefficient and variance ranges, random seed and numerical tolerance are specified in @sec-imap-validation. The same script produces the tables and graph illustration.</span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a>The graphical checks concern all DAGs in the specified finite ordered class. Numerical checks compare population covariance factorizations, effect coefficients and reverse constraints. They assess the implementation against analytical benchmarks; they do not establish general theorems or the statistical performance of Bayesian estimators.</span>
+<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reproduction</span></span>
+<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a>Run the validation from the repository root:</span>
+<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/002-imap-validation.R</span>
+<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a>Standalone execution writes regenerated tables and execution-environment information to <span class="in">`results/`</span>. The calculations use base R. A full HTML build executes the same validation code:</span>
+<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a>The seed, inputs, parameter ranges and tolerances define the computational experiment; runtime information supports reproduction across environments.</span>
+<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a><span class="fu">## Executable checks</span></span>
+<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a>The downloadable <span class="co">[</span><span class="ot">validation script</span><span class="co">](../scripts/R/002-imap-validation.R)</span> uses base R and seed <span class="in">`20261010`</span>. It enumerates all $2^{10}=1024$ DAGs compatible with the fixed ordering $(1,2,3,4,5)$, and all ancestor treatment-outcome pairs within each. This is exhaustive for that finite ordered class, not for arbitrary node counts or every labeled five-node DAG.</span>
+<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a>The graphical reference uses d-separation by ancestral moralization. The numerical reference independently computes regressions from $\Sigma$. For each pair, the script constructs a closest ordering, applies the forward swaps, checks the outcome parent set, compares against direct modified Cholesky regression, verifies covariance and the effect coefficient, and reverses the transformation. One coefficient draw per graph is uniform on $<span class="co">[</span><span class="ot">-0.8,0.8</span><span class="co">]</span>$, with error variances uniform on $<span class="co">[</span><span class="ot">0.5,2</span><span class="co">]</span>$. It also checks the diamond formula, the general reverse formulas on 100 unconstrained examples, exact path cancellation, and rejection of a non-adjacent transposition. Absolute tolerance is $10^{-9}$.</span>
+<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: run-imap-validation</span></span>
+<span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/R/002-imap-validation.R"</span>)</span>
+<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-imap-cases</span></span>
+<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Finite scope of the I-MAP validation."</span></span>
+<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>summary)</span>
+<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-diamond-imap</span></span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "The original diamond and its ordered I-MAP. The highlighted edge carries the original total effect; other I-MAP arrows describe an observational factorization."</span></span>
+<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
+<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_plot_diamond</span>()</span>
+<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-imap-errors</span></span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Maximum absolute discrepancies against independent algebraic benchmarks."</span></span>
+<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>errors, <span class="at">digits =</span> <span class="dv">17</span>)</span>
+<span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a>The examples use $a=-0.7$, $b=0.4$, $c=-0.6$, $e=0.8$ and original variances $(1.2,0.7,1.5,0.9)$:</span>
+<span id="cb14-160"><a href="#cb14-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-diamond-values</span></span>
+<span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Effect and residual variance in the diamond example."</span></span>
+<span id="cb14-166"><a href="#cb14-166" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(imap_results<span class="sc">$</span>diamond, <span class="at">digits =</span> <span class="dv">5</span>)</span>
+<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-168"><a href="#cb14-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-169"><a href="#cb14-169" aria-hidden="true" tabindex="-1"></a>These are population-parameter calculations, not simulated data or posterior inference. The analytical arguments establish the general results; the finite checks detect implementation errors. They do not prove a theorem or evaluate Bayesian prior sensitivity.</span>
+<span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sparse frugal coordinates and adjustment validity {#sec-frugal-validation}</span></span>
+<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">modular validation script</span><span class="co">](../scripts/R/003-frugal-validation.R)</span> executes the chain maps in @sec-frugal-chain with seed <span class="in">`20261011`</span>. It uses 100 coefficient pairs uniform on $<span class="co">[</span><span class="ot">-1,1</span><span class="co">]</span>^2$, variances uniform on $<span class="co">[</span><span class="ot">0.5,2</span><span class="co">]</span>^3$, and three additional pairs with one or both coefficients zero. The checks compare covariance matrices and inverse parameters, retain the missing-edge equation, and reject an incompatible effect coordinate. They also verify the intervention variance by replacing the treatment equation directly.</span>
+<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-176"><a href="#cb14-176" aria-hidden="true" tabindex="-1"></a>All 24 node relabelings of the diamond verify construction without assuming that numerical labels are already topological. Four six-node graphs and seven candidate sets give 28 adjustment-validity comparisons. For each valid pretreatment set, the population regression coefficient is compared with the structural effect. The validity routine uses d-separation in the back-door graph and restricts candidates to non-descendants of treatment; it is not an implementation of the full generalized adjustment criterion. Absolute numerical tolerance is $10^{-9}$.</span>
+<span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: run-frugal-validation</span></span>
+<span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/R/003-frugal-validation.R"</span>)</span>
+<span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-189"><a href="#cb14-189" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-frugal-cases</span></span>
+<span id="cb14-190"><a href="#cb14-190" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Finite checks for sparse coordinates, node relabeling and adjustment."</span></span>
+<span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(frugal_results<span class="sc">$</span>summary)</span>
+<span id="cb14-192"><a href="#cb14-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-frugal-errors</span></span>
+<span id="cb14-198"><a href="#cb14-198" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Maximum absolute discrepancies for the sparse-model benchmarks."</span></span>
+<span id="cb14-199"><a href="#cb14-199" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(frugal_results<span class="sc">$</span>errors, <span class="at">digits =</span> <span class="dv">17</span>)</span>
+<span id="cb14-200"><a href="#cb14-200" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-201"><a href="#cb14-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-202"><a href="#cb14-202" aria-hidden="true" tabindex="-1"></a>For the graphs in @sec-bayesian-adjustment, the candidate-set results are:</span>
+<span id="cb14-203"><a href="#cb14-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-207"><a href="#cb14-207" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-adjustment-validity</span></span>
+<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Pretreatment adjustment validity in the four-graph example."</span></span>
+<span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(frugal_results<span class="sc">$</span>validity)</span>
+<span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a>These calculations check population identities and implementation. They contain no simulated observations and do not establish repeated-sampling precision or Bayesian coverage.</span>
+<span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Bayesian evidence and sampling benchmark {#sec-workflow-validation}</span></span>
+<span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-216"><a href="#cb14-216" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">Bayesian benchmark</span><span class="co">](../scripts/R/004-bayesian-benchmark.R)</span> uses the three Markov-equivalent orientations of the path skeleton on $(1,2,3)$. Only the chain $1\to2\to3$ permits the target effect of 1 on 3. It generates $n=120$ zero-mean observations from that chain, with $B_{12}=0.7$, $B_{23}=0.9$ and all error variances one. The baseline uses compatible DAG-Wishart shapes with $a=8$, $U=I_3$ and equal graph masses. Seed is <span class="in">`20261012`</span>.</span>
+<span id="cb14-217"><a href="#cb14-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-218"><a href="#cb14-218" aria-hidden="true" tabindex="-1"></a>For the chain, the baseline coefficient blocks for $B_{12}$ and $B_{23}$ are independent. Therefore its prior and posterior moments of $\tau_{13}=B_{12}B_{23}$ factor into the corresponding coefficient moments. In a node block, if the coefficient has conditional mean $\mu$ and conditional variance $vK^{-1}_{uu}$, with $v\sim\operatorname{IG}(r,b_0)$, then</span>
+<span id="cb14-219"><a href="#cb14-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-220"><a href="#cb14-220" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-221"><a href="#cb14-221" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">B^2</span><span class="co">]</span>=\mu^2+\frac{b_0K^{-1}_{uu}}{r-1},\qquad</span>
+<span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">B^3</span><span class="co">]</span>=\mu^3+\frac{3\mu b_0K^{-1}_{uu}}{r-1},</span>
+<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb14-224"><a href="#cb14-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a>provided the required absolute moments exist. The benchmark has $r&gt;2$, which also gives a finite fourth moment. Independence then yields $E<span class="co">[</span><span class="ot">\tau^k</span><span class="co">]</span>=E<span class="co">[</span><span class="ot">B_{12}^k</span><span class="co">]</span>E<span class="co">[</span><span class="ot">B_{23}^k</span><span class="co">]</span>$ for $k\le4$.</span>
+<span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-227"><a href="#cb14-227" aria-hidden="true" tabindex="-1"></a>Apply the properly normalized $\tau^2$ tilt only to the active chain; keep the two null priors unchanged. Its evidence correction is exactly $E_0<span class="co">[</span><span class="ot">\tau^2\mid\mathbf X</span><span class="co">]</span>/E_0<span class="co">[</span><span class="ot">\tau^2</span><span class="co">]</span>$. Its conditional posterior mean is exactly $E_0<span class="co">[</span><span class="ot">\tau^3\mid\mathbf X</span><span class="co">]</span>/E_0<span class="co">[</span><span class="ot">\tau^2\mid\mathbf X</span><span class="co">]</span>$. These give independent analytical references for the evidence and sampling calculations. This tilt is not an assertion that every DAG has a common Gaussian moment-prior marginal.</span>
+<span id="cb14-228"><a href="#cb14-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: run-bayesian-benchmark</span></span>
+<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/R/004-bayesian-benchmark.R"</span>)</span>
+<span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-239"><a href="#cb14-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-bayesian-scores</span></span>
+<span id="cb14-241"><a href="#cb14-241" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Equal baseline evidence and effect-informed graph weights in the three-graph benchmark."</span></span>
+<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bayesian_results<span class="sc">$</span>scores, <span class="at">digits =</span> <span class="dv">6</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-244"><a href="#cb14-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-248"><a href="#cb14-248" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-bayesian-exact-moments</span></span>
+<span id="cb14-249"><a href="#cb14-249" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Analytical normalizing constants and posterior effect summaries."</span></span>
+<span id="cb14-250"><a href="#cb14-250" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bayesian_results<span class="sc">$</span>moments, <span class="at">digits =</span> <span class="dv">6</span>)</span>
+<span id="cb14-251"><a href="#cb14-251" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-253"><a href="#cb14-253" aria-hidden="true" tabindex="-1"></a>The sampler draws 8,000 independent baseline posterior parameter values from the normal/inverse-gamma blocks. Effect-squared weights produce conditional tilted-posterior estimates. Monte Carlo standard errors are reported for the baseline second moment and the self-normalized tilted mean; the latter uses the delta method. Their discrepancies must lie within seven estimated Monte Carlo standard errors in this deterministic-seed check. Covariance/effect identities and score equality use absolute tolerance $10^{-9}$.</span>
+<span id="cb14-254"><a href="#cb14-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-257"><a href="#cb14-257" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-258"><a href="#cb14-258" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-bayesian-monte-carlo</span></span>
+<span id="cb14-259"><a href="#cb14-259" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Posterior sampling compared with exact coefficient-moment calculations."</span></span>
+<span id="cb14-260"><a href="#cb14-260" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bayesian_results<span class="sc">$</span>monte_carlo, <span class="at">digits =</span> <span class="dv">6</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-262"><a href="#cb14-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-265"><a href="#cb14-265" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-266"><a href="#cb14-266" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-bayesian-diagnostics</span></span>
+<span id="cb14-267"><a href="#cb14-267" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Algebraic discrepancies and importance-weight diagnostic."</span></span>
+<span id="cb14-268"><a href="#cb14-268" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bayesian_results<span class="sc">$</span>diagnostics, <span class="at">digits =</span> <span class="dv">6</span>)</span>
+<span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a>The graph probabilities are obtained by exact enumeration of three models. The benchmark contains no graph-search MCMC, general I-MAP density sampler, or comparison of estimators over repeated datasets. It checks a normalized prior modification, exact marginal-likelihood identities and conditional posterior sampling within this finite example.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

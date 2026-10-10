@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Adjustment decisions under graph uncertainty – Alternative DAG Parameterizations</title>
+<title>7&nbsp; The two-step approach – Alternative DAG Parameterizations</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/04-findings.html" rel="next">
+<link href="../chapters/discussion.html" rel="next">
 <link href="../chapters/bayesian-imap.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -152,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/bayesian-adjustment.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/bayesian-adjustment.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -186,7 +186,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -198,13 +198,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,38 +215,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,6 +237,23 @@ window.Quarto = {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -265,10 +264,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#a-well-defined-action-space" id="toc-a-well-defined-action-space" class="nav-link active" data-scroll-target="#a-well-defined-action-space"><span class="header-section-number">8.1</span> A well-defined action space</a></li>
-  <li><a href="#sec-adjustment-risk" id="toc-sec-adjustment-risk" class="nav-link" data-scroll-target="#sec-adjustment-risk"><span class="header-section-number">8.2</span> Squared-loss decision rule</a></li>
-  <li><a href="#validity-precision-and-alternative-losses" id="toc-validity-precision-and-alternative-losses" class="nav-link" data-scroll-target="#validity-precision-and-alternative-losses"><span class="header-section-number">8.3</span> Validity, precision, and alternative losses</a></li>
-  <li><a href="#structural-null-effects-and-shrinkage-estimators" id="toc-structural-null-effects-and-shrinkage-estimators" class="nav-link" data-scroll-target="#structural-null-effects-and-shrinkage-estimators"><span class="header-section-number">8.4</span> Structural null effects and shrinkage estimators</a></li>
+  <li><a href="#discovery-adjustment-and-a-common-prior" id="toc-discovery-adjustment-and-a-common-prior" class="nav-link active" data-scroll-target="#discovery-adjustment-and-a-common-prior"><span class="header-section-number">7.1</span> Discovery, adjustment and a common prior</a></li>
+  <li><a href="#choosing-the-adjustment-set" id="toc-choosing-the-adjustment-set" class="nav-link" data-scroll-target="#choosing-the-adjustment-set"><span class="header-section-number">7.2</span> Choosing the adjustment set</a></li>
+  <li><a href="#a-well-defined-action-space" id="toc-a-well-defined-action-space" class="nav-link" data-scroll-target="#a-well-defined-action-space"><span class="header-section-number">7.3</span> A well-defined action space</a></li>
+  <li><a href="#sec-adjustment-risk" id="toc-sec-adjustment-risk" class="nav-link" data-scroll-target="#sec-adjustment-risk"><span class="header-section-number">7.4</span> Squared-loss decision rule</a></li>
+  <li><a href="#validity-precision-and-alternative-losses" id="toc-validity-precision-and-alternative-losses" class="nav-link" data-scroll-target="#validity-precision-and-alternative-losses"><span class="header-section-number">7.5</span> Validity, precision, and alternative losses</a></li>
+  <li><a href="#structural-null-effects-and-shrinkage-estimators" id="toc-structural-null-effects-and-shrinkage-estimators" class="nav-link" data-scroll-target="#structural-null-effects-and-shrinkage-estimators"><span class="header-section-number">7.6</span> Structural null effects and shrinkage estimators</a></li>
+  <li><a href="#a-four-graph-adjustment-example" id="toc-a-four-graph-adjustment-example" class="nav-link" data-scroll-target="#a-four-graph-adjustment-example"><span class="header-section-number">7.7</span> A four-graph adjustment example</a></li>
+  <li><a href="#posterior-reports-and-uncertainty" id="toc-posterior-reports-and-uncertainty" class="nav-link" data-scroll-target="#posterior-reports-and-uncertainty"><span class="header-section-number">7.8</span> Posterior reports and uncertainty</a></li>
   </ul>
 </nav>
     </div>
@@ -277,7 +280,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="sec-bayesian-adjustment" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-bayesian-adjustment" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -294,18 +297,56 @@ window.Quarto = {
 </header>
 
 
-<section id="a-well-defined-action-space" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="a-well-defined-action-space"><span class="header-section-number">8.1</span> A well-defined action space</h2>
+<p>The two-step approach uses an effect-informed discovery model to learn about graph uncertainty, then estimates the effect through a separate Bayesian adjustment regression. The motivation is to retain direct control over the effect prior while allowing a decision about which covariates to adjust for. Its output is a specified modular procedure, rather than automatically the posterior of the joint model in <a href="bayesian-imap.html" class="quarto-xref"><span>Chapter 6</span></a>.</p>
+<section id="discovery-adjustment-and-a-common-prior" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="discovery-adjustment-and-a-common-prior"><span class="header-section-number">7.1</span> Discovery, adjustment and a common prior</h2>
+<p>In the first step, a proper I-MAP prior and its marginal likelihood produce graph weights <span class="math inline">\(w_{\mathcal D}(\mathbf X)\)</span>. The active-effect marginal is <span class="math inline">\(h(\tau)\)</span> and structural-null graphs receive their separately specified prior mass. The graph weights define which adjustment sets are possible or credible, but the union of graph-specific valid sets need not be valid across all supported graphs.</p>
+<p>For a chosen candidate <span class="math inline">\(Z\)</span>, the second step fits</p>
+<p><span class="math display">\[
+X_y=\tau X_d+\beta_Z^\top X_Z+e_Z,\qquad e_Z\sim N(0,\sigma_Z^2).
+\]</span></p>
+<p>When <span class="math inline">\(Z\)</span> is valid in the causal graph, the treatment coefficient equals <span class="math inline">\(\tau_{dy}\)</span>. Assign the same active-effect prior <span class="math inline">\(h(\tau)\)</span>, along with a proper prior <span class="math inline">\(q_Z(\beta_Z,\sigma_Z^2\mid\tau)\)</span>. The nuisance prior is part of the second-step model; it may change with <span class="math inline">\(Z\)</span>. If null uncertainty is retained, specify a point mass at <span class="math inline">\(\tau=0\)</span> and its mixing weight as well. A continuous prior alone does not reproduce the structural-null component of graph averaging.</p>
+<p>Equality of the <strong>marginal</strong> effect priors is the intended connection between the steps. A conventional normal/inverse-gamma regression prior usually specifies a normal coefficient prior conditional on <span class="math inline">\(\sigma_Z^2\)</span>, giving a marginal Student distribution after integrating the variance. That marginal must be checked against <span class="math inline">\(h\)</span>; using the same conditional scale or hyperparameter in two different models is insufficient. Independent <span class="math inline">\(h(\tau)\)</span> and nuisance priors are one possibility, but may sacrifice conjugacy.</p>
+<p>Both steps can use the same data if their output is declared to be a modular estimator or decision rule. This does not mean multiplying the first-step effect posterior by a second likelihood for those same observations: such a multiplication counts the observations twice unless justified by a joint model. A cut or other modular posterior needs an explicit definition of which feedback is removed. Splitting the data gives a different procedure; if a first-subset posterior is used as a second-subset prior, it is no longer the original <span class="math inline">\(h\)</span>. Matching priors therefore supplies comparability, not automatic joint Bayesian coherence or post-selection calibration.</p>
+</section>
+<section id="choosing-the-adjustment-set" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="choosing-the-adjustment-set"><span class="header-section-number">7.2</span> Choosing the adjustment set</h2>
+<p>The second step needs an action and a loss before an optimal adjustment set is defined. A possible action reports the posterior mean from each candidate regression and uses the first-step graph-and-effect posterior as a reference distribution for loss evaluation. This is a decision rule applied to the data, not an additional likelihood update. The admissible candidate collection can encode adjustment validity, computational cost or substantive restrictions. The O-set supplies a frequentist precision benchmark, while a Bayesian choice depends on the actual loss.</p>
+</section>
+<section id="a-well-defined-action-space" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="a-well-defined-action-space"><span class="header-section-number">7.3</span> A well-defined action space</h2>
 <p>An adjustment regression can be selected by minimizing posterior expected loss. Let <span class="math inline">\(\tau=\tau_{dy}(\mathcal D,\theta)\)</span> have a proper reference posterior <span class="math inline">\(p(\mathcal D,\theta\mid\mathbf X)\)</span> with a finite second moment. For each candidate <span class="math inline">\(Z\)</span>, specify a regression prior and obtain a reported number <span class="math inline">\(a_Z(\mathbf X)\)</span>, such as its posterior mean. This action is computable from the data and <span class="math inline">\(Z\)</span>; it cannot depend on an unknown true DAG unless a further, observable rule averages those DAG-specific actions.</p>
 <p>“Bayesian OLS” does not by itself specify a posterior. A regression likelihood, prior, and treatment of the residual variance are required. A regression coefficient for an invalid set is an associational estimand, even if it is assigned a Bayesian posterior. The reference posterior for the causal effect and the candidate regression posteriors serve different roles.</p>
 </section>
-<section id="sec-adjustment-risk" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="sec-adjustment-risk"><span class="header-section-number">8.2</span> Squared-loss decision rule</h2>
-<p>Take <span class="math inline">\(L(Z,\tau)=(a_Z-\tau)^2\)</span>. Put <span class="math inline">\(\mu=E[\tau\mid\mathbf X]\)</span> and <span class="math inline">\(V=\operatorname{Var}(\tau\mid\mathbf X)\)</span>. Expanding around <span class="math inline">\(\mu\)</span> gives the exact risk</p>
+<section id="sec-adjustment-risk" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-adjustment-risk"><span class="header-section-number">7.4</span> Squared-loss decision rule</h2>
+<p>Take <span class="math inline">\(L(Z,\tau)=(a_Z-\tau)^2\)</span>. Put <span class="math inline">\(\mu=E[\tau\mid\mathbf X]\)</span> and <span class="math inline">\(V=\operatorname{Var}(\tau\mid\mathbf X)\)</span>. The exact risk is</p>
 <p><span class="math display">\[
 R(Z\mid\mathbf X)=(a_Z-\mu)^2+V,
 \qquad Z^*\in\operatorname*{arg\,min}_Z(a_Z-\mu)^2.
 \]</span></p>
+<div id="proof-adjustment-risk" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Conditional on <span class="math inline">\(\mathbf X\)</span>, <span class="math inline">\(a_Z\)</span> is fixed and <span class="math inline">\(E[\tau-\mu\mid\mathbf X]=0\)</span>. Expanding the square gives</p>
+<p><span class="math display">\[
+E[(a_Z-\tau)^2\mid\mathbf X]
+=(a_Z-\mu)^2-2(a_Z-\mu)E[\tau-\mu\mid\mathbf X]+E[(\tau-\mu)^2\mid\mathbf X]
+=(a_Z-\mu)^2+V.
+\]</span></p>
+<p>Since <span class="math inline">\(V\)</span> does not depend on <span class="math inline">\(Z\)</span>, the minimizers are those of <span class="math inline">\((a_Z-\mu)^2\)</span>.</p>
+</div>
+</div>
+</div>
 <p><strong>Analytical result.</strong> The chosen action is closest to the Bayesian model averaged effect mean among the available actions. The posterior variance of the reference effect is constant across <span class="math inline">\(Z\)</span>. The regression posterior variance <span class="math inline">\(s_Z^2\)</span> does not appear. Thus squared loss for the reported point action does <strong>not</strong> separately penalize the candidate estimator’s variance. The full Bayes risk is not equal to its first term; that term is only an equivalent minimization objective.</p>
 <p>With <span class="math inline">\(\mu_{\mathcal D}=E[\tau\mid\mathcal D,\mathbf X]\)</span> and <span class="math inline">\(V_{\mathcal D}=\operatorname{Var}(\tau\mid\mathcal D,\mathbf X)\)</span>, the law of total variance gives</p>
 <p><span class="math display">\[
@@ -319,8 +360,8 @@ V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}
 \]</span></p>
 <p>The constant term here is the within-DAG variance; the total mixture variance additionally includes between-DAG variation. This expression describes an action that observes <span class="math inline">\(\mathcal D\)</span>; it is not an implementable decision under graph uncertainty without an additional rule. If <span class="math inline">\(a_{\mathcal D,Z}=a_Z\)</span> for every DAG, minimizing the first term recovers the preceding closest-to-<span class="math inline">\(\mu\)</span> rule, with the between-DAG constant retained in the full risk.</p>
 </section>
-<section id="validity-precision-and-alternative-losses" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="validity-precision-and-alternative-losses"><span class="header-section-number">8.3</span> Validity, precision, and alternative losses</h2>
+<section id="validity-precision-and-alternative-losses" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="validity-precision-and-alternative-losses"><span class="header-section-number">7.5</span> Validity, precision, and alternative losses</h2>
 <p><strong>Proposals.</strong> Distinct objectives need distinct specifications. Possible choices include:</p>
 <ul>
 <li>Restrict to sets valid in every DAG with posterior support, if such sets exist; that intersection can be empty.</li>
@@ -330,14 +371,56 @@ V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}
 </ul>
 <p>Enumeration of candidates is one computational approach, not a demonstrated necessary or uniquely available algorithm. The union of graph-specific valid sets contains sets invalid in other supported DAGs. A graphical characterization of a Bayesian criterion depends on its particular loss and posterior specification. The frequentist O-set result optimizes a different quantity (<a href="02-framework.html" class="quarto-xref"><span>Chapter 3</span></a>).</p>
 </section>
-<section id="structural-null-effects-and-shrinkage-estimators" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="structural-null-effects-and-shrinkage-estimators"><span class="header-section-number">8.4</span> Structural null effects and shrinkage estimators</h2>
+<section id="structural-null-effects-and-shrinkage-estimators" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="structural-null-effects-and-shrinkage-estimators"><span class="header-section-number">7.6</span> Structural null effects and shrinkage estimators</h2>
 <p>Consider the shrinkage rule <span class="math inline">\(\tau^{PB}=P(\tau\ne0\mid\mathbf X)\,\tau^B\)</span>. Let <span class="math inline">\(H\)</span> indicate an active effect model, with <span class="math inline">\(\tau=0\)</span> under <span class="math inline">\(H=0\)</span>. Then</p>
 <p><span class="math display">\[
 E[\tau\mid\mathbf X]=P(H=1\mid\mathbf X)E[\tau\mid H=1,\mathbf X].
 \]</span></p>
 <p>This is a coherent squared-loss estimator if <span class="math inline">\(\tau^B\)</span> is the <strong>conditional active-model posterior mean</strong>. If <span class="math inline">\(\tau^B\)</span> is already the unconditional model averaged mean, multiplying by <span class="math inline">\(P(H=1\mid\mathbf X)\)</span> applies the inclusion factor twice. If <span class="math inline">\(\tau^B\)</span> is selected from adjustment regressions, the product needs its own loss-based justification.</p>
-<p>Under absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (<a href="bayesian-imap.html" class="quarto-xref"><span>Chapter 7</span></a>).</p>
+<p>Under absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (<a href="bayesian-imap.html" class="quarto-xref"><span>Chapter 6</span></a>).</p>
+</section>
+<section id="a-four-graph-adjustment-example" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="a-four-graph-adjustment-example"><span class="header-section-number">7.7</span> A four-graph adjustment example</h2>
+<p>Take treatment 4 and outcome 6. Consider graphs with common edges <span class="math inline">\(1\to2\)</span>, <span class="math inline">\(1\to4\)</span>, <span class="math inline">\(4\to5\)</span>, <span class="math inline">\(4\to6\)</span> and <span class="math inline">\(5\to6\)</span>, with these additional specifications:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Graph</th>
+<th>Additional edges</th>
+<th>O-set for the effect of 4 on 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal D_1\)</span></td>
+<td><span class="math inline">\(2\to5\)</span>, <span class="math inline">\(3\to6\)</span></td>
+<td><span class="math inline">\(\{2,3\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathcal D_2\)</span></td>
+<td><span class="math inline">\(2\to5\)</span>, <span class="math inline">\(6\to3\)</span></td>
+<td><span class="math inline">\(\{2\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal D_3\)</span></td>
+<td><span class="math inline">\(2\to5\)</span></td>
+<td><span class="math inline">\(\{2\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathcal D_4\)</span></td>
+<td><span class="math inline">\(5\to2\)</span></td>
+<td><span class="math inline">\(\varnothing\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The set <span class="math inline">\(\{1\}\)</span> is valid in every graph, since it blocks any back-door path through the treatment’s only parent. The set <span class="math inline">\(\{2\}\)</span> is valid in the first three graphs, but in <span class="math inline">\(\mathcal D_4\)</span> it conditions on a descendant of mediator 5. Likewise, <span class="math inline">\(\{1,3\}\)</span> is valid in the other graphs but conditions on an outcome descendant in <span class="math inline">\(\mathcal D_2\)</span>. The union of graph-specific valid sets therefore includes inadmissible choices for some supported graphs.</p>
+<p>For graph weights <span class="math inline">\(w_1,\ldots,w_4\)</span>, the posterior validity probability of <span class="math inline">\(\{2\}\)</span> is <span class="math inline">\(w_1+w_2+w_3\)</span>. A rule requiring validity probability at least <span class="math inline">\(1-\varepsilon\)</span> admits this set only when <span class="math inline">\(w_4\le\varepsilon\)</span>. A rule requiring validity in every supported graph rejects it whenever <span class="math inline">\(w_4&gt;0\)</span>. Neither rule alone specifies the estimation loss, so it must be combined with a stated action criterion. Population regression checks for these examples are given in <a href="imap-validation.html#sec-frugal-validation" class="quarto-xref"><span>Section A.5</span></a>.</p>
+</section>
+<section id="posterior-reports-and-uncertainty" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="posterior-reports-and-uncertainty"><span class="header-section-number">7.8</span> Posterior reports and uncertainty</h2>
+<p>After a point-action choice <span class="math inline">\(Z^*(\mathbf X)\)</span>, the selected regression posterior is conditional on that regression model and its prior. It need not include uncertainty from learning the graph or selecting <span class="math inline">\(Z\)</span>. An effect posterior obtained by averaging coherent graph models already includes graph uncertainty; a mixture of separate adjustment-regression posteriors needs its own weights and interpretation.</p>
+<p>If the action is a distribution rather than a number, squared loss for a point estimate is no longer the appropriate specification. A proper scoring rule or an explicit interval loss can compare posterior reports, with validity and measurement costs added when relevant. Claims of efficiency, coverage or shrinkage improvement must be assessed for that complete procedure. In particular, a variance penalty cannot be inferred from the point-action squared-loss identity.</p>
 
 
 <!-- -->
@@ -798,73 +881,131 @@ E[\tau\mid\mathbf X]=P(H=1\mid\mathbf X)E[\tau\mid H=1,\mathbf X].
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/bayesian-imap.html" class="pagination-link" aria-label="Bayesian inference with an effect coordinate">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span>
+      <a href="../chapters/bayesian-imap.html" class="pagination-link" aria-label="The fully Bayesian workflow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/04-findings.html" class="pagination-link" aria-label="Summary of analytical results">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/discussion.html" class="pagination-link" aria-label="Discussion, conclusions and open questions">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Adjustment decisions under graph uncertainty {#sec-bayesian-adjustment}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># The two-step approach {#sec-bayesian-adjustment}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## A well-defined action space</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>The two-step approach uses an effect-informed discovery model to learn about graph uncertainty, then estimates the effect through a separate Bayesian adjustment regression. The motivation is to retain direct control over the effect prior while allowing a decision about which covariates to adjust for. Its output is a specified modular procedure, rather than automatically the posterior of the joint model in @sec-bayesian-imap.</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>An adjustment regression can be selected by minimizing posterior expected loss. Let $\tau=\tau_{dy}(\mathcal D,\theta)$ have a proper reference posterior $p(\mathcal D,\theta\mid\mathbf X)$ with a finite second moment. For each candidate $Z$, specify a regression prior and obtain a reported number $a_Z(\mathbf X)$, such as its posterior mean. This action is computable from the data and $Z$; it cannot depend on an unknown true DAG unless a further, observable rule averages those DAG-specific actions.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Discovery, adjustment and a common prior</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>“Bayesian OLS” does not by itself specify a posterior. A regression likelihood, prior, and treatment of the residual variance are required. A regression coefficient for an invalid set is an associational estimand, even if it is assigned a Bayesian posterior. The reference posterior for the causal effect and the candidate regression posteriors serve different roles.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>In the first step, a proper I-MAP prior and its marginal likelihood produce graph weights $w_{\mathcal D}(\mathbf X)$. The active-effect marginal is $h(\tau)$ and structural-null graphs receive their separately specified prior mass. The graph weights define which adjustment sets are possible or credible, but the union of graph-specific valid sets need not be valid across all supported graphs.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Squared-loss decision rule {#sec-adjustment-risk}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>For a chosen candidate $Z$, the second step fits</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Take $L(Z,\tau)=(a_Z-\tau)^2$. Put $\mu=E<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>$ and $V=\operatorname{Var}(\tau\mid\mathbf X)$. Expanding around $\mu$ gives the exact risk</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>X_y=\tau X_d+\beta_Z^\top X_Z+e_Z,\qquad e_Z\sim N(0,\sigma_Z^2).</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>R(Z\mid\mathbf X)=(a_Z-\mu)^2+V,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>\qquad Z^*\in\operatorname*{arg\,min}_Z(a_Z-\mu)^2.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Analytical result.** The chosen action is closest to the Bayesian model averaged effect mean among the available actions. The posterior variance of the reference effect is constant across $Z$. The regression posterior variance $s_Z^2$ does not appear. Thus squared loss for the reported point action does **not** separately penalize the candidate estimator's variance. The full Bayes risk is not equal to its first term; that term is only an equivalent minimization objective.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>With $\mu_{\mathcal D}=E<span class="co">[</span><span class="ot">\tau\mid\mathcal D,\mathbf X</span><span class="co">]</span>$ and $V_{\mathcal D}=\operatorname{Var}(\tau\mid\mathcal D,\mathbf X)$, the law of total variance gives</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>+\operatorname{Var}_{\mathcal D\mid\mathbf X}(\mu_{\mathcal D}).</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>When $Z$ is valid in the causal graph, the treatment coefficient equals $\tau_{dy}$. Assign the same active-effect prior $h(\tau)$, along with a proper prior $q_Z(\beta_Z,\sigma_Z^2\mid\tau)$. The nuisance prior is part of the second-step model; it may change with $Z$. If null uncertainty is retained, specify a point mass at $\tau=0$ and its mixing weight as well. A continuous prior alone does not reproduce the structural-null component of graph averaging.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Equality of the **marginal** effect priors is the intended connection between the steps. A conventional normal/inverse-gamma regression prior usually specifies a normal coefficient prior conditional on $\sigma_Z^2$, giving a marginal Student distribution after integrating the variance. That marginal must be checked against $h$; using the same conditional scale or hyperparameter in two different models is insufficient. Independent $h(\tau)$ and nuisance priors are one possibility, but may sacrifice conjugacy.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Both steps can use the same data if their output is declared to be a modular estimator or decision rule. This does not mean multiplying the first-step effect posterior by a second likelihood for those same observations: such a multiplication counts the observations twice unless justified by a joint model. A cut or other modular posterior needs an explicit definition of which feedback is removed. Splitting the data gives a different procedure; if a first-subset posterior is used as a second-subset prior, it is no longer the original $h$. Matching priors therefore supplies comparability, not automatic joint Bayesian coherence or post-selection calibration.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Choosing the adjustment set</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>The second step needs an action and a loss before an optimal adjustment set is defined. A possible action reports the posterior mean from each candidate regression and uses the first-step graph-and-effect posterior as a reference distribution for loss evaluation. This is a decision rule applied to the data, not an additional likelihood update. The admissible candidate collection can encode adjustment validity, computational cost or substantive restrictions. The O-set supplies a frequentist precision benchmark, while a Bayesian choice depends on the actual loss.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## A well-defined action space</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>If one formally writes a DAG-dependent action $a_{\mathcal D,Z}$, its risk is</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>An adjustment regression can be selected by minimizing posterior expected loss. Let $\tau=\tau_{dy}(\mathcal D,\theta)$ have a proper reference posterior $p(\mathcal D,\theta\mid\mathbf X)$ with a finite second moment. For each candidate $Z$, specify a regression prior and obtain a reported number $a_Z(\mathbf X)$, such as its posterior mean. This action is computable from the data and $Z$; it cannot depend on an unknown true DAG unless a further, observable rule averages those DAG-specific actions.</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="sc">\{</span>(a_{\mathcal D,Z}-\mu_{\mathcal D})^2+V_{\mathcal D}<span class="sc">\}</span>.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The constant term here is the within-DAG variance; the total mixture variance additionally includes between-DAG variation. This expression describes an action that observes $\mathcal D$; it is not an implementable decision under graph uncertainty without an additional rule. If $a_{\mathcal D,Z}=a_Z$ for every DAG, minimizing the first term recovers the preceding closest-to-$\mu$ rule, with the between-DAG constant retained in the full risk.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validity, precision, and alternative losses</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>**Proposals.** Distinct objectives need distinct specifications. Possible choices include:</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>“Bayesian OLS” does not by itself specify a posterior. A regression likelihood, prior, and treatment of the residual variance are required. A regression coefficient for an invalid set is an associational estimand, even if it is assigned a Bayesian posterior. The reference posterior for the causal effect and the candidate regression posteriors serve different roles.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Squared-loss decision rule {#sec-adjustment-risk}</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Take $L(Z,\tau)=(a_Z-\tau)^2$. Put $\mu=E<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>$ and $V=\operatorname{Var}(\tau\mid\mathbf X)$. The exact risk is</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>R(Z\mid\mathbf X)=(a_Z-\mu)^2+V,</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>\qquad Z^*\in\operatorname*{arg\,min}_Z(a_Z-\mu)^2.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Restrict to sets valid in every DAG with posterior support, if such sets exist; that intersection can be empty.</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Require $P(Z\text{ is valid in }\mathcal D\mid\mathbf X)\ge1-\varepsilon$, documenting the chosen tolerance and the posterior graph model.</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use the decision criterion $(a_Z-\mu)^2+\lambda s_Z^2$ with a specified $\lambda\ge0$ to penalize regression posterior dispersion. This is a new criterion, not a consequence of the original squared-loss rule.</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluate predictive or repeated-sampling risk with an explicit data-generating model if the goal is estimator bias and sampling variance.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Enumeration of candidates is one computational approach, not a demonstrated necessary or uniquely available algorithm. The union of graph-specific valid sets contains sets invalid in other supported DAGs. A graphical characterization of a Bayesian criterion depends on its particular loss and posterior specification. The frequentist O-set result optimizes a different quantity (@sec-framework).</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Structural null effects and shrinkage estimators</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Consider the shrinkage rule $\tau^{PB}=P(\tau\ne0\mid\mathbf X)\,\tau^B$. Let $H$ indicate an active effect model, with $\tau=0$ under $H=0$. Then</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>=P(H=1\mid\mathbf X)E<span class="co">[</span><span class="ot">\tau\mid H=1,\mathbf X</span><span class="co">]</span>.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>This is a coherent squared-loss estimator if $\tau^B$ is the **conditional active-model posterior mean**. If $\tau^B$ is already the unconditional model averaged mean, multiplying by $P(H=1\mid\mathbf X)$ applies the inclusion factor twice. If $\tau^B$ is selected from adjustment regressions, the product needs its own loss-based justification.</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Under absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (@sec-bayesian-imap).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-adjustment-risk collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Conditional on $\mathbf X$, $a_Z$ is fixed and $E<span class="co">[</span><span class="ot">\tau-\mu\mid\mathbf X</span><span class="co">]</span>=0$. Expanding the square gives</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">(a_Z-\tau)^2\mid\mathbf X</span><span class="co">]</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>=(a_Z-\mu)^2-2(a_Z-\mu)E<span class="co">[</span><span class="ot">\tau-\mu\mid\mathbf X</span><span class="co">]</span>+E<span class="co">[</span><span class="ot">(\tau-\mu)^2\mid\mathbf X</span><span class="co">]</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>=(a_Z-\mu)^2+V.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Since $V$ does not depend on $Z$, the minimizers are those of $(a_Z-\mu)^2$.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>**Analytical result.** The chosen action is closest to the Bayesian model averaged effect mean among the available actions. The posterior variance of the reference effect is constant across $Z$. The regression posterior variance $s_Z^2$ does not appear. Thus squared loss for the reported point action does **not** separately penalize the candidate estimator's variance. The full Bayes risk is not equal to its first term; that term is only an equivalent minimization objective.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>With $\mu_{\mathcal D}=E<span class="co">[</span><span class="ot">\tau\mid\mathcal D,\mathbf X</span><span class="co">]</span>$ and $V_{\mathcal D}=\operatorname{Var}(\tau\mid\mathcal D,\mathbf X)$, the law of total variance gives</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>+\operatorname{Var}_{\mathcal D\mid\mathbf X}(\mu_{\mathcal D}).</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>If one formally writes a DAG-dependent action $a_{\mathcal D,Z}$, its risk is</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="sc">\{</span>(a_{\mathcal D,Z}-\mu_{\mathcal D})^2+V_{\mathcal D}<span class="sc">\}</span>.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>The constant term here is the within-DAG variance; the total mixture variance additionally includes between-DAG variation. This expression describes an action that observes $\mathcal D$; it is not an implementable decision under graph uncertainty without an additional rule. If $a_{\mathcal D,Z}=a_Z$ for every DAG, minimizing the first term recovers the preceding closest-to-$\mu$ rule, with the between-DAG constant retained in the full risk.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validity, precision, and alternative losses</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>**Proposals.** Distinct objectives need distinct specifications. Possible choices include:</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Restrict to sets valid in every DAG with posterior support, if such sets exist; that intersection can be empty.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Require $P(Z\text{ is valid in }\mathcal D\mid\mathbf X)\ge1-\varepsilon$, documenting the chosen tolerance and the posterior graph model.</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use the decision criterion $(a_Z-\mu)^2+\lambda s_Z^2$ with a specified $\lambda\ge0$ to penalize regression posterior dispersion. This is a new criterion, not a consequence of the original squared-loss rule.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluate predictive or repeated-sampling risk with an explicit data-generating model if the goal is estimator bias and sampling variance.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>Enumeration of candidates is one computational approach, not a demonstrated necessary or uniquely available algorithm. The union of graph-specific valid sets contains sets invalid in other supported DAGs. A graphical characterization of a Bayesian criterion depends on its particular loss and posterior specification. The frequentist O-set result optimizes a different quantity (@sec-framework).</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## Structural null effects and shrinkage estimators</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Consider the shrinkage rule $\tau^{PB}=P(\tau\ne0\mid\mathbf X)\,\tau^B$. Let $H$ indicate an active effect model, with $\tau=0$ under $H=0$. Then</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>=P(H=1\mid\mathbf X)E<span class="co">[</span><span class="ot">\tau\mid H=1,\mathbf X</span><span class="co">]</span>.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>This is a coherent squared-loss estimator if $\tau^B$ is the **conditional active-model posterior mean**. If $\tau^B$ is already the unconditional model averaged mean, multiplying by $P(H=1\mid\mathbf X)$ applies the inclusion factor twice. If $\tau^B$ is selected from adjustment regressions, the product needs its own loss-based justification.</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>Under absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (@sec-bayesian-imap).</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## A four-graph adjustment example</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>Take treatment 4 and outcome 6. Consider graphs with common edges $1\to2$, $1\to4$, $4\to5$, $4\to6$ and $5\to6$, with these additional specifications:</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Graph <span class="pp">|</span> Additional edges <span class="pp">|</span> O-set for the effect of 4 on 6 <span class="pp">|</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_1$ <span class="pp">|</span> $2\to5$, $3\to6$ <span class="pp">|</span> $<span class="sc">\{</span>2,3<span class="sc">\}</span>$ <span class="pp">|</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_2$ <span class="pp">|</span> $2\to5$, $6\to3$ <span class="pp">|</span> $<span class="sc">\{</span>2<span class="sc">\}</span>$ <span class="pp">|</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_3$ <span class="pp">|</span> $2\to5$ <span class="pp">|</span> $<span class="sc">\{</span>2<span class="sc">\}</span>$ <span class="pp">|</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_4$ <span class="pp">|</span> $5\to2$ <span class="pp">|</span> $\varnothing$ <span class="pp">|</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>The set $<span class="sc">\{</span>1<span class="sc">\}</span>$ is valid in every graph, since it blocks any back-door path through the treatment's only parent. The set $<span class="sc">\{</span>2<span class="sc">\}</span>$ is valid in the first three graphs, but in $\mathcal D_4$ it conditions on a descendant of mediator 5. Likewise, $<span class="sc">\{</span>1,3<span class="sc">\}</span>$ is valid in the other graphs but conditions on an outcome descendant in $\mathcal D_2$. The union of graph-specific valid sets therefore includes inadmissible choices for some supported graphs.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>For graph weights $w_1,\ldots,w_4$, the posterior validity probability of $<span class="sc">\{</span>2<span class="sc">\}</span>$ is $w_1+w_2+w_3$. A rule requiring validity probability at least $1-\varepsilon$ admits this set only when $w_4\le\varepsilon$. A rule requiring validity in every supported graph rejects it whenever $w_4&gt;0$. Neither rule alone specifies the estimation loss, so it must be combined with a stated action criterion. Population regression checks for these examples are given in @sec-frugal-validation.</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="fu">## Posterior reports and uncertainty</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>After a point-action choice $Z^*(\mathbf X)$, the selected regression posterior is conditional on that regression model and its prior. It need not include uncertainty from learning the graph or selecting $Z$. An effect posterior obtained by averaging coherent graph models already includes graph uncertainty; a mixture of separate adjustment-regression posteriors needs its own weights and interpretation.</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>If the action is a distribution rather than a number, squared loss for a point estimate is no longer the appropriate specification. A proper scoring rule or an explicit interval loss can compare posterior reports, with validity and measurement costs added when relevant. Claims of efficiency, coverage or shrinkage improvement must be assessed for that complete procedure. In particular, a variance penalty cannot be inferred from the point-action squared-loss identity.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

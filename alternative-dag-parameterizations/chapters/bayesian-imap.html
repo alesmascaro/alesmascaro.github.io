@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Bayesian inference with an effect coordinate – Alternative DAG Parameterizations</title>
+<title>6&nbsp; The fully Bayesian workflow – Alternative DAG Parameterizations</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -91,7 +91,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/bayesian-adjustment.html" rel="next">
-<link href="../chapters/imap-validation.html" rel="prev">
+<link href="../chapters/imap-construction.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -171,7 +171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/bayesian-imap.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/bayesian-imap.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -205,7 +205,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -217,13 +217,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -234,38 +234,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -274,6 +256,23 @@ window.Quarto = {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -284,11 +283,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exact-dag-wishart-baseline" id="toc-exact-dag-wishart-baseline" class="nav-link active" data-scroll-target="#exact-dag-wishart-baseline"><span class="header-section-number">7.1</span> Exact DAG-Wishart baseline</a></li>
-  <li><a href="#what-an-i-map-prior-must-specify" id="toc-what-an-i-map-prior-must-specify" class="nav-link" data-scroll-target="#what-an-i-map-prior-must-specify"><span class="header-section-number">7.2</span> What an I-MAP prior must specify</a></li>
-  <li><a href="#laplace-approximation-and-mle-invariance" id="toc-laplace-approximation-and-mle-invariance" class="nav-link" data-scroll-target="#laplace-approximation-and-mle-invariance"><span class="header-section-number">7.3</span> Laplace approximation and MLE invariance</a></li>
-  <li><a href="#graph-search-and-importance-sampling" id="toc-graph-search-and-importance-sampling" class="nav-link" data-scroll-target="#graph-search-and-importance-sampling"><span class="header-section-number">7.4</span> Graph search and importance sampling</a></li>
-  <li><a href="#sec-nonlocal-prior" id="toc-sec-nonlocal-prior" class="nav-link" data-scroll-target="#sec-nonlocal-prior"><span class="header-section-number">7.5</span> A normalized non-local alternative</a></li>
+  <li><a href="#a-common-effect-prior-and-the-structural-null" id="toc-a-common-effect-prior-and-the-structural-null" class="nav-link active" data-scroll-target="#a-common-effect-prior-and-the-structural-null"><span class="header-section-number">6.1</span> A common effect prior and the structural null</a></li>
+  <li><a href="#priors-on-the-constrained-i-map-space" id="toc-priors-on-the-constrained-i-map-space" class="nav-link" data-scroll-target="#priors-on-the-constrained-i-map-space"><span class="header-section-number">6.2</span> Priors on the constrained I-MAP space</a></li>
+  <li><a href="#laplace-approximation-and-mle-invariance" id="toc-laplace-approximation-and-mle-invariance" class="nav-link" data-scroll-target="#laplace-approximation-and-mle-invariance"><span class="header-section-number">6.3</span> Laplace approximation and MLE invariance</a></li>
+  <li><a href="#graph-search" id="toc-graph-search" class="nav-link" data-scroll-target="#graph-search"><span class="header-section-number">6.4</span> Graph search</a></li>
+  <li><a href="#conditional-parameter-sampling-and-model-averaging" id="toc-conditional-parameter-sampling-and-model-averaging" class="nav-link" data-scroll-target="#conditional-parameter-sampling-and-model-averaging"><span class="header-section-number">6.5</span> Conditional parameter sampling and model averaging</a></li>
+  <li><a href="#sec-nonlocal-prior" id="toc-sec-nonlocal-prior" class="nav-link" data-scroll-target="#sec-nonlocal-prior"><span class="header-section-number">6.6</span> A normalized non-local alternative</a></li>
+  <li><a href="#computational-organization" id="toc-computational-organization" class="nav-link" data-scroll-target="#computational-organization"><span class="header-section-number">6.7</span> Computational organization</a></li>
   </ul>
 </nav>
     </div>
@@ -297,7 +298,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="sec-bayesian-imap" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-bayesian-imap" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -314,44 +315,81 @@ window.Quarto = {
 </header>
 
 
-<section id="exact-dag-wishart-baseline" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="exact-dag-wishart-baseline"><span class="header-section-number">7.1</span> Exact DAG-Wishart baseline</h2>
-<p>The DAG-Wishart distribution is a conjugate prior for Gaussian DAG models <span class="citation" data-cites="benDavidDAGWishart peluso2020">(<a href="../references.html#ref-benDavidDAGWishart" role="doc-biblioref">Ben-David et al. 2015</a>; <a href="../references.html#ref-peluso2020" role="doc-biblioref">Peluso and Consonni 2020</a>)</span>. In the <span class="math inline">\(L=I-B\)</span> convention, its normalization follows by completing the square. For centered independent observations collected in an <span class="math inline">\(n\times q\)</span> matrix <span class="math inline">\(\mathbf X\)</span>, take <span class="math inline">\(U\succ0\)</span> and shape vector <span class="math inline">\(\alpha\)</span> with <span class="math inline">\(\alpha_j&gt;|P_j|+2\)</span>, <span class="math inline">\(P_j=\operatorname{pa}_{\mathcal D}(j)\)</span>. The prior density with respect to the free entries of <span class="math inline">\(L\)</span> and the variances is</p>
+<p>A fully Bayesian analysis uses one joint model for the graph, its admissible parameters and the observations. Let <span class="math inline">\(\mathfrak D_+=\{\mathcal D:d\in\operatorname{an}_{\mathcal D}(y)\}\)</span> be the active graph class and let <span class="math inline">\(\mathfrak D_0\)</span> contain structural-null graphs. For an active graph, the I-MAP map <span class="math inline">\(F_{\mathcal D}\)</span> exposes <span class="math inline">\(\tau_{dy}=-\widetilde L_{dy}\)</span>. It leaves the Gaussian likelihood unchanged and restricts the transformed parameters to <span class="math inline">\(F_{\mathcal D}(\Theta_{\mathcal D})\)</span>.</p>
+<p>The workflow consists of specifying graph and parameter priors, computing graph evidence, learning or sampling the graph, drawing its conditional parameter posterior, and averaging the resulting effects. The intended computational target is a graph score inexpensive enough for repeated evaluation, together with a sampler compatible with that same score and prior. The exact baseline in <a href="methods.html" class="quarto-xref"><span>Chapter 4</span></a> and the normalized tilt below give tractable reference cases. General effect-centered priors need additional integration methods.</p>
+<section id="a-common-effect-prior-and-the-structural-null" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="a-common-effect-prior-and-the-structural-null"><span class="header-section-number">6.1</span> A common effect prior and the structural null</h2>
+<p>Let <span class="math inline">\(H=\mathbf1\{\mathcal D\in\mathfrak D_+\}\)</span>. An explicit specification is</p>
 <p><span class="math display">\[
-\pi(L,D\mid\mathcal D)=\frac1{Z_{\mathcal D}(\alpha,U)}
-\exp\{-\tfrac12\operatorname{tr}(LD^{-1}L^\top U)\}
-\prod_j v_j^{-\alpha_j/2}.
+P(H=1)=\omega_H,\qquad p(\mathcal D)=
+\begin{cases}
+\omega_H p_+(\mathcal D),&amp;\mathcal D\in\mathfrak D_+,\\
+(1-\omega_H)p_0(\mathcal D),&amp;\mathcal D\in\mathfrak D_0,
+\end{cases}
 \]</span></p>
-<p>Put <span class="math inline">\(p_j=|P_j|\)</span>, <span class="math inline">\(K_j=U_{P_jP_j}\)</span>, <span class="math inline">\(u_j=U_{P_jj}\)</span>, <span class="math inline">\(s_j=U_{jj}-u_j^\top K_j^{-1}u_j\)</span>, and <span class="math inline">\(r_j=(\alpha_j-p_j)/2-1\)</span>. Empty parent sets have determinant one and <span class="math inline">\(s_j=U_{jj}\)</span>. Completing the square in the exponent and then integrating the variance gives</p>
+<p>where each <span class="math inline">\(p_h\)</span> is normalized on its graph class. This allows effect inclusion odds to be chosen separately from the number of graphs representing each class. Conditional on each active graph, the aim is the same effect marginal <span class="math inline">\(h(\tau)\)</span>, with a graph-specific nuisance distribution. The unconditional prior on the effect is then <span class="math inline">\((1-\omega_H)\delta_0+\omega_H h(\tau)\,d\tau\)</span>. This statement assumes continuous active-effect distributions; extra point masses require a corresponding explicit specification.</p>
+<p><strong>Attainable effects.</strong> In the unrestricted Gaussian DAG coefficient space, every active graph permits every real value of <span class="math inline">\(\tau_{dy}\)</span>.</p>
+<div id="proof-effect-support" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To see this, choose one directed <span class="math inline">\(d\)</span>-to-<span class="math inline">\(y\)</span> path, assign its first coefficient the desired value <span class="math inline">\(t\)</span>, assign its other coefficients one, and set every other allowed coefficient to zero. The path sum is then <span class="math inline">\(t\)</span>, and any positive variances give a valid model.</p>
+</div>
+</div>
+</div>
+<p>This argument uses the allowed zero coefficients; additional sign, magnitude or faithfulness restrictions need their own support analysis.</p>
+<p>An effect prior cannot be arbitrary outside the attainable effect support of a graph. Even with support <span class="math inline">\(\mathbb R\)</span>, the nuisance-coordinate domain may depend on <span class="math inline">\(\tau\)</span>. A normalized conditional specification</p>
 <p><span class="math display">\[
-Z_{\mathcal D}(\alpha,U)=\prod_j
-(2\pi)^{p_j/2}|K_j|^{-1/2}\Gamma(r_j)(s_j/2)^{-r_j}.
+\pi_{\mathcal D}(\tau,\eta)=h(\tau)\,
+q_{\mathcal D}(\eta\mid\tau),\qquad
+\int_{\mathcal N_{\mathcal D}(\tau)}q_{\mathcal D}(\eta\mid\tau)\,d\eta=1
 \]</span></p>
-<p>Indeed the coefficient integral contributes <span class="math inline">\((2\pi v_j)^{p_j/2}|K_j|^{-1/2}\)</span>, and the remaining integral is that of an inverse-gamma kernel. Equivalently, independently over nodes,</p>
+<p>provides the requested effect marginal in a valid chart. A multi-chart construction needs consistent densities on overlapping domains.</p>
+<p><strong>Analytical construction by reweighting.</strong> Suppose a proper baseline prior has effect density <span class="math inline">\(g_{\mathcal D}(t)\)</span>, and the desired density <span class="math inline">\(h\)</span> is absolutely continuous with respect to that effect distribution. Then, almost everywhere under the baseline,</p>
 <p><span class="math display">\[
-v_j\sim\operatorname{IG}(r_j,s_j/2),\qquad
-L_{P_jj}\mid v_j\sim N(-K_j^{-1}u_j,v_jK_j^{-1}).
+\pi_{1,\mathcal D}(\theta)=
+\frac{h\{\tau_{dy}(\theta)\}}{g_{\mathcal D}\{\tau_{dy}(\theta)\}}
+\pi_{0,\mathcal D}(\theta).
 \]</span></p>
-<p>Here <span class="math inline">\(\operatorname{IG}(r,b)\)</span> has density <span class="math inline">\(b^r\Gamma(r)^{-1}v^{-r-1}e^{-b/v}\)</span>. Marginally the coefficient vector is Student <span class="math inline">\(t\)</span> with <span class="math inline">\(2r_j\)</span> degrees of freedom, center <span class="math inline">\(-K_j^{-1}u_j\)</span>, and scale matrix <span class="math inline">\(s_jK_j^{-1}/(2r_j)\)</span>; that scale is not its covariance matrix.</p>
-<p>The posterior updates are <span class="math inline">\(\alpha_j\mapsto\alpha_j+n\)</span> and <span class="math inline">\(U\mapsto U+\mathbf X^\top\mathbf X\)</span>. Thus</p>
-<p><span class="math display">\[
-m_0(\mathbf X\mid\mathcal D)=(2\pi)^{-nq/2}
-\frac{Z_{\mathcal D}(\alpha+n\mathbf1,U+\mathbf X^\top\mathbf X)}{Z_{\mathcal D}(\alpha,U)}.
-\]</span></p>
-<p>A compatible choice is <span class="math inline">\(\alpha_j=a-q+2p_j+3\)</span> with <span class="math inline">\(a&gt;q-1\)</span> and common <span class="math inline">\(U\)</span>, yielding the score-equivalent construction discussed by Peluso and Consonni. The scalar <span class="math inline">\(a\)</span> is a <strong>shape</strong> hyperparameter; <span class="math inline">\(U\)</span> is the scale/rate matrix in the exponential kernel. Arbitrary DAG-Wishart shapes need not yield equal marginal likelihoods for Markov-equivalent graphs.</p>
+<div id="proof-effect-prior" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Integrating with respect to the baseline effect distribution gives <span class="math inline">\(\int h(t)\,dt=1\)</span>, and restricting the integral to an effect set gives exactly its probability under <span class="math inline">\(h\)</span>. The construction retains the baseline conditional distribution of nuisance quantities given the effect. It proves existence under domination without asserting a global independent-coordinate chart.</p>
+</div>
+</div>
+</div>
+<p>The practical obstacle is computing <span class="math inline">\(g_{\mathcal D}\)</span> and controlling the ratio in its tails.</p>
+<p>The chain in <a href="related-work.html#sec-frugal-chain" class="quarto-xref"><span>Section 2.3.1</span></a> supplies a simpler illustration. Draw <span class="math inline">\(\tau\sim h\)</span>, draw <span class="math inline">\(b\)</span> from a proper continuous density with <span class="math inline">\(P(b=0)=0\)</span>, and draw positive variances from proper priors. Set <span class="math inline">\(c=\tau/b\)</span>. This defines a proper chain prior with the specified effect marginal. In original coordinates its density contains the factor <span class="math inline">\(|b|h(bc)\)</span>, multiplied by the nuisance density. The excluded chart boundary has zero probability under this construction, but can matter for numerical stability and for other priors. Locating an effect coefficient alone does not establish this normalization.</p>
 </section>
-<section id="what-an-i-map-prior-must-specify" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="what-an-i-map-prior-must-specify"><span class="header-section-number">7.2</span> What an I-MAP prior must specify</h2>
+<section id="priors-on-the-constrained-i-map-space" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="priors-on-the-constrained-i-map-space"><span class="header-section-number">6.2</span> Priors on the constrained I-MAP space</h2>
 <p><strong>Possible prior construction.</strong> Normal/inverse-gamma local priors can be assigned to selected free I-MAP entries, with the remaining entries determined by the model constraints, to influence <span class="math inline">\(\tau_{dy}=-\widetilde L_{dy}\)</span>. Such a specification, denoted “I-MAP-Wishart,” requires an admissible coordinate domain and a proper joint distribution; the label alone does not establish a conjugate family.</p>
-<p>A prior on the full ambient I-MAP generally assigns probability zero to the lower-dimensional constrained image. Choosing a collection of “free” entries requires a valid chart, its domain, a rule for all branches of the constraints, and a reference measure. Independent priors in two different charts usually induce different priors on the same covariance model. The diamond chart dividing by <span class="math inline">\(b'\)</span> already illustrates a domain problem (<a href="imap-validation.html#sec-diamond-constraints" class="quarto-xref"><span>Section 6.2</span></a>).</p>
+<p>A prior on the full ambient I-MAP generally assigns probability zero to the lower-dimensional constrained image. Choosing a collection of “free” entries requires a valid chart, its domain, a rule for all branches of the constraints, and a reference measure. Independent priors in two different charts usually induce different priors on the same covariance model. The diamond chart dividing by <span class="math inline">\(b'\)</span> already illustrates a domain problem (<a href="imap-validation.html#sec-diamond-constraints" class="quarto-xref"><span>Section A.2</span></a>).</p>
 <p>For a smooth bijective chart transformation <span class="math inline">\(z=g(\theta)\)</span>, densities representing the <strong>same prior</strong> obey</p>
 <p><span class="math display">\[
 \pi_z(z)=\pi_\theta(g^{-1}(z))\left|\det Dg^{-1}(z)\right|.
 \]</span></p>
 <p>For the embedded I-MAP image, work in coordinates of its actual dimension, not an ambient rectangular Jacobian determinant. A prior on the original DAG can always be pushed forward through <span class="math inline">\(F\)</span>; this preserves its marginal likelihood but does not independently choose an arbitrary marginal prior on the effect. Properness, effect support and the domains of a global or multi-chart nuisance specification must be established for each prior construction.</p>
 </section>
-<section id="laplace-approximation-and-mle-invariance" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="laplace-approximation-and-mle-invariance"><span class="header-section-number">7.3</span> Laplace approximation and MLE invariance</h2>
+<section id="laplace-approximation-and-mle-invariance" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="laplace-approximation-and-mle-invariance"><span class="header-section-number">6.3</span> Laplace approximation and MLE invariance</h2>
 <p><strong>Analytical identity.</strong> If a finite interior MLE exists, the constrained I-MAP estimate is <span class="math inline">\(F(\widehat\theta)\)</span> by invariance under the smooth bijection onto the constrained image. It is not the unconstrained MLE of the denser I-MAP model.</p>
 <p>For a proper smooth prior in <span class="math inline">\(k=q+|E|\)</span> coordinates and a regular interior likelihood maximum,</p>
 <p><span class="math display">\[
@@ -366,43 +404,85 @@ e^{\ell(\widehat\theta)}\pi(\widehat\theta)(2\pi)^{k/2}
 <p>BIC discards prior- and graph-dependent constants, so it cannot retain all effects of an effect-centered prior. Changing coordinates for a fixed prior does not change the exact integral; the transformed density and curvature terms compensate in the leading Laplace expression. Using the number of ambient I-MAP entries over-penalizes the model. A non-local prior that vanishes at a null maximum needs a separate approximation; the displayed regular formula cannot simply be used there.</p>
 <p>Exact nodewise integration after changing priors is available only if the full prior and likelihood still factor into independent blocks in valid coordinates. The fact that some equations are numerically unchanged does not by itself establish that condition. A split between exact integration and Laplace approximation requires a specified prior and a factorization proof.</p>
 </section>
-<section id="graph-search-and-importance-sampling" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="graph-search-and-importance-sampling"><span class="header-section-number">7.4</span> Graph search and importance sampling</h2>
+<section id="graph-search" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="graph-search"><span class="header-section-number">6.4</span> Graph search</h2>
 <p>For any properly specified score <span class="math inline">\(m(\mathbf X\mid\mathcal D)\)</span> and graph prior <span class="math inline">\(p(\mathcal D)\)</span>, the Metropolis-Hastings acceptance probability is</p>
 <p><span class="math display">\[
 \min\left\{1,\frac{m(\mathbf X\mid\mathcal D')p(\mathcal D')q(\mathcal D\mid\mathcal D')}
 {m(\mathbf X\mid\mathcal D)p(\mathcal D)q(\mathcal D'\mid\mathcal D)}\right\}.
 \]</span></p>
 <p>Proposals can add, delete, or reverse edges, rejecting cycles. The skeleton-size prior <span class="math inline">\(p(\mathcal D)\propto\omega^{|E|}(1-\omega)^{q(q-1)/2-|E|}\)</span> is a possible mass function on the chosen DAG space; orientation and DAG restrictions are part of that choice. Rejecting all moves that destroy <span class="math inline">\(d\in\operatorname{an}(y)\)</span> targets a posterior <strong>conditional on ancestry</strong>. It cannot then estimate the probability of a structural null effect. A deterministic approximate marginal likelihood also targets an approximate posterior, not the exact one.</p>
-<p>If samples <span class="math inline">\(\theta^{(s)}\)</span> come from a baseline <strong>posterior</strong> under <span class="math inline">\(\pi_0\)</span>, reweight by <span class="math inline">\(w_s\propto\pi_1(\theta^{(s)})/\pi_0(\theta^{(s)})\)</span>, provided both densities are in the same coordinates and reference measure. If they instead come from the baseline <strong>prior</strong>, include the likelihood as well. Jacobians are needed when comparing densities in different charts. Support coverage and finite weight moments matter; effective sample size and tail diagnostics assess the reliability of the weighted approximation.</p>
 </section>
-<section id="sec-nonlocal-prior" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="sec-nonlocal-prior"><span class="header-section-number">7.5</span> A normalized non-local alternative</h2>
+<section id="conditional-parameter-sampling-and-model-averaging" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="conditional-parameter-sampling-and-model-averaging"><span class="header-section-number">6.5</span> Conditional parameter sampling and model averaging</h2>
+<p>For a fixed graph, sampling can use original free coefficients and log variances, computing the I-MAP effect within each evaluation. This automatically respects the missing-edge constraints. A density defined in I-MAP chart coordinates must be converted to these original coordinates with its chart Jacobian; log-variance coordinates add the factor <span class="math inline">\(\prod_j v_j\)</span>. Alternatively, a valid I-MAP chart can be sampled directly. Hamiltonian or other Markov chain Monte Carlo methods require a specified target density, branch handling and convergence diagnostics. Sampling every ambient I-MAP coefficient freely changes the model.</p>
+<p>If samples <span class="math inline">\(\theta^{(s)}\)</span> come from a baseline <strong>posterior</strong> under <span class="math inline">\(\pi_0\)</span>, reweight by <span class="math inline">\(w_s\propto\pi_1(\theta^{(s)})/\pi_0(\theta^{(s)})\)</span>, provided both densities are in the same coordinates and reference measure. If they instead come from the baseline <strong>prior</strong>, include the likelihood as well. Jacobians are needed when comparing densities in different charts. Support coverage and finite weight moments matter; effective sample size and tail diagnostics assess the reliability of the weighted approximation.</p>
+<p>For posterior draws <span class="math inline">\((\mathcal D^{(s)},\theta^{(s)})\)</span>, compute <span class="math inline">\(\tau^{(s)}=\tau_{dy}(\mathcal D^{(s)},\theta^{(s)})\)</span>, assigning zero to every structural-null draw. Averages and quantiles of these draws describe the model averaged effect posterior; its mean is</p>
+<p><span class="math display">\[
+E[\tau_{dy}\mid\mathbf X]=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)
+E[\tau_{dy}\mid\mathcal D,\mathbf X].
+\]</span></p>
+<p>Within-graph Monte Carlo weights and between-graph posterior masses must both refer to the same prior used in the scores. With reweighting <span class="math inline">\(r_{\mathcal D}=\pi_{1,\mathcal D}/\pi_{0,\mathcal D}\)</span>,</p>
+<p><span class="math display">\[
+m_1=m_0 E_0[r_{\mathcal D}\mid\mathbf X,\mathcal D],\qquad
+E_1[f\mid\mathbf X,\mathcal D]=
+\frac{E_0[f r_{\mathcal D}\mid\mathbf X,\mathcal D]}
+{E_0[r_{\mathcal D}\mid\mathbf X,\mathcal D]}.
+\]</span></p>
+<p>These identities give a consistent route to evidence and conditional effect sampling. An estimated score used as if deterministic generally gives an approximate graph posterior. Exact pseudo-marginal sampling instead requires a nonnegative unbiased evidence estimator and an augmented-state acceptance rule that retains the current estimate; fresh random estimates in an ordinary acceptance ratio do not establish that target <span class="citation" data-cites="andrieuRoberts2009">(<a href="../references.html#ref-andrieuRoberts2009" role="doc-biblioref">Andrieu and Roberts 2009</a>)</span>.</p>
+</section>
+<section id="sec-nonlocal-prior" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="sec-nonlocal-prior"><span class="header-section-number">6.6</span> A normalized non-local alternative</h2>
 <p><strong>Analytical result.</strong> Let a proper baseline prior on a fixed DAG be <span class="math inline">\(\pi_0(\theta\mid\mathcal D)\)</span>, with <span class="math inline">\(0&lt;C_{\mathcal D}=E_0[\tau_{dy}^2\mid\mathcal D]&lt;\infty\)</span>. Define</p>
 <p><span class="math display">\[
 \pi_M(\theta\mid\mathcal D)=\frac{\tau_{dy}(\theta)^2}{C_{\mathcal D}}\pi_0(\theta\mid\mathcal D).
 \]</span></p>
-<p>Direct substitution into the marginal likelihood integral gives</p>
+<p>The corresponding marginal likelihood satisfies</p>
 <p><span class="math display">\[
 m_M(\mathbf X\mid\mathcal D)=m_0(\mathbf X\mid\mathcal D)
 \frac{E_0[\tau_{dy}^2\mid\mathbf X,\mathcal D]}{C_{\mathcal D}}.
 \]</span></p>
+<div id="proof-moment-evidence" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The baseline posterior density is <span class="math inline">\(p_0(\theta\mid\mathbf X,\mathcal D)=p(\mathbf X\mid\theta,\mathcal D)\pi_0(\theta\mid\mathcal D)/m_0(\mathbf X\mid\mathcal D)\)</span>. Consequently,</p>
+<p><span class="math display">\[
+m_M(\mathbf X\mid\mathcal D)
+=\frac1{C_{\mathcal D}}\int p(\mathbf X\mid\theta,\mathcal D)\tau_{dy}(\theta)^2\pi_0(\theta\mid\mathcal D)\,d\theta
+=\frac{m_0(\mathbf X\mid\mathcal D)}{C_{\mathcal D}}E_0[\tau_{dy}^2\mid\mathbf X,\mathcal D].
+\]</span></p>
+</div>
+</div>
+</div>
 <p>This identity requires no I-MAP coordinates. The normalizing constant can be replaced by <span class="math inline">\(v\)</span> only when the baseline effect marginal has second moment <span class="math inline">\(v\)</span>, for example <span class="math inline">\(\tau\sim N(0,v)\)</span> in an admissible coordinate factorization. A general DAG-Wishart-induced path-sum prior need not have this second moment or even a finite one. DAGs with no <span class="math inline">\(d\)</span>-to-<span class="math inline">\(y\)</span> path have <span class="math inline">\(C_{\mathcal D}=0\)</span>; they require a separate null component rather than this tilt.</p>
+<p>The tilted effect density is <span class="math inline">\(t^2g_{\mathcal D}(t)/C_{\mathcal D}\)</span>. It is therefore generally graph dependent. This tractable tilt illustrates effect-informed scoring, but does not itself impose a common moment-prior marginal across all active DAGs. For a specified common <span class="math inline">\(h\)</span>, the preceding <span class="math inline">\(h/g_{\mathcal D}\)</span> construction is the relevant normalized reweighting.</p>
 <p>The posterior second moment is exactly <span class="math inline">\(E_0[\tau\mid\mathbf X]^2+\operatorname{Var}_0(\tau\mid\mathbf X)\)</span>. A normal posterior approximation may replace these by <span class="math inline">\(\widehat\tau^2+\widehat V_\tau\)</span>, but <span class="math inline">\(\widehat V_\tau\)</span> is not generally <span class="math inline">\(1/n\)</span>. For a regular parameter vector it is the delta-method quantity</p>
 <p><span class="math display">\[
 \widehat V_\tau=\nabla\tau(\widehat\theta)^\top H(\widehat\theta)^{-1}\nabla\tau(\widehat\theta).
 \]</span></p>
 <p>For an unconstrained Gaussian regression on a valid <span class="math inline">\(Z\)</span>, the corresponding OLS variance coefficient is <span class="math inline">\(\sigma^2_{y\mid d,Z}/\{n\sigma^2_{d\mid Z}\}\)</span>. Approximation accuracy near path cancellation and in small samples depends on posterior shape, prior moments and the model-specific information matrix.</p>
+</section>
+<section id="computational-organization" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="computational-organization"><span class="header-section-number">6.7</span> Computational organization</h2>
+<p>For each proposed DAG, obtain a topological ordering, identify its treatment-outcome mediator block and construct a closest ordering. Fit the original DAG’s node regressions, then apply the adjacent column transformations to their parameters. This gives the constrained I-MAP MLE without optimizing a denser model. Each dense column update costs <span class="math inline">\(O(q)\)</span>, so moving the outcome across <span class="math inline">\(|M|\)</span> mediators costs <span class="math inline">\(O(q|M|)\)</span> once an appropriate factorization is available. Constructing that initial factorization and the graph’s score has its own cost; this bound is not a benchmark for a complete graph search.</p>
+<p>Effect-centered priors can couple several equations, so nodewise score caching needs a factorization argument. Cache graph structures, sufficient statistics and genuinely unaffected score blocks; update the changed prior normalization as well as the likelihood. The same prior density, effect map and evidence conventions should be called by graph scoring and posterior sampling. Modular functions make this consistency inspectable.</p>
+<p>The appendix includes an executable three-graph benchmark (<a href="imap-validation.html#sec-workflow-validation" class="quarto-xref"><span>Section A.6</span></a>): compatible DAG-Wishart scores are equal for the chain and its two equivalent orientations, while a properly normalized effect-moment tilt can change their posterior weights. For this example, its normalizing constants and evidence corrections are computed analytically. It validates those calculations, without asserting that a general I-MAP prior is conjugate or that an approximation is uniformly accurate.</p>
 
 
 <!-- -->
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-benDavidDAGWishart" class="csl-entry" role="listitem">
-Ben-David, Emanuel, Tianxi Li, Helene Massam, and Bala Rajaratnam. 2015. <em>High Dimensional Bayesian Inference for <span>Gaussian</span> Directed Acyclic Graph Models</em>. <a href="https://arxiv.org/abs/1109.4371v5">https://arxiv.org/abs/1109.4371v5</a>.
-</div>
-<div id="ref-peluso2020" class="csl-entry" role="listitem">
-Peluso, Stefano, and Guido Consonni. 2020. <span>“Compatible Priors for Model Selection of High-Dimensional <span>Gaussian</span> <span>DAGs</span>.”</span> <em>Electronic Journal of Statistics</em> 14 (2): 4110–32. <a href="https://doi.org/10.1214/20-EJS1768">https://doi.org/10.1214/20-EJS1768</a>.
+<div id="ref-andrieuRoberts2009" class="csl-entry" role="listitem">
+Andrieu, Christophe, and Gareth O. Roberts. 2009. <span>“The Pseudo-Marginal Approach for Efficient <span>Monte Carlo</span> Computations.”</span> <em>The Annals of Statistics</em> 37 (2): 697–725. <a href="https://doi.org/10.1214/07-AOS574">https://doi.org/10.1214/07-AOS574</a>.
 </div>
 </div>
 </section>
@@ -861,127 +941,193 @@ Peluso, Stefano, and Guido Consonni. 2020. <span>“Compatible Priors for Model 
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/imap-validation.html" class="pagination-link" aria-label="Worked example and reproducible validation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span>
+      <a href="../chapters/imap-construction.html" class="pagination-link" aria-label="The I-MAP construction and its constraints">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The I-MAP construction and its constraints</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/bayesian-adjustment.html" class="pagination-link" aria-label="Adjustment decisions under graph uncertainty">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/bayesian-adjustment.html" class="pagination-link" aria-label="The two-step approach">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Bayesian inference with an effect coordinate {#sec-bayesian-imap}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># The fully Bayesian workflow {#sec-bayesian-imap}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exact DAG-Wishart baseline</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>The DAG-Wishart distribution is a conjugate prior for Gaussian DAG models <span class="co">[</span><span class="ot">@benDavidDAGWishart; @peluso2020</span><span class="co">]</span>. In the $L=I-B$ convention, its normalization follows by completing the square. For centered independent observations collected in an $n\times q$ matrix $\mathbf X$, take $U\succ0$ and shape vector $\alpha$ with $\alpha_j&gt;|P_j|+2$, $P_j=\operatorname{pa}_{\mathcal D}(j)$. The prior density with respect to the free entries of $L$ and the variances is</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>\pi(L,D\mid\mathcal D)=\frac1{Z_{\mathcal D}(\alpha,U)}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>\exp<span class="sc">\{</span>-\tfrac12\operatorname{tr}(LD^{-1}L^\top U)<span class="sc">\}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>\prod_j v_j^{-\alpha_j/2}.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Put $p_j=|P_j|$, $K_j=U_{P_jP_j}$, $u_j=U_{P_jj}$,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>$s_j=U_{jj}-u_j^\top K_j^{-1}u_j$, and $r_j=(\alpha_j-p_j)/2-1$. Empty parent sets have determinant one and $s_j=U_{jj}$. Completing the square in the exponent and then integrating the variance gives</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Z_{\mathcal D}(\alpha,U)=\prod_j</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>(2\pi)^{p_j/2}|K_j|^{-1/2}\Gamma(r_j)(s_j/2)^{-r_j}.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Indeed the coefficient integral contributes $(2\pi v_j)^{p_j/2}|K_j|^{-1/2}$, and the remaining integral is that of an inverse-gamma kernel. Equivalently, independently over nodes,</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>v_j\sim\operatorname{IG}(r_j,s_j/2),\qquad</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>L_{P_jj}\mid v_j\sim N(-K_j^{-1}u_j,v_jK_j^{-1}).</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>A fully Bayesian analysis uses one joint model for the graph, its admissible parameters and the observations. Let $\mathfrak D_+=<span class="sc">\{</span>\mathcal D:d\in\operatorname{an}_{\mathcal D}(y)\}$ be the active graph class and let $\mathfrak D_0$ contain structural-null graphs. For an active graph, the I-MAP map $F_{\mathcal D}$ exposes $\tau_{dy}=-\widetilde L_{dy}$. It leaves the Gaussian likelihood unchanged and restricts the transformed parameters to $F_{\mathcal D}(\Theta_{\mathcal D})$.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>The workflow consists of specifying graph and parameter priors, computing graph evidence, learning or sampling the graph, drawing its conditional parameter posterior, and averaging the resulting effects. The intended computational target is a graph score inexpensive enough for repeated evaluation, together with a sampler compatible with that same score and prior. The exact baseline in @sec-preliminaries and the normalized tilt below give tractable reference cases. General effect-centered priors need additional integration methods.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## A common effect prior and the structural null</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Let $H=\mathbf1<span class="sc">\{</span>\mathcal D\in\mathfrak D_+<span class="sc">\}</span>$. An explicit specification is</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>P(H=1)=\omega_H,\qquad p(\mathcal D)=</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>\begin{cases}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>\omega_H p_+(\mathcal D),&amp;\mathcal D\in\mathfrak D_+,<span class="sc">\\</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>(1-\omega_H)p_0(\mathcal D),&amp;\mathcal D\in\mathfrak D_0,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>\end{cases}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>where each $p_h$ is normalized on its graph class. This allows effect inclusion odds to be chosen separately from the number of graphs representing each class. Conditional on each active graph, the aim is the same effect marginal $h(\tau)$, with a graph-specific nuisance distribution. The unconditional prior on the effect is then $(1-\omega_H)\delta_0+\omega_H h(\tau)\,d\tau$. This statement assumes continuous active-effect distributions; extra point masses require a corresponding explicit specification.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>**Attainable effects.** In the unrestricted Gaussian DAG coefficient space, every active graph permits every real value of $\tau_{dy}$.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-effect-support collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>To see this, choose one directed $d$-to-$y$ path, assign its first coefficient the desired value $t$, assign its other coefficients one, and set every other allowed coefficient to zero. The path sum is then $t$, and any positive variances give a valid model.</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Here $\operatorname{IG}(r,b)$ has density $b^r\Gamma(r)^{-1}v^{-r-1}e^{-b/v}$. Marginally the coefficient vector is Student $t$ with $2r_j$ degrees of freedom, center $-K_j^{-1}u_j$, and scale matrix $s_jK_j^{-1}/(2r_j)$; that scale is not its covariance matrix.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The posterior updates are $\alpha_j\mapsto\alpha_j+n$ and $U\mapsto U+\mathbf X^\top\mathbf X$. Thus</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>This argument uses the allowed zero coefficients; additional sign, magnitude or faithfulness restrictions need their own support analysis.</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>m_0(\mathbf X\mid\mathcal D)=(2\pi)^{-nq/2}</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\frac{Z_{\mathcal D}(\alpha+n\mathbf1,U+\mathbf X^\top\mathbf X)}{Z_{\mathcal D}(\alpha,U)}.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>A compatible choice is $\alpha_j=a-q+2p_j+3$ with $a&gt;q-1$ and common $U$, yielding the score-equivalent construction discussed by Peluso and Consonni. The scalar $a$ is a **shape** hyperparameter; $U$ is the scale/rate matrix in the exponential kernel. Arbitrary DAG-Wishart shapes need not yield equal marginal likelihoods for Markov-equivalent graphs.</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## What an I-MAP prior must specify</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>**Possible prior construction.** Normal/inverse-gamma local priors can be assigned to selected free I-MAP entries, with the remaining entries determined by the model constraints, to influence $\tau_{dy}=-\widetilde L_{dy}$. Such a specification, denoted “I-MAP-Wishart,” requires an admissible coordinate domain and a proper joint distribution; the label alone does not establish a conjugate family.</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>A prior on the full ambient I-MAP generally assigns probability zero to the lower-dimensional constrained image. Choosing a collection of “free” entries requires a valid chart, its domain, a rule for all branches of the constraints, and a reference measure. Independent priors in two different charts usually induce different priors on the same covariance model. The diamond chart dividing by $b'$ already illustrates a domain problem (@sec-diamond-constraints).</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>For a smooth bijective chart transformation $z=g(\theta)$, densities representing the **same prior** obey</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>\pi_z(z)=\pi_\theta(g^{-1}(z))\left|\det Dg^{-1}(z)\right|.</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>For the embedded I-MAP image, work in coordinates of its actual dimension, not an ambient rectangular Jacobian determinant. A prior on the original DAG can always be pushed forward through $F$; this preserves its marginal likelihood but does not independently choose an arbitrary marginal prior on the effect. Properness, effect support and the domains of a global or multi-chart nuisance specification must be established for each prior construction.</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## Laplace approximation and MLE invariance</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>**Analytical identity.** If a finite interior MLE exists, the constrained I-MAP estimate is $F(\widehat\theta)$ by invariance under the smooth bijection onto the constrained image. It is not the unconstrained MLE of the denser I-MAP model.</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>For a proper smooth prior in $k=q+|E|$ coordinates and a regular interior likelihood maximum,</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>m(\mathbf X\mid\mathcal D)\approx</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a> e^{\ell(\widehat\theta)}\pi(\widehat\theta)(2\pi)^{k/2}</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a> <span class="pp">|</span>H(\widehat\theta)<span class="pp">|</span>^{-1/2},</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>where $H=-\nabla^2\ell$ is the observed information in those same coordinates. This MLE-centered expression is the leading approximation when the prior is smooth and positive nearby; a posterior-mode formulation incorporates prior curvature explicitly. Under standard fixed-dimensional conditions,</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>\log m=\ell(\widehat\theta)-\tfrac{k}{2}\log n+O(1).</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>BIC discards prior- and graph-dependent constants, so it cannot retain all effects of an effect-centered prior. Changing coordinates for a fixed prior does not change the exact integral; the transformed density and curvature terms compensate in the leading Laplace expression. Using the number of ambient I-MAP entries over-penalizes the model. A non-local prior that vanishes at a null maximum needs a separate approximation; the displayed regular formula cannot simply be used there.</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Exact nodewise integration after changing priors is available only if the full prior and likelihood still factor into independent blocks in valid coordinates. The fact that some equations are numerically unchanged does not by itself establish that condition. A split between exact integration and Laplace approximation requires a specified prior and a factorization proof.</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Graph search and importance sampling</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>For any properly specified score $m(\mathbf X\mid\mathcal D)$ and graph prior $p(\mathcal D)$, the Metropolis-Hastings acceptance probability is</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>\min\left<span class="sc">\{</span>1,\frac{m(\mathbf X\mid\mathcal D')p(\mathcal D')q(\mathcal D\mid\mathcal D')}</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>{m(\mathbf X\mid\mathcal D)p(\mathcal D)q(\mathcal D'\mid\mathcal D)}\right<span class="sc">\}</span>.</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Proposals can add, delete, or reverse edges, rejecting cycles. The skeleton-size prior $p(\mathcal D)\propto\omega^{|E|}(1-\omega)^{q(q-1)/2-|E|}$ is a possible mass function on the chosen DAG space; orientation and DAG restrictions are part of that choice. Rejecting all moves that destroy $d\in\operatorname{an}(y)$ targets a posterior **conditional on ancestry**. It cannot then estimate the probability of a structural null effect. A deterministic approximate marginal likelihood also targets an approximate posterior, not the exact one.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>An effect prior cannot be arbitrary outside the attainable effect support of a graph. Even with support $\mathbb R$, the nuisance-coordinate domain may depend on $\tau$. A normalized conditional specification</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>\pi_{\mathcal D}(\tau,\eta)=h(\tau)\,</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>q_{\mathcal D}(\eta\mid\tau),\qquad</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>\int_{\mathcal N_{\mathcal D}(\tau)}q_{\mathcal D}(\eta\mid\tau)\,d\eta=1</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>provides the requested effect marginal in a valid chart. A multi-chart construction needs consistent densities on overlapping domains.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>**Analytical construction by reweighting.** Suppose a proper baseline prior has effect density $g_{\mathcal D}(t)$, and the desired density $h$ is absolutely continuous with respect to that effect distribution. Then, almost everywhere under the baseline,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>\pi_{1,\mathcal D}(\theta)=</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>\frac{h<span class="sc">\{</span>\tau_{dy}(\theta)<span class="sc">\}</span>}{g_{\mathcal D}<span class="sc">\{</span>\tau_{dy}(\theta)<span class="sc">\}</span>}</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>\pi_{0,\mathcal D}(\theta).</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-effect-prior collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Integrating with respect to the baseline effect distribution gives $\int h(t)\,dt=1$, and restricting the integral to an effect set gives exactly its probability under $h$. The construction retains the baseline conditional distribution of nuisance quantities given the effect. It proves existence under domination without asserting a global independent-coordinate chart.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>The practical obstacle is computing $g_{\mathcal D}$ and controlling the ratio in its tails.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>The chain in @sec-frugal-chain supplies a simpler illustration. Draw $\tau\sim h$, draw $b$ from a proper continuous density with $P(b=0)=0$, and draw positive variances from proper priors. Set $c=\tau/b$. This defines a proper chain prior with the specified effect marginal. In original coordinates its density contains the factor $|b|h(bc)$, multiplied by the nuisance density. The excluded chart boundary has zero probability under this construction, but can matter for numerical stability and for other priors. Locating an effect coefficient alone does not establish this normalization.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Priors on the constrained I-MAP space</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>**Possible prior construction.** Normal/inverse-gamma local priors can be assigned to selected free I-MAP entries, with the remaining entries determined by the model constraints, to influence $\tau_{dy}=-\widetilde L_{dy}$. Such a specification, denoted “I-MAP-Wishart,” requires an admissible coordinate domain and a proper joint distribution; the label alone does not establish a conjugate family.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>A prior on the full ambient I-MAP generally assigns probability zero to the lower-dimensional constrained image. Choosing a collection of “free” entries requires a valid chart, its domain, a rule for all branches of the constraints, and a reference measure. Independent priors in two different charts usually induce different priors on the same covariance model. The diamond chart dividing by $b'$ already illustrates a domain problem (@sec-diamond-constraints).</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>For a smooth bijective chart transformation $z=g(\theta)$, densities representing the **same prior** obey</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>\pi_z(z)=\pi_\theta(g^{-1}(z))\left|\det Dg^{-1}(z)\right|.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>For the embedded I-MAP image, work in coordinates of its actual dimension, not an ambient rectangular Jacobian determinant. A prior on the original DAG can always be pushed forward through $F$; this preserves its marginal likelihood but does not independently choose an arbitrary marginal prior on the effect. Properness, effect support and the domains of a global or multi-chart nuisance specification must be established for each prior construction.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Laplace approximation and MLE invariance</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>**Analytical identity.** If a finite interior MLE exists, the constrained I-MAP estimate is $F(\widehat\theta)$ by invariance under the smooth bijection onto the constrained image. It is not the unconstrained MLE of the denser I-MAP model.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>For a proper smooth prior in $k=q+|E|$ coordinates and a regular interior likelihood maximum,</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>m(\mathbf X\mid\mathcal D)\approx</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a> e^{\ell(\widehat\theta)}\pi(\widehat\theta)(2\pi)^{k/2}</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a> <span class="pp">|</span>H(\widehat\theta)<span class="pp">|</span>^{-1/2},</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>If samples $\theta^{(s)}$ come from a baseline **posterior** under $\pi_0$, reweight by $w_s\propto\pi_1(\theta^{(s)})/\pi_0(\theta^{(s)})$, provided both densities are in the same coordinates and reference measure. If they instead come from the baseline **prior**, include the likelihood as well. Jacobians are needed when comparing densities in different charts. Support coverage and finite weight moments matter; effective sample size and tail diagnostics assess the reliability of the weighted approximation.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>where $H=-\nabla^2\ell$ is the observed information in those same coordinates. This MLE-centered expression is the leading approximation when the prior is smooth and positive nearby; a posterior-mode formulation incorporates prior curvature explicitly. Under standard fixed-dimensional conditions,</span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## A normalized non-local alternative {#sec-nonlocal-prior}</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>**Analytical result.** Let a proper baseline prior on a fixed DAG be $\pi_0(\theta\mid\mathcal D)$, with $0&lt;C_{\mathcal D}=E_0<span class="co">[</span><span class="ot">\tau_{dy}^2\mid\mathcal D</span><span class="co">]</span>&lt;\infty$. Define</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>\log m=\ell(\widehat\theta)-\tfrac{k}{2}\log n+O(1).</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>\pi_M(\theta\mid\mathcal D)=\frac{\tau_{dy}(\theta)^2}{C_{\mathcal D}}\pi_0(\theta\mid\mathcal D).</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>BIC discards prior- and graph-dependent constants, so it cannot retain all effects of an effect-centered prior. Changing coordinates for a fixed prior does not change the exact integral; the transformed density and curvature terms compensate in the leading Laplace expression. Using the number of ambient I-MAP entries over-penalizes the model. A non-local prior that vanishes at a null maximum needs a separate approximation; the displayed regular formula cannot simply be used there.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Exact nodewise integration after changing priors is available only if the full prior and likelihood still factor into independent blocks in valid coordinates. The fact that some equations are numerically unchanged does not by itself establish that condition. A split between exact integration and Laplace approximation requires a specified prior and a factorization proof.</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Direct substitution into the marginal likelihood integral gives</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Graph search</span></span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>m_M(\mathbf X\mid\mathcal D)=m_0(\mathbf X\mid\mathcal D)</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>\frac{E_0<span class="co">[</span><span class="ot">\tau_{dy}^2\mid\mathbf X,\mathcal D</span><span class="co">]</span>}{C_{\mathcal D}}.</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>This identity requires no I-MAP coordinates. The normalizing constant can be replaced by $v$ only when the baseline effect marginal has second moment $v$, for example $\tau\sim N(0,v)$ in an admissible coordinate factorization. A general DAG-Wishart-induced path-sum prior need not have this second moment or even a finite one. DAGs with no $d$-to-$y$ path have $C_{\mathcal D}=0$; they require a separate null component rather than this tilt.</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>For any properly specified score $m(\mathbf X\mid\mathcal D)$ and graph prior $p(\mathcal D)$, the Metropolis-Hastings acceptance probability is</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>\min\left<span class="sc">\{</span>1,\frac{m(\mathbf X\mid\mathcal D')p(\mathcal D')q(\mathcal D\mid\mathcal D')}</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>{m(\mathbf X\mid\mathcal D)p(\mathcal D)q(\mathcal D'\mid\mathcal D)}\right<span class="sc">\}</span>.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>The posterior second moment is exactly $E_0<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>^2+\operatorname{Var}_0(\tau\mid\mathbf X)$. A normal posterior approximation may replace these by $\widehat\tau^2+\widehat V_\tau$, but $\widehat V_\tau$ is not generally $1/n$. For a regular parameter vector it is the delta-method quantity</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>Proposals can add, delete, or reverse edges, rejecting cycles. The skeleton-size prior $p(\mathcal D)\propto\omega^{|E|}(1-\omega)^{q(q-1)/2-|E|}$ is a possible mass function on the chosen DAG space; orientation and DAG restrictions are part of that choice. Rejecting all moves that destroy $d\in\operatorname{an}(y)$ targets a posterior **conditional on ancestry**. It cannot then estimate the probability of a structural null effect. A deterministic approximate marginal likelihood also targets an approximate posterior, not the exact one.</span>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>\widehat V_\tau=\nabla\tau(\widehat\theta)^\top H(\widehat\theta)^{-1}\nabla\tau(\widehat\theta).</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conditional parameter sampling and model averaging</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>For a fixed graph, sampling can use original free coefficients and log variances, computing the I-MAP effect within each evaluation. This automatically respects the missing-edge constraints. A density defined in I-MAP chart coordinates must be converted to these original coordinates with its chart Jacobian; log-variance coordinates add the factor $\prod_j v_j$. Alternatively, a valid I-MAP chart can be sampled directly. Hamiltonian or other Markov chain Monte Carlo methods require a specified target density, branch handling and convergence diagnostics. Sampling every ambient I-MAP coefficient freely changes the model.</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>For an unconstrained Gaussian regression on a valid $Z$, the corresponding OLS variance coefficient is $\sigma^2_{y\mid d,Z}/<span class="sc">\{</span>n\sigma^2_{d\mid Z}<span class="sc">\}</span>$. Approximation accuracy near path cancellation and in small samples depends on posterior shape, prior moments and the model-specific information matrix.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>If samples $\theta^{(s)}$ come from a baseline **posterior** under $\pi_0$, reweight by $w_s\propto\pi_1(\theta^{(s)})/\pi_0(\theta^{(s)})$, provided both densities are in the same coordinates and reference measure. If they instead come from the baseline **prior**, include the likelihood as well. Jacobians are needed when comparing densities in different charts. Support coverage and finite weight moments matter; effective sample size and tail diagnostics assess the reliability of the weighted approximation.</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>For posterior draws $(\mathcal D^{(s)},\theta^{(s)})$, compute $\tau^{(s)}=\tau_{dy}(\mathcal D^{(s)},\theta^{(s)})$, assigning zero to every structural-null draw. Averages and quantiles of these draws describe the model averaged effect posterior; its mean is</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">\tau_{dy}\mid\mathbf X</span><span class="co">]</span>=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">\tau_{dy}\mid\mathcal D,\mathbf X</span><span class="co">]</span>.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>Within-graph Monte Carlo weights and between-graph posterior masses must both refer to the same prior used in the scores. With reweighting $r_{\mathcal D}=\pi_{1,\mathcal D}/\pi_{0,\mathcal D}$,</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>m_1=m_0 E_0<span class="co">[</span><span class="ot">r_{\mathcal D}\mid\mathbf X,\mathcal D</span><span class="co">]</span>,\qquad</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>E_1<span class="co">[</span><span class="ot">f\mid\mathbf X,\mathcal D</span><span class="co">]</span>=</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>\frac{E_0<span class="co">[</span><span class="ot">f r_{\mathcal D}\mid\mathbf X,\mathcal D</span><span class="co">]</span>}</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>{E_0<span class="co">[</span><span class="ot">r_{\mathcal D}\mid\mathbf X,\mathcal D</span><span class="co">]</span>}.</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>These identities give a consistent route to evidence and conditional effect sampling. An estimated score used as if deterministic generally gives an approximate graph posterior. Exact pseudo-marginal sampling instead requires a nonnegative unbiased evidence estimator and an augmented-state acceptance rule that retains the current estimate; fresh random estimates in an ordinary acceptance ratio do not establish that target <span class="co">[</span><span class="ot">@andrieuRoberts2009</span><span class="co">]</span>.</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="fu">## A normalized non-local alternative {#sec-nonlocal-prior}</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>**Analytical result.** Let a proper baseline prior on a fixed DAG be $\pi_0(\theta\mid\mathcal D)$, with $0&lt;C_{\mathcal D}=E_0<span class="co">[</span><span class="ot">\tau_{dy}^2\mid\mathcal D</span><span class="co">]</span>&lt;\infty$. Define</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>\pi_M(\theta\mid\mathcal D)=\frac{\tau_{dy}(\theta)^2}{C_{\mathcal D}}\pi_0(\theta\mid\mathcal D).</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>The corresponding marginal likelihood satisfies</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>m_M(\mathbf X\mid\mathcal D)=m_0(\mathbf X\mid\mathcal D)</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>\frac{E_0<span class="co">[</span><span class="ot">\tau_{dy}^2\mid\mathbf X,\mathcal D</span><span class="co">]</span>}{C_{\mathcal D}}.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-moment-evidence collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>The baseline posterior density is $p_0(\theta\mid\mathbf X,\mathcal D)=p(\mathbf X\mid\theta,\mathcal D)\pi_0(\theta\mid\mathcal D)/m_0(\mathbf X\mid\mathcal D)$. Consequently,</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>m_M(\mathbf X\mid\mathcal D)</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>=\frac1{C_{\mathcal D}}\int p(\mathbf X\mid\theta,\mathcal D)\tau_{dy}(\theta)^2\pi_0(\theta\mid\mathcal D)\,d\theta</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>=\frac{m_0(\mathbf X\mid\mathcal D)}{C_{\mathcal D}}E_0<span class="co">[</span><span class="ot">\tau_{dy}^2\mid\mathbf X,\mathcal D</span><span class="co">]</span>.</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>This identity requires no I-MAP coordinates. The normalizing constant can be replaced by $v$ only when the baseline effect marginal has second moment $v$, for example $\tau\sim N(0,v)$ in an admissible coordinate factorization. A general DAG-Wishart-induced path-sum prior need not have this second moment or even a finite one. DAGs with no $d$-to-$y$ path have $C_{\mathcal D}=0$; they require a separate null component rather than this tilt.</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>The tilted effect density is $t^2g_{\mathcal D}(t)/C_{\mathcal D}$. It is therefore generally graph dependent. This tractable tilt illustrates effect-informed scoring, but does not itself impose a common moment-prior marginal across all active DAGs. For a specified common $h$, the preceding $h/g_{\mathcal D}$ construction is the relevant normalized reweighting.</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>The posterior second moment is exactly $E_0<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>^2+\operatorname{Var}_0(\tau\mid\mathbf X)$. A normal posterior approximation may replace these by $\widehat\tau^2+\widehat V_\tau$, but $\widehat V_\tau$ is not generally $1/n$. For a regular parameter vector it is the delta-method quantity</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>\widehat V_\tau=\nabla\tau(\widehat\theta)^\top H(\widehat\theta)^{-1}\nabla\tau(\widehat\theta).</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>For an unconstrained Gaussian regression on a valid $Z$, the corresponding OLS variance coefficient is $\sigma^2_{y\mid d,Z}/<span class="sc">\{</span>n\sigma^2_{d\mid Z}<span class="sc">\}</span>$. Approximation accuracy near path cancellation and in small samples depends on posterior shape, prior moments and the model-specific information matrix.</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Computational organization</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>For each proposed DAG, obtain a topological ordering, identify its treatment-outcome mediator block and construct a closest ordering. Fit the original DAG's node regressions, then apply the adjacent column transformations to their parameters. This gives the constrained I-MAP MLE without optimizing a denser model. Each dense column update costs $O(q)$, so moving the outcome across $|M|$ mediators costs $O(q|M|)$ once an appropriate factorization is available. Constructing that initial factorization and the graph's score has its own cost; this bound is not a benchmark for a complete graph search.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>Effect-centered priors can couple several equations, so nodewise score caching needs a factorization argument. Cache graph structures, sufficient statistics and genuinely unaffected score blocks; update the changed prior normalization as well as the likelihood. The same prior density, effect map and evidence conventions should be called by graph scoring and posterior sampling. Modular functions make this consistency inspectable.</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>The appendix includes an executable three-graph benchmark (@sec-workflow-validation): compatible DAG-Wishart scores are equal for the chain and its two equivalent orientations, while a properly normalized effect-moment tilt can change their posterior weights. For this example, its normalizing constants and evidence corrections are computed analytically. It validates those calculations, without asserting that a general I-MAP prior is conjugate or that an approximation is uniformly accurate.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

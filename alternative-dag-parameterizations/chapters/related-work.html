@@ -130,6 +130,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -176,7 +205,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -188,13 +217,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -205,38 +234,20 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -245,6 +256,23 @@ div.csl-indent {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -255,9 +283,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#graphs-interventions-and-uncertainty" id="toc-graphs-interventions-and-uncertainty" class="nav-link active" data-scroll-target="#graphs-interventions-and-uncertainty"><span class="header-section-number">2.1</span> Graphs, interventions, and uncertainty</a></li>
-  <li><a href="#bayesian-graph-and-effect-inference" id="toc-bayesian-graph-and-effect-inference" class="nav-link" data-scroll-target="#bayesian-graph-and-effect-inference"><span class="header-section-number">2.2</span> Bayesian graph and effect inference</a></li>
-  <li><a href="#frugal-parameterization" id="toc-frugal-parameterization" class="nav-link" data-scroll-target="#frugal-parameterization"><span class="header-section-number">2.3</span> Frugal parameterization</a></li>
+  <li><a href="#from-ida-to-effect-inference-under-graph-uncertainty" id="toc-from-ida-to-effect-inference-under-graph-uncertainty" class="nav-link active" data-scroll-target="#from-ida-to-effect-inference-under-graph-uncertainty"><span class="header-section-number">2.1</span> From IDA to effect inference under graph uncertainty</a></li>
+  <li><a href="#bayesian-structure-learning-and-causal-effect-estimation" id="toc-bayesian-structure-learning-and-causal-effect-estimation" class="nav-link" data-scroll-target="#bayesian-structure-learning-and-causal-effect-estimation"><span class="header-section-number">2.2</span> Bayesian structure learning and causal effect estimation</a></li>
+  <li><a href="#frugal-parameterization" id="toc-frugal-parameterization" class="nav-link" data-scroll-target="#frugal-parameterization"><span class="header-section-number">2.3</span> Frugal parameterization</a>
+  <ul class="collapse">
+  <li><a href="#sec-frugal-chain" id="toc-sec-frugal-chain" class="nav-link" data-scroll-target="#sec-frugal-chain"><span class="header-section-number">2.3.1</span> A sparse chain: constraints without redundancy</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -283,19 +314,68 @@ div.csl-indent {
 </header>
 
 
-<section id="graphs-interventions-and-uncertainty" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="graphs-interventions-and-uncertainty"><span class="header-section-number">2.1</span> Graphs, interventions, and uncertainty</h2>
-<p>Pearl’s graphical framework provides the language of conditional independence and interventions <span class="citation" data-cites="pearl1988 pearl2009">(<a href="../references.html#ref-pearl1988" role="doc-biblioref">Pearl 1988</a>, <a href="../references.html#ref-pearl2009" role="doc-biblioref">2009</a>)</span>. IDA estimates possible effects across DAGs compatible with an observational equivalence class <span class="citation" data-cites="maathuis2009">(<a href="../references.html#ref-maathuis2009" role="doc-biblioref">Maathuis et al. 2009</a>)</span>. Joint interventions require additional methods <span class="citation" data-cites="nandy2017">(<a href="../references.html#ref-nandy2017" role="doc-biblioref">Nandy et al. 2017</a>)</span>, and ancestral-graph approaches allow latent-variable uncertainty under their own assumptions <span class="citation" data-cites="malinsky2016">(<a href="../references.html#ref-malinsky2016" role="doc-biblioref">Malinsky and Spirtes 2016</a>)</span>. The generalized adjustment criterion covers DAGs and several classes of partially identified graphs <span class="citation" data-cites="perkovic2018">(<a href="../references.html#ref-perkovic2018" role="doc-biblioref">Perković et al. 2018</a>)</span>. These results motivate graph uncertainty without making an individual causal DAG observationally identifiable.</p>
-<p>Henckel, Perković and Maathuis characterize the asymptotically efficient O-set for linear-model adjustment <span class="citation" data-cites="henckel2022">(<a href="../references.html#ref-henckel2022" role="doc-biblioref">Henckel et al. 2022</a>)</span>. Witte and colleagues give its forbidden-projection interpretation and integrate it into effect estimation under graph uncertainty <span class="citation" data-cites="witte2020">(<a href="../references.html#ref-witte2020" role="doc-biblioref">Witte et al. 2020</a>)</span>. The I-MAP construction here retains all nodes and uses a constrained reordering; forbidden projection marginalizes selected nodes. They are related constructions with different inferential roles.</p>
+<section id="from-ida-to-effect-inference-under-graph-uncertainty" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="from-ida-to-effect-inference-under-graph-uncertainty"><span class="header-section-number">2.1</span> From IDA to effect inference under graph uncertainty</h2>
+<p>Pearl’s graphical framework connects conditional independence, structural equations and interventions <span class="citation" data-cites="pearl1988 pearl2009">(<a href="../references.html#ref-pearl1988" role="doc-biblioref">Pearl 1988</a>, <a href="../references.html#ref-pearl2009" role="doc-biblioref">2009</a>)</span>. With observational data and the usual causal sufficiency and faithfulness assumptions, a discovery procedure can identify a Markov equivalence class rather than a unique causal DAG. The IDA algorithm of Maathuis, Kalisch and Bühlmann addresses the resulting effect ambiguity: it combines an estimated equivalence class with local parent-set possibilities to estimate a collection of possible intervention effects in linear systems <span class="citation" data-cites="maathuis2009">(<a href="../references.html#ref-maathuis2009" role="doc-biblioref">Maathuis et al. 2009</a>)</span>. These possibilities are not posterior probabilities, and repeated estimates need not represent distinct causal functionals.</p>
+<p>Several branches develop this starting point. Joint-IDA extends effect estimation to simultaneous interventions, where intervening on one treatment changes paths from another <span class="citation" data-cites="nandy2017">(<a href="../references.html#ref-nandy2017" role="doc-biblioref">Nandy et al. 2017</a>)</span>. Ancestral-graph methods extend possible-effect reasoning to settings that allow latent variables, under different graphical assumptions <span class="citation" data-cites="malinsky2016">(<a href="../references.html#ref-malinsky2016" role="doc-biblioref">Malinsky and Spirtes 2016</a>)</span>. Neither extension can be obtained by applying a single-treatment, causally sufficient formula unchanged.</p>
+<p>The adjustment branch asks when an observational regression identifies a causal effect across compatible graphs. Perković, Textor, Kalisch and Maathuis give a complete graphical characterization of adjustment sets for DAGs and several partially directed or ancestral graph classes <span class="citation" data-cites="perkovic2018">(<a href="../references.html#ref-perkovic2018" role="doc-biblioref">Perković et al. 2018</a>)</span>. Incorporating background knowledge leads to maximally oriented partially directed acyclic graphs (MPDAGs), for which Perković develops a broader identification criterion <span class="citation" data-cites="perkovic2020">(<a href="../references.html#ref-perkovic2020" role="doc-biblioref">Perković 2020</a>)</span>. Identification by the g-formula can be possible even when adjustment alone is insufficient. Guo and Perković further partition a graph class by distinct identified effect functionals, reducing duplication in enumeration <span class="citation" data-cites="guoPerkovic2021">(<a href="../references.html#ref-guoPerkovic2021" role="doc-biblioref">Guo and Perković 2021</a>)</span>.</p>
+<p>A second branch concerns efficiency after identification. Henckel, Perković and Maathuis establish graphical variance comparisons and the O-set’s asymptotic optimality among valid least-squares adjustment estimators in causal linear models <span class="citation" data-cites="henckel2022">(<a href="../references.html#ref-henckel2022" role="doc-biblioref">Henckel et al. 2022</a>)</span>. Witte, Henckel, Maathuis and Didelez interpret this set through forbidden projection and use it for efficient estimation of possible effects <span class="citation" data-cites="witte2020">(<a href="../references.html#ref-witte2020" role="doc-biblioref">Witte et al. 2020</a>)</span>. These findings motivate the outcome-parent set in the I-MAP construction. Their optimality is within an adjustment-estimator class: Guo and Perković show that recursive least squares can exploit additional linear-model restrictions and is efficient among regular estimators based on the sample covariance <span class="citation" data-cites="guoPerkovic2022">(<a href="../references.html#ref-guoPerkovic2022" role="doc-biblioref">Guo and Perković 2022</a>)</span>. Guo, Perković and Rotnitzky study elimination of variables while retaining identification and the semiparametric efficiency bound for an interventional mean <span class="citation" data-cites="guoPerkovicRotnitzky2023">(<a href="../references.html#ref-guoPerkovicRotnitzky2023" role="doc-biblioref">Guo et al. 2023</a>)</span>.</p>
+<p>Further developments address conditional effects and the causal consequences of discovery errors. LaPlante and Perković characterize conditional adjustment in MPDAGs and PAGs when conditioning variables are unaffected by treatment <span class="citation" data-cites="laplantePerkovic2024">(<a href="../references.html#ref-laplantePerkovic2024" role="doc-biblioref">LaPlante and Perković 2024</a>)</span>. Their preprint on conditional identification goes beyond adjustment to a complete identification algorithm in MPDAGs <span class="citation" data-cites="laplantePerkovic2025">(<a href="../references.html#ref-laplantePerkovic2025" role="doc-biblioref">LaPlante and Perković 2025</a>)</span>. A separate preprint by LaPlante, Triantafillou and Perković provides data-driven routes to adjustment for multiple treatments under restrictions on the adjustment variables <span class="citation" data-cites="laplanteTriantafillouPerkovic2025">(<a href="../references.html#ref-laplanteTriantafillouPerkovic2025" role="doc-biblioref">LaPlante et al. 2025</a>)</span>. These results concern identification criteria, not automatic correction for all uncertainty introduced by estimating a graph from finite data.</p>
+<p>Henckel, Würtzen and Weichwald propose adjustment identification distances that assess learned structures through the causal formulas they imply <span class="citation" data-cites="henckelWurtzenWeichwald2024">(<a href="../references.html#ref-henckelWurtzenWeichwald2024" role="doc-biblioref">Henckel et al. 2024</a>)</span>. Wienöbst, Henckel and Weichwald develop discrete score-based search with iterative Cholesky updates <span class="citation" data-cites="wienobstHenckelWeichwald2026">(<a href="../references.html#ref-wienobstHenckelWeichwald2026" role="doc-biblioref">Wienöbst et al. 2026</a>)</span>. Freni, Henckel and Weichwald’s verification preprint asks whether a <em>given</em> observational formula identifies an intervention distribution, a question distinct from finding some identifying formula <span class="citation" data-cites="freniHenckelWeichwald2026">(<a href="../references.html#ref-freniHenckelWeichwald2026" role="doc-biblioref">Freni et al. 2026</a>)</span>. Together, these strands connect identification, efficient estimation and computational discovery. They do not supply a common prior on an effect across unknown DAGs, which is the inferential role considered here.</p>
 </section>
-<section id="bayesian-graph-and-effect-inference" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="bayesian-graph-and-effect-inference"><span class="header-section-number">2.2</span> Bayesian graph and effect inference</h2>
-<p>DAG-Wishart priors supply a conjugate baseline <span class="citation" data-cites="benDavidDAGWishart">(<a href="../references.html#ref-benDavidDAGWishart" role="doc-biblioref">Ben-David et al. 2015</a>)</span>. Compatible priors for model comparison impose additional shape restrictions <span class="citation" data-cites="peluso2020">(<a href="../references.html#ref-peluso2020" role="doc-biblioref">Peluso and Consonni 2020</a>)</span>, connected to the parameter-prior construction framework of Geiger and Heckerman <span class="citation" data-cites="geiger2002">(<a href="../references.html#ref-geiger2002" role="doc-biblioref">Geiger and Heckerman 2002</a>)</span>. Conjugacy alone does not imply score equivalence.</p>
-<p>Bayesian effect inference can average over graph and parameter uncertainty in Gaussian systems <span class="citation" data-cites="castellettiConsonni2021 pensar2020">(<a href="../references.html#ref-castellettiConsonni2021" role="doc-biblioref">Castelletti and Consonni 2021</a>; <a href="../references.html#ref-pensar2020" role="doc-biblioref">Pensar et al. 2020</a>)</span>, including simultaneous interventions <span class="citation" data-cites="castellettiMascaro2021">(<a href="../references.html#ref-castellettiMascaro2021" role="doc-biblioref">Castelletti and Mascaro 2021</a>)</span>. Categorical-model extensions have also been developed <span class="citation" data-cites="castelletti2024">(<a href="../references.html#ref-castelletti2024" role="doc-biblioref">Castelletti et al. 2024</a>)</span>.</p>
+<section id="bayesian-structure-learning-and-causal-effect-estimation" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="bayesian-structure-learning-and-causal-effect-estimation"><span class="header-section-number">2.2</span> Bayesian structure learning and causal effect estimation</h2>
+<p>Bayesian methods give weights to graph and parameter uncertainty rather than only enumerating possible effects. Castelletti and Consonni develop Gaussian causal effect inference with unknown structure <span class="citation" data-cites="castellettiConsonni2021">(<a href="../references.html#ref-castellettiConsonni2021" role="doc-biblioref">Castelletti and Consonni 2021</a>)</span>. Castelletti and Mascaro consider joint interventions among network-dependent variables <span class="citation" data-cites="castellettiMascaro2021">(<a href="../references.html#ref-castellettiMascaro2021" role="doc-biblioref">Castelletti and Mascaro 2021</a>)</span>. Pensar and colleagues provide another Bayesian route to observational effect inference <span class="citation" data-cites="pensar2020">(<a href="../references.html#ref-pensar2020" role="doc-biblioref">Pensar et al. 2020</a>)</span>, and Castelletti, Consonni and Della Vedova develop a categorical-model workflow <span class="citation" data-cites="castelletti2024">(<a href="../references.html#ref-castelletti2024" role="doc-biblioref">Castelletti et al. 2024</a>)</span>.</p>
+<p>For Gaussian models, DAG-Wishart priors provide conjugate integration and parameter sampling <span class="citation" data-cites="benDavidDAGWishart">(<a href="../references.html#ref-benDavidDAGWishart" role="doc-biblioref">Ben-David et al. 2015</a>)</span>. Peluso and Consonni construct compatible priors for comparing DAG models <span class="citation" data-cites="peluso2020">(<a href="../references.html#ref-peluso2020" role="doc-biblioref">Peluso and Consonni 2020</a>)</span>, building on the parameter-prior framework of Geiger and Heckerman <span class="citation" data-cites="geiger2002">(<a href="../references.html#ref-geiger2002" role="doc-biblioref">Geiger and Heckerman 2002</a>)</span>. The resulting evidence and averaging calculations are explained in <a href="methods.html" class="quarto-xref"><span>Chapter 4</span></a>. Their practicality is a useful benchmark for an effect-centered alternative.</p>
+<p>Non-local priors make prior density vanish at a null parameter value and can alter Bayes-factor learning rates under stated testing assumptions <span class="citation" data-cites="johnsonRossell2010">(<a href="../references.html#ref-johnsonRossell2010" role="doc-biblioref">Johnson and Rossell 2010</a>)</span>. This motivates separating structural null effects from active effects and controlling the latter near zero. The exact reweighting identity in <a href="bayesian-imap.html#sec-nonlocal-prior" class="quarto-xref"><span>Section 6.6</span></a> is available for a normalized effect tilt; claims about graph-selection consistency or effect-estimation performance require additional analysis.</p>
 </section>
 <section id="frugal-parameterization" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="frugal-parameterization"><span class="header-section-number">2.3</span> Frugal parameterization</h2>
-<p>Evans and Didelez directly parameterize a causal distribution and build the remaining model around it <span class="citation" data-cites="evansDidelez2024">(<a href="../references.html#ref-evansDidelez2024" role="doc-biblioref">Evans and Didelez 2024</a>)</span>. The I-MAP target here is a mean derivative in a constrained Gaussian DAG representation. Comparisons of redundancy or inferential accuracy require explicit sparse-model constraints and a common inferential target. See Q006 and the discussion.</p>
+<p>Evans and Didelez organize a joint model around a causal distribution, together with a distribution for the remaining variables and a conditional association component <span class="citation" data-cites="evansDidelez2024">(<a href="../references.html#ref-evansDidelez2024" role="doc-biblioref">Evans and Didelez 2024</a>)</span>. Under their assumptions, this yields a smooth, regular and non-redundant parameterization. Appropriate association measures, such as odds ratios or copulas, can supply variation independence. Their framework supports simulation and likelihood-based inference, including Bayesian inference, and extends beyond Gaussian mean effects to marginal causal distributions and longitudinal models.</p>
+<p>Three properties need to be distinguished. <strong>Non-redundancy</strong> means that distinct admissible parameter values do not encode the same distribution. <strong>Variation independence</strong> means that parameter blocks can vary over a Cartesian product of their separate ranges. <strong>Saturation</strong> means that a model contains every distribution in the specified observational family. A parameterization can be non-redundant without being saturated or variation independent. In the paper’s Gaussian example, a regression coefficient for the association component entails a variance inequality; using an appropriate correlation removes that dependence in the saturated model <span class="citation" data-cites="evansDidelez2024">(<a href="../references.html#ref-evansDidelez2024" role="doc-biblioref">Evans and Didelez 2024</a>, Example 1.2)</span>.</p>
+<section id="sec-frugal-chain" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="sec-frugal-chain"><span class="header-section-number">2.3.1</span> A sparse chain: constraints without redundancy</h3>
+<p><strong>Analytical example.</strong> Consider the centered Gaussian chain</p>
+<p><span class="math display">\[
+X_1=\epsilon_1,\qquad X_2=bX_1+\epsilon_2,\qquad
+X_3=cX_2+\epsilon_3,\qquad
+\operatorname{Var}(\epsilon_j)=v_j&gt;0,
+\]</span></p>
+<p>with mutually independent errors. The target is the effect of 1 on 3, <span class="math inline">\(\tau_{13}=bc\)</span>. Write <span class="math inline">\(s=c^2v_2+v_3\)</span>. Since treatment 1 has no parents,</p>
+<p><span class="math display">\[
+X_3\mid\operatorname{do}(X_1=x)\sim N(\tau_{13}x,s)
+\]</span></p>
+<p>also equals its observational conditional distribution given <span class="math inline">\(X_1=x\)</span>.</p>
+<p>A Gaussian marginal-and-association representation of all three variables is</p>
+<p><span class="math display">\[
+X_1\sim N(0,v_1),\qquad X_2\mid X_1\sim N(bX_1,v_2),
+\]</span></p>
+<p><span class="math display">\[
+X_3\mid X_1,X_2\sim
+N\{\tau X_1+\alpha(X_2-bX_1),\ s-\alpha^2v_2\}.
+\]</span></p>
+<p>Marginalizing over <span class="math inline">\(X_2\mid X_1\)</span> gives <span class="math inline">\(X_3\mid X_1\sim N(\tau X_1,s)\)</span>. Thus <span class="math inline">\((v_1,b,v_2)\)</span> describes <span class="math inline">\(p(x_1,x_2)\)</span>, <span class="math inline">\((\tau,s)\)</span> describes the marginal effect model, and <span class="math inline">\(\alpha\)</span> describes residual association. Here <span class="math inline">\(X_2\)</span> is a <strong>mediator</strong>, not a pretreatment covariate: the integration weight is <span class="math inline">\(p(x_2\mid x_1)\)</span>, rather than a baseline marginal <span class="math inline">\(p(x_2)\)</span>. This is a marginal-and-association special case of the frugal construction; the usual pretreatment adjustment recipe cannot be used unchanged.</p>
+<p>On the saturated Gaussian family, the domain is <span class="math inline">\(v_1,v_2,s&gt;0\)</span> and <span class="math inline">\(s&gt;\alpha^2v_2\)</span>, with <span class="math inline">\(b,\tau\in\mathbb R\)</span>. Expanding the conditional mean shows that the direct coefficient of <span class="math inline">\(X_1\)</span> in the outcome equation is <span class="math inline">\(\tau-\alpha b\)</span>. The chain’s missing edge <span class="math inline">\(1\to3\)</span> therefore imposes exactly</p>
+<p><span class="math display">\[
+\tau=\alpha b.
+\]</span></p>
+<p>On this constrained domain, the original coefficients and variances are recovered uniquely:</p>
+<p><span class="math display">\[
+c=\alpha,\qquad v_3=s-\alpha^2v_2.
+\]</span></p>
+<p>The chain has five free parameters, and the six ambient coordinates satisfy one independent equation. There is no duplication of distributions. Ignoring the equation would fit the saturated model instead of the chain.</p>
+<p>To separate this constraint from the variance inequality, use</p>
+<p><span class="math display">\[
+\rho=\alpha\sqrt{v_2/s},\qquad -1&lt;\rho&lt;1.
+\]</span></p>
+<p>This is the correlation of <span class="math inline">\(X_2-bX_1\)</span> with <span class="math inline">\(X_3-\tau X_1\)</span>. In the ambient model, <span class="math inline">\((v_1,b,v_2)\)</span>, <span class="math inline">\((\tau,s)\)</span> and <span class="math inline">\(\rho\)</span> have a Cartesian-product domain. On the chain, however,</p>
+<p><span class="math display">\[
+\tau=b\rho\sqrt{s/v_2},\qquad
+c=\rho\sqrt{s/v_2},\qquad v_3=s(1-\rho^2).
+\]</span></p>
+<p>The restricted parameterization remains injective, but the effect cannot vary independently of these particular nuisance coordinates. If <span class="math inline">\(b=0\)</span>, the effect is necessarily zero. Where <span class="math inline">\(b\ne0\)</span>, <span class="math inline">\((\tau,b,v_1,v_2,v_3)\)</span> gives an alternative chart, with <span class="math inline">\(c=\tau/b\)</span> and absolute inverse Jacobian <span class="math inline">\(1/|b|\)</span>. That chart excludes valid points with <span class="math inline">\(b=0\)</span>; at <span class="math inline">\(b=c=0\)</span>, the differential of <span class="math inline">\(bc\)</span> vanishes, so <span class="math inline">\(\tau\)</span> cannot be a coordinate in a smooth local chart of the full five-dimensional model.</p>
+<p>For the distinct target effect of 2 on 3, node 1 is a pretreatment variable. Applying the elementary frugal recipe with <span class="math inline">\(Z=X_1\)</span>, treatment <span class="math inline">\(X_2\)</span> and outcome <span class="math inline">\(X_3\)</span> sets the residual <span class="math inline">\(Z\)</span>-outcome association to zero and retains the five free parameters. This gives another sparse, non-redundant example.</p>
+<p>Consequently, a complete DAG is <strong>not necessary</strong> for non-redundancy. Missing edges restrict the admissible frugal coordinates, and may destroy their blockwise variation independence. The practical comparison with I-MAP coordinates concerns how these restrictions are constructed and handled across a graph search, rather than an inherent redundancy of frugal parameterization.</p>
 
 
 <!-- -->
@@ -316,11 +396,38 @@ Castelletti, Federico, and Alessandro Mascaro. 2021. <span>“Structural Learnin
 <div id="ref-evansDidelez2024" class="csl-entry" role="listitem">
 Evans, Robin J., and Vanessa Didelez. 2024. <span>“Parameterizing and Simulating from Causal Models.”</span> <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 86 (3): 535–68. <a href="https://doi.org/10.1093/jrsssb/qkad058">https://doi.org/10.1093/jrsssb/qkad058</a>.
 </div>
+<div id="ref-freniHenckelWeichwald2026" class="csl-entry" role="listitem">
+Freni, Francesco, Leonard Henckel, and Sebastian Weichwald. 2026. <em>Verifying Formulas for Interventional Distributions</em>. <a href="https://arxiv.org/abs/2607.13883v1">https://arxiv.org/abs/2607.13883v1</a>.
+</div>
 <div id="ref-geiger2002" class="csl-entry" role="listitem">
 Geiger, Dan, and David Heckerman. 2002. <span>“Parameter Priors for Directed Acyclic Graphical Models and the Characterization of Several Probability Distributions.”</span> <em>The Annals of Statistics</em> 30 (5): 1412–40. <a href="https://doi.org/10.1214/aos/1035844981">https://doi.org/10.1214/aos/1035844981</a>.
 </div>
+<div id="ref-guoPerkovic2021" class="csl-entry" role="listitem">
+Guo, F. Richard, and Emilija Perković. 2021. <span>“Minimal Enumeration of All Possible Total Effects in a <span>Markov</span> Equivalence Class.”</span> <em>Proceedings of the 24th International Conference on Artificial Intelligence and Statistics</em>, Proceedings of machine learning research, vol. 130: 2395–403. <a href="https://proceedings.mlr.press/v130/guo21c.html">https://proceedings.mlr.press/v130/guo21c.html</a>.
+</div>
+<div id="ref-guoPerkovic2022" class="csl-entry" role="listitem">
+Guo, F. Richard, and Emilija Perković. 2022. <span>“Efficient Least Squares for Estimating Total Effects Under Linearity and Causal Sufficiency.”</span> <em>Journal of Machine Learning Research</em> 23 (104): 1–41. <a href="https://jmlr.org/papers/v23/21-023.html">https://jmlr.org/papers/v23/21-023.html</a>.
+</div>
+<div id="ref-guoPerkovicRotnitzky2023" class="csl-entry" role="listitem">
+Guo, F. Richard, Emilija Perković, and Andrea Rotnitzky. 2023. <span>“Variable Elimination, Graph Reduction and the Efficient g-Formula.”</span> <em>Biometrika</em> 110 (3): 739–61. <a href="https://doi.org/10.1093/biomet/asac062">https://doi.org/10.1093/biomet/asac062</a>.
+</div>
 <div id="ref-henckel2022" class="csl-entry" role="listitem">
 Henckel, Leonard, Emilija Perković, and Marloes H. Maathuis. 2022. <span>“Graphical Criteria for Efficient Total Effect Estimation via Adjustment in Causal Linear Models.”</span> <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 84 (2): 579–99. <a href="https://academic.oup.com/jrsssb/article/84/2/579/7056108">https://academic.oup.com/jrsssb/article/84/2/579/7056108</a>.
+</div>
+<div id="ref-henckelWurtzenWeichwald2024" class="csl-entry" role="listitem">
+Henckel, Leonard, Theo Würtzen, and Sebastian Weichwald. 2024. <span>“Adjustment Identification Distance: A Gadjid for Causal Structure Learning.”</span> <em>Proceedings of the Fortieth Conference on Uncertainty in Artificial Intelligence</em>, Proceedings of machine learning research, vol. 244: 1569–98. <a href="https://proceedings.mlr.press/v244/henckel24a.html">https://proceedings.mlr.press/v244/henckel24a.html</a>.
+</div>
+<div id="ref-johnsonRossell2010" class="csl-entry" role="listitem">
+Johnson, Valen E., and David Rossell. 2010. <span>“On the Use of Non-Local Prior Densities in <span>Bayesian</span> Hypothesis Tests.”</span> <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 72 (2): 143–70. <a href="https://doi.org/10.1111/j.1467-9868.2009.00730.x">https://doi.org/10.1111/j.1467-9868.2009.00730.x</a>.
+</div>
+<div id="ref-laplantePerkovic2024" class="csl-entry" role="listitem">
+LaPlante, Sara, and Emilija Perković. 2024. <span>“Conditional Adjustment in a <span>Markov</span> Equivalence Class.”</span> <em>Proceedings of the 27th International Conference on Artificial Intelligence and Statistics</em>, Proceedings of machine learning research, vol. 238: 2782–90. <a href="https://proceedings.mlr.press/v238/laplante24a.html">https://proceedings.mlr.press/v238/laplante24a.html</a>.
+</div>
+<div id="ref-laplantePerkovic2025" class="csl-entry" role="listitem">
+LaPlante, Sara, and Emilija Perković. 2025. <em>Identifying Conditional Causal Effects in <span>MPDAGs</span></em>. <a href="https://arxiv.org/abs/2507.15842v1">https://arxiv.org/abs/2507.15842v1</a>.
+</div>
+<div id="ref-laplanteTriantafillouPerkovic2025" class="csl-entry" role="listitem">
+LaPlante, Sara, Sofia Triantafillou, and Emilija Perković. 2025. <em>Data-Driven Adjustment for Multiple Treatments</em>. <a href="https://arxiv.org/abs/2503.08971v2">https://arxiv.org/abs/2503.08971v2</a>.
 </div>
 <div id="ref-maathuis2009" class="csl-entry" role="listitem">
 Maathuis, Marloes H., Markus Kalisch, and Peter Bühlmann. 2009. <span>“Estimating High-Dimensional Intervention Effects from Observational Data.”</span> <em>The Annals of Statistics</em> 37 (6A): 3133–64. <a href="https://doi.org/10.1214/09-AOS685">https://doi.org/10.1214/09-AOS685</a>.
@@ -343,13 +450,20 @@ Peluso, Stefano, and Guido Consonni. 2020. <span>“Compatible Priors for Model 
 <div id="ref-pensar2020" class="csl-entry" role="listitem">
 Pensar, Johan, Topi Talvitie, Antti Hyttinen, and Mikko Koivisto. 2020. <span>“A <span>Bayesian</span> Approach for Estimating Causal Effects from Observational Data.”</span> <em>Proceedings of the AAAI Conference on Artificial Intelligence</em> 34 (04): 5395–402. <a href="https://doi.org/10.1609/aaai.v34i04.5988">https://doi.org/10.1609/aaai.v34i04.5988</a>.
 </div>
+<div id="ref-perkovic2020" class="csl-entry" role="listitem">
+Perković, Emilija. 2020. <span>“Identifying Causal Effects in Maximally Oriented Partially Directed Acyclic Graphs.”</span> <em>Proceedings of the 36th Conference on Uncertainty in Artificial Intelligence</em>, Proceedings of machine learning research, vol. 124: 530–39. <a href="https://proceedings.mlr.press/v124/perkovic20a.html">https://proceedings.mlr.press/v124/perkovic20a.html</a>.
+</div>
 <div id="ref-perkovic2018" class="csl-entry" role="listitem">
 Perković, Emilija, Johannes Textor, Markus Kalisch, and Marloes H. Maathuis. 2018. <span>“Complete Graphical Characterization and Construction of Adjustment Sets in <span>Markov</span> Equivalence Classes of Ancestral Graphs.”</span> <em>Journal of Machine Learning Research</em> 18 (220): 1–62. <a href="https://jmlr.org/papers/v18/16-319.html">https://jmlr.org/papers/v18/16-319.html</a>.
+</div>
+<div id="ref-wienobstHenckelWeichwald2026" class="csl-entry" role="listitem">
+Wienöbst, Marcel, Leonard Henckel, and Sebastian Weichwald. 2026. <span>“Embracing Discrete Search: A Reasonable Approach to Causal Structure Learning.”</span> <em>International Conference on Learning Representations</em>. <a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/59db52d2abe2c60ec722e50e2852baad-Paper-Conference.pdf">https://proceedings.iclr.cc/paper_files/paper/2026/file/59db52d2abe2c60ec722e50e2852baad-Paper-Conference.pdf</a>.
 </div>
 <div id="ref-witte2020" class="csl-entry" role="listitem">
 Witte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa Didelez. 2020. <span>“On Efficient Adjustment in Causal Graphs.”</span> <em>Journal of Machine Learning Research</em> 21 (246): 1–45. <a href="https://jmlr.org/papers/v21/20-175.html">https://jmlr.org/papers/v21/20-175.html</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -806,33 +920,111 @@ Witte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa Didelez. 2020. 
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/01-questions.html" class="pagination-link" aria-label="Introduction and research questions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span>
+      <a href="../chapters/01-questions.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/02-framework.html" class="pagination-link" aria-label="Notation and theoretical framework">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/02-framework.html" class="pagination-link" aria-label="Notation and context">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Related work {#sec-related-work}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Graphs, interventions, and uncertainty</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## From IDA to effect inference under graph uncertainty</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Pearl's graphical framework provides the language of conditional independence and interventions <span class="co">[</span><span class="ot">@pearl1988; @pearl2009</span><span class="co">]</span>. IDA estimates possible effects across DAGs compatible with an observational equivalence class <span class="co">[</span><span class="ot">@maathuis2009</span><span class="co">]</span>. Joint interventions require additional methods <span class="co">[</span><span class="ot">@nandy2017</span><span class="co">]</span>, and ancestral-graph approaches allow latent-variable uncertainty under their own assumptions <span class="co">[</span><span class="ot">@malinsky2016</span><span class="co">]</span>. The generalized adjustment criterion covers DAGs and several classes of partially identified graphs <span class="co">[</span><span class="ot">@perkovic2018</span><span class="co">]</span>. These results motivate graph uncertainty without making an individual causal DAG observationally identifiable.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Pearl's graphical framework connects conditional independence, structural equations and interventions <span class="co">[</span><span class="ot">@pearl1988; @pearl2009</span><span class="co">]</span>. With observational data and the usual causal sufficiency and faithfulness assumptions, a discovery procedure can identify a Markov equivalence class rather than a unique causal DAG. The IDA algorithm of Maathuis, Kalisch and Bühlmann addresses the resulting effect ambiguity: it combines an estimated equivalence class with local parent-set possibilities to estimate a collection of possible intervention effects in linear systems <span class="co">[</span><span class="ot">@maathuis2009</span><span class="co">]</span>. These possibilities are not posterior probabilities, and repeated estimates need not represent distinct causal functionals.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Henckel, Perković and Maathuis characterize the asymptotically efficient O-set for linear-model adjustment <span class="co">[</span><span class="ot">@henckel2022</span><span class="co">]</span>. Witte and colleagues give its forbidden-projection interpretation and integrate it into effect estimation under graph uncertainty <span class="co">[</span><span class="ot">@witte2020</span><span class="co">]</span>. The I-MAP construction here retains all nodes and uses a constrained reordering; forbidden projection marginalizes selected nodes. They are related constructions with different inferential roles.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Several branches develop this starting point. Joint-IDA extends effect estimation to simultaneous interventions, where intervening on one treatment changes paths from another <span class="co">[</span><span class="ot">@nandy2017</span><span class="co">]</span>. Ancestral-graph methods extend possible-effect reasoning to settings that allow latent variables, under different graphical assumptions <span class="co">[</span><span class="ot">@malinsky2016</span><span class="co">]</span>. Neither extension can be obtained by applying a single-treatment, causally sufficient formula unchanged.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bayesian graph and effect inference</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The adjustment branch asks when an observational regression identifies a causal effect across compatible graphs. Perković, Textor, Kalisch and Maathuis give a complete graphical characterization of adjustment sets for DAGs and several partially directed or ancestral graph classes <span class="co">[</span><span class="ot">@perkovic2018</span><span class="co">]</span>. Incorporating background knowledge leads to maximally oriented partially directed acyclic graphs (MPDAGs), for which Perković develops a broader identification criterion <span class="co">[</span><span class="ot">@perkovic2020</span><span class="co">]</span>. Identification by the g-formula can be possible even when adjustment alone is insufficient. Guo and Perković further partition a graph class by distinct identified effect functionals, reducing duplication in enumeration <span class="co">[</span><span class="ot">@guoPerkovic2021</span><span class="co">]</span>.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>DAG-Wishart priors supply a conjugate baseline <span class="co">[</span><span class="ot">@benDavidDAGWishart</span><span class="co">]</span>. Compatible priors for model comparison impose additional shape restrictions <span class="co">[</span><span class="ot">@peluso2020</span><span class="co">]</span>, connected to the parameter-prior construction framework of Geiger and Heckerman <span class="co">[</span><span class="ot">@geiger2002</span><span class="co">]</span>. Conjugacy alone does not imply score equivalence.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>A second branch concerns efficiency after identification. Henckel, Perković and Maathuis establish graphical variance comparisons and the O-set's asymptotic optimality among valid least-squares adjustment estimators in causal linear models <span class="co">[</span><span class="ot">@henckel2022</span><span class="co">]</span>. Witte, Henckel, Maathuis and Didelez interpret this set through forbidden projection and use it for efficient estimation of possible effects <span class="co">[</span><span class="ot">@witte2020</span><span class="co">]</span>. These findings motivate the outcome-parent set in the I-MAP construction. Their optimality is within an adjustment-estimator class: Guo and Perković show that recursive least squares can exploit additional linear-model restrictions and is efficient among regular estimators based on the sample covariance <span class="co">[</span><span class="ot">@guoPerkovic2022</span><span class="co">]</span>. Guo, Perković and Rotnitzky study elimination of variables while retaining identification and the semiparametric efficiency bound for an interventional mean <span class="co">[</span><span class="ot">@guoPerkovicRotnitzky2023</span><span class="co">]</span>.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Bayesian effect inference can average over graph and parameter uncertainty in Gaussian systems <span class="co">[</span><span class="ot">@castellettiConsonni2021; @pensar2020</span><span class="co">]</span>, including simultaneous interventions <span class="co">[</span><span class="ot">@castellettiMascaro2021</span><span class="co">]</span>. Categorical-model extensions have also been developed <span class="co">[</span><span class="ot">@castelletti2024</span><span class="co">]</span>.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Further developments address conditional effects and the causal consequences of discovery errors. LaPlante and Perković characterize conditional adjustment in MPDAGs and PAGs when conditioning variables are unaffected by treatment <span class="co">[</span><span class="ot">@laplantePerkovic2024</span><span class="co">]</span>. Their preprint on conditional identification goes beyond adjustment to a complete identification algorithm in MPDAGs <span class="co">[</span><span class="ot">@laplantePerkovic2025</span><span class="co">]</span>. A separate preprint by LaPlante, Triantafillou and Perković provides data-driven routes to adjustment for multiple treatments under restrictions on the adjustment variables <span class="co">[</span><span class="ot">@laplanteTriantafillouPerkovic2025</span><span class="co">]</span>. These results concern identification criteria, not automatic correction for all uncertainty introduced by estimating a graph from finite data.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Frugal parameterization</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Henckel, Würtzen and Weichwald propose adjustment identification distances that assess learned structures through the causal formulas they imply <span class="co">[</span><span class="ot">@henckelWurtzenWeichwald2024</span><span class="co">]</span>. Wienöbst, Henckel and Weichwald develop discrete score-based search with iterative Cholesky updates <span class="co">[</span><span class="ot">@wienobstHenckelWeichwald2026</span><span class="co">]</span>. Freni, Henckel and Weichwald's verification preprint asks whether a *given* observational formula identifies an intervention distribution, a question distinct from finding some identifying formula <span class="co">[</span><span class="ot">@freniHenckelWeichwald2026</span><span class="co">]</span>. Together, these strands connect identification, efficient estimation and computational discovery. They do not supply a common prior on an effect across unknown DAGs, which is the inferential role considered here.</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Evans and Didelez directly parameterize a causal distribution and build the remaining model around it <span class="co">[</span><span class="ot">@evansDidelez2024</span><span class="co">]</span>. The I-MAP target here is a mean derivative in a constrained Gaussian DAG representation. Comparisons of redundancy or inferential accuracy require explicit sparse-model constraints and a common inferential target. See Q006 and the discussion.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bayesian structure learning and causal effect estimation</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Bayesian methods give weights to graph and parameter uncertainty rather than only enumerating possible effects. Castelletti and Consonni develop Gaussian causal effect inference with unknown structure <span class="co">[</span><span class="ot">@castellettiConsonni2021</span><span class="co">]</span>. Castelletti and Mascaro consider joint interventions among network-dependent variables <span class="co">[</span><span class="ot">@castellettiMascaro2021</span><span class="co">]</span>. Pensar and colleagues provide another Bayesian route to observational effect inference <span class="co">[</span><span class="ot">@pensar2020</span><span class="co">]</span>, and Castelletti, Consonni and Della Vedova develop a categorical-model workflow <span class="co">[</span><span class="ot">@castelletti2024</span><span class="co">]</span>.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>For Gaussian models, DAG-Wishart priors provide conjugate integration and parameter sampling <span class="co">[</span><span class="ot">@benDavidDAGWishart</span><span class="co">]</span>. Peluso and Consonni construct compatible priors for comparing DAG models <span class="co">[</span><span class="ot">@peluso2020</span><span class="co">]</span>, building on the parameter-prior framework of Geiger and Heckerman <span class="co">[</span><span class="ot">@geiger2002</span><span class="co">]</span>. The resulting evidence and averaging calculations are explained in @sec-preliminaries. Their practicality is a useful benchmark for an effect-centered alternative.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Non-local priors make prior density vanish at a null parameter value and can alter Bayes-factor learning rates under stated testing assumptions <span class="co">[</span><span class="ot">@johnsonRossell2010</span><span class="co">]</span>. This motivates separating structural null effects from active effects and controlling the latter near zero. The exact reweighting identity in @sec-nonlocal-prior is available for a normalized effect tilt; claims about graph-selection consistency or effect-estimation performance require additional analysis.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Frugal parameterization</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Evans and Didelez organize a joint model around a causal distribution, together with a distribution for the remaining variables and a conditional association component <span class="co">[</span><span class="ot">@evansDidelez2024</span><span class="co">]</span>. Under their assumptions, this yields a smooth, regular and non-redundant parameterization. Appropriate association measures, such as odds ratios or copulas, can supply variation independence. Their framework supports simulation and likelihood-based inference, including Bayesian inference, and extends beyond Gaussian mean effects to marginal causal distributions and longitudinal models.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Three properties need to be distinguished. **Non-redundancy** means that distinct admissible parameter values do not encode the same distribution. **Variation independence** means that parameter blocks can vary over a Cartesian product of their separate ranges. **Saturation** means that a model contains every distribution in the specified observational family. A parameterization can be non-redundant without being saturated or variation independent. In the paper's Gaussian example, a regression coefficient for the association component entails a variance inequality; using an appropriate correlation removes that dependence in the saturated model <span class="co">[</span><span class="ot">@evansDidelez2024, Example 1.2</span><span class="co">]</span>.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### A sparse chain: constraints without redundancy {#sec-frugal-chain}</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>**Analytical example.** Consider the centered Gaussian chain</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>X_1=\epsilon_1,\qquad X_2=bX_1+\epsilon_2,\qquad</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>X_3=cX_2+\epsilon_3,\qquad</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>\operatorname{Var}(\epsilon_j)=v_j&gt;0,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>with mutually independent errors. The target is the effect of 1 on 3,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>$\tau_{13}=bc$. Write $s=c^2v_2+v_3$. Since treatment 1 has no parents,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>X_3\mid\operatorname{do}(X_1=x)\sim N(\tau_{13}x,s)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>also equals its observational conditional distribution given $X_1=x$.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>A Gaussian marginal-and-association representation of all three variables is</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>X_1\sim N(0,v_1),\qquad X_2\mid X_1\sim N(bX_1,v_2),</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>X_3\mid X_1,X_2\sim</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>N<span class="sc">\{</span>\tau X_1+\alpha(X_2-bX_1),\ s-\alpha^2v_2<span class="sc">\}</span>.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Marginalizing over $X_2\mid X_1$ gives $X_3\mid X_1\sim N(\tau X_1,s)$.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Thus $(v_1,b,v_2)$ describes $p(x_1,x_2)$, $(\tau,s)$ describes the marginal effect model, and $\alpha$ describes residual association. Here $X_2$ is a **mediator**, not a pretreatment covariate: the integration weight is $p(x_2\mid x_1)$, rather than a baseline marginal $p(x_2)$. This is a marginal-and-association special case of the frugal construction; the usual pretreatment adjustment recipe cannot be used unchanged.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>On the saturated Gaussian family, the domain is $v_1,v_2,s&gt;0$ and $s&gt;\alpha^2v_2$, with $b,\tau\in\mathbb R$. Expanding the conditional mean shows that the direct coefficient of $X_1$ in the outcome equation is $\tau-\alpha b$. The chain's missing edge $1\to3$ therefore imposes exactly</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>\tau=\alpha b.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>On this constrained domain, the original coefficients and variances are recovered uniquely:</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>c=\alpha,\qquad v_3=s-\alpha^2v_2.</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>The chain has five free parameters, and the six ambient coordinates satisfy one independent equation. There is no duplication of distributions. Ignoring the equation would fit the saturated model instead of the chain.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>To separate this constraint from the variance inequality, use</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>\rho=\alpha\sqrt{v_2/s},\qquad -1&lt;\rho&lt;1.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>This is the correlation of $X_2-bX_1$ with $X_3-\tau X_1$. In the ambient model, $(v_1,b,v_2)$, $(\tau,s)$ and $\rho$ have a Cartesian-product domain. On the chain, however,</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>\tau=b\rho\sqrt{s/v_2},\qquad</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>c=\rho\sqrt{s/v_2},\qquad v_3=s(1-\rho^2).</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>The restricted parameterization remains injective, but the effect cannot vary independently of these particular nuisance coordinates. If $b=0$, the effect is necessarily zero. Where $b\ne0$, $(\tau,b,v_1,v_2,v_3)$ gives an alternative chart, with $c=\tau/b$ and absolute inverse Jacobian $1/|b|$. That chart excludes valid points with $b=0$; at $b=c=0$, the differential of $bc$ vanishes, so $\tau$ cannot be a coordinate in a smooth local chart of the full five-dimensional model.</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>For the distinct target effect of 2 on 3, node 1 is a pretreatment variable. Applying the elementary frugal recipe with $Z=X_1$, treatment $X_2$ and outcome $X_3$ sets the residual $Z$-outcome association to zero and retains the five free parameters. This gives another sparse, non-redundant example.</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>Consequently, a complete DAG is **not necessary** for non-redundancy. Missing edges restrict the admissible frugal coordinates, and may destroy their blockwise variation independence. The practical comparison with I-MAP coordinates concerns how these restrictions are constructed and handled across a graph search, rather than an inherent redundancy of frugal parameterization.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

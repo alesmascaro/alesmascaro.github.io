@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Notation and theoretical framework – Alternative DAG Parameterizations</title>
+<title>3&nbsp; Notation and context – Alternative DAG Parameterizations</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -171,7 +171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-framework.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-framework.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -205,7 +205,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -217,13 +217,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-framework.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -234,38 +234,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -274,6 +256,23 @@ window.Quarto = {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -296,7 +295,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="sec-framework" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-framework" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -313,6 +312,62 @@ window.Quarto = {
 </header>
 
 
+<p>The graph describes the causal system, while a variable ordering describes an observational regression factorization. Keeping these objects distinct is essential: changing the ordering can expose a causal effect without giving every new arrow a causal interpretation.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal D=(V,E)\)</span></td>
+<td>Original causal DAG; <span class="math inline">\(q=|V|\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X\)</span>, <span class="math inline">\(\mathbf X\)</span></td>
+<td>Random vector and <span class="math inline">\(n\times q\)</span> observation matrix</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(B_{uj}\)</span>, <span class="math inline">\(L_{uj}=-B_{uj}\)</span></td>
+<td>Structural coefficient for <span class="math inline">\(u\to j\)</span> and its modified Cholesky entry, for <span class="math inline">\(u\ne j\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(D=\operatorname{diag}(v_1,\ldots,v_q)\)</span></td>
+<td>Positive structural error variances</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d,y\)</span>, <span class="math inline">\(\tau_{dy}\)</span></td>
+<td>Treatment, outcome and total causal effect</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(M\)</span>, <span class="math inline">\(O\)</span>, <span class="math inline">\(Z\)</span></td>
+<td>Mediators, O-set and a candidate adjustment set</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\pi\)</span>, <span class="math inline">\(G^\pi_{\mathcal D}\)</span></td>
+<td>Variable ordering and its graph-defined ordered I-MAP</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\widetilde L,\widetilde D\)</span></td>
+<td>Parameters after changing the observational ordering</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\theta_{\mathcal D}\)</span>, <span class="math inline">\(\Theta_{\mathcal D}\)</span></td>
+<td>Free original-DAG parameters and their domain</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\pi_{\mathcal D}(\theta)\)</span>, <span class="math inline">\(p(\mathcal D)\)</span>, <span class="math inline">\(m(\mathbf X\mid\mathcal D)\)</span></td>
+<td>Parameter-prior density, graph-prior mass and marginal likelihood</td>
+</tr>
+</tbody>
+</table>
+<p>The symbol <span class="math inline">\(\pi\)</span> without a subscript denotes an ordering; <span class="math inline">\(\pi_{\mathcal D}(\theta)\)</span> denotes a density. Parent sets are <span class="math inline">\(P_j=\operatorname{pa}_{\mathcal D}(j)\)</span>, whereas all predecessors in an ordering are <span class="math inline">\(R_j^\pi\)</span>. Matrices retain the original node labels unless a permutation is stated explicitly.</p>
 <section id="graphs-and-gaussian-models" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="graphs-and-gaussian-models"><span class="header-section-number">3.1</span> Graphs and Gaussian models</h2>
 <p>Let <span class="math inline">\(\mathcal D=(V,E)\)</span> be a DAG on <span class="math inline">\(V=\{1,\ldots,q\}\)</span>. Write <span class="math inline">\(\operatorname{pa}_{\mathcal D}(j)\)</span>, <span class="math inline">\(\operatorname{an}_{\mathcal D}(j)\)</span> and <span class="math inline">\(\operatorname{de}_{\mathcal D}(j)\)</span> for parents, strict ancestors and strict descendants. These sets exclude the node itself. An ordering is topological when every parent precedes its children. For a set, parents and ancestors denote unions of the corresponding node sets.</p>
@@ -335,7 +390,22 @@ L^\top X=\epsilon,\qquad
 =\sum_{p:d\rightsquigarrow y}\prod_{(u\to v)\in p} B_{uv}
 =[L^{-1}]_{dy}.
 \]</span></p>
-<p><strong>Analytical justification.</strong> Since <span class="math inline">\(B\)</span> is nilpotent after topological permutation, <span class="math inline">\((I-B)^{-1}=I+B+\cdots+B^{q-1}\)</span>. For distinct endpoints its <span class="math inline">\((d,y)\)</span> entry enumerates the directed paths. Replacing the treatment equation yields the same propagation along paths starting at <span class="math inline">\(d\)</span>.</p>
+<div id="proof-path-sum" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Since <span class="math inline">\(B\)</span> is nilpotent after topological permutation, <span class="math inline">\((I-B)^{-1}=I+B+\cdots+B^{q-1}\)</span>. For distinct endpoints its <span class="math inline">\((d,y)\)</span> entry enumerates the directed paths. Replacing the treatment equation yields the same propagation along paths starting at <span class="math inline">\(d\)</span>.</p>
+</div>
+</div>
+</div>
 <p>If no directed path exists, <span class="math inline">\(\tau_{dy}=0\)</span> for all parameters. If a path exists, opposing path contributions may still cancel. Thus ancestry and a nonzero effect are different statements at particular parameter values. For simultaneous interventions, paths through another intervened treatment are removed; the single-treatment formula cannot be reused without this change. Joint interventions require a separate construction <span class="citation" data-cites="nandy2017 castellettiMascaro2021">(<a href="../references.html#ref-nandy2017" role="doc-biblioref">Nandy et al. 2017</a>; <a href="../references.html#ref-castellettiMascaro2021" role="doc-biblioref">Castelletti and Mascaro 2021</a>)</span>.</p>
 </section>
 <section id="adjustment-and-the-o-set" class="level2" data-number="3.3">
@@ -371,11 +441,11 @@ O=\operatorname{pa}_{\mathcal D}(C)\setminus(\{d\}\cup M).
 <section id="sec-ordered-imap" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="sec-ordered-imap"><span class="header-section-number">3.4</span> Independence maps and ordered regressions</h2>
 <p>Let <span class="math inline">\(\mathcal I(\mathcal D)\)</span> denote all graphical d-separations, and <span class="math inline">\(\mathcal I(p)\)</span> all distributional conditional independences. A DAG <span class="math inline">\(G\)</span> is an I-MAP of <span class="math inline">\(p\)</span> if <span class="math inline">\(\mathcal I(G)\subseteq\mathcal I(p)\)</span>, and an I-MAP of <span class="math inline">\(\mathcal D\)</span> if <span class="math inline">\(\mathcal I(G)\subseteq\mathcal I(\mathcal D)\)</span>. This latter definition does not require choosing a faithful distribution. Faithfulness means <span class="math inline">\(\mathcal I(p)=\mathcal I(\mathcal D)\)</span>.</p>
-<p>For ordering <span class="math inline">\(\pi\)</span>, put <span class="math inline">\(P_j=\{\pi_1,\ldots,\pi_{j-1}\}\)</span>. Define the ordered graph by</p>
+<p>For ordering <span class="math inline">\(\pi\)</span>, put <span class="math inline">\(R_{\pi_j}^\pi=\{\pi_1,\ldots,\pi_{j-1}\}\)</span>, the predecessors of the node <span class="math inline">\(\pi_j\)</span>. Define the ordered graph by</p>
 <p><span class="math display">\[
 \pi_i\to\pi_j\in G^\pi_{\mathcal D}
 \quad\Longleftrightarrow\quad
-i&lt;j\ \text{and}\ \pi_i\not\!\perp_{\mathcal D}\pi_j\mid P_j\setminus\{\pi_i\}.
+i&lt;j\ \text{and}\ \pi_i\not\!\perp_{\mathcal D}\pi_j\mid R_{\pi_j}^\pi\setminus\{\pi_i\}.
 \]</span></p>
 <p>The edge criterion uses <strong>dependence</strong>. For nonsingular Gaussians, the corresponding distribution-specific construction keeps exactly the nonzero coefficients in each regression on all predecessors. Gaussian conditional independence satisfies the intersection property, so removing all zero coefficients leaves a valid factorization. Each retained coefficient is necessary: deleting it would impose a conditional independence that fails in that regression. Thus the distribution-specific graph is a minimal I-MAP. Taking a faithful Gaussian distribution of <span class="math inline">\(\mathcal D\)</span> gives the graphical ordered minimal I-MAP above; its definition applies to the entire DAG model.</p>
 <p><strong>Minimal</strong> means no edge can be removed while retaining the I-MAP property; it does not mean globally fewest edges. At unfaithful parameter values, a regression coefficient can vanish on an edge of the graph-defined I-MAP. Keep the graph and its allowed coefficients separate.</p>
@@ -858,102 +928,123 @@ Witte, Janine, Leonard Henckel, Marloes H. Maathuis, and Vanessa Didelez. 2020. 
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/methods.html" class="pagination-link" aria-label="Analytical and computational methods">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/methods.html" class="pagination-link" aria-label="Preliminaries">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Notation and theoretical framework {#sec-framework}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Notation and context {#sec-framework}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Graphs and Gaussian models</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>The graph describes the causal system, while a variable ordering describes an observational regression factorization. Keeping these objects distinct is essential: changing the ordering can expose a causal effect without giving every new arrow a causal interpretation.</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Let $\mathcal D=(V,E)$ be a DAG on $V=<span class="sc">\{</span>1,\ldots,q<span class="sc">\}</span>$. Write $\operatorname{pa}_{\mathcal D}(j)$, $\operatorname{an}_{\mathcal D}(j)$ and $\operatorname{de}_{\mathcal D}(j)$ for parents, strict ancestors and strict descendants. These sets exclude the node itself. An ordering is topological when every parent precedes its children. For a set, parents and ancestors denote unions of the corresponding node sets.</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Use $\mathcal D$ for the graph and $D=\operatorname{diag}(v_1,\ldots,v_q)$ for positive error variances. The centered structural equations are</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>X=B^\top X+\epsilon,\qquad \epsilon\sim N_q(0,D),\qquad L=I-B,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>where $B_{uj}=0$ if $u\notin\operatorname{pa}_{\mathcal D}(j)$. Allowed edge coefficients may equal zero; requiring every allowed coefficient to be nonzero would unnecessarily exclude legitimate parameter values and would still not guarantee faithfulness. Consequently,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>L^\top X=\epsilon,\qquad</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>\Sigma=L^{-\top}DL^{-1},\qquad \Omega=LD^{-1}L^\top.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Symbol <span class="pp">|</span> Meaning <span class="pp">|</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D=(V,E)$ <span class="pp">|</span> Original causal DAG; $q=<span class="pp">|</span>V<span class="pp">|</span>$ <span class="pp">|</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $X$, $\mathbf X$ <span class="pp">|</span> Random vector and $n\times q$ observation matrix <span class="pp">|</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $B_{uj}$, $L_{uj}=-B_{uj}$ <span class="pp">|</span> Structural coefficient for $u\to j$ and its modified Cholesky entry, for $u\ne j$ <span class="pp">|</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $D=\operatorname{diag}(v_1,\ldots,v_q)$ <span class="pp">|</span> Positive structural error variances <span class="pp">|</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $d,y$, $\tau_{dy}$ <span class="pp">|</span> Treatment, outcome and total causal effect <span class="pp">|</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $M$, $O$, $Z$ <span class="pp">|</span> Mediators, O-set and a candidate adjustment set <span class="pp">|</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\pi$, $G^\pi_{\mathcal D}$ <span class="pp">|</span> Variable ordering and its graph-defined ordered I-MAP <span class="pp">|</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\widetilde L,\widetilde D$ <span class="pp">|</span> Parameters after changing the observational ordering <span class="pp">|</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\theta_{\mathcal D}$, $\Theta_{\mathcal D}$ <span class="pp">|</span> Free original-DAG parameters and their domain <span class="pp">|</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\pi_{\mathcal D}(\theta)$, $p(\mathcal D)$, $m(\mathbf X\mid\mathcal D)$ <span class="pp">|</span> Parameter-prior density, graph-prior mass and marginal likelihood <span class="pp">|</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>The symbol $\pi$ without a subscript denotes an ordering; $\pi_{\mathcal D}(\theta)$ denotes a density. Parent sets are $P_j=\operatorname{pa}_{\mathcal D}(j)$, whereas all predecessors in an ordering are $R_j^\pi$. Matrices retain the original node labels unless a permutation is stated explicitly.</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>All errors are mutually independent. There are no hidden variables, selection effects, or feedback loops. Means are assumed known to be zero in the likelihood calculations. Estimating an intercept or mean requires changing those calculations and their parameter counts.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Graphs and Gaussian models</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interventions and total effects</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Let $\mathcal D=(V,E)$ be a DAG on $V=<span class="sc">\{</span>1,\ldots,q<span class="sc">\}</span>$. Write $\operatorname{pa}_{\mathcal D}(j)$, $\operatorname{an}_{\mathcal D}(j)$ and $\operatorname{de}_{\mathcal D}(j)$ for parents, strict ancestors and strict descendants. These sets exclude the node itself. An ordering is topological when every parent precedes its children. For a set, parents and ancestors denote unions of the corresponding node sets.</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>A hard intervention $\operatorname{do}(X_d=x)$ replaces the equation for $X_d$ by the constant $x$ and removes its incoming edges. The remaining structural equations are retained. For $d\ne y$, define</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Use $\mathcal D$ for the graph and $D=\operatorname{diag}(v_1,\ldots,v_q)$ for positive error variances. The centered structural equations are</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>\tau_{dy}=\frac{\partial}{\partial x}E<span class="co">[</span><span class="ot">X_y\mid\operatorname{do}(X_d=x)</span><span class="co">]</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>=\sum_{p:d\rightsquigarrow y}\prod_{(u\to v)\in p} B_{uv}</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>=<span class="co">[</span><span class="ot">L^{-1}</span><span class="co">]</span>_{dy}.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>X=B^\top X+\epsilon,\qquad \epsilon\sim N_q(0,D),\qquad L=I-B,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>where $B_{uj}=0$ if $u\notin\operatorname{pa}_{\mathcal D}(j)$. Allowed edge coefficients may equal zero; requiring every allowed coefficient to be nonzero would unnecessarily exclude legitimate parameter values and would still not guarantee faithfulness. Consequently,</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>**Analytical justification.** Since $B$ is nilpotent after topological permutation, $(I-B)^{-1}=I+B+\cdots+B^{q-1}$. For distinct endpoints its $(d,y)$ entry enumerates the directed paths. Replacing the treatment equation yields the same propagation along paths starting at $d$.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>If no directed path exists, $\tau_{dy}=0$ for all parameters. If a path exists, opposing path contributions may still cancel. Thus ancestry and a nonzero effect are different statements at particular parameter values. For simultaneous interventions, paths through another intervened treatment are removed; the single-treatment formula cannot be reused without this change. Joint interventions require a separate construction <span class="co">[</span><span class="ot">@nandy2017; @castellettiMascaro2021</span><span class="co">]</span>.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Adjustment and the O-set</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>A set $Z\subseteq V\setminus<span class="sc">\{</span>d,y<span class="sc">\}</span>$ is valid for adjustment if, for every causal distribution compatible with the original DAG,</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>p(x_y\mid\operatorname{do}(X_d=x))</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>=\int p(x_y\mid X_d=x,X_Z=z)p(z)\,dz.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>L^\top X=\epsilon,\qquad</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\Sigma=L^{-\top}DL^{-1},\qquad \Omega=LD^{-1}L^\top.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>All errors are mutually independent. There are no hidden variables, selection effects, or feedback loops. Means are assumed known to be zero in the likelihood calculations. Estimating an intercept or mean requires changing those calculations and their parameter counts.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interventions and total effects</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>A hard intervention $\operatorname{do}(X_d=x)$ replaces the equation for $X_d$ by the constant $x$ and removes its incoming edges. The remaining structural equations are retained. For $d\ne y$, define</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>For $Z=\varnothing$, the right side is $p(x_y\mid X_d=x)$. In a Gaussian model write the **observational** conditional mean as</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>\tau_{dy}=\frac{\partial}{\partial x}E<span class="co">[</span><span class="ot">X_y\mid\operatorname{do}(X_d=x)</span><span class="co">]</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>=\sum_{p:d\rightsquigarrow y}\prod_{(u\to v)\in p} B_{uv}</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>=<span class="co">[</span><span class="ot">L^{-1}</span><span class="co">]</span>_{dy}.</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">X_y\mid X_d,X_Z</span><span class="co">]</span>=\beta_d X_d+\beta_Z^\top X_Z.</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-path-sum collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>If $Z$ is valid, integrating this expression proves $\beta_d=\tau_{dy}$. The adjustment identity does not generally equate the observational conditional law with $p(x_y\mid\operatorname{do}(X_d=x),X_Z=z)$ for an arbitrary valid set.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Since $B$ is nilpotent after topological permutation, $(I-B)^{-1}=I+B+\cdots+B^{q-1}$. For distinct endpoints its $(d,y)$ entry enumerates the directed paths. Replacing the treatment equation yields the same propagation along paths starting at $d$.</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>Suppose $d\in\operatorname{an}_{\mathcal D}(y)$ and let</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>M=\operatorname{de}_{\mathcal D}(d)\cap\operatorname{an}_{\mathcal D}(y),\qquad</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>C=M\cup<span class="sc">\{</span>y<span class="sc">\}</span>,\qquad</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>O=\operatorname{pa}_{\mathcal D}(C)\setminus(<span class="sc">\{</span>d<span class="sc">\}</span>\cup M).</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>If no directed path exists, $\tau_{dy}=0$ for all parameters. If a path exists, opposing path contributions may still cancel. Thus ancestry and a nonzero effect are different statements at particular parameter values. For simultaneous interventions, paths through another intervened treatment are removed; the single-treatment formula cannot be reused without this change. Joint interventions require a separate construction <span class="co">[</span><span class="ot">@nandy2017; @castellettiMascaro2021</span><span class="co">]</span>.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Adjustment and the O-set</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>A set $Z\subseteq V\setminus<span class="sc">\{</span>d,y<span class="sc">\}</span>$ is valid for adjustment if, for every causal distribution compatible with the original DAG,</span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>The general O-set definition removes the treatment and the causal nodes together with their descendants. In this single-treatment DAG setting, an external parent of $C$ cannot be a descendant of $C$ without a directed cycle, so it reduces to the displayed expression. An external parent descended from $d$ would itself lie in $M$; hence $O$ contains only non-descendants of $d$.</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>**Source-supported result.** The O-set is valid and minimizes the **asymptotic** variance of the OLS total-effect estimator over valid adjustment sets under the causal linear-model assumptions <span class="co">[</span><span class="ot">@henckel2022; @witte2020</span><span class="co">]</span>. This is not a claim of universal finite-sample or Bayesian optimality. With $A=(d,O)$ in that order,</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>\tau_{dy}=<span class="co">[</span><span class="ot">\Sigma_{AA}^{-1}\Sigma_{Ay}</span><span class="co">]</span>_1,\qquad</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>\widehat\tau_{dy}=<span class="co">[</span><span class="ot">S_{AA}^{-1}S_{Ay}</span><span class="co">]</span>_1.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>p(x_y\mid\operatorname{do}(X_d=x))</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>=\int p(x_y\mid X_d=x,X_Z=z)p(z)\,dz.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>For $Z=\varnothing$, the right side is $p(x_y\mid X_d=x)$. In a Gaussian model write the **observational** conditional mean as</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>$S$ is the sample covariance matrix (centered when fitting an intercept). Equivalently, use $(W^\top W)^{-1}W^\top x_y$ for the regression design $W$. The asymptotic variance is</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">X_y\mid X_d,X_Z</span><span class="co">]</span>=\beta_d X_d+\beta_Z^\top X_Z.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>\operatorname{avar}(\widehat\tau_{dy})=</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>\frac{\operatorname{Var}(X_y\mid X_d,X_O)}{n\operatorname{Var}(X_d\mid X_O)}.</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Independence maps and ordered regressions {#sec-ordered-imap}</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>Let $\mathcal I(\mathcal D)$ denote all graphical d-separations, and $\mathcal I(p)$ all distributional conditional independences. A DAG $G$ is an I-MAP of $p$ if $\mathcal I(G)\subseteq\mathcal I(p)$, and an I-MAP of $\mathcal D$ if $\mathcal I(G)\subseteq\mathcal I(\mathcal D)$. This latter definition does not require choosing a faithful distribution. Faithfulness means $\mathcal I(p)=\mathcal I(\mathcal D)$.</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>For ordering $\pi$, put $P_j=<span class="sc">\{</span>\pi_1,\ldots,\pi_{j-1}<span class="sc">\}</span>$. Define the ordered graph by</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>\pi_i\to\pi_j\in G^\pi_{\mathcal D}</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>\quad\Longleftrightarrow\quad</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>i&lt;j\ \text{and}\ \pi_i\not<span class="sc">\!</span>\perp_{\mathcal D}\pi_j\mid P_j\setminus<span class="sc">\{</span>\pi_i<span class="sc">\}</span>.</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>The edge criterion uses **dependence**. For nonsingular Gaussians, the corresponding distribution-specific construction keeps exactly the nonzero coefficients in each regression on all predecessors. Gaussian conditional independence satisfies the intersection property, so removing all zero coefficients leaves a valid factorization. Each retained coefficient is necessary: deleting it would impose a conditional independence that fails in that regression. Thus the distribution-specific graph is a minimal I-MAP. Taking a faithful Gaussian distribution of $\mathcal D$ gives the graphical ordered minimal I-MAP above; its definition applies to the entire DAG model.</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>If $Z$ is valid, integrating this expression proves $\beta_d=\tau_{dy}$. The adjustment identity does not generally equate the observational conditional law with $p(x_y\mid\operatorname{do}(X_d=x),X_Z=z)$ for an arbitrary valid set.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Suppose $d\in\operatorname{an}_{\mathcal D}(y)$ and let</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>M=\operatorname{de}_{\mathcal D}(d)\cap\operatorname{an}_{\mathcal D}(y),\qquad</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>C=M\cup<span class="sc">\{</span>y<span class="sc">\}</span>,\qquad</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>O=\operatorname{pa}_{\mathcal D}(C)\setminus(<span class="sc">\{</span>d<span class="sc">\}</span>\cup M).</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>The general O-set definition removes the treatment and the causal nodes together with their descendants. In this single-treatment DAG setting, an external parent of $C$ cannot be a descendant of $C$ without a directed cycle, so it reduces to the displayed expression. An external parent descended from $d$ would itself lie in $M$; hence $O$ contains only non-descendants of $d$.</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>**Source-supported result.** The O-set is valid and minimizes the **asymptotic** variance of the OLS total-effect estimator over valid adjustment sets under the causal linear-model assumptions <span class="co">[</span><span class="ot">@henckel2022; @witte2020</span><span class="co">]</span>. This is not a claim of universal finite-sample or Bayesian optimality. With $A=(d,O)$ in that order,</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>\tau_{dy}=<span class="co">[</span><span class="ot">\Sigma_{AA}^{-1}\Sigma_{Ay}</span><span class="co">]</span>_1,\qquad</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>\widehat\tau_{dy}=<span class="co">[</span><span class="ot">S_{AA}^{-1}S_{Ay}</span><span class="co">]</span>_1.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>**Minimal** means no edge can be removed while retaining the I-MAP property; it does not mean globally fewest edges. At unfaithful parameter values, a regression coefficient can vanish on an edge of the graph-defined I-MAP. Keep the graph and its allowed coefficients separate.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>$S$ is the sample covariance matrix (centered when fitting an intercept). Equivalently, use $(W^\top W)^{-1}W^\top x_y$ for the regression design $W$. The asymptotic variance is</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>\operatorname{avar}(\widehat\tau_{dy})=</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>\frac{\operatorname{Var}(X_y\mid X_d,X_O)}{n\operatorname{Var}(X_d\mid X_O)}.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Independence maps and ordered regressions {#sec-ordered-imap}</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Let $\mathcal I(\mathcal D)$ denote all graphical d-separations, and $\mathcal I(p)$ all distributional conditional independences. A DAG $G$ is an I-MAP of $p$ if $\mathcal I(G)\subseteq\mathcal I(p)$, and an I-MAP of $\mathcal D$ if $\mathcal I(G)\subseteq\mathcal I(\mathcal D)$. This latter definition does not require choosing a faithful distribution. Faithfulness means $\mathcal I(p)=\mathcal I(\mathcal D)$.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>For ordering $\pi$, put $R_{\pi_j}^\pi=<span class="sc">\{</span>\pi_1,\ldots,\pi_{j-1}<span class="sc">\}</span>$, the predecessors of the node $\pi_j$. Define the ordered graph by</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>\pi_i\to\pi_j\in G^\pi_{\mathcal D}</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>\quad\Longleftrightarrow\quad</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>i&lt;j\ \text{and}\ \pi_i\not<span class="sc">\!</span>\perp_{\mathcal D}\pi_j\mid R_{\pi_j}^\pi\setminus<span class="sc">\{</span>\pi_i<span class="sc">\}</span>.</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>The edge criterion uses **dependence**. For nonsingular Gaussians, the corresponding distribution-specific construction keeps exactly the nonzero coefficients in each regression on all predecessors. Gaussian conditional independence satisfies the intersection property, so removing all zero coefficients leaves a valid factorization. Each retained coefficient is necessary: deleting it would impose a conditional independence that fails in that regression. Thus the distribution-specific graph is a minimal I-MAP. Taking a faithful Gaussian distribution of $\mathcal D$ gives the graphical ordered minimal I-MAP above; its definition applies to the entire DAG model.</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>**Minimal** means no edge can be removed while retaining the I-MAP property; it does not mean globally fewest edges. At unfaithful parameter values, a regression coefficient can vanish on an edge of the graph-defined I-MAP. Keep the graph and its allowed coefficients separate.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

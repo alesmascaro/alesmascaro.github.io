@@ -2,54 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/index.html</loc>
-    <lastmod>2026-10-10T11:04:56.799Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.079Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/01-questions.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.073Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/related-work.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.074Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/02-framework.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.073Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/methods.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.074Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/imap-construction.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
-  </url>
-  <url>
-    <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/imap-validation.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.074Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/bayesian-imap.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.074Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/bayesian-adjustment.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
-  </url>
-  <url>
-    <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/04-findings.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.073Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/discussion.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
-  </url>
-  <url>
-    <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/05-open-questions.html</loc>
-    <lastmod>2026-10-10T11:04:56.798Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.074Z</lastmod>
   </url>
   <url>
     <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/references.html</loc>
-    <lastmod>2026-10-10T11:04:56.800Z</lastmod>
+    <lastmod>2026-10-10T13:30:45.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://alesmascaro.github.io/alternative-dag-parameterizations/chapters/imap-validation.html</loc>
+    <lastmod>2026-10-10T13:30:45.074Z</lastmod>
   </url>
 </urlset>

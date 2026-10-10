@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/imap-validation.html" rel="next">
+<link href="../chapters/bayesian-imap.html" rel="next">
 <link href="../chapters/methods.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -186,7 +186,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -198,13 +198,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,38 +215,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,6 +237,23 @@ window.Quarto = {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -270,6 +269,7 @@ window.Quarto = {
   <li><a href="#sec-transposition" id="toc-sec-transposition" class="nav-link" data-scroll-target="#sec-transposition"><span class="header-section-number">5.3</span> Adjacent transposition</a></li>
   <li><a href="#forward-and-reverse-algorithms" id="toc-forward-and-reverse-algorithms" class="nav-link" data-scroll-target="#forward-and-reverse-algorithms"><span class="header-section-number">5.4</span> Forward and reverse algorithms</a></li>
   <li><a href="#sec-imap-constraints" id="toc-sec-imap-constraints" class="nav-link" data-scroll-target="#sec-imap-constraints"><span class="header-section-number">5.5</span> Exact characterization of the constrained image</a></li>
+  <li><a href="#a-chain-in-effect-coordinates" id="toc-a-chain-in-effect-coordinates" class="nav-link" data-scroll-target="#a-chain-in-effect-coordinates"><span class="header-section-number">5.6</span> A chain in effect coordinates</a></li>
   </ul>
 </nav>
     </div>
@@ -301,7 +301,23 @@ window.Quarto = {
 <p><span class="math display">\[
 \pi_{dy}=\langle\delta_1,d,M,y,\delta_3\rangle,
 \]</span></p>
-<p>where the mediator block <span class="math inline">\(M\)</span> is internally topological. Define <span class="math inline">\(S=\{d\}\cup M\cup\{y\}\)</span> and <span class="math inline">\(A=\operatorname{an}_{\mathcal D}(S)\setminus S\)</span>. Choose a topological ordering within <span class="math inline">\(A\)</span>, then <span class="math inline">\(d,M,y\)</span>, then the remaining nodes. This is topological: every outside parent of <span class="math inline">\(S\)</span> belongs to <span class="math inline">\(A\)</span>, and an ancestor of <span class="math inline">\(S\)</span> descended from <span class="math inline">\(d\)</span> must lie on a <span class="math inline">\(d\)</span>-to-<span class="math inline">\(y\)</span> path and so belongs to <span class="math inline">\(S\)</span>. No node in <span class="math inline">\(S\)</span> can therefore be an ancestor of a node in <span class="math inline">\(A\)</span>. Since <span class="math inline">\(A\cup S\)</span> is ancestral, all remaining nodes can be placed last. This establishes the existence of a closest ordering.</p>
+<p>where the mediator block <span class="math inline">\(M\)</span> is internally topological. Such an ordering always exists.</p>
+<div id="proof-closest-ordering" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Define <span class="math inline">\(S=\{d\}\cup M\cup\{y\}\)</span> and <span class="math inline">\(A=\operatorname{an}_{\mathcal D}(S)\setminus S\)</span>. Choose a topological ordering within <span class="math inline">\(A\)</span>, then <span class="math inline">\(d,M,y\)</span>, then the remaining nodes. This is topological: every outside parent of <span class="math inline">\(S\)</span> belongs to <span class="math inline">\(A\)</span>, and an ancestor of <span class="math inline">\(S\)</span> descended from <span class="math inline">\(d\)</span> must lie on a <span class="math inline">\(d\)</span>-to-<span class="math inline">\(y\)</span> path and so belongs to <span class="math inline">\(S\)</span>. No node in <span class="math inline">\(S\)</span> can therefore be an ancestor of a node in <span class="math inline">\(A\)</span>. Since <span class="math inline">\(A\cup S\)</span> is ancestral, all remaining nodes can be placed last. This establishes the existence of a closest ordering.</p>
+</div>
+</div>
+</div>
 <p>Move <span class="math inline">\(y\)</span> just before the mediator block to obtain</p>
 <p><span class="math display">\[
 \pi^*=\langle\delta_1,d,y,M,\delta_3\rangle.
@@ -318,12 +334,27 @@ window.Quarto = {
 <p><span class="math display">\[
 -\widetilde L_{dy}=\tau_{dy}.
 \]</span></p>
-<p><strong>Proof.</strong> Every external parent of <span class="math inline">\(M\cup\{y\}\)</span> is either <span class="math inline">\(d\)</span> or lies in <span class="math inline">\(O\subseteq\delta_1\)</span>. Successive substitution of the equations for the mediators therefore gives</p>
+<div id="proof-outcome" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Every external parent of <span class="math inline">\(M\cup\{y\}\)</span> is either <span class="math inline">\(d\)</span> or lies in <span class="math inline">\(O\subseteq\delta_1\)</span>. Successive substitution of the equations for the mediators therefore gives</p>
 <p><span class="math display">\[
 X_y=\tau_{dy}X_d+\sum_{u\in O}c_uX_u+\eta,
 \]</span></p>
 <p>where <span class="math inline">\(\eta\)</span> is a linear combination of the errors at <span class="math inline">\(M\cup\{y\}\)</span>. Because the closest ordering is topological, <span class="math inline">\((X_{\delta_1},X_d)\)</span> depends only on earlier errors, so <span class="math inline">\(\eta\)</span> is independent of this entire predecessor vector. Its variance is positive because its coefficient on <span class="math inline">\(\epsilon_y\)</span> is one. This is exactly the regression of <span class="math inline">\(X_y\)</span> on <span class="math inline">\((X_{\delta_1},X_d)\)</span>; all predecessors outside <span class="math inline">\(\{d\}\cup O\)</span> have zero coefficients.</p>
 <p>For each <span class="math inline">\(u\in O\)</span>, an edge <span class="math inline">\(u\to c\)</span>, <span class="math inline">\(c\in M\cup\{y\}\)</span>, followed by a directed path from <span class="math inline">\(c\)</span> to <span class="math inline">\(y\)</span> supplies a monomial in <span class="math inline">\(c_u\)</span>. All internal nodes of this path lie in the mediator block. Distinct paths give distinct monomials with positive formal signs in the <span class="math inline">\(B\)</span> coefficients; hence <span class="math inline">\(c_u\)</span> is not the zero polynomial. Likewise, a directed <span class="math inline">\(d\)</span>-to-<span class="math inline">\(y\)</span> path makes <span class="math inline">\(\tau_{dy}\)</span> a nonzero polynomial. These coefficients can be nonzero in the DAG model and thus their associated conditional independences are not graphically implied. By the ordered edge criterion, precisely these predecessor nodes are parents in <span class="math inline">\(G^*\)</span>. This proves the graph statement, while the substitution identity proves the effect equality at all parameter values. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
 <p>Ancestors of <span class="math inline">\(d\)</span> need not be separated from the outcome by conditioning on <span class="math inline">\(d\)</span>. For example, <span class="math inline">\(u\to d\)</span>, <span class="math inline">\(u\to y\)</span> and <span class="math inline">\(d\to y\)</span> leave <span class="math inline">\(u\)</span> associated with <span class="math inline">\(y\)</span> given <span class="math inline">\(d\)</span>. Such confounders are included in the external-parent regression.</p>
 </section>
 <section id="sec-transposition" class="level2" data-number="5.3">
@@ -339,11 +370,26 @@ L_{\cdot j}^{E}=L_{\cdot j}-aL_{\cdot i},\qquad
 \widetilde v_i=\frac{v_iv_j}{s},\qquad \widetilde v_j=s.
 \]</span></p>
 <p>Swap <span class="math inline">\(i,j\)</span> in the ordering. Both variance updates use the <strong>old</strong> values; an in-place update that reuses the new <span class="math inline">\(v_i\)</span> in <span class="math inline">\(s\)</span> is incorrect.</p>
-<p><strong>Proof of covariance preservation and DAG validity.</strong> The eliminated error is <span class="math inline">\(\epsilon_j^E=\epsilon_j-a\epsilon_i\)</span>, with variance <span class="math inline">\(s\)</span> and covariance <span class="math inline">\(-av_i\)</span> with <span class="math inline">\(\epsilon_i\)</span>. Replacing the latter by <span class="math inline">\(\widetilde\epsilon_i=\epsilon_i+(av_i/s)\epsilon_j^E\)</span> makes these two errors uncorrelated, hence independent by Gaussianity, and gives variance <span class="math inline">\(v_iv_j/s\)</span>. The invertible equation operations leave <span class="math inline">\(X\)</span> unchanged, so</p>
+<div id="proof-transposition" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof of covariance preservation and DAG validity">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof of covariance preservation and DAG validity
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The eliminated error is <span class="math inline">\(\epsilon_j^E=\epsilon_j-a\epsilon_i\)</span>, with variance <span class="math inline">\(s\)</span> and covariance <span class="math inline">\(-av_i\)</span> with <span class="math inline">\(\epsilon_i\)</span>. Replacing the latter by <span class="math inline">\(\widetilde\epsilon_i=\epsilon_i+(av_i/s)\epsilon_j^E\)</span> makes these two errors uncorrelated, hence independent by Gaussianity, and gives variance <span class="math inline">\(v_iv_j/s\)</span>. The invertible equation operations leave <span class="math inline">\(X\)</span> unchanged, so</p>
 <p><span class="math display">\[
 \widetilde L^{-\top}\widetilde D\widetilde L^{-1}=L^{-\top}DL^{-1}.
 \]</span></p>
 <p>Adjacency ensures that both old columns involve only predecessors and the pair itself. After elimination the <span class="math inline">\(j\)</span> column involves only earlier nodes; the <span class="math inline">\(i\)</span> column involves those nodes and <span class="math inline">\(j\)</span>. The unit diagonal is retained and the new matrix is triangular in the swapped ordering. Its equations therefore constitute a DAG factorization. Uniqueness of Gaussian regressions on all predecessors identifies it with the modified Cholesky factorization in that ordering. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
 <p>The covariance algebra alone is insufficient to establish a DAG for arbitrary <span class="math inline">\(i\to j\)</span>. In <span class="math inline">\(i\to k\to j\)</span> with <span class="math inline">\(i\to j\)</span>, transposing <span class="math inline">\(i,j\)</span> can introduce <span class="math inline">\(k\to i\)</span> while retaining <span class="math inline">\(i\to k\)</span>. Adjacency is essential to DAG validity. Minimality follows from the ordered construction: for a faithful input distribution, numerical nonzero support gives the ordered minimal I-MAP; for a graph-defined output use d-separation in the original graph, rather than thresholding a particular parameter matrix.</p>
 </section>
 <section id="forward-and-reverse-algorithms" class="level2" data-number="5.4">
@@ -361,9 +407,37 @@ F(\Theta_{\mathcal D})=
 \left\{\widetilde\theta\in\Theta_{G^*}:
 L^{\mathrm{back}}_{uv}=0\ \text{for every }u\prec_{\pi_{dy}}v\text{ with }u\to v\notin E\right\}.
 \]</span></p>
-<p><strong>Proof.</strong> Necessity follows from reversing <span class="math inline">\(F\)</span>. For sufficiency, the imposed zeros place the restored factorization in <span class="math inline">\(\Theta_{\mathcal D}\)</span>. Refactorizing it in <span class="math inline">\(\pi^*\)</span> returns the unique original <span class="math inline">\(\widetilde\theta\)</span>. All denominators are positive conditional variances. Consequently <span class="math inline">\(F\)</span> and its inverse are smooth on the positive-variance domains, and the image has dimension <span class="math inline">\(q+|E|\)</span>, even though the ambient I-MAP has dimension <span class="math inline">\(q+|E(G^*)|\)</span>. <span class="math inline">\(\square\)</span></p>
+<div id="proof-constrained-image" class="proof callout callout-style-simple callout-note no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Necessity follows from reversing <span class="math inline">\(F\)</span>. For sufficiency, the imposed zeros place the restored factorization in <span class="math inline">\(\Theta_{\mathcal D}\)</span>. Refactorizing it in <span class="math inline">\(\pi^*\)</span> returns the unique original <span class="math inline">\(\widetilde\theta\)</span>. All denominators are positive conditional variances. Consequently <span class="math inline">\(F\)</span> and its inverse are smooth on the positive-variance domains, and the image has dimension <span class="math inline">\(q+|E|\)</span>, even though the ambient I-MAP has dimension <span class="math inline">\(q+|E(G^*)|\)</span>. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
 <p>This characterization avoids any need to infer constraints from a single numerical sparsity pattern. Constraints may be redundant; their number need not equal their rank. A choice of which entries to solve for can fail at zero denominators, so a global free-coordinate chart and variation independence of the effect from the nuisance parameters require additional conditions.</p>
 <p>The construction preserves the observational model. The alternative arrows generally do not retain the original intervention semantics. The distinguished effect coefficient is justified by the preceding theorem; other intervention effects must still be evaluated from the original causal model.</p>
+</section>
+<section id="a-chain-in-effect-coordinates" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="a-chain-in-effect-coordinates"><span class="header-section-number">5.6</span> A chain in effect coordinates</h2>
+<p>For <span class="math inline">\(1\to2\to3\)</span> with structural coefficients <span class="math inline">\(b=B_{12}\)</span> and <span class="math inline">\(c=B_{23}\)</span>, the closest ordering is <span class="math inline">\((1,2,3)\)</span> and the effect ordering is <span class="math inline">\((1,3,2)\)</span>. Here <span class="math inline">\(M=\{2\}\)</span> and <span class="math inline">\(O=\varnothing\)</span>. Substitution gives</p>
+<p><span class="math display">\[
+X_3=bcX_1+c\epsilon_2+\epsilon_3.
+\]</span></p>
+<p>Thus the transformed outcome equation has coefficient <span class="math inline">\(\tau_{13}=bc\)</span> and residual variance <span class="math inline">\(s=c^2v_2+v_3\)</span>. In the regression of <span class="math inline">\(X_2\)</span> on <span class="math inline">\((X_1,X_3)\)</span>, put</p>
+<p><span class="math display">\[
+k=\frac{cv_2}{s},\qquad u=\frac{v_2v_3}{s}.
+\]</span></p>
+<p>Its coefficients are <span class="math inline">\(b-k\tau_{13}\)</span> for <span class="math inline">\(X_1\)</span> and <span class="math inline">\(k\)</span> for <span class="math inline">\(X_3\)</span>, with residual variance <span class="math inline">\(u&gt;0\)</span>. These are the adjacent-transposition formulas expressed as regression coefficients. The unconstrained I-MAP has three edges; the original chain has two. Reversing the transposition enforces the one missing-edge equation, so the transformed model still has five free parameters.</p>
+<p>The comparison in <a href="related-work.html#sec-frugal-chain" class="quarto-xref"><span>Section 2.3.1</span></a> uses the same causal marginal and preserves the chain by a different explicit constraint. Both representations expose the effect, and both must retain the original model’s restrictions. The diamond in <a href="imap-validation.html#sec-diamond" class="quarto-xref"><span>Section A.1</span></a> illustrates the analogous construction with multiple causal paths and two missing-edge constraints.</p>
 
 
 <!-- -->
@@ -824,13 +898,13 @@ L^{\mathrm{back}}_{uv}=0\ \text{for every }u\prec_{\pi_{dy}}v\text{ with }u\to v
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/methods.html" class="pagination-link" aria-label="Analytical and computational methods">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span>
+      <a href="../chapters/methods.html" class="pagination-link" aria-label="Preliminaries">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/imap-validation.html" class="pagination-link" aria-label="Worked example and reproducible validation">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/bayesian-imap.html" class="pagination-link" aria-label="The fully Bayesian workflow">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -844,95 +918,131 @@ L^{\mathrm{back}}_{uv}=0\ \text{for every }u\prec_{\pi_{dy}}v\text{ with }u\to v
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>\pi_{dy}=\langle\delta_1,d,M,y,\delta_3\rangle,</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>where the mediator block $M$ is internally topological. Define $S=<span class="sc">\{</span>d<span class="sc">\}</span>\cup M\cup<span class="sc">\{</span>y<span class="sc">\}</span>$ and $A=\operatorname{an}_{\mathcal D}(S)\setminus S$. Choose a topological ordering within $A$, then $d,M,y$, then the remaining nodes. This is topological: every outside parent of $S$ belongs to $A$, and an ancestor of $S$ descended from $d$ must lie on a $d$-to-$y$ path and so belongs to $S$. No node in $S$ can therefore be an ancestor of a node in $A$. Since $A\cup S$ is ancestral, all remaining nodes can be placed last. This establishes the existence of a closest ordering.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>where the mediator block $M$ is internally topological. Such an ordering always exists.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Move $y$ just before the mediator block to obtain</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-closest-ordering collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\pi^*=\langle\delta_1,d,y,M,\delta_3\rangle.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Define $S=<span class="sc">\{</span>d<span class="sc">\}</span>\cup M\cup<span class="sc">\{</span>y<span class="sc">\}</span>$ and $A=\operatorname{an}_{\mathcal D}(S)\setminus S$. Choose a topological ordering within $A$, then $d,M,y$, then the remaining nodes. This is topological: every outside parent of $S$ belongs to $A$, and an ancestor of $S$ descended from $d$ must lie on a $d$-to-$y$ path and so belongs to $S$. No node in $S$ can therefore be an ancestor of a node in $A$. Since $A\cup S$ is ancestral, all remaining nodes can be placed last. This establishes the existence of a closest ordering.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Different choices inside $\delta_1,M,\delta_3$ may give different I-MAPs. “Optimal” here refers to the outcome regression's adjustment efficiency; it does not identify a unique globally optimal graph.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Move $y$ just before the mediator block to obtain</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Outcome parents and the effect coordinate {#sec-outcome-theorem}</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>**Proposition (outcome parents and effect coordinate).** For any closest ordering, the graph-defined ordered minimal I-MAP $G^*=G^{\pi^*}_{\mathcal D}$ has</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\pi^*=\langle\delta_1,d,y,M,\delta_3\rangle.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\operatorname{pa}_{G^*}(y)=<span class="sc">\{</span>d<span class="sc">\}</span>\cup O.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Different choices inside $\delta_1,M,\delta_3$ may give different I-MAPs. “Optimal” here refers to the outcome regression's adjustment efficiency; it does not identify a unique globally optimal graph.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Outcome parents and the effect coordinate {#sec-outcome-theorem}</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>For every positive-variance parameter value of the original Gaussian DAG model, including unfaithful ones, its regression factorization in $\pi^*$ satisfies</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>**Proposition (outcome parents and effect coordinate).** For any closest ordering, the graph-defined ordered minimal I-MAP $G^*=G^{\pi^*}_{\mathcal D}$ has</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>-\widetilde L_{dy}=\tau_{dy}.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>\operatorname{pa}_{G^*}(y)=<span class="sc">\{</span>d<span class="sc">\}</span>\cup O.</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>**Proof.** Every external parent of $M\cup<span class="sc">\{</span>y<span class="sc">\}</span>$ is either $d$ or lies in $O\subseteq\delta_1$. Successive substitution of the equations for the mediators therefore gives</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>For every positive-variance parameter value of the original Gaussian DAG model, including unfaithful ones, its regression factorization in $\pi^*$ satisfies</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>X_y=\tau_{dy}X_d+\sum_{u\in O}c_uX_u+\eta,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>-\widetilde L_{dy}=\tau_{dy}.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>where $\eta$ is a linear combination of the errors at $M\cup<span class="sc">\{</span>y<span class="sc">\}</span>$. Because the closest ordering is topological, $(X_{\delta_1},X_d)$ depends only on earlier errors, so $\eta$ is independent of this entire predecessor vector. Its variance is positive because its coefficient on $\epsilon_y$ is one. This is exactly the regression of $X_y$ on $(X_{\delta_1},X_d)$; all predecessors outside $<span class="sc">\{</span>d<span class="sc">\}</span>\cup O$ have zero coefficients.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-outcome collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>For each $u\in O$, an edge $u\to c$, $c\in M\cup<span class="sc">\{</span>y<span class="sc">\}</span>$, followed by a directed path from $c$ to $y$ supplies a monomial in $c_u$. All internal nodes of this path lie in the mediator block. Distinct paths give distinct monomials with positive formal signs in the $B$ coefficients; hence $c_u$ is not the zero polynomial. Likewise, a directed $d$-to-$y$ path makes $\tau_{dy}$ a nonzero polynomial. These coefficients can be nonzero in the DAG model and thus their associated conditional independences are not graphically implied. By the ordered edge criterion, precisely these predecessor nodes are parents in $G^*$. This proves the graph statement, while the substitution identity proves the effect equality at all parameter values. $\square$</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Every external parent of $M\cup<span class="sc">\{</span>y<span class="sc">\}</span>$ is either $d$ or lies in $O\subseteq\delta_1$. Successive substitution of the equations for the mediators therefore gives</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Ancestors of $d$ need not be separated from the outcome by conditioning on $d$. For example, $u\to d$, $u\to y$ and $d\to y$ leave $u$ associated with $y$ given $d$. Such confounders are included in the external-parent regression.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Adjacent transposition {#sec-transposition}</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>X_y=\tau_{dy}X_d+\sum_{u\in O}c_uX_u+\eta,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Let $i,j$ be **adjacent in the current factorization ordering**, with $i$ preceding $j$, and put $a=L_{ij}$. It is permissible that $a=0$. Save the old variances $v_i,v_j$ and set $s=v_j+a^2v_i$. Apply these column operations in sequence:</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>where $\eta$ is a linear combination of the errors at $M\cup<span class="sc">\{</span>y<span class="sc">\}</span>$. Because the closest ordering is topological, $(X_{\delta_1},X_d)$ depends only on earlier errors, so $\eta$ is independent of this entire predecessor vector. Its variance is positive because its coefficient on $\epsilon_y$ is one. This is exactly the regression of $X_y$ on $(X_{\delta_1},X_d)$; all predecessors outside $<span class="sc">\{</span>d<span class="sc">\}</span>\cup O$ have zero coefficients.</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>L_{\cdot j}^{E}=L_{\cdot j}-aL_{\cdot i},\qquad</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>\widetilde L_{\cdot i}=L_{\cdot i}+\frac{av_i}{s}L_{\cdot j}^{E},\qquad</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>\widetilde L_{\cdot j}=L_{\cdot j}^{E},</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>For each $u\in O$, an edge $u\to c$, $c\in M\cup<span class="sc">\{</span>y<span class="sc">\}</span>$, followed by a directed path from $c$ to $y$ supplies a monomial in $c_u$. All internal nodes of this path lie in the mediator block. Distinct paths give distinct monomials with positive formal signs in the $B$ coefficients; hence $c_u$ is not the zero polynomial. Likewise, a directed $d$-to-$y$ path makes $\tau_{dy}$ a nonzero polynomial. These coefficients can be nonzero in the DAG model and thus their associated conditional independences are not graphically implied. By the ordered edge criterion, precisely these predecessor nodes are parents in $G^*$. This proves the graph statement, while the substitution identity proves the effect equality at all parameter values. $\square$</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Ancestors of $d$ need not be separated from the outcome by conditioning on $d$. For example, $u\to d$, $u\to y$ and $d\to y$ leave $u$ associated with $y$ given $d$. Such confounders are included in the external-parent regression.</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>and leave other columns unchanged. The new variances are</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Adjacent transposition {#sec-transposition}</span></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>\widetilde v_i=\frac{v_iv_j}{s},\qquad \widetilde v_j=s.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Let $i,j$ be **adjacent in the current factorization ordering**, with $i$ preceding $j$, and put $a=L_{ij}$. It is permissible that $a=0$. Save the old variances $v_i,v_j$ and set $s=v_j+a^2v_i$. Apply these column operations in sequence:</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Swap $i,j$ in the ordering. Both variance updates use the **old** values; an in-place update that reuses the new $v_i$ in $s$ is incorrect.</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>**Proof of covariance preservation and DAG validity.** The eliminated error is $\epsilon_j^E=\epsilon_j-a\epsilon_i$, with variance $s$ and covariance $-av_i$ with $\epsilon_i$. Replacing the latter by $\widetilde\epsilon_i=\epsilon_i+(av_i/s)\epsilon_j^E$ makes these two errors uncorrelated, hence independent by Gaussianity, and gives variance $v_iv_j/s$. The invertible equation operations leave $X$ unchanged, so</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>L_{\cdot j}^{E}=L_{\cdot j}-aL_{\cdot i},\qquad</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>\widetilde L_{\cdot i}=L_{\cdot i}+\frac{av_i}{s}L_{\cdot j}^{E},\qquad</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>\widetilde L_{\cdot j}=L_{\cdot j}^{E},</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>\widetilde L^{-\top}\widetilde D\widetilde L^{-1}=L^{-\top}DL^{-1}.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>and leave other columns unchanged. The new variances are</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>Adjacency ensures that both old columns involve only predecessors and the pair itself. After elimination the $j$ column involves only earlier nodes; the $i$ column involves those nodes and $j$. The unit diagonal is retained and the new matrix is triangular in the swapped ordering. Its equations therefore constitute a DAG factorization. Uniqueness of Gaussian regressions on all predecessors identifies it with the modified Cholesky factorization in that ordering. $\square$</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\widetilde v_i=\frac{v_iv_j}{s},\qquad \widetilde v_j=s.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>The covariance algebra alone is insufficient to establish a DAG for arbitrary $i\to j$. In $i\to k\to j$ with $i\to j$, transposing $i,j$ can introduce $k\to i$ while retaining $i\to k$. Adjacency is essential to DAG validity. Minimality follows from the ordered construction: for a faithful input distribution, numerical nonzero support gives the ordered minimal I-MAP; for a graph-defined output use d-separation in the original graph, rather than thresholding a particular parameter matrix.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Swap $i,j$ in the ordering. Both variance updates use the **old** values; an in-place update that reuses the new $v_i$ in $s$ is incorrect.</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Forward and reverse algorithms</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-transposition collapse="true" appearance="minimal" icon="false" title="Proof of covariance preservation and DAG validity"}</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Start with a closest ordering. Traverse $M$ in reverse topological order and transpose each mediator with $y$. At every step they are adjacent. If the current coefficient happens to be zero, swap their ordering with no numerical change. After the last step, the ordering is $\pi^*$ and the parameters are its unique Gaussian regression factorization. Minimality relative to the original graph follows from the ordered d-separation criterion; it does not follow solely from a succession of locally minimal I-MAPs.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>The eliminated error is $\epsilon_j^E=\epsilon_j-a\epsilon_i$, with variance $s$ and covariance $-av_i$ with $\epsilon_i$. Replacing the latter by $\widetilde\epsilon_i=\epsilon_i+(av_i/s)\epsilon_j^E$ makes these two errors uncorrelated, hence independent by Gaussianity, and gives variance $v_iv_j/s$. The invertible equation operations leave $X$ unchanged, so</span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>To reverse the construction, traverse $M$ in its original topological order, transposing $y$ with each mediator. Each transposition is an involution on its adjacent factorization pair: alternatively, uniqueness in the restored ordering proves that the reverse sequence recovers the original $(L,D)$ on the constrained image. Applied to an unconstrained Gaussian factorization on $G^*$, it recovers a factorization in $\pi_{dy}$ that can have extra coefficients.</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>With exactly one mediator, a single adjacent transposition in a closest ordering produces the effect coefficient. The existence of an edge $m\to y$ alone does not imply that $m$ is the sole mediator.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>\widetilde L^{-\top}\widetilde D\widetilde L^{-1}=L^{-\top}DL^{-1}.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exact characterization of the constrained image {#sec-imap-constraints}</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Adjacency ensures that both old columns involve only predecessors and the pair itself. After elimination the $j$ column involves only earlier nodes; the $i$ column involves those nodes and $j$. The unit diagonal is retained and the new matrix is triangular in the swapped ordering. Its equations therefore constitute a DAG factorization. Uniqueness of Gaussian regressions on all predecessors identifies it with the modified Cholesky factorization in that ordering. $\square$</span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Let $\Theta_{\mathcal D}$ have one free coefficient per allowed edge and $q$ positive variances. Let $\Theta_{G^*}$ be the analogous ambient space. The change of ordering $F$ maps the former into the latter while preserving $\Sigma$.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>For $\widetilde\theta\in\Theta_{G^*}$, reconstruct its covariance and factorize it in the original ordering, obtaining $(L^{\mathrm{back}},D^{\mathrm{back}})$. Then</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>The covariance algebra alone is insufficient to establish a DAG for arbitrary $i\to j$. In $i\to k\to j$ with $i\to j$, transposing $i,j$ can introduce $k\to i$ while retaining $i\to k$. Adjacency is essential to DAG validity. Minimality follows from the ordered construction: for a faithful input distribution, numerical nonzero support gives the ordered minimal I-MAP; for a graph-defined output use d-separation in the original graph, rather than thresholding a particular parameter matrix.</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>F(\Theta_{\mathcal D})=</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>\left<span class="sc">\{</span>\widetilde\theta\in\Theta_{G^*}:</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>L^{\mathrm{back}}_{uv}=0\ \text{for every }u\prec_{\pi_{dy}}v\text{ with }u\to v\notin E\right<span class="sc">\}</span>.</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Forward and reverse algorithms</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>Start with a closest ordering. Traverse $M$ in reverse topological order and transpose each mediator with $y$. At every step they are adjacent. If the current coefficient happens to be zero, swap their ordering with no numerical change. After the last step, the ordering is $\pi^*$ and the parameters are its unique Gaussian regression factorization. Minimality relative to the original graph follows from the ordered d-separation criterion; it does not follow solely from a succession of locally minimal I-MAPs.</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>To reverse the construction, traverse $M$ in its original topological order, transposing $y$ with each mediator. Each transposition is an involution on its adjacent factorization pair: alternatively, uniqueness in the restored ordering proves that the reverse sequence recovers the original $(L,D)$ on the constrained image. Applied to an unconstrained Gaussian factorization on $G^*$, it recovers a factorization in $\pi_{dy}$ that can have extra coefficients.</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>**Proof.** Necessity follows from reversing $F$. For sufficiency, the imposed zeros place the restored factorization in $\Theta_{\mathcal D}$. Refactorizing it in $\pi^*$ returns the unique original $\widetilde\theta$. All denominators are positive conditional variances. Consequently $F$ and its inverse are smooth on the positive-variance domains, and the image has dimension $q+|E|$, even though the ambient I-MAP has dimension $q+|E(G^*)|$. $\square$</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>With exactly one mediator, a single adjacent transposition in a closest ordering produces the effect coefficient. The existence of an edge $m\to y$ alone does not imply that $m$ is the sole mediator.</span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>This characterization avoids any need to infer constraints from a single numerical sparsity pattern. Constraints may be redundant; their number need not equal their rank. A choice of which entries to solve for can fail at zero denominators, so a global free-coordinate chart and variation independence of the effect from the nuisance parameters require additional conditions.</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exact characterization of the constrained image {#sec-imap-constraints}</span></span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>The construction preserves the observational model. The alternative arrows generally do not retain the original intervention semantics. The distinguished effect coefficient is justified by the preceding theorem; other intervention effects must still be evaluated from the original causal model.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Let $\Theta_{\mathcal D}$ have one free coefficient per allowed edge and $q$ positive variances. Let $\Theta_{G^*}$ be the analogous ambient space. The change of ordering $F$ maps the former into the latter while preserving $\Sigma$.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>For $\widetilde\theta\in\Theta_{G^*}$, reconstruct its covariance and factorize it in the original ordering, obtaining $(L^{\mathrm{back}},D^{\mathrm{back}})$. Then</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>F(\Theta_{\mathcal D})=</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>\left<span class="sc">\{</span>\widetilde\theta\in\Theta_{G^*}:</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>L^{\mathrm{back}}_{uv}=0\ \text{for every }u\prec_{\pi_{dy}}v\text{ with }u\to v\notin E\right<span class="sc">\}</span>.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-constrained-image collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>Necessity follows from reversing $F$. For sufficiency, the imposed zeros place the restored factorization in $\Theta_{\mathcal D}$. Refactorizing it in $\pi^*$ returns the unique original $\widetilde\theta$. All denominators are positive conditional variances. Consequently $F$ and its inverse are smooth on the positive-variance domains, and the image has dimension $q+|E|$, even though the ambient I-MAP has dimension $q+|E(G^*)|$. $\square$</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>This characterization avoids any need to infer constraints from a single numerical sparsity pattern. Constraints may be redundant; their number need not equal their rank. A choice of which entries to solve for can fail at zero denominators, so a global free-coordinate chart and variation independence of the effect from the nuisance parameters require additional conditions.</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>The construction preserves the observational model. The alternative arrows generally do not retain the original intervention semantics. The distinguished effect coefficient is justified by the preceding theorem; other intervention effects must still be evaluated from the original causal model.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="fu">## A chain in effect coordinates</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>For $1\to2\to3$ with structural coefficients $b=B_{12}$ and $c=B_{23}$, the closest ordering is $(1,2,3)$ and the effect ordering is $(1,3,2)$. Here $M=<span class="sc">\{</span>2<span class="sc">\}</span>$ and $O=\varnothing$. Substitution gives</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>X_3=bcX_1+c\epsilon_2+\epsilon_3.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>Thus the transformed outcome equation has coefficient $\tau_{13}=bc$ and residual variance $s=c^2v_2+v_3$. In the regression of $X_2$ on $(X_1,X_3)$, put</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>k=\frac{cv_2}{s},\qquad u=\frac{v_2v_3}{s}.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>Its coefficients are $b-k\tau_{13}$ for $X_1$ and $k$ for $X_3$, with residual variance $u&gt;0$. These are the adjacent-transposition formulas expressed as regression coefficients. The unconstrained I-MAP has three edges; the original chain has two. Reversing the transposition enforces the one missing-edge equation, so the transformed model still has five free parameters.</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>The comparison in @sec-frugal-chain uses the same causal marginal and preserves the chain by a different explicit constraint. Both representations expose the effect, and both must retain the original model's restrictions. The diamond in @sec-diamond illustrates the analogous construction with multiple causal paths and two missing-edge constraints.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

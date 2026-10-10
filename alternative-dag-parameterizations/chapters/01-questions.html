@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction and research questions – Alternative DAG Parameterizations</title>
+<title>1&nbsp; Introduction – Alternative DAG Parameterizations</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -61,7 +61,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -152,7 +171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-questions.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-questions.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -186,7 +205,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-questions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -198,13 +217,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and theoretical framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notation and context</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Analytical and computational methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,38 +234,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Worked example and reproducible validation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-imap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian inference with an effect coordinate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The fully Bayesian workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/bayesian-adjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adjustment decisions under graph uncertainty</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/04-findings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary of analytical results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The two-step approach</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/discussion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-open-questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusions and open questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion, conclusions and open questions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,6 +256,23 @@ window.Quarto = {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/imap-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Numerical validation and worked algebra</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -265,8 +283,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#scope-and-motivation" id="toc-scope-and-motivation" class="nav-link active" data-scroll-target="#scope-and-motivation"><span class="header-section-number">1.1</span> Scope and motivation</a></li>
-  <li><a href="#scientific-questions" id="toc-scientific-questions" class="nav-link" data-scroll-target="#scientific-questions"><span class="header-section-number">1.2</span> Scientific questions</a></li>
+  <li><a href="#observational-compatibility-and-causal-information" id="toc-observational-compatibility-and-causal-information" class="nav-link active" data-scroll-target="#observational-compatibility-and-causal-information"><span class="header-section-number">1.1</span> Observational compatibility and causal information</a></li>
+  <li><a href="#two-inferential-workflows" id="toc-two-inferential-workflows" class="nav-link" data-scroll-target="#two-inferential-workflows"><span class="header-section-number">1.2</span> Two inferential workflows</a></li>
+  <li><a href="#scientific-questions" id="toc-scientific-questions" class="nav-link" data-scroll-target="#scientific-questions"><span class="header-section-number">1.3</span> Scientific questions</a></li>
   </ul>
 </nav>
     </div>
@@ -275,7 +294,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="sec-questions" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and research questions</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-questions" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -292,13 +311,30 @@ window.Quarto = {
 </header>
 
 
-<section id="scope-and-motivation" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="scope-and-motivation"><span class="header-section-number">1.1</span> Scope and motivation</h2>
-<p>A total effect in a linear causal DAG is a sum of products of edge coefficients. Independent priors on those coefficients provide indirect control over the induced effect distribution, and the mapping changes across DAGs. The I-MAP construction instead places the target effect in a single outcome regression while preserving the observational model through constraints.</p>
-<p>The setting consists of fully observed, acyclic, linear Gaussian systems with independent errors, one treatment <span class="math inline">\(d\)</span>, and one outcome <span class="math inline">\(y\)</span>. A causal interpretation is assumed for the original DAG. Observational data alone need not identify that DAG or its causal effect. Gaussianity supports the regression factorization; it does not resolve causal ambiguity.</p>
+<p>Estimating a causal effect when the causal graph is unknown brings together two sources of uncertainty: which structural relationships are present, and what their parameters imply for the intervention of interest. Structure learning and effect estimation are therefore closely connected. In Bayesian inference, the prior influences both the posterior distribution of the effect within a graph and the posterior weights assigned to different graphs.</p>
+<p>The central aim is to develop parameterizations that permit flexible prior specification for a total causal effect when estimation also requires causal discovery. This flexibility matters for two reasons. First, prior choice can change the statistical behavior of model comparison and estimation. Non-local priors, whose densities vanish at a null effect, illustrate how the treatment of small effects can affect evidence accumulation <span class="citation" data-cites="johnsonRossell2010">(<a href="../references.html#ref-johnsonRossell2010" role="doc-biblioref">Johnson and Rossell 2010</a>)</span>. Their properties in standard testing problems motivate an investigation in causal graph models; those properties do not automatically transfer to graph uncertainty or path cancellations. Second, substantive prior information is often available about an intervention’s effect rather than about the individual coefficients of an unknown DAG. A useful parameterization should make that information expressible in the quantity to which it refers.</p>
+<section id="observational-compatibility-and-causal-information" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="observational-compatibility-and-causal-information"><span class="header-section-number">1.1</span> Observational compatibility and causal information</h2>
+<p>Prior specification is particularly difficult when the graph itself is uncertain. Objective Bayesian approaches provide systematic constructions, including parameter priors designed to give the same marginal likelihood to Markov-equivalent DAGs <span class="citation" data-cites="geiger2002 peluso2020">(<a href="../references.html#ref-geiger2002" role="doc-biblioref">Geiger and Heckerman 2002</a>; <a href="../references.html#ref-peluso2020" role="doc-biblioref">Peluso and Consonni 2020</a>)</span>. This compatibility is valuable when the observational data do not distinguish causal orientations and the prior is intended to respect that symmetry.</p>
+<p>There are three separate statements here. Markov-equivalent DAGs represent the same family of observational distributions, so corresponding parameter values give the same observational likelihood. Equality of their <em>marginal</em> likelihoods also requires compatible parameter priors. Equality of their posterior graph probabilities further requires equal prior graph probabilities. Observational equivalence alone implies neither of the latter two equalities.</p>
+<p>Causal prior information can make a different symmetry appropriate. Consider</p>
+<p><span class="math display">\[
+\mathcal D_1:1\longrightarrow2\longrightarrow3,
+\qquad
+\mathcal D_2:1\longleftarrow2\longrightarrow3.
+\]</span></p>
+<p>Both graphs impose <span class="math inline">\(X_1\perp X_3\mid X_2\)</span>, yet the effect of intervening on <span class="math inline">\(X_1\)</span> differs. In the chain, <span class="math inline">\(\tau_{13}=B_{12}B_{23}\)</span>; in the fork, <span class="math inline">\(\tau_{13}=0\)</span> for every parameter value. Prior knowledge that this effect is nonzero is therefore information about the causal models, even though their observational families coincide. Hard prior knowledge excludes the fork; softer knowledge can be expressed through graph odds, effect distributions, or both. It does not guarantee that any finite dataset will favor the chain under every resulting prior.</p>
+<p>A related issue is the unit on which prior symmetry is imposed. Uniform mass over DAGs generally induces unequal mass over effect hypotheses, because different hypotheses can be represented by different numbers of graphs. Even the three orientations of the same path skeleton illustrate this: only <span class="math inline">\(1\to2\to3\)</span> permits an effect of 1 on 3, whereas <span class="math inline">\(1\leftarrow2\to3\)</span> and <span class="math inline">\(1\leftarrow2\leftarrow3\)</span> imply a structural zero. Equal graph masses give prior mass <span class="math inline">\(1/3\)</span> to an active effect model and <span class="math inline">\(2/3\)</span> to a structural null. This is a consequence of the mapping from graphs to effects, rather than a logical inconsistency. It nevertheless shows why graph-level symmetry need not express neutrality about the causal question.</p>
+<p>An effect coordinate complements compatible-prior methods by providing another point of control. The same parameter can represent <span class="math inline">\(\tau_{dy}\)</span> in every candidate graph with a treatment-to-outcome path. Graphs without such a path remain a separate null component. Direct control over the active-effect distribution can then be combined with an explicit prior probability of that component.</p>
 </section>
-<section id="scientific-questions" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="scientific-questions"><span class="header-section-number">1.2</span> Scientific questions</h2>
+<section id="two-inferential-workflows" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="two-inferential-workflows"><span class="header-section-number">1.2</span> Two inferential workflows</h2>
+<p>The fully Bayesian workflow specifies a prior on the admissible I-MAP parameter space for each DAG, integrates its likelihood to score graphs, samples graph and parameter uncertainty, and transforms the draws into a posterior for the causal effect. Its computational requirements are substantial: an effect coefficient must be accompanied by a proper nuisance prior, a tractable marginal likelihood and a parameter sampler. The I-MAP construction provides the coordinate and model constraints; establishing unrestricted effect-prior specification and efficient computation is a further inferential problem.</p>
+<p>The two-step workflow separates structure learning from effect estimation. Effect-informed graph learning supplies a distribution over candidate causal structures. A subsequent Bayesian regression uses an adjustment set chosen for the inferential objective. The intended link is a common prior on the active causal effect in both steps. This leaves room to choose adjustment sets by a prespecified loss, rather than fixing the regression to the original DAG parent set. Matching one prior marginal does not make the two procedures identical: their nuisance models and use of the data must also be specified.</p>
+<p>The setting throughout is a fully observed, acyclic linear Gaussian system with independent errors, one treatment and one outcome. The original DAG is assumed to be causal. Gaussian factorization enables the construction, but does not remove observational ambiguity about that causal graph.</p>
+</section>
+<section id="scientific-questions" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="scientific-questions"><span class="header-section-number">1.3</span> Scientific questions</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -316,32 +352,32 @@ window.Quarto = {
 <tr class="odd">
 <td>Q001</td>
 <td>What should the I-MAP parameterization explain or predict?</td>
-<td>Effect representation and model preservation: <a href="02-framework.html" class="quarto-xref"><span>Chapter 3</span></a>; <a href="imap-construction.html" class="quarto-xref"><span>Chapter 5</span></a>.</td>
+<td>Direct effect-prior specification while preserving the sparse model: <a href="02-framework.html" class="quarto-xref"><span>Chapter 3</span></a>; <a href="imap-construction.html" class="quarto-xref"><span>Chapter 5</span></a>.</td>
 </tr>
 <tr class="even">
 <td>Q002</td>
 <td>When does an ordered I-MAP expose the total effect, and how are its parameters computed?</td>
-<td>Outcome-parent theorem and adjacent transposition: <a href="imap-construction.html" class="quarto-xref"><span>Chapter 5</span></a>; <a href="imap-validation.html" class="quarto-xref"><span>Chapter 6</span></a>.</td>
+<td>Outcome-parent theorem and adjacent transposition: <a href="imap-construction.html" class="quarto-xref"><span>Chapter 5</span></a>; <a href="imap-validation.html" class="quarto-xref"><span>Appendix A</span></a>.</td>
 </tr>
 <tr class="odd">
 <td>Q003</td>
 <td>Which constraints retain the original sparse Gaussian DAG model?</td>
-<td>Restored missing-edge equations: <a href="imap-construction.html#sec-imap-constraints" class="quarto-xref"><span>Section 5.5</span></a>; <a href="imap-validation.html#sec-diamond-constraints" class="quarto-xref"><span>Section 6.2</span></a>.</td>
+<td>Restored missing-edge equations: <a href="imap-construction.html#sec-imap-constraints" class="quarto-xref"><span>Section 5.5</span></a>; <a href="imap-validation.html#sec-diamond-constraints" class="quarto-xref"><span>Section A.2</span></a>.</td>
 </tr>
 <tr class="even">
 <td>Q004</td>
 <td>How can a proper effect-centered prior and marginal likelihood be constructed?</td>
-<td>Admissible prior coordinates and normalized reweighting: <a href="bayesian-imap.html" class="quarto-xref"><span>Chapter 7</span></a>.</td>
+<td>Prior domains, evidence and sampling: <a href="bayesian-imap.html" class="quarto-xref"><span>Chapter 6</span></a>.</td>
 </tr>
 <tr class="odd">
 <td>Q005</td>
 <td>What loss defines Bayesian optimal adjustment under graph uncertainty?</td>
-<td>Posterior risk and validity criteria: <a href="bayesian-adjustment.html" class="quarto-xref"><span>Chapter 8</span></a>.</td>
+<td>Two-step inference, posterior risk and validity: <a href="bayesian-adjustment.html" class="quarto-xref"><span>Chapter 7</span></a>.</td>
 </tr>
 <tr class="even">
 <td>Q006</td>
 <td>How does the construction compare with existing causal parameterizations?</td>
-<td>Frugal parameterization and forbidden projection: <a href="related-work.html" class="quarto-xref"><span>Chapter 2</span></a>.</td>
+<td>Frugal coordinates and sparse-model restrictions: <a href="related-work.html#sec-frugal-chain" class="quarto-xref"><span>Section 2.3.1</span></a>.</td>
 </tr>
 </tbody>
 </table>
@@ -349,6 +385,17 @@ window.Quarto = {
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-geiger2002" class="csl-entry" role="listitem">
+Geiger, Dan, and David Heckerman. 2002. <span>“Parameter Priors for Directed Acyclic Graphical Models and the Characterization of Several Probability Distributions.”</span> <em>The Annals of Statistics</em> 30 (5): 1412–40. <a href="https://doi.org/10.1214/aos/1035844981">https://doi.org/10.1214/aos/1035844981</a>.
+</div>
+<div id="ref-johnsonRossell2010" class="csl-entry" role="listitem">
+Johnson, Valen E., and David Rossell. 2010. <span>“On the Use of Non-Local Prior Densities in <span>Bayesian</span> Hypothesis Tests.”</span> <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 72 (2): 143–70. <a href="https://doi.org/10.1111/j.1467-9868.2009.00730.x">https://doi.org/10.1111/j.1467-9868.2009.00730.x</a>.
+</div>
+<div id="ref-peluso2020" class="csl-entry" role="listitem">
+Peluso, Stefano, and Guido Consonni. 2020. <span>“Compatible Priors for Model Selection of High-Dimensional <span>Gaussian</span> <span>DAGs</span>.”</span> <em>Electronic Journal of Statistics</em> 14 (2): 4110–32. <a href="https://doi.org/10.1214/20-EJS1768">https://doi.org/10.1214/20-EJS1768</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -815,24 +862,50 @@ window.Quarto = {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction and research questions {#sec-questions}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction {#sec-questions}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scope and motivation</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Estimating a causal effect when the causal graph is unknown brings together two sources of uncertainty: which structural relationships are present, and what their parameters imply for the intervention of interest. Structure learning and effect estimation are therefore closely connected. In Bayesian inference, the prior influences both the posterior distribution of the effect within a graph and the posterior weights assigned to different graphs.</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>A total effect in a linear causal DAG is a sum of products of edge coefficients. Independent priors on those coefficients provide indirect control over the induced effect distribution, and the mapping changes across DAGs. The I-MAP construction instead places the target effect in a single outcome regression while preserving the observational model through constraints.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>The central aim is to develop parameterizations that permit flexible prior specification for a total causal effect when estimation also requires causal discovery. This flexibility matters for two reasons. First, prior choice can change the statistical behavior of model comparison and estimation. Non-local priors, whose densities vanish at a null effect, illustrate how the treatment of small effects can affect evidence accumulation <span class="co">[</span><span class="ot">@johnsonRossell2010</span><span class="co">]</span>. Their properties in standard testing problems motivate an investigation in causal graph models; those properties do not automatically transfer to graph uncertainty or path cancellations. Second, substantive prior information is often available about an intervention's effect rather than about the individual coefficients of an unknown DAG. A useful parameterization should make that information expressible in the quantity to which it refers.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>The setting consists of fully observed, acyclic, linear Gaussian systems with independent errors, one treatment $d$, and one outcome $y$. A causal interpretation is assumed for the original DAG. Observational data alone need not identify that DAG or its causal effect. Gaussianity supports the regression factorization; it does not resolve causal ambiguity.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observational compatibility and causal information</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scientific questions</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Prior specification is particularly difficult when the graph itself is uncertain. Objective Bayesian approaches provide systematic constructions, including parameter priors designed to give the same marginal likelihood to Markov-equivalent DAGs <span class="co">[</span><span class="ot">@geiger2002; @peluso2020</span><span class="co">]</span>. This compatibility is valuable when the observational data do not distinguish causal orientations and the prior is intended to respect that symmetry.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> ID <span class="pp">|</span> Question <span class="pp">|</span> Relevant analysis <span class="pp">|</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q001 <span class="pp">|</span> What should the I-MAP parameterization explain or predict? <span class="pp">|</span> Effect representation and model preservation: @sec-framework; @sec-imap-construction. <span class="pp">|</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q002 <span class="pp">|</span> When does an ordered I-MAP expose the total effect, and how are its parameters computed? <span class="pp">|</span> Outcome-parent theorem and adjacent transposition: @sec-imap-construction; @sec-imap-validation. <span class="pp">|</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q003 <span class="pp">|</span> Which constraints retain the original sparse Gaussian DAG model? <span class="pp">|</span> Restored missing-edge equations: @sec-imap-constraints; @sec-diamond-constraints. <span class="pp">|</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q004 <span class="pp">|</span> How can a proper effect-centered prior and marginal likelihood be constructed? <span class="pp">|</span> Admissible prior coordinates and normalized reweighting: @sec-bayesian-imap. <span class="pp">|</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q005 <span class="pp">|</span> What loss defines Bayesian optimal adjustment under graph uncertainty? <span class="pp">|</span> Posterior risk and validity criteria: @sec-bayesian-adjustment. <span class="pp">|</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q006 <span class="pp">|</span> How does the construction compare with existing causal parameterizations? <span class="pp">|</span> Frugal parameterization and forbidden projection: @sec-related-work. <span class="pp">|</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>There are three separate statements here. Markov-equivalent DAGs represent the same family of observational distributions, so corresponding parameter values give the same observational likelihood. Equality of their *marginal* likelihoods also requires compatible parameter priors. Equality of their posterior graph probabilities further requires equal prior graph probabilities. Observational equivalence alone implies neither of the latter two equalities.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Causal prior information can make a different symmetry appropriate. Consider</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\mathcal D_1:1\longrightarrow2\longrightarrow3,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>\qquad</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\mathcal D_2:1\longleftarrow2\longrightarrow3.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Both graphs impose $X_1\perp X_3\mid X_2$, yet the effect of intervening on $X_1$ differs. In the chain, $\tau_{13}=B_{12}B_{23}$; in the fork, $\tau_{13}=0$ for every parameter value. Prior knowledge that this effect is nonzero is therefore information about the causal models, even though their observational families coincide. Hard prior knowledge excludes the fork; softer knowledge can be expressed through graph odds, effect distributions, or both. It does not guarantee that any finite dataset will favor the chain under every resulting prior.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>A related issue is the unit on which prior symmetry is imposed. Uniform mass over DAGs generally induces unequal mass over effect hypotheses, because different hypotheses can be represented by different numbers of graphs. Even the three orientations of the same path skeleton illustrate this: only $1\to2\to3$ permits an effect of 1 on 3, whereas $1\leftarrow2\to3$ and $1\leftarrow2\leftarrow3$ imply a structural zero. Equal graph masses give prior mass $1/3$ to an active effect model and $2/3$ to a structural null. This is a consequence of the mapping from graphs to effects, rather than a logical inconsistency. It nevertheless shows why graph-level symmetry need not express neutrality about the causal question.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>An effect coordinate complements compatible-prior methods by providing another point of control. The same parameter can represent $\tau_{dy}$ in every candidate graph with a treatment-to-outcome path. Graphs without such a path remain a separate null component. Direct control over the active-effect distribution can then be combined with an explicit prior probability of that component.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Two inferential workflows</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>The fully Bayesian workflow specifies a prior on the admissible I-MAP parameter space for each DAG, integrates its likelihood to score graphs, samples graph and parameter uncertainty, and transforms the draws into a posterior for the causal effect. Its computational requirements are substantial: an effect coefficient must be accompanied by a proper nuisance prior, a tractable marginal likelihood and a parameter sampler. The I-MAP construction provides the coordinate and model constraints; establishing unrestricted effect-prior specification and efficient computation is a further inferential problem.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>The two-step workflow separates structure learning from effect estimation. Effect-informed graph learning supplies a distribution over candidate causal structures. A subsequent Bayesian regression uses an adjustment set chosen for the inferential objective. The intended link is a common prior on the active causal effect in both steps. This leaves room to choose adjustment sets by a prespecified loss, rather than fixing the regression to the original DAG parent set. Matching one prior marginal does not make the two procedures identical: their nuisance models and use of the data must also be specified.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>The setting throughout is a fully observed, acyclic linear Gaussian system with independent errors, one treatment and one outcome. The original DAG is assumed to be causal. Gaussian factorization enables the construction, but does not remove observational ambiguity about that causal graph.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scientific questions</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> ID <span class="pp">|</span> Question <span class="pp">|</span> Relevant analysis <span class="pp">|</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q001 <span class="pp">|</span> What should the I-MAP parameterization explain or predict? <span class="pp">|</span> Direct effect-prior specification while preserving the sparse model: @sec-framework; @sec-imap-construction. <span class="pp">|</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q002 <span class="pp">|</span> When does an ordered I-MAP expose the total effect, and how are its parameters computed? <span class="pp">|</span> Outcome-parent theorem and adjacent transposition: @sec-imap-construction; @sec-imap-validation. <span class="pp">|</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q003 <span class="pp">|</span> Which constraints retain the original sparse Gaussian DAG model? <span class="pp">|</span> Restored missing-edge equations: @sec-imap-constraints; @sec-diamond-constraints. <span class="pp">|</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q004 <span class="pp">|</span> How can a proper effect-centered prior and marginal likelihood be constructed? <span class="pp">|</span> Prior domains, evidence and sampling: @sec-bayesian-imap. <span class="pp">|</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q005 <span class="pp">|</span> What loss defines Bayesian optimal adjustment under graph uncertainty? <span class="pp">|</span> Two-step inference, posterior risk and validity: @sec-bayesian-adjustment. <span class="pp">|</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Q006 <span class="pp">|</span> How does the construction compare with existing causal parameterizations? <span class="pp">|</span> Frugal coordinates and sparse-model restrictions: @sec-frugal-chain. <span class="pp">|</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
