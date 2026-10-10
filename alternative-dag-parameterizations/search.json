@@ -1,0 +1,312 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Alternative DAG Parameterizations",
+    "section": "",
+    "text": "Overview\nThis living research book develops and evaluates alternative parameterizations of directed acyclic graphs. Its scientific scope will be refined as source materials and research questions are introduced.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Alternative DAG Parameterizations",
+    "section": "Abstract",
+    "text": "Abstract\nThe project is at the setup stage. No project-specific theoretical or empirical conclusions have been established. The executable Monte Carlo example in the appendix demonstrates the computational workflow only.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#reading-guide",
+    "href": "index.html#reading-guide",
+    "title": "Alternative DAG Parameterizations",
+    "section": "Reading guide",
+    "text": "Reading guide\nThe main text follows a scientific article structure: introduction, related work, notation, methods, research results, discussion, conclusions, and references. Topic investigations can expand the results section over time. Appendices document reproducibility and the evolution of the research.\nEach substantive claim should be linked to a derivation, verified source, or reproducible computation, with its assumptions and limitations stated explicitly.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "chapters/01-questions.html",
+    "href": "chapters/01-questions.html",
+    "title": "1  Introduction and research questions",
+    "section": "",
+    "text": "1.1 Scope\nTo be established from the first research materials and questions.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction and research questions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-questions.html#question-register",
+    "href": "chapters/01-questions.html#question-register",
+    "title": "1  Introduction and research questions",
+    "section": "1.2 Question register",
+    "text": "1.2 Question register\n\n\n\n\n\n\n\n\n\nID\nQuestion\nStatus\nEvidence\n\n\n\n\nQ001\nWhat should the I-MAP parameterization explain or predict?\nOpen\nPending source materials\n\n\n\nUse stable IDs so chapters, scripts, findings, and GitHub issues can refer to the same question.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction and research questions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/related-work.html",
+    "href": "chapters/related-work.html",
+    "title": "2  Related work",
+    "section": "",
+    "text": "2.1 Source inventory\nVerified scientific sources will be summarized here, with citations from references.bib. Record what each source establishes, its assumptions, and how it relates to the research questions.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Related work</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/related-work.html#gap-and-motivation",
+    "href": "chapters/related-work.html#gap-and-motivation",
+    "title": "2  Related work",
+    "section": "2.2 Gap and motivation",
+    "text": "2.2 Gap and motivation\nThe research gap will be defined after reviewing the initial materials. No literature claims have been made yet.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Related work</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-framework.html",
+    "href": "chapters/02-framework.html",
+    "title": "3  Notation and theoretical framework",
+    "section": "",
+    "text": "3.1 Definitions and notation\nRecord precise definitions, units, domains, and notation here.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Notation and theoretical framework</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-framework.html#assumptions",
+    "href": "chapters/02-framework.html#assumptions",
+    "title": "3  Notation and theoretical framework",
+    "section": "3.2 Assumptions",
+    "text": "3.2 Assumptions\nDistinguish assumptions supported by sources from working hypotheses.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Notation and theoretical framework</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-framework.html#reasoning",
+    "href": "chapters/02-framework.html#reasoning",
+    "title": "3  Notation and theoretical framework",
+    "section": "3.3 Reasoning",
+    "text": "3.3 Reasoning\nWrite derivations with explicit premises. Cite source material using BibTeX keys.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Notation and theoretical framework</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-framework.html#limits-of-the-argument",
+    "href": "chapters/02-framework.html#limits-of-the-argument",
+    "title": "3  Notation and theoretical framework",
+    "section": "3.4 Limits of the argument",
+    "text": "3.4 Limits of the argument\nRecord alternative explanations and conditions under which the argument may fail.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Notation and theoretical framework</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methods.html",
+    "href": "chapters/methods.html",
+    "title": "4  Methods and reproducibility",
+    "section": "",
+    "text": "4.1 Analytical methods\nState premises, definitions, and proof obligations for each proposed result.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Methods and reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methods.html#computational-methods",
+    "href": "chapters/methods.html#computational-methods",
+    "title": "4  Methods and reproducibility",
+    "section": "4.2 Computational methods",
+    "text": "4.2 Computational methods\nKeep analysis code in scripts/R/ or scripts/python/. Execute that code from the relevant research chapter, or consume documented artifacts from an explicit pipeline. Specify input provenance, parameters, random seeds, package versions, and numerical tolerances.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Methods and reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methods.html#validation",
+    "href": "chapters/methods.html#validation",
+    "title": "4  Methods and reproducibility",
+    "section": "4.3 Validation",
+    "text": "4.3 Validation\nCompare numerical results with analytical benchmarks where available. Report uncertainty and sensitivity to assumptions. The executable appendix illustrates the workflow without establishing a project-specific result.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Methods and reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04-findings.html",
+    "href": "chapters/04-findings.html",
+    "title": "5  Research results",
+    "section": "",
+    "text": "No project-specific findings have been established yet.\nFor each finding, record its ID, associated question, evidence chapter, assumptions, uncertainty, and implications. Distinguish analytical results from numerical evidence and conjecture.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/discussion.html",
+    "href": "chapters/discussion.html",
+    "title": "6  Discussion",
+    "section": "",
+    "text": "6.1 Interpretation and implications\nTo be developed from the research results.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Discussion</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/discussion.html#limitations",
+    "href": "chapters/discussion.html#limitations",
+    "title": "6  Discussion",
+    "section": "6.2 Limitations",
+    "text": "6.2 Limitations\nDistinguish model assumptions, data limitations, numerical approximations, and unresolved proof obligations.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Discussion</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/discussion.html#alternative-explanations",
+    "href": "chapters/discussion.html#alternative-explanations",
+    "title": "6  Discussion",
+    "section": "6.3 Alternative explanations",
+    "text": "6.3 Alternative explanations\nDocument competing interpretations and the evidence needed to distinguish them.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Discussion</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-open-questions.html",
+    "href": "chapters/05-open-questions.html",
+    "title": "7  Conclusions and open questions",
+    "section": "",
+    "text": "7.1 Conclusions\nNo project-specific conclusions have been established yet.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Conclusions and open questions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-open-questions.html#next-investigations",
+    "href": "chapters/05-open-questions.html#next-investigations",
+    "title": "7  Conclusions and open questions",
+    "section": "7.2 Next investigations",
+    "text": "7.2 Next investigations\n\nDefine the scientific scope and meaning of I-MAP.\nInventory source materials and identify the first parameterization question.\nSpecify the observations or simulations needed to assess proposed claims.\n\nRevisit this list after each substantive investigation.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Conclusions and open questions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-reproducible-example.html",
+    "href": "chapters/03-reproducible-example.html",
+    "title": "Appendix A — Reproducible computation: workflow demonstration",
+    "section": "",
+    "text": "A.1 Question and status\nStatus: demonstration. Can a standalone R script supply the book’s table and figure without copying results by hand?",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-reproducible-example.html#mathematical-expectation",
+    "href": "chapters/03-reproducible-example.html#mathematical-expectation",
+    "title": "Appendix A — Reproducible computation: workflow demonstration",
+    "section": "A.2 Mathematical expectation",
+    "text": "A.2 Mathematical expectation\nFor independent standard normal observations, the sample mean has expectation zero and standard deviation \\(1/\\sqrt{n}\\). This is a theoretical result; the simulation illustrates its numerical behavior.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-reproducible-example.html#method-and-script",
+    "href": "chapters/03-reproducible-example.html#method-and-script",
+    "title": "Appendix A — Reproducible computation: workflow demonstration",
+    "section": "A.3 Method and script",
+    "text": "A.3 Method and script\nThe downloadable R script uses seed 20261010, 2,000 repetitions, and sample sizes 10, 100, and 1,000. Run it independently from the repository root:\nRscript scripts/R/001-monte-carlo.R\nThe book executes that same script when rendered:\n\n\nCode\nsource(\"scripts/R/001-monte-carlo.R\")\n\n\n\n\nCode\nknitr::kable(mc_results, digits = 4)\n\n\n\n\nTable A.1: Empirical and theoretical standard deviations of sample means.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsample_size\nrepetitions\nempirical_mean\nempirical_sd\ntheoretical_sd\n\n\n\n\n10\n2000\n-0.0058\n0.3199\n0.3162\n\n\n100\n2000\n0.0025\n0.0995\n0.1000\n\n\n1000\n2000\n-0.0014\n0.0313\n0.0316\n\n\n\n\n\n\n\n\n\n\nCode\nplot(mc_results$sample_size, mc_results$empirical_sd,\n     log = \"xy\", pch = 19, xlab = \"Sample size\", ylab = \"Standard deviation\")\nlines(mc_results$sample_size, mc_results$theoretical_sd, col = \"steelblue\", lwd = 2)\nlegend(\"topright\", c(\"Simulation\", \"Theory\"),\n       pch = c(19, NA), lty = c(NA, 1), col = c(\"black\", \"steelblue\"), bty = \"n\")\n\n\n\n\n\n\n\n\nFigure A.1: Empirical variability compared with the theoretical prediction.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-reproducible-example.html#interpretation-and-limitations",
+    "href": "chapters/03-reproducible-example.html#interpretation-and-limitations",
+    "title": "Appendix A — Reproducible computation: workflow demonstration",
+    "section": "A.4 Interpretation and limitations",
+    "text": "A.4 Interpretation and limitations\nTable A.1 and Figure A.1 compare simulated variability with the analytical prediction. Differences reflect finite Monte Carlo sampling. A simulation can provide evidence or a counterexample; it does not replace a general mathematical proof.\nThis example does not establish any I-MAP finding.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-reproducible-example.html#execution-environment",
+    "href": "chapters/03-reproducible-example.html#execution-environment",
+    "title": "Appendix A — Reproducible computation: workflow demonstration",
+    "section": "A.5 Execution environment",
+    "text": "A.5 Execution environment\n\n\nCode\nsessionInfo()\n\n\nR version 4.4.2 (2024-10-31)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Sequoia 15.6.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] C.UTF-8/C.UTF-8/C.UTF-8/C/C.UTF-8/C.UTF-8\n\ntime zone: Europe/Madrid\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.2    fastmap_1.2.0     cli_3.6.4        \n [5] tools_4.4.2       htmltools_0.5.8.1 yaml_2.3.10       rmarkdown_2.29   \n [9] knitr_1.50        jsonlite_2.0.0    xfun_0.52         digest_0.6.37    \n[13] rlang_1.1.6       evaluate_1.0.3",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Reproducible computation: workflow demonstration</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/research-log.html",
+    "href": "chapters/research-log.html",
+    "title": "Appendix B — Research log",
+    "section": "",
+    "text": "B.1 2026-10-10 — Project foundation\nRecord changes in reasoning, rejected hypotheses, and the evidence behind decisions. Link to question IDs, chapters, and relevant commits.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/research-log.html#project-foundation",
+    "href": "chapters/research-log.html#project-foundation",
+    "title": "Appendix B — Research log",
+    "section": "",
+    "text": "Established a Quarto book structure and an executable R demonstration.\nNo scientific source material or project-specific conclusions have been added yet.\nVerified the standalone R simulation and full HTML book rendering, including its table and figure.\nSelected the private GitHub repository name alternative-dag-parameterizations. Created and pushed the private repository: https://github.com/alesmascaro/alternative-dag-parameterizations.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/research-log.html#shared-context-and-automated-builds",
+    "href": "chapters/research-log.html#shared-context-and-automated-builds",
+    "title": "Appendix B — Research log",
+    "section": "B.2 2026-10-10 — Shared context and automated builds",
+    "text": "B.2 2026-10-10 — Shared context and automated builds\n\nAdded PROJECT_CONTEXT.md and startup/update instructions for chats sharing this project.\nDiagnosed the initial CI failure: the R package fs required missing libuv headers. Added the system dependency and explicit R dependency checks.\nOnline website publication remains a separate decision from private repository storage.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/research-log.html#article-structure-and-reuse",
+    "href": "chapters/research-log.html#article-structure-and-reuse",
+    "title": "Appendix B — Research log",
+    "section": "B.3 2026-10-10 — Article structure and reuse",
+    "text": "B.3 2026-10-10 — Article structure and reuse\n\nCorrected GitHub build passed.\nAuthorized a public book website; private-repository Pages was rejected by the current GitHub plan.\nReorganized the main text around a scientific article and moved the workflow example to the appendices.\nAdded contributor guidance and a clean scaffold exporter for future projects.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/research-log.html#publication-through-the-personal-website",
+    "href": "chapters/research-log.html#publication-through-the-personal-website",
+    "title": "Appendix B — Research log",
+    "section": "B.4 2026-10-10 — Publication through the personal website",
+    "text": "B.4 2026-10-10 — Publication through the personal website\n\nAuthorized publishing the generated book into the existing public personal website while preserving the private research repository.\nConfigured a website-repository deploy key and an encrypted research-repository secret for automatic updates.\nThe website deploys via GitHub Pages Actions; research builds update only the dedicated book folder.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
+    ]
+  }
+]
