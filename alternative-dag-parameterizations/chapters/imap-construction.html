@@ -141,6 +141,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -394,8 +395,44 @@ L_{\cdot j}^{E}=L_{\cdot j}-aL_{\cdot i},\qquad
 </section>
 <section id="forward-and-reverse-algorithms" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="forward-and-reverse-algorithms"><span class="header-section-number">5.4</span> Forward and reverse algorithms</h2>
+<p>The forward construction is summarized in <a href="#algo-imap-forward" class="quarto-xref">Algorithm&nbsp;<span>5.1</span></a>. Its output retains original node labels; only the factorization ordering changes.</p>
+<div id="algo-imap-forward" class="algorithm quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-algo figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-algo" id="algo-imap-forward-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Algorithm&nbsp;5.1: Forward I-MAP construction and effect extraction.
+</figcaption>
+<div aria-describedby="algo-imap-forward-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p><strong>Input:</strong> Original DAG <span class="math inline">\(\mathcal D\)</span>, admissible <span class="math inline">\((L,D)\)</span> with positive variances, treatment <span class="math inline">\(d\)</span>, outcome <span class="math inline">\(y\)</span>, and <span class="math inline">\(d\in\operatorname{an}_{\mathcal D}(y)\)</span>.</p>
+<p><strong>Output:</strong> Effect ordering <span class="math inline">\(\pi^*\)</span>, graph-defined I-MAP <span class="math inline">\(G^*\)</span> and constrained parameters <span class="math inline">\((\widetilde L,\widetilde D)\)</span>.</p>
+<ol type="1">
+<li>Compute <span class="math inline">\(M=\operatorname{de}(d)\cap\operatorname{an}(y)\)</span> and a closest topological ordering <span class="math inline">\(\pi_{dy}=\langle\delta_1,d,M,y,\delta_3\rangle\)</span> as above.</li>
+<li>Initialize <span class="math inline">\((\widetilde L,\widetilde D)\leftarrow(L,D)\)</span> and the current ordering to <span class="math inline">\(\pi_{dy}\)</span>.</li>
+<li><strong>For each</strong> <span class="math inline">\(m\)</span> in reverse order of the mediator block: transpose the adjacent pair <span class="math inline">\((m,y)\)</span> using <a href="#sec-transposition" class="quarto-xref"><span>Section 5.3</span></a>, saving the old variances; exchange their positions in the current ordering even if the coefficient is zero.</li>
+<li><strong>For each</strong> node <span class="math inline">\(j\)</span> and predecessor <span class="math inline">\(u\)</span> in the resulting ordering, add <span class="math inline">\(u\to j\)</span> to <span class="math inline">\(G^*\)</span> exactly when <span class="math inline">\(u\)</span> and <span class="math inline">\(j\)</span> are not d-separated in <span class="math inline">\(\mathcal D\)</span> by the other predecessors.</li>
+<li>Return <span class="math inline">\(\pi^*=\langle\delta_1,d,y,M,\delta_3\rangle\)</span>, <span class="math inline">\(G^*\)</span> and <span class="math inline">\((\widetilde L,\widetilde D)\)</span>; read <span class="math inline">\(\tau_{dy}=-\widetilde L_{dy}\)</span>.</li>
+</ol>
+</div>
+</figure>
+</div>
 <p>Start with a closest ordering. Traverse <span class="math inline">\(M\)</span> in reverse topological order and transpose each mediator with <span class="math inline">\(y\)</span>. At every step they are adjacent. If the current coefficient happens to be zero, swap their ordering with no numerical change. After the last step, the ordering is <span class="math inline">\(\pi^*\)</span> and the parameters are its unique Gaussian regression factorization. Minimality relative to the original graph follows from the ordered d-separation criterion; it does not follow solely from a succession of locally minimal I-MAPs.</p>
 <p>To reverse the construction, traverse <span class="math inline">\(M\)</span> in its original topological order, transposing <span class="math inline">\(y\)</span> with each mediator. Each transposition is an involution on its adjacent factorization pair: alternatively, uniqueness in the restored ordering proves that the reverse sequence recovers the original <span class="math inline">\((L,D)\)</span> on the constrained image. Applied to an unconstrained Gaussian factorization on <span class="math inline">\(G^*\)</span>, it recovers a factorization in <span class="math inline">\(\pi_{dy}\)</span> that can have extra coefficients.</p>
+<div id="algo-imap-reverse" class="algorithm quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-algo figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-algo" id="algo-imap-reverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Algorithm&nbsp;5.2: Reverse factorization and sparse-model membership.
+</figcaption>
+<div aria-describedby="algo-imap-reverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p><strong>Input:</strong> Original <span class="math inline">\(\mathcal D\)</span> and closest ordering <span class="math inline">\(\pi_{dy}\)</span>; a positive-variance factorization <span class="math inline">\((\widetilde L,\widetilde D)\)</span> on <span class="math inline">\(G^*\)</span> in ordering <span class="math inline">\(\pi^*\)</span>.</p>
+<p><strong>Output:</strong> Restored <span class="math inline">\((L^{\mathrm{back}},D^{\mathrm{back}})\)</span> and exact membership condition for the original model.</p>
+<ol type="1">
+<li>Initialize the current parameters to <span class="math inline">\((\widetilde L,\widetilde D)\)</span> and ordering to <span class="math inline">\(\pi^*\)</span>.</li>
+<li><strong>For each</strong> <span class="math inline">\(m\)</span> in the original topological mediator order: transpose the adjacent pair <span class="math inline">\((y,m)\)</span> and exchange their positions.</li>
+<li>Collect <span class="math inline">\(L^{\mathrm{back}}_{uv}\)</span> for every original-order pair <span class="math inline">\(u\prec_{\pi_{dy}}v\)</span> whose edge <span class="math inline">\(u\to v\)</span> is absent from <span class="math inline">\(\mathcal D\)</span>.</li>
+<li>Return the restored parameters and the condition that every collected coefficient equals zero. In numerical evaluation, report an explicit tolerance rather than treating thresholded support as a graphical assertion.</li>
+</ol>
+</div>
+</figure>
+</div>
 <p>With exactly one mediator, a single adjacent transposition in a closest ordering produces the effect coefficient. The existence of an edge <span class="math inline">\(m\to y\)</span> alone does not imply that <span class="math inline">\(m\)</span> is the sole mediator.</p>
 </section>
 <section id="sec-imap-constraints" class="level2" data-number="5.5">
@@ -998,51 +1035,84 @@ k=\frac{cv_2}{s},\qquad u=\frac{v_2v_3}{s}.
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Forward and reverse algorithms</span></span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>Start with a closest ordering. Traverse $M$ in reverse topological order and transpose each mediator with $y$. At every step they are adjacent. If the current coefficient happens to be zero, swap their ordering with no numerical change. After the last step, the ordering is $\pi^*$ and the parameters are its unique Gaussian regression factorization. Minimality relative to the original graph follows from the ordered d-separation criterion; it does not follow solely from a succession of locally minimal I-MAPs.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>The forward construction is summarized in @algo-imap-forward. Its output retains original node labels; only the factorization ordering changes.</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>To reverse the construction, traverse $M$ in its original topological order, transposing $y$ with each mediator. Each transposition is an involution on its adjacent factorization pair: alternatively, uniqueness in the restored ordering proves that the reverse sequence recovers the original $(L,D)$ on the constrained image. Applied to an unconstrained Gaussian factorization on $G^*$, it recovers a factorization in $\pi_{dy}$ that can have extra coefficients.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>::: {#algo-imap-forward .algorithm}</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>With exactly one mediator, a single adjacent transposition in a closest ordering produces the effect coefficient. The existence of an edge $m\to y$ alone does not imply that $m$ is the sole mediator.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>**Input:** Original DAG $\mathcal D$, admissible $(L,D)$ with positive variances, treatment $d$, outcome $y$, and $d\in\operatorname{an}_{\mathcal D}(y)$.</span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exact characterization of the constrained image {#sec-imap-constraints}</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>**Output:** Effect ordering $\pi^*$, graph-defined I-MAP $G^*$ and constrained parameters $(\widetilde L,\widetilde D)$.</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Let $\Theta_{\mathcal D}$ have one free coefficient per allowed edge and $q$ positive variances. Let $\Theta_{G^*}$ be the analogous ambient space. The change of ordering $F$ maps the former into the latter while preserving $\Sigma$.</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>For $\widetilde\theta\in\Theta_{G^*}$, reconstruct its covariance and factorize it in the original ordering, obtaining $(L^{\mathrm{back}},D^{\mathrm{back}})$. Then</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>F(\Theta_{\mathcal D})=</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>\left<span class="sc">\{</span>\widetilde\theta\in\Theta_{G^*}:</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>L^{\mathrm{back}}_{uv}=0\ \text{for every }u\prec_{\pi_{dy}}v\text{ with }u\to v\notin E\right<span class="sc">\}</span>.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Compute $M=\operatorname{de}(d)\cap\operatorname{an}(y)$ and a closest topological ordering $\pi_{dy}=\langle\delta_1,d,M,y,\delta_3\rangle$ as above.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Initialize $(\widetilde L,\widetilde D)\leftarrow(L,D)$ and the current ordering to $\pi_{dy}$.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**For each** $m$ in reverse order of the mediator block: transpose the adjacent pair $(m,y)$ using @sec-transposition, saving the old variances; exchange their positions in the current ordering even if the coefficient is zero.</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**For each** node $j$ and predecessor $u$ in the resulting ordering, add $u\to j$ to $G^*$ exactly when $u$ and $j$ are not d-separated in $\mathcal D$ by the other predecessors.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Return $\pi^*=\langle\delta_1,d,y,M,\delta_3\rangle$, $G^*$ and $(\widetilde L,\widetilde D)$; read $\tau_{dy}=-\widetilde L_{dy}$.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>Forward I-MAP construction and effect extraction.</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-constrained-image collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>Start with a closest ordering. Traverse $M$ in reverse topological order and transpose each mediator with $y$. At every step they are adjacent. If the current coefficient happens to be zero, swap their ordering with no numerical change. After the last step, the ordering is $\pi^*$ and the parameters are its unique Gaussian regression factorization. Minimality relative to the original graph follows from the ordered d-separation criterion; it does not follow solely from a succession of locally minimal I-MAPs.</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>Necessity follows from reversing $F$. For sufficiency, the imposed zeros place the restored factorization in $\Theta_{\mathcal D}$. Refactorizing it in $\pi^*$ returns the unique original $\widetilde\theta$. All denominators are positive conditional variances. Consequently $F$ and its inverse are smooth on the positive-variance domains, and the image has dimension $q+|E|$, even though the ambient I-MAP has dimension $q+|E(G^*)|$. $\square$</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>To reverse the construction, traverse $M$ in its original topological order, transposing $y$ with each mediator. Each transposition is an involution on its adjacent factorization pair: alternatively, uniqueness in the restored ordering proves that the reverse sequence recovers the original $(L,D)$ on the constrained image. Applied to an unconstrained Gaussian factorization on $G^*$, it recovers a factorization in $\pi_{dy}$ that can have extra coefficients.</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>::: {#algo-imap-reverse .algorithm}</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>This characterization avoids any need to infer constraints from a single numerical sparsity pattern. Constraints may be redundant; their number need not equal their rank. A choice of which entries to solve for can fail at zero denominators, so a global free-coordinate chart and variation independence of the effect from the nuisance parameters require additional conditions.</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>**Input:** Original $\mathcal D$ and closest ordering $\pi_{dy}$; a positive-variance factorization $(\widetilde L,\widetilde D)$ on $G^*$ in ordering $\pi^*$.</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>The construction preserves the observational model. The alternative arrows generally do not retain the original intervention semantics. The distinguished effect coefficient is justified by the preceding theorem; other intervention effects must still be evaluated from the original causal model.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>**Output:** Restored $(L^{\mathrm{back}},D^{\mathrm{back}})$ and exact membership condition for the original model.</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="fu">## A chain in effect coordinates</span></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>For $1\to2\to3$ with structural coefficients $b=B_{12}$ and $c=B_{23}$, the closest ordering is $(1,2,3)$ and the effect ordering is $(1,3,2)$. Here $M=<span class="sc">\{</span>2<span class="sc">\}</span>$ and $O=\varnothing$. Substitution gives</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>X_3=bcX_1+c\epsilon_2+\epsilon_3.</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>Thus the transformed outcome equation has coefficient $\tau_{13}=bc$ and residual variance $s=c^2v_2+v_3$. In the regression of $X_2$ on $(X_1,X_3)$, put</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>k=\frac{cv_2}{s},\qquad u=\frac{v_2v_3}{s}.</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>Its coefficients are $b-k\tau_{13}$ for $X_1$ and $k$ for $X_3$, with residual variance $u&gt;0$. These are the adjacent-transposition formulas expressed as regression coefficients. The unconstrained I-MAP has three edges; the original chain has two. Reversing the transposition enforces the one missing-edge equation, so the transformed model still has five free parameters.</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>The comparison in @sec-frugal-chain uses the same causal marginal and preserves the chain by a different explicit constraint. Both representations expose the effect, and both must retain the original model's restrictions. The diamond in @sec-diamond illustrates the analogous construction with multiple causal paths and two missing-edge constraints.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Initialize the current parameters to $(\widetilde L,\widetilde D)$ and ordering to $\pi^*$.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**For each** $m$ in the original topological mediator order: transpose the adjacent pair $(y,m)$ and exchange their positions.</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Collect $L^{\mathrm{back}}_{uv}$ for every original-order pair $u\prec_{\pi_{dy}}v$ whose edge $u\to v$ is absent from $\mathcal D$.</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Return the restored parameters and the condition that every collected coefficient equals zero. In numerical evaluation, report an explicit tolerance rather than treating thresholded support as a graphical assertion.</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Reverse factorization and sparse-model membership.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>With exactly one mediator, a single adjacent transposition in a closest ordering produces the effect coefficient. The existence of an edge $m\to y$ alone does not imply that $m$ is the sole mediator.</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exact characterization of the constrained image {#sec-imap-constraints}</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>Let $\Theta_{\mathcal D}$ have one free coefficient per allowed edge and $q$ positive variances. Let $\Theta_{G^*}$ be the analogous ambient space. The change of ordering $F$ maps the former into the latter while preserving $\Sigma$.</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>For $\widetilde\theta\in\Theta_{G^*}$, reconstruct its covariance and factorize it in the original ordering, obtaining $(L^{\mathrm{back}},D^{\mathrm{back}})$. Then</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>F(\Theta_{\mathcal D})=</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>\left<span class="sc">\{</span>\widetilde\theta\in\Theta_{G^*}:</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>L^{\mathrm{back}}_{uv}=0\ \text{for every }u\prec_{\pi_{dy}}v\text{ with }u\to v\notin E\right<span class="sc">\}</span>.</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>::: {.callout-note .proof #proof-constrained-image collapse="true" appearance="minimal" icon="false" title="Proof"}</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>Necessity follows from reversing $F$. For sufficiency, the imposed zeros place the restored factorization in $\Theta_{\mathcal D}$. Refactorizing it in $\pi^*$ returns the unique original $\widetilde\theta$. All denominators are positive conditional variances. Consequently $F$ and its inverse are smooth on the positive-variance domains, and the image has dimension $q+|E|$, even though the ambient I-MAP has dimension $q+|E(G^*)|$. $\square$</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>This characterization avoids any need to infer constraints from a single numerical sparsity pattern. Constraints may be redundant; their number need not equal their rank. A choice of which entries to solve for can fail at zero denominators, so a global free-coordinate chart and variation independence of the effect from the nuisance parameters require additional conditions.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>The construction preserves the observational model. The alternative arrows generally do not retain the original intervention semantics. The distinguished effect coefficient is justified by the preceding theorem; other intervention effects must still be evaluated from the original causal model.</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="fu">## A chain in effect coordinates</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>For $1\to2\to3$ with structural coefficients $b=B_{12}$ and $c=B_{23}$, the closest ordering is $(1,2,3)$ and the effect ordering is $(1,3,2)$. Here $M=<span class="sc">\{</span>2<span class="sc">\}</span>$ and $O=\varnothing$. Substitution gives</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>X_3=bcX_1+c\epsilon_2+\epsilon_3.</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>Thus the transformed outcome equation has coefficient $\tau_{13}=bc$ and residual variance $s=c^2v_2+v_3$. In the regression of $X_2$ on $(X_1,X_3)$, put</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>k=\frac{cv_2}{s},\qquad u=\frac{v_2v_3}{s}.</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>Its coefficients are $b-k\tau_{13}$ for $X_1$ and $k$ for $X_3$, with residual variance $u&gt;0$. These are the adjacent-transposition formulas expressed as regression coefficients. The unconstrained I-MAP has three edges; the original chain has two. Reversing the transposition enforces the one missing-edge equation, so the transformed model still has five free parameters.</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>The comparison in @sec-frugal-chain uses the same causal marginal and preserves the chain by a different explicit constraint. Both representations expose the effect, and both must retain the original model's restrictions. The diamond in @sec-diamond illustrates the analogous construction with multiple causal paths and two missing-edge constraints.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

@@ -4,7 +4,8 @@ imap_validate_frugal <- function(seed = 20261011L, cases = 100L, tolerance = 1e-
   coefficients <- rbind(matrix(runif(2 * cases, -1, 1), cases, 2),
                         c(0, .8), c(.8, 0), c(0, 0))
   errors <- c(frugal_covariance = 0, inverse = 0, chain_constraint = 0,
-              intervention_variance = 0, relabeled_imap = 0, valid_adjustment = 0)
+              intervention_variance = 0, shared_sparse_constraint = 0,
+              relabeled_imap = 0, valid_adjustment = 0)
   for (k in seq_len(nrow(coefficients))) {
     b <- coefficients[k, 1]; c <- coefficients[k, 2]; v <- runif(3, .5, 2)
     L <- diag(3); L[1,2] <- -b; L[2,3] <- -c
@@ -17,6 +18,11 @@ imap_validate_frugal <- function(seed = 20261011L, cases = 100L, tolerance = 1e-
     causal <- imap_intervention(L,v,1,3)
     errors['intervention_variance'] <- max(errors['intervention_variance'],
                                            abs(causal$effect-z$tau), abs(causal$variance-z$s))
+    Achain <- matrix(FALSE,3,3); Achain[1,2] <- Achain[2,3] <- TRUE
+    mapped <- imap_transform(L,v,Achain,1,3)
+    t <- -mapped$L[1,3]; r <- -mapped$L[1,2]; kappa <- -mapped$L[3,2]
+    errors['shared_sparse_constraint'] <- max(errors['shared_sparse_constraint'],
+      abs(t*mapped$v[2] - r*kappa*mapped$v[3]))
     altered <- z; altered$tau <- z$tau + .2
     rejected <- tryCatch(imap_frugal_chain_inverse(altered), error = function(e) e)
     stopifnot(inherits(rejected, 'error'))

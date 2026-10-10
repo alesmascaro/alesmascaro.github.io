@@ -141,6 +141,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -348,6 +349,25 @@ E[(a_Z-\tau)^2\mid\mathbf X]
 </div>
 </div>
 <p><strong>Analytical result.</strong> The chosen action is closest to the Bayesian model averaged effect mean among the available actions. The posterior variance of the reference effect is constant across <span class="math inline">\(Z\)</span>. The regression posterior variance <span class="math inline">\(s_Z^2\)</span> does not appear. Thus squared loss for the reported point action does <strong>not</strong> separately penalize the candidate estimator’s variance. The full Bayes risk is not equal to its first term; that term is only an equivalent minimization objective.</p>
+<div id="algo-two-step" class="algorithm quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-algo figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-algo" id="algo-two-step-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Algorithm&nbsp;7.1: Two-step adjustment selection under squared point-action loss.
+</figcaption>
+<div aria-describedby="algo-two-step-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p><strong>Input:</strong> Data, a specified first-step graph-and-effect posterior, candidate sets, a validity rule, proper second-step regression priors with common active-effect marginal <span class="math inline">\(h\)</span>, and squared loss for a reported number.</p>
+<p><strong>Output:</strong> A selected adjustment set and its point action, interpreted as a modular decision.</p>
+<ol type="1">
+<li>Compute graph weights and the reference posterior effect mean <span class="math inline">\(\mu\)</span>; retain the null component when included in the first-step model.</li>
+<li>Enumerate candidate adjustment sets and apply the prespecified validity rule using graph weights. If no set is admissible, return that outcome.</li>
+<li><strong>For each</strong> admissible <span class="math inline">\(Z\)</span>: fit its Bayesian adjustment regression with its specified nuisance prior and any null mixing component, and compute the action <span class="math inline">\(a_Z(\mathbf X)\)</span>.</li>
+<li>Select <span class="math inline">\(Z^*\in\arg\min_Z(a_Z-\mu)^2\)</span>, with a prespecified tie rule. Retain <span class="math inline">\(V\)</span> when reporting the full reference posterior risk.</li>
+<li>Report <span class="math inline">\(a_{Z^*}\)</span>, the selected set, its validity probability and the scope of its uncertainty report. Do not multiply the reference posterior by another likelihood for the same observations.</li>
+</ol>
+</div>
+</figure>
+</div>
+<p><a href="#algo-two-step" class="quarto-xref">Algorithm&nbsp;<span>7.1</span></a> implements the stated loss, not a separate precision penalty. Other losses change step 4 and require their own derivation.</p>
 <p>With <span class="math inline">\(\mu_{\mathcal D}=E[\tau\mid\mathcal D,\mathbf X]\)</span> and <span class="math inline">\(V_{\mathcal D}=\operatorname{Var}(\tau\mid\mathcal D,\mathbf X)\)</span>, the law of total variance gives</p>
 <p><span class="math display">\[
 V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}
@@ -946,66 +966,84 @@ E[\tau\mid\mathbf X]=P(H=1\mid\mathbf X)E[\tau\mid H=1,\mathbf X].
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>**Analytical result.** The chosen action is closest to the Bayesian model averaged effect mean among the available actions. The posterior variance of the reference effect is constant across $Z$. The regression posterior variance $s_Z^2$ does not appear. Thus squared loss for the reported point action does **not** separately penalize the candidate estimator's variance. The full Bayes risk is not equal to its first term; that term is only an equivalent minimization objective.</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>With $\mu_{\mathcal D}=E<span class="co">[</span><span class="ot">\tau\mid\mathcal D,\mathbf X</span><span class="co">]</span>$ and $V_{\mathcal D}=\operatorname{Var}(\tau\mid\mathcal D,\mathbf X)$, the law of total variance gives</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>::: {#algo-two-step .algorithm}</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>+\operatorname{Var}_{\mathcal D\mid\mathbf X}(\mu_{\mathcal D}).</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>If one formally writes a DAG-dependent action $a_{\mathcal D,Z}$, its risk is</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="sc">\{</span>(a_{\mathcal D,Z}-\mu_{\mathcal D})^2+V_{\mathcal D}<span class="sc">\}</span>.</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>**Input:** Data, a specified first-step graph-and-effect posterior, candidate sets, a validity rule, proper second-step regression priors with common active-effect marginal $h$, and squared loss for a reported number.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>**Output:** A selected adjustment set and its point action, interpreted as a modular decision.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Compute graph weights and the reference posterior effect mean $\mu$; retain the null component when included in the first-step model.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Enumerate candidate adjustment sets and apply the prespecified validity rule using graph weights. If no set is admissible, return that outcome.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**For each** admissible $Z$: fit its Bayesian adjustment regression with its specified nuisance prior and any null mixing component, and compute the action $a_Z(\mathbf X)$.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Select $Z^*\in\arg\min_Z(a_Z-\mu)^2$, with a prespecified tie rule. Retain $V$ when reporting the full reference posterior risk.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Report $a_{Z^*}$, the selected set, its validity probability and the scope of its uncertainty report. Do not multiply the reference posterior by another likelihood for the same observations.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Two-step adjustment selection under squared point-action loss.</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>The constant term here is the within-DAG variance; the total mixture variance additionally includes between-DAG variation. This expression describes an action that observes $\mathcal D$; it is not an implementable decision under graph uncertainty without an additional rule. If $a_{\mathcal D,Z}=a_Z$ for every DAG, minimizing the first term recovers the preceding closest-to-$\mu$ rule, with the between-DAG constant retained in the full risk.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validity, precision, and alternative losses</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>@algo-two-step implements the stated loss, not a separate precision penalty. Other losses change step 4 and require their own derivation.</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>**Proposals.** Distinct objectives need distinct specifications. Possible choices include:</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>With $\mu_{\mathcal D}=E<span class="co">[</span><span class="ot">\tau\mid\mathcal D,\mathbf X</span><span class="co">]</span>$ and $V_{\mathcal D}=\operatorname{Var}(\tau\mid\mathcal D,\mathbf X)$, the law of total variance gives</span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Restrict to sets valid in every DAG with posterior support, if such sets exist; that intersection can be empty.</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Require $P(Z\text{ is valid in }\mathcal D\mid\mathbf X)\ge1-\varepsilon$, documenting the chosen tolerance and the posterior graph model.</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use the decision criterion $(a_Z-\mu)^2+\lambda s_Z^2$ with a specified $\lambda\ge0$ to penalize regression posterior dispersion. This is a new criterion, not a consequence of the original squared-loss rule.</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluate predictive or repeated-sampling risk with an explicit data-generating model if the goal is estimator bias and sampling variance.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>V=\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)V_{\mathcal D}</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>+\operatorname{Var}_{\mathcal D\mid\mathbf X}(\mu_{\mathcal D}).</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>Enumeration of candidates is one computational approach, not a demonstrated necessary or uniquely available algorithm. The union of graph-specific valid sets contains sets invalid in other supported DAGs. A graphical characterization of a Bayesian criterion depends on its particular loss and posterior specification. The frequentist O-set result optimizes a different quantity (@sec-framework).</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>If one formally writes a DAG-dependent action $a_{\mathcal D,Z}$, its risk is</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## Structural null effects and shrinkage estimators</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Consider the shrinkage rule $\tau^{PB}=P(\tau\ne0\mid\mathbf X)\,\tau^B$. Let $H$ indicate an active effect model, with $\tau=0$ under $H=0$. Then</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>=P(H=1\mid\mathbf X)E<span class="co">[</span><span class="ot">\tau\mid H=1,\mathbf X</span><span class="co">]</span>.</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>This is a coherent squared-loss estimator if $\tau^B$ is the **conditional active-model posterior mean**. If $\tau^B$ is already the unconditional model averaged mean, multiplying by $P(H=1\mid\mathbf X)$ applies the inclusion factor twice. If $\tau^B$ is selected from adjustment regressions, the product needs its own loss-based justification.</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>Under absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (@sec-bayesian-imap).</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## A four-graph adjustment example</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>Take treatment 4 and outcome 6. Consider graphs with common edges $1\to2$, $1\to4$, $4\to5$, $4\to6$ and $5\to6$, with these additional specifications:</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>\sum_{\mathcal D}p(\mathcal D\mid\mathbf X)</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="sc">\{</span>(a_{\mathcal D,Z}-\mu_{\mathcal D})^2+V_{\mathcal D}<span class="sc">\}</span>.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>The constant term here is the within-DAG variance; the total mixture variance additionally includes between-DAG variation. This expression describes an action that observes $\mathcal D$; it is not an implementable decision under graph uncertainty without an additional rule. If $a_{\mathcal D,Z}=a_Z$ for every DAG, minimizing the first term recovers the preceding closest-to-$\mu$ rule, with the between-DAG constant retained in the full risk.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validity, precision, and alternative losses</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>**Proposals.** Distinct objectives need distinct specifications. Possible choices include:</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Restrict to sets valid in every DAG with posterior support, if such sets exist; that intersection can be empty.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Require $P(Z\text{ is valid in }\mathcal D\mid\mathbf X)\ge1-\varepsilon$, documenting the chosen tolerance and the posterior graph model.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use the decision criterion $(a_Z-\mu)^2+\lambda s_Z^2$ with a specified $\lambda\ge0$ to penalize regression posterior dispersion. This is a new criterion, not a consequence of the original squared-loss rule.</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluate predictive or repeated-sampling risk with an explicit data-generating model if the goal is estimator bias and sampling variance.</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Graph <span class="pp">|</span> Additional edges <span class="pp">|</span> O-set for the effect of 4 on 6 <span class="pp">|</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_1$ <span class="pp">|</span> $2\to5$, $3\to6$ <span class="pp">|</span> $<span class="sc">\{</span>2,3<span class="sc">\}</span>$ <span class="pp">|</span></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_2$ <span class="pp">|</span> $2\to5$, $6\to3$ <span class="pp">|</span> $<span class="sc">\{</span>2<span class="sc">\}</span>$ <span class="pp">|</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_3$ <span class="pp">|</span> $2\to5$ <span class="pp">|</span> $<span class="sc">\{</span>2<span class="sc">\}</span>$ <span class="pp">|</span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_4$ <span class="pp">|</span> $5\to2$ <span class="pp">|</span> $\varnothing$ <span class="pp">|</span></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>The set $<span class="sc">\{</span>1<span class="sc">\}</span>$ is valid in every graph, since it blocks any back-door path through the treatment's only parent. The set $<span class="sc">\{</span>2<span class="sc">\}</span>$ is valid in the first three graphs, but in $\mathcal D_4$ it conditions on a descendant of mediator 5. Likewise, $<span class="sc">\{</span>1,3<span class="sc">\}</span>$ is valid in the other graphs but conditions on an outcome descendant in $\mathcal D_2$. The union of graph-specific valid sets therefore includes inadmissible choices for some supported graphs.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>For graph weights $w_1,\ldots,w_4$, the posterior validity probability of $<span class="sc">\{</span>2<span class="sc">\}</span>$ is $w_1+w_2+w_3$. A rule requiring validity probability at least $1-\varepsilon$ admits this set only when $w_4\le\varepsilon$. A rule requiring validity in every supported graph rejects it whenever $w_4&gt;0$. Neither rule alone specifies the estimation loss, so it must be combined with a stated action criterion. Population regression checks for these examples are given in @sec-frugal-validation.</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Enumeration of candidates is one computational approach, not a demonstrated necessary or uniquely available algorithm. The union of graph-specific valid sets contains sets invalid in other supported DAGs. A graphical characterization of a Bayesian criterion depends on its particular loss and posterior specification. The frequentist O-set result optimizes a different quantity (@sec-framework).</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## Structural null effects and shrinkage estimators</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Consider the shrinkage rule $\tau^{PB}=P(\tau\ne0\mid\mathbf X)\,\tau^B$. Let $H$ indicate an active effect model, with $\tau=0$ under $H=0$. Then</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">\tau\mid\mathbf X</span><span class="co">]</span>=P(H=1\mid\mathbf X)E<span class="co">[</span><span class="ot">\tau\mid H=1,\mathbf X</span><span class="co">]</span>.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>This is a coherent squared-loss estimator if $\tau^B$ is the **conditional active-model posterior mean**. If $\tau^B$ is already the unconditional model averaged mean, multiplying by $P(H=1\mid\mathbf X)$ applies the inclusion factor twice. If $\tau^B$ is selected from adjustment regressions, the product needs its own loss-based justification.</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="fu">## Posterior reports and uncertainty</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>Under absolutely continuous priors on original DAG coefficients, a nonzero path-sum polynomial equals zero on a Lebesgue-null set. Therefore, within an ancestor DAG, exact cancellation has prior and posterior probability zero whenever the posterior remains absolutely continuous; DAGs without ancestry supply a point mass at zero. This almost-sure relation does not say every ancestor parameter value has a nonzero effect. If graph sampling is restricted to ancestry, that structural-null uncertainty has already been removed (@sec-bayesian-imap).</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>After a point-action choice $Z^*(\mathbf X)$, the selected regression posterior is conditional on that regression model and its prior. It need not include uncertainty from learning the graph or selecting $Z$. An effect posterior obtained by averaging coherent graph models already includes graph uncertainty; a mixture of separate adjustment-regression posteriors needs its own weights and interpretation.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## A four-graph adjustment example</span></span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>If the action is a distribution rather than a number, squared loss for a point estimate is no longer the appropriate specification. A proper scoring rule or an explicit interval loss can compare posterior reports, with validity and measurement costs added when relevant. Claims of efficiency, coverage or shrinkage improvement must be assessed for that complete procedure. In particular, a variance penalty cannot be inferred from the point-action squared-loss identity.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>Take treatment 4 and outcome 6. Consider graphs with common edges $1\to2$, $1\to4$, $4\to5$, $4\to6$ and $5\to6$, with these additional specifications:</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Graph <span class="pp">|</span> Additional edges <span class="pp">|</span> O-set for the effect of 4 on 6 <span class="pp">|</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_1$ <span class="pp">|</span> $2\to5$, $3\to6$ <span class="pp">|</span> $<span class="sc">\{</span>2,3<span class="sc">\}</span>$ <span class="pp">|</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_2$ <span class="pp">|</span> $2\to5$, $6\to3$ <span class="pp">|</span> $<span class="sc">\{</span>2<span class="sc">\}</span>$ <span class="pp">|</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_3$ <span class="pp">|</span> $2\to5$ <span class="pp">|</span> $<span class="sc">\{</span>2<span class="sc">\}</span>$ <span class="pp">|</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mathcal D_4$ <span class="pp">|</span> $5\to2$ <span class="pp">|</span> $\varnothing$ <span class="pp">|</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>The set $<span class="sc">\{</span>1<span class="sc">\}</span>$ is valid in every graph, since it blocks any back-door path through the treatment's only parent. The set $<span class="sc">\{</span>2<span class="sc">\}</span>$ is valid in the first three graphs, but in $\mathcal D_4$ it conditions on a descendant of mediator 5. Likewise, $<span class="sc">\{</span>1,3<span class="sc">\}</span>$ is valid in the other graphs but conditions on an outcome descendant in $\mathcal D_2$. The union of graph-specific valid sets therefore includes inadmissible choices for some supported graphs.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>For graph weights $w_1,\ldots,w_4$, the posterior validity probability of $<span class="sc">\{</span>2<span class="sc">\}</span>$ is $w_1+w_2+w_3$. A rule requiring validity probability at least $1-\varepsilon$ admits this set only when $w_4\le\varepsilon$. A rule requiring validity in every supported graph rejects it whenever $w_4&gt;0$. Neither rule alone specifies the estimation loss, so it must be combined with a stated action criterion. Population regression checks for these examples are given in @sec-frugal-validation.</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Posterior reports and uncertainty</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>After a point-action choice $Z^*(\mathbf X)$, the selected regression posterior is conditional on that regression model and its prior. It need not include uncertainty from learning the graph or selecting $Z$. An effect posterior obtained by averaging coherent graph models already includes graph uncertainty; a mixture of separate adjustment-regression posteriors needs its own weights and interpretation.</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>If the action is a distribution rather than a number, squared loss for a point estimate is no longer the appropriate specification. A proper scoring rule or an explicit interval loss can compare posterior reports, with validity and measurement costs added when relevant. Claims of efficiency, coverage or shrinkage improvement must be assessed for that complete procedure. In particular, a variance penalty cannot be inferred from the point-action squared-loss identity.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

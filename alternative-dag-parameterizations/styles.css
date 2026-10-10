@@ -1,0 +1,15 @@
+/* Pseudocode shares the book's typography and remains visible beside the proofs. */
+.algorithm {
+  border: 1px solid var(--bs-border-color, #d5d9de);
+  border-left: 3px solid #27649b;
+  border-radius: .2rem;
+  padding: 1rem 1.2rem;
+  margin: 1.4rem 0;
+  break-inside: avoid;
+}
+.algorithm figcaption {
+  font-weight: 600;
+  color: inherit;
+  margin-bottom: .8rem;
+}
+.algorithm ol { margin-bottom: .8rem; }
