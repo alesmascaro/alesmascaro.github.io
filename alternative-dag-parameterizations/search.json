@@ -303,7 +303,7 @@
     "href": "chapters/research-log.html#publication-through-the-personal-website",
     "title": "Appendix B — Research log",
     "section": "B.4 2026-10-10 — Publication through the personal website",
-    "text": "B.4 2026-10-10 — Publication through the personal website\n\nAuthorized publishing the generated book into the existing public personal website while preserving the private research repository.\nConfigured a website-repository deploy key and an encrypted research-repository secret for automatic updates.\nThe website deploys via GitHub Pages Actions; research builds update only the dedicated book folder.",
+    "text": "B.4 2026-10-10 — Publication through the personal website\n\nAuthorized publishing the generated book into the existing public personal website while preserving the private research repository.\nConfigured a website-repository deploy key and an encrypted research-repository secret for automatic updates.\nThe website deploys via GitHub Pages Actions; research builds update only the dedicated book folder.\nVerified the complete automatic cross-repository publishing run and subsequent website deployment; live book and existing homepage responded successfully.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Research log</span>"
